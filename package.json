@@ -6,7 +6,6 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    // https://nuxtjs.org/guide/commands/#static-generated-deployment-pre-rendered-
     "generate": "nuxt build && nuxt export",
     "export": "nuxt export",
     "serve": "nuxt serve",

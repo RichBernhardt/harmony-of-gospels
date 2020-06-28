@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/harmony-of-gospels", {data:[{}],fetch:[],mutations:void 0});
