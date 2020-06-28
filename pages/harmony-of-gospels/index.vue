@@ -8,8 +8,8 @@
         groupTitle: (Object.keys(group)).toString()
       }" />
     <Map />
-    <ButtonMap />
-    <ButtonMenu />
+    <!-- <ButtonMap /> -->
+    <!-- <ButtonMenu /> -->
   </main>
 </template>
 
@@ -17,16 +17,16 @@
 import { gdata } from "~/components/gdata";
 import AccordionMain from "~/components/AccordionMain";
 import Map from "~/components/Map"
-import ButtonMap from "~/components/ButtonMap"
-import ButtonMenu from "~/components/ButtonMenu"
+// import ButtonMap from "~/components/ButtonMap"
+// import ButtonMenu from "~/components/ButtonMenu"
 
 export default {
 
   components: {
     AccordionMain,
     Map,
-    ButtonMap,
-    ButtonMenu
+    // ButtonMap,
+    // ButtonMenu
   },
 
   data () {
