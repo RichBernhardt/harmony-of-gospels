@@ -47,7 +47,7 @@ export default {
   
   .header-button {
     display: block;
-    height: 3em;
+    min-height: 3em;
     border: 0px none rgba(255,255,255,0);
     background-color: rgba(0,0,0,0);
     font-weight: bold;

@@ -54,7 +54,7 @@ export default {
 
   .header-button {
     display: block;
-    height: 3em;
+    min-height: 3em;
     margin-bottom: 3px;
     border: 2px solid orangered;
     border-radius: 3px;

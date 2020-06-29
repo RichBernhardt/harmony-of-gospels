@@ -1219,7 +1219,7 @@ They answered, “Seven, and a few small fish.”`,
 // 3
 `Then Moses and Elijah(ba) appeared to them, talking with Jesus.`,
 // 4
-`Peter said to Jesus, “Lord, it is good that we are here. If you want, I will put up three tents here-one for you, one for Moses, and one for Elijah.”`,
+`Peter said to Jesus, “Lord, it is good that we are here. If you want, I will put up three tents here - one for you, one for Moses, and one for Elijah.”`,
 // 5
 `While Peter was talking, a bright cloud covered them. A voice came from the cloud and said, “This is my Son, whom I love, and I am very pleased with him. Listen to him!”`,
 // 6
@@ -2998,7 +2998,7 @@ Peter answered, “You are the Christ.”`,
 // 4
 `Then Elijah and Moses(ac) appeared to them, talking with Jesus.`,
 // 5
-`Peter said to Jesus, “Teacher, it is good that we are here. Let us make three tents-one for you, one for Moses, and one for Elijah.”`,
+`Peter said to Jesus, “Teacher, it is good that we are here. Let us make three tents - one for you, one for Moses, and one for Elijah.”`,
 // 6
 `Peter did not know what to say, because he and the others were so frightened.`,
 // 7
@@ -3487,7 +3487,7 @@ They answered, “Caesar’s.”`,
 // 17
 `In the evening, Jesus went to that house with the twelve.`,
 // 18
-`While they were all eating, Jesus said, “I tell you the truth, one of you will turn against me-one of you eating with me now.”`,
+`While they were all eating, Jesus said, “I tell you the truth, one of you will turn against me - one of you eating with me now.”`,
 // 19
 `The followers were very sad to hear this. Each one began to say to Jesus, “I am not the one, am I?”`,
 // 20
@@ -4711,7 +4711,7 @@ Peter answered, “You are the Christ from God.”`,
 // 32
 `Peter and the others were very sleepy, but when they awoke fully, they saw the glory of Jesus and the two men standing with him.`,
 // 33
-`When Moses and Elijah were about to leave, Peter said to Jesus, “Master, it is good that we are here. Let us make three tents-one for you, one for Moses, and one for Elijah.” (Peter did not know what he was talking about.)`,
+`When Moses and Elijah were about to leave, Peter said to Jesus, “Master, it is good that we are here. Let us make three tents - one for you, one for Moses, and one for Elijah.” (Peter did not know what he was talking about.)`,
 // 34
 `While he was saying these things, a cloud came and covered them, and they became afraid as the cloud covered them.`,
 // 35
@@ -6037,7 +6037,7 @@ Jesus answered, “Those are your words.”`,
 // 32
 `There were also two criminals led out with Jesus to be put to death.`,
 // 33
-`When they came to a place called the Skull, the soldiers crucified Jesus and the criminals-one on his right and the other on his left.`,
+`When they came to a place called the Skull, the soldiers crucified Jesus and the criminals - one on his right and the other on his left.`,
 // 34
 `Jesus said, “Father, forgive them, because they don’t know what they are doing.”(h)
 The soldiers threw lots to decide who would get his clothes.`,
