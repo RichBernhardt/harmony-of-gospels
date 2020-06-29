@@ -1,5 +1,5 @@
 <template>
-  <p style="display:none" />
+  <span style="display:none" />
 </template>
 
 <script>
@@ -7,8 +7,8 @@ import { gdata } from "~/components/gdata";
 
 // The timeline is the blueprint:
 // [ { groupTitle: [default,mt,mk,lk,jn,week,eventTitle,location],... },... ].
-// The fetched timeline has gaps for minimizing editing errors and data transfer,
-// and we complete it here in this component.
+// The fetched timeline has gaps for minimizing editing errors and data transfer.
+// It is completed here in this component.
 export default {
 
   created() {

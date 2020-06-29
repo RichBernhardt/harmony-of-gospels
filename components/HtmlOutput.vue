@@ -1,5 +1,5 @@
 <template>
-  <p style="display:none" />
+  <span style="display:none" />
 </template>
 
 <script>
@@ -88,10 +88,13 @@ export default {
       }
     },
 
-    // input:  [default,mt,mk,lk,jn,week,eventTitle,location]
-    // output: [default,mt,mk,lk,jn,week+eventTitle,location]
+    // input:  [...,week,eventTitle,location]
+    // output: [...,week+eventTitle,location]
     addSpaceTime(g,gt,e) {      
-
+      
+      // Week in gdata is a raw number.
+      // We concatenate with "Week" and a separator pipe
+      // before copying into htmlOutput
       if (gdata.timeline[g][gt][e][5]) {
         gdata.timeline[g][gt][e][5] =
           "Week " + gdata.timeline[g][gt][e][5] + " | ";
