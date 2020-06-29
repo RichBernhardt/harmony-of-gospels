@@ -88,8 +88,6 @@ sw.*
 
 # Vim swap files
 *.swp
-layouts/default.vue
-layouts/README.md
 middleware/README.md
 plugins/README.md
 static/favicon.ico
