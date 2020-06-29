@@ -26,7 +26,7 @@ const timelineRaw = [
   ]},
   {"Week 7 | Jesus Visits His Family Of Origin In Galilee": [
     ["","","","",[2,1,11],"7","The Wedding At Cana","cana"],
-    ["","","","",[2,12,12],"7","Jesus Families Of Origin And Faith Together In Capernaum","capernaum"]
+    ["","","","",[2,12,12],"7","Jesus' Family Of Faith And Family Of Origin Together In Capernaum","capernaum"]
   ]},
   {"Week 8 | First Passover In Jerusalem, Ministry In Judea": [
     ["","","","",[2,13,17],"8","First Cleansing Of Temple For Passover","jerusalem"],
@@ -85,7 +85,7 @@ const timelineRaw = [
     ["",[7,28,29],"","","","18-31","Jesus Teaches With Authority","capernaum"],
     [[["MT",8,1,1],["LK",7,1,1]],[8,1,1],"",[7,1,1],"","18-31","End Of Sermon On The Mount","capernaum"]
   ]},
-  {"Week 18-31 | The Galilean Minsitry Continues": [
+  {"Week 18-31 | The Galilean Ministry Continues": [
     ["MT",[8,5,13],"",[7,2,10],"","18-31","An Army Officer’s Faith","capernaum"],
     ["",[9,27,31],"","","","18-31","Two Blind Men's Faith","capernaum"],
     ["",[9,32,34],"","","","18-31","A Dumb Demoniac","capernaum"],
@@ -115,7 +115,7 @@ const timelineRaw = [
     ["MK",[8,23,23],[4,36,36],[8,22,22],"","18-31","End Of Sermon By The Sea","galilee-shore"],
     ["",[13,36,43],"","","","18-31","Wheat And Weeds Explanation","galilee-shore"]
   ]},
-  {"Week 18-31 | The Galilean Minsitry Goes On": [
+  {"Week 18-31 | The Galilean Ministry Goes On": [
     ["LK",[8,24,27],[4,37,41],[8,23,25],"","18-31","Jesus Calms A Storm","lake-galilee"],
     ["MK",[8,28,34],[5,1,20],[8,26,39],"","18-31","The Demoniacs Of Gadara","gadara"],
     ["LK",[9,1,1],[5,21,21],[8,40,40],"","18-31","Back To The Galilee Side Of The Lake","galilee-shore"],
@@ -140,7 +140,7 @@ const timelineRaw = [
     ["","","","",[6,22,71],"31","Feast Of The Day Of Trumpets","gennesaret"],
     [[["MK",7,1,5],["MT",15,3,9],["MK",7,15,15],["LK",11,40,40],["LK",11,41,54],["MT",15,12,20]],[15,1,20],[7,1,23],[11,37,54],"","31","Hypocrite Hand Wash","gennesaret"]
   ]},
-  {"Week 31-32 | The Galilean Minsitry Continues": [
+  {"Week 31-32 | The Galilean Ministry Continues": [
     ["LK",[14,1,2],[6,14,16],[9,7,9],"","31","Herod Hears About Jesus",false],
     [[["MK",8,1,4],["MT",15,34,39]],[15,32,39],[8,1,10],"","","32","More Than Four Thousand Fed","decapolis-shore"],
     [[["MT",16,1,3],["MK",8,12,20],["MT",16,11,12]],[16,1,12],[8,11,21],"","","32","Beware Of The Yeast Of The Pharisees","magadan"],
@@ -179,7 +179,7 @@ const timelineRaw = [
     ["","","","",[8,31,59],"34","The True Sons Of The Heavenly Father","jerusalem"],
     ["","","","",[9,1,41],"35","The Man Born Blind","jerusalem"]
   ]},
-  {"Week 35-43 | Minsitry In Judea": [
+  {"Week 35-43 | Ministry In Judea": [
     ["","","","",[10,1,21],"35-36","The Good Shepherd Gives His Life For The Sheep","judea"],
     ["","","",[10,1,11],"","35-36","Sending Out Seventy-Two Followers","judea"],
     ["","","",[10,25,37],"","36-43","Who Is My Neighbor?","judea"],
@@ -308,10 +308,10 @@ const timelineRaw = [
     [[["JN",18,29,30],["MT",27,12,13],["MK",15,3,5],["JN",18,31,38],["LK",23,5,5]],[27,11,14],[15,2,5],[23,2,5],[18,29,38],"63","Pilate Questions Jesus","jerusalem"],
     ["","","",[23,6,12],"","63","Pilate Sends Jesus to Herod","jerusalem"],
     ["","","",[23,13,16],"","63","Pilate Declares: Jesus Is Not Guilty","jerusalem"],
-    [[["MK",15,6,7],["MT",27,17,20],["LK",23,18,18],["LK",23,20,23]],[27,15,23],[15,6,14],[23,17,23],[18,39,40],"63","Jesus Or Barabbas","jerusalem"],
+    [[["MK",15,6,7],["MT",27,17,20],["LK",23,18,18],["LK",23,20,22]],[27,15,23],[15,6,14],[23,17,22],[18,39,40],"63","Jesus Or Barabbas","jerusalem"],
     ["MT",[27,27,30],[15,16,19],"",[19,1,3],"63","Pilate Whips Jesus, The Soldiers Shame Him","jerusalem"],
     ["JN","","","",[19,4,15],"63","Pilate Argues For Jesus Against The People","jerusalem"],
-    [[["MT",27,24,25],["JN",19,16,16]],[27,24,26],[15,15,15],[23,24,25],[19,16,16],"63","Pilate Washing His Hands","jerusalem"],
+    [[["MT",27,24,25],["JN",19,16,16]],[27,24,26],[15,15,15],[23,23,25],[19,16,16],"63","Pilate Washing His Hands","jerusalem"],
     ["MK",[27,31,31],[15,20,20],"","","63","The Soldiers Get Jesus Dressed In His Own Clothes","jerusalem"],
     [[["MT",27,32,32],["LK",23,27,32],["MK",15,22,23]],[27,32,34],[15,21,23],[23,26,32],[19,17,17],"63","The Way To Golgota","jerusalem"],
     [[["LK",23,33,33],["MK",15,25,25],["JN",19,19,22],["LK",23,34,34],["JN",19,23,27]],[27,35,37],[15,24,26],[23,33,34],[19,18,27],"63","The Crucifixion","jerusalem"],
