@@ -2,11 +2,11 @@
   <div
     class="accordion-main"
     v-bind="{expanded}">
-      <button
-        class="header-button"
+      <div
+        class="header"
         @click.prevent="expanded = ! expanded">
           {{ groupTitle }}
-      </button>
+      </div>
     <AccordionSub
       v-for="(event,eventIndex) in gdata.htmlOutput[groupIndex][groupTitle]"
       v-show="expanded"
@@ -49,19 +49,29 @@ export default {
   .accordion-main {
     display: flex;
     flex-direction: column;
-    z-index: 0;
+    max-width: 400px;
+    background-color: lemonchiffon;
+    border: 1px solid darkkhaki;
+    border-radius: 5px;
+    margin-bottom: 3px;
   }
 
-  .header-button {
-    display: block;
+  .header {
+    display: flex;
+    align-items: center;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0px;
+    z-index: 1;
     min-height: 3em;
-    margin-bottom: 3px;
-    border: 2px solid orangered;
-    border-radius: 3px;
-    background-color: rgba(255,255,255,0.88);
+    background-color: khaki;
+    border: 0px none rgba(0,0,0,0);
+    border-bottom: 1px solid darkkhaki; /* to do: style binding */
+    border-radius: 5px;
+    padding-left: 5px;
+    font-size: 0.9rem;
     text-align: left;
     font-weight: bold;
-    color: orangered;    
   }
 
 </style>

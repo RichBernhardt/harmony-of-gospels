@@ -1267,8 +1267,7 @@ Peter went into the house, but before he could speak, Jesus said to him, “What
 `Peter answered, “Other people pay the taxes.”
 Jesus said to Peter, “Then the children of the king don’t have to pay taxes.`,
 // 27
-`But we don’t want to upset these tax collectors. So go to the lake and fish. After you catch the first fish, open its mouth and you will find a coin. Take that coin and give it to the tax collectors for you and me.”
-Who Is the Greatest?`
+`But we don’t want to upset these tax collectors. So go to the lake and fish. After you catch the first fish, open its mouth and you will find a coin. Take that coin and give it to the tax collectors for you and me.”`
 ],
 [ // 18
 `At that time the followers came to Jesus and asked, “Who is greatest in the kingdom of heaven?”`,

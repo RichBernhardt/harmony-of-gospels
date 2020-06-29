@@ -1,7 +1,7 @@
 <template>
   <div class="accordion-sub" v-bind="{expanded}">
-      <button
-        class="header-button" 
+      <div
+        class="header" 
         @click.prevent="expanded = ! expanded"
         v-html="gdata.htmlOutput[groupIndex][groupTitle][eventIndex][5]"
       />
@@ -34,59 +34,36 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
   .accordion-sub {
+    background-color: lemonchiffon;
+    border: 0px none lemonchiffon;
+    border-bottom: 1px solid darkkhaki;
+  }
+
+  .accordion-sub:last-child {
+    background-color: lemonchiffon;
+    border: 0px none lemonchiffon;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  .header {
     display: flex;
-    flex-direction: column;
-    margin-bottom: 3px;
-    border: 1px solid orangered;
-    border-radius: 3px;
-    background-color: rgba(255,255,255,0.88);
-  }
-  
-  .header-button {
-    display: block;
+    align-items: center;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 3em;
     min-height: 3em;
-    border: 0px none rgba(255,255,255,0);
-    background-color: rgba(0,0,0,0);
+    border-radius: 5px;
+    border: 0px none lemonchiffon;
+    background-color: lemonchiffon;
     font-weight: bold;
-    text-align: left; 
-  }
-  
-  .header-button:focus {
-    border: 0px none rgba(255,255,255,0);
-  }
-
-  /* .header-button:active  {
-    border: 0px none rgba(255,255,255,0);
-  }
-
-  .header-button:enabled  {
-    border: 0px none rgba(255,255,255,0);
-  }
-
-  .header-button:visited {
-    border: 0px none rgba(255,255,255,0);
-  } */
-
-  /* Shorthand for: flex-grow: 1; flex-shrink: 0; flex-basis: 0; */
-  .verses {
-    flex: 1;
-    padding: 5px;
-    text-align: justify;
-  }
-
-  /* https://stackoverflow.com/a/13878902/1405507 */
-  .verse-ref {
-    display: inline-block;
-    vertical-align: middle;
-    text-align: center;
-    font-size: 0.6rem;
-    font-weight: bold;
-    color: gray;
-    padding-left: 0.5em;
-    padding-right: 0.3em;
+    text-align: left;
+    font-size: 0.9rem;
+    margin-left: 5px;
+    margin-right: 5px;
   }
 
 </style>

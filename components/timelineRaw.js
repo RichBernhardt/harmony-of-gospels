@@ -205,7 +205,7 @@ const timelineRaw = [
   ]},
   {"Week 43 | Hanukkah, The Feast Of Victory Over Religious Unification In Jerusalem": [
     ["MT",[23,37,39],"",[13,34,35],"","43","Jesus Judges Jerusalem","jerusalem"],
-    ["","","",[14,1,6],"","43","Eating With A Chief Pharisee:],[Healing On Sabbath","jerusalem"],
+    ["","","",[14,1,6],"","43","Eating With A Chief Pharisee: Healing On Sabbath","jerusalem"],
     ["","","",[14,7,14],"","43","Power Or Influence","jerusalem"],
     ["","","","",[10,22,39],"43","At The Feast Of Dedication (Hanukkah)","jerusalem"]
   ]},

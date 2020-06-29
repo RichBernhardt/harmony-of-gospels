@@ -37,16 +37,3 @@ export default {
 
 }
 </script>
-
-
-<style>
-html {
-  font-size: 100%;
-}
-
-/* .gospels-root {
-  
-} */
-
-
-</style>
