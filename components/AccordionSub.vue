@@ -2,7 +2,7 @@
   <div class="accordion-sub" v-bind="{expanded}">
       <div
         class="header" 
-        @click.prevent="expanded = ! expanded"
+        @click.prevent="expanded = ! expanded; setLocation();"
         v-html="gdata.htmlOutput[groupIndex][groupTitle][eventIndex][5]"
       />
       <div
@@ -30,7 +30,14 @@ export default {
       gdata,
       expanded: false
     }
-  }  
+  },
+
+  methods: {
+    setLocation() {
+      gdata.currentLocation = gdata.htmlOutput[
+        this.groupIndex][this.groupTitle][this.eventIndex][6];
+    }
+  }
 }
 </script>
 

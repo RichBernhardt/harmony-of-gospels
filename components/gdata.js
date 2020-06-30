@@ -1,6 +1,5 @@
-// https://stackoverflow.com/questions/62302299/vue-js-store-pattern-sharing-data-between-sibling-components
+// https://stackoverflow.com/questions/62302299/
 import Vue from 'vue'
-// import Vue from 'vue/dist/vue.js'
 import timelineRaw from '~/components/timelineRaw.js'
 import gospels from "~/components/gospelsNCV.js"
 
@@ -12,5 +11,6 @@ export const gdata = Vue.observable({
   LK: gospels.lk,
   JN: gospels.jn,
   htmlOutput: [],
-  mapOnShow: false
+  currentLocation: "",
+  mapOnShow: false,
 });

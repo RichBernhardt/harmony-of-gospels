@@ -3,7 +3,7 @@
     class="accordion-main"
     v-bind="{expanded}">
       <div
-        class="header"
+        :class="['header', expanded ? 'expanded' : '']"
         @click.prevent="expanded = ! expanded">
           {{ groupTitle }}
       </div>
@@ -66,12 +66,15 @@ export default {
     min-height: 3em;
     background-color: khaki;
     border: 0px none rgba(0,0,0,0);
-    border-bottom: 1px solid darkkhaki; /* to do: style binding */
     border-radius: 5px;
     padding-left: 5px;
     font-size: 0.9rem;
     text-align: left;
     font-weight: bold;
+  }
+
+  .expanded {
+    border-bottom: 1px solid darkkhaki;
   }
 
 </style>

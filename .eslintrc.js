@@ -45,6 +45,7 @@ module.exports = {
     'vue/require-default-prop':0,
     'vue/no-v-html': 0,
     'vue/html-indent': 0,
+    'vue/max-attributes-per-line': 0,
     // npm run lint -- --fix
   }
 }

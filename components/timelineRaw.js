@@ -169,7 +169,7 @@ const timelineRaw = [
     ["",[18,23,35],"","","","33","An Unforgiving Servant","capernaum"]
   ]},
   {"Week 33-34 | Feast Of Tabernacles In Jerusalem": [
-    [[["LK",9,51,56],["JN",7,11,13]],"","",[9,51,56],[7,10,13],"33","Jesus Goes To Jerusalem At The Feast Of Tabernacles","judea"],
+    [[["LK",9,51,56],["JN",7,11,13]],"","",[9,51,56],[7,10,13],"33","Jesus Goes To Jerusalem At The Feast Of Tabernacles","galilee"],
     ["","","",[17,11,19],"","33","The Ten Lepers","galilee-samaria"],
     ["MT",[19,1,2],[10,1,1],"","","33","Arrival To Judea To The Other Side Of The Jordan","jordan-in-judea"],
     ["","","","",[7,14,36],"34","Teaching In The Temple At Feast Of Tabernacles","jerusalem"],
