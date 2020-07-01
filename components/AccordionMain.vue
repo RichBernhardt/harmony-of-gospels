@@ -64,7 +64,7 @@ export default {
     top: 0px;
     z-index: 1;
     min-height: 3em;
-    background-color: #e6ff99;
+    background-color: #ebf292;
     border: 0px none rgba(0,0,0,0);
     border-radius: 5px;
     padding-left: 5px;
