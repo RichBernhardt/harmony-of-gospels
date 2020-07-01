@@ -12,9 +12,23 @@ export default {
 </script>
 
 <style scoped>
-  .root { 
-    position: fixed; top: 0; right: 0; height: 100%; z-index: -1;
+  .rootConstant { 
+    position: fixed; z-index: -1;
     stroke-linecap:round; stroke-linejoin:round; paint-order:stroke; }
+
+  .rootVariable {
+    height: 100%; top: 0; right: 0; }
+  
+  /* https://stackoverflow.com/questions/36681583/ */
+  @media 
+    (orientation: landscape) and
+    (max-width: 500px),
+    (max-height: 500px) {
+    .rootVariable {
+      height: 101vw;
+      transform: rotate(-90deg) translateY(-20vw) translateX(21vw);
+    }
+  }
 
   .current-area { fill:OrangeRed; opacity:0.6;}
   .current-city { stroke:OrangeRed; }
@@ -44,7 +58,7 @@ export default {
 
   text {
     font-size:0.6rem;
-    font-family:georgia, serif;
+    /* font-family:'Georgia', serif; */
     white-space:pre;
     stroke-width:0.1em;
     }
@@ -52,9 +66,9 @@ export default {
 
 <template>
   <svg
-    class="root"
-    version="1.1" 
-    viewBox="0 0 270 460" 
+    :class="['rootConstant', 'rootVariable']"
+    version="1.1"
+    viewBox="0 0 270 460"
     xmlns="http://www.w3.org/2000/svg" 
     xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
@@ -102,9 +116,9 @@ export default {
           id="lake-galilee" 
           :class="{ 'current-area': gdata.currentLocation === 'lake-galilee' }"
           d="m198 181c-11.9 3.52-13.8 6.44-15.9 13-.593 8.75 8.77 14.6 8.86 23.2.143 13.7 14.1.65 12.9-6.89-1.53-9.73 4.42-29.2-5.87-29.3" />
-        <g transform="translate(194,195)">
+        <g transform="translate(195,194)">
           <text id="lake-text" class="center text-water" transform="rotate(45)">Lake</text>
-          <text id="galilee-text" class="center text-water" transform="rotate(45)" y="0.8em">Galilee</text>
+          <text id="galilee-text" class="center text-water" transform="rotate(45)" y="0.8em" x="0.25em">Galilee</text>
         </g>
       </g>
       <g>

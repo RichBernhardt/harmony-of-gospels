@@ -27,15 +27,12 @@ export default {
 
   html {
     font-size: 100%;
-    font-family: serif;
+    font-family: 'Georgia', serif;
+    --singleWidth: 400px;
   }
 
-  /* Shorthand for: flex-grow: 1; flex-shrink: 0; flex-basis: 0; */
-  .verses {
-    flex: 1;
-    margin: 5px;
-    text-align: justify;
-    line-height: 1.4; /* https://stackoverflow.com/a/20818206/ */
+  body {
+    margin:0;
   }
 
   /* https://stackoverflow.com/a/13878902/ */
