@@ -1,37 +1,37 @@
 <template>
-  <div class="accordion-sub" v-bind="{expanded}">
+  <div class="accordion-sub" v-bind="{ expanded }">
       <div
-        class="header-wrapper" 
+        class="header" 
         @click.prevent="expanded = ! expanded; setLocation();">
-          <span class="header-title">
-            {{ gdata.htmlOutput[groupIndex][groupTitle][eventIndex][5] }}
-          </span>
+          {{ gdata.htmlOutput[groupIndex][groupTitle][eventIndex][5] }}
+      </div>
+      <div
+        class="range-wrapper"
+        v-show="!expanded">
           <span
-            class="header-range-wrapper"
-            v-show="!expanded"
+            v-for="range in ranges"
+            :key="range"
             >
-              <span
-                class="header-range"
-                v-for="range in ranges"
-                :key="range">
-                  {{ range }}
-                </span>
+              {{ range }}
           </span>
       </div>
-      <div v-show="expanded">
-        <div class="gospel-range">
-          <span>Default | </span>
-          <span 
-            v-for="range in ranges"
-            :key="range">
-              {{ range }}
-            </span>
-        </div>
+      <div
+        class="range-wrapper"
+        v-show="expanded"
+        >
+        <span>Default | </span>
+        <span
+          v-for="range in ranges"
+          :key="range"
+          >
+            {{ range }}
+        </span>
+      </div>
         <div
           class="gospel-text"
+          v-show="expanded"
           v-html="gdata.htmlOutput[groupIndex][groupTitle][eventIndex][0]"
         />
-      </div>
   </div>
 </template>
 
@@ -102,24 +102,22 @@ export default {
     background-color: lemonchiffon;
     border: 0px none lemonchiffon;
     border-bottom: 1px solid darkkhaki;
+    padding: 5px;
+    padding-bottom: 0px;
   }
 
   .accordion-sub:last-child {
-    background-color: lemonchiffon;
     border: 0px none lemonchiffon;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
   }
   
-  .header-wrapper {
+  .header {
     position: sticky;
     /* Safari */
     position: -webkit-sticky;
     top: 3em;
     min-height: 2em;
-    margin: 5px;
-    margin-bottom: 0px;
-    padding-bottom: 0.8em;
     border-radius: 5px;
     border: 0px none lemonchiffon;
     background-color: lemonchiffon;
@@ -127,29 +125,17 @@ export default {
     font-weight: bold;
   }
   
-  .header-range-wrapper {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    /* float: right; */
-    /* white-space: pre-wrap; */
-    padding-top: 0.25em;
-    font-size: 0.8em;
-    margin-left: 5px;
+  .range-wrapper {
+    float: right;
+    overflow: auto;
     font-weight: normal;
-  }
-
-  .gospel-range {
-    margin-right: 5px;
-    text-align: right;
-    font-size: 0.8em;
+    font-size: 0.9em;
     font-family: 'Times New Roman', serif;
   }
 
   /* Shorthand for: flex-grow: 1; flex-shrink: 0; flex-basis: 0; */
   .gospel-text {
-    flex: 1;
-    margin: 5px;
+    margin-top: 1.5em;
     text-align: justify;
     line-height: 1.4; /* https://stackoverflow.com/a/20818206/ */
   }

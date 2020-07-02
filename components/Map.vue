@@ -22,7 +22,7 @@ export default {
   /* https://stackoverflow.com/questions/36681583/ */
   @media 
     (orientation: landscape) and (max-width: 500px),
-    (orientation: landscape) and (max-height: 500px) {
+    (orientation: landscape) and (max-height: 700px) {
     .rootVariable {
       height: 101vw;
       transform: rotate(-90deg) translateY(-20vw) translateX(21vw);
