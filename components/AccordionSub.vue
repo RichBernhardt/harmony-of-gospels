@@ -1,20 +1,21 @@
 <template>
   <div class="accordion-sub" v-bind="{expanded}">
       <div
-        class="header" 
+        class="header-wrapper" 
         @click.prevent="expanded = ! expanded; setLocation();">
-          <span class="title">
+          <span class="header-title">
             {{ gdata.htmlOutput[groupIndex][groupTitle][eventIndex][5] }}
           </span>
           <span
-            class="header-range"
+            class="header-range-wrapper"
             v-show="!expanded"
-          >
-            <span
-              v-for="range in ranges"
-              :key="range">
-              {{ range }}
-            </span>
+            >
+              <span
+                class="header-range"
+                v-for="range in ranges"
+                :key="range">
+                  {{ range }}
+                </span>
           </span>
       </div>
       <div v-show="expanded">
@@ -24,7 +25,7 @@
             v-for="range in ranges"
             :key="range">
               {{ range }}
-          </span>
+            </span>
         </div>
         <div
           class="gospel-text"
@@ -70,7 +71,8 @@ export default {
           gdata.timeline[this.groupIndex][this.groupTitle][
             this.eventIndex][gospel][0][2] + "-" +
           gdata.timeline[this.groupIndex][this.groupTitle][
-            this.eventIndex][gospel][0][3] );
+            this.eventIndex][gospel][0][3]
+        );
       }
     }
 
@@ -109,31 +111,32 @@ export default {
     border-bottom-right-radius: 5px;
   }
   
-  .header {
+  .header-wrapper {
     position: sticky;
     /* Safari */
-    /* position: -webkit-sticky; */
+    position: -webkit-sticky;
     top: 3em;
     min-height: 2em;
-    padding: 5px;
+    margin: 5px;
+    margin-bottom: 0px;
+    padding-bottom: 0.8em;
     border-radius: 5px;
     border: 0px none lemonchiffon;
     background-color: lemonchiffon;
     font-family: 'Times New Roman', serif;
-  }
-
-  .title {
-    text-align: left;
     font-weight: bold;
   }
-
-  .header-range {
-    /* position: absolute;
-    right: 5px;
-    bottom: 0px; */
-    float: right;
+  
+  .header-range-wrapper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    /* float: right; */
+    /* white-space: pre-wrap; */
     padding-top: 0.25em;
     font-size: 0.8em;
+    margin-left: 5px;
+    font-weight: normal;
   }
 
   .gospel-range {
