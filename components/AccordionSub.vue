@@ -3,29 +3,27 @@
       <div
         class="header" 
         @click.prevent="expanded = ! expanded; setLocation();">
-          <div>
+          <span class="title">
             {{ gdata.htmlOutput[groupIndex][groupTitle][eventIndex][5] }}
-          </div>
-          <div
-            class="gospel-nav"
+          </span>
+          <span
+            class="header-range"
             v-show="!expanded"
           >
-            <span 
-              v-for="(gospel) in [1,2,3]"
-              :key="gospel">
-              {{ navigation(gospel) }}
+            <span
+              v-for="range in ranges"
+              :key="range">
+              {{ range }}
             </span>
-          </div>
+          </span>
       </div>
-      <div 
-        class="gospel-wrapper"
-        v-show="expanded">
-        <div class="gospel-nav">
-          <span>Default</span>
+      <div v-show="expanded">
+        <div class="gospel-range">
+          <span>Default | </span>
           <span 
-            v-for="(gospel) in [1,2,3]"
-            :key="gospel">
-              {{ navigation(gospel) }}
+            v-for="range in ranges"
+            :key="range">
+              {{ range }}
           </span>
         </div>
         <div
@@ -51,30 +49,44 @@ export default {
   data () {
     return {
       gdata,
-      expanded: false
+      expanded: false,
+      ranges: []
     }
   },
   
-  methods: {
-    setLocation() {
-      gdata.currentLocation = gdata.htmlOutput[
-        this.groupIndex][this.groupTitle][this.eventIndex][6];
-    },
+  created() {
+    for (let gospel = 1; gospel <= 4; gospel++) {
 
-    navigation(gospel) {
-      // https://stackoverflow.com/questions/40522634
       if (gdata.timeline[this.groupIndex][this.groupTitle][
           this.eventIndex][gospel]) {
-        return gdata.timeline[this.groupIndex][this.groupTitle][
-            this.eventIndex][gospel][0][0] +
+          
+        this.ranges.push(
+          gdata.timeline[this.groupIndex][this.groupTitle][
+            this.eventIndex][gospel][0][0]
+            // https://stackoverflow.com/a/53203953/
+            .replace(/(^.)(.*)/, (_,$1,$2) => $1 + $2.toLowerCase()) +
           gdata.timeline[this.groupIndex][this.groupTitle][
             this.eventIndex][gospel][0][1] + ":" +
           gdata.timeline[this.groupIndex][this.groupTitle][
             this.eventIndex][gospel][0][2] + "-" +
           gdata.timeline[this.groupIndex][this.groupTitle][
-            this.eventIndex][gospel][0][3];
+            this.eventIndex][gospel][0][3] );
       }
     }
+
+    if (this.ranges.length > 1) {
+      for (let i = 0; i < this.ranges.length-1; i++) {
+        this.ranges[i] += " | ";
+      }
+    }
+  },
+
+  methods: {
+    setLocation() {
+      gdata.currentLocation = gdata.htmlOutput[
+        this.groupIndex][this.groupTitle][this.eventIndex][6];
+    }
+
   },
 
 }
@@ -98,29 +110,37 @@ export default {
   }
   
   .header {
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    position: -webkit-sticky; /* Safari */
     position: sticky;
+    /* Safari */
+    /* position: -webkit-sticky; */
     top: 3em;
-    min-height: 3em;
+    min-height: 2em;
+    padding: 5px;
     border-radius: 5px;
     border: 0px none lemonchiffon;
     background-color: lemonchiffon;
-    font-weight: bold;
-    text-align: left;
-    margin-left: 5px;
-    margin-right: 5px;
-    font-weight: bold;
     font-family: 'Times New Roman', serif;
   }
 
-  .gospel-nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
+  .title {
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .header-range {
+    /* position: absolute;
+    right: 5px;
+    bottom: 0px; */
+    float: right;
+    padding-top: 0.25em;
+    font-size: 0.8em;
+  }
+
+  .gospel-range {
+    margin-right: 5px;
+    text-align: right;
+    font-size: 0.8em;
+    font-family: 'Times New Roman', serif;
   }
 
   /* Shorthand for: flex-grow: 1; flex-shrink: 0; flex-basis: 0; */

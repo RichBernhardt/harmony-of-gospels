@@ -21,9 +21,8 @@ export default {
   
   /* https://stackoverflow.com/questions/36681583/ */
   @media 
-    (orientation: landscape) and
-    (max-width: 500px),
-    (max-height: 500px) {
+    (orientation: landscape) and (max-width: 500px),
+    (orientation: landscape) and (max-height: 500px) {
     .rootVariable {
       height: 101vw;
       transform: rotate(-90deg) translateY(-20vw) translateX(21vw);
@@ -66,7 +65,7 @@ export default {
 
 <template>
   <svg
-    :class="['rootConstant', 'rootVariable']"
+    class="rootConstant rootVariable"
     version="1.1"
     viewBox="0 0 270 460"
     xmlns="http://www.w3.org/2000/svg" 
