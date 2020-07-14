@@ -21,12 +21,6 @@ export default {
     htmlOutput
   },
 
-  // data () {
-  //   return {
-  //     gdata,
-  //   }
-  // },
-
 }
 </script>
 

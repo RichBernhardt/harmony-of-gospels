@@ -1,20 +1,19 @@
 <template>
-  <div class="sole-gospel">
+  <div 
+    v-show="expanded && (lengthIndex + 1 <= gdata.currentParalelGospels)"
+    class="sole-gospel separator">
       <div
         class="range-wrapper"
       >
         <span
-          v-show="expanded"
-        >Default | </span>
-        <span
-          v-for="range in ranges"
+          v-for="range in rangesWithDefault"
           :key="range"
+          class="range"
         >
           {{ range }}
         </span>
       </div>
       <div
-        v-show="expanded"
         class="gospel-text"
         v-html="gdata.htmlOutput[groupIndex][groupTitle][eventIndex][gospelIndex]"
       />
@@ -32,43 +31,24 @@ export default {
     eventIndex: Number,
     gospelIndex: Number,
     expanded: Boolean,
+    lengthIndex: Number,
+    ranges: Array,
   },
 
   data() {
     return {
       gdata,
-      ranges: []
     }
   },
 
-  created() {
-    for (let gospel = 1; gospel <= 4; gospel++) {
-
-      if (gdata.timeline[this.groupIndex][this.groupTitle][
-          this.eventIndex][gospel]) {
-          
-        this.ranges.push(
-          gdata.timeline[this.groupIndex][this.groupTitle][
-            this.eventIndex][gospel][0][0]
-            // https://stackoverflow.com/a/53203953/
-            .replace(/(^.)(.*)/, (_,$1,$2) => $1 + $2.toLowerCase()) + " " +  
-          gdata.timeline[this.groupIndex][this.groupTitle][
-            this.eventIndex][gospel][0][1] + ":" +
-          gdata.timeline[this.groupIndex][this.groupTitle][
-            this.eventIndex][gospel][0][2] + "-" +
-          gdata.timeline[this.groupIndex][this.groupTitle][
-            this.eventIndex][gospel][0][3]
-        );
-      }
-    }
-
-    if (this.ranges.length > 1) {
-      for (let i = 0; i < this.ranges.length-1; i++) {
-        this.ranges[i] += " | ";
-      }
+  computed: {
+    rangesWithDefault() {
+      const rangesClone = JSON.parse(JSON.stringify(this.ranges));
+      rangesClone.unshift("Default");
+      return rangesClone;
     }
   },
-  
+
 }
 </script>
 
@@ -77,23 +57,29 @@ export default {
   .sole-gospel {
     flex: 1;
     min-width: 10em;
+    max-width: 25em;
     padding-left: 5px;
     padding-right: 5px;
     margin-bottom: 5px;
   }
 
   /* https://stackoverflow.com/a/47824568 */
-  .sole-gospel:not(:last-child) {
-    border-right: solid gray 1px;
+  .separator:not(:first-child) {
+    border-left: solid gray 1px;
   }
 
   .range-wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     font-weight: normal;
     font-size: 0.9em;
     font-family: 'Times New Roman', serif;
+  }
+
+  .range {
+    padding-left: 7px;
+    padding-right: 7px;
   }
 
   .gospel-text {

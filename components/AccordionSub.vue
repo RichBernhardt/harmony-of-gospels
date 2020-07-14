@@ -1,9 +1,24 @@
 <template>
-  <div class="accordion-sub" v-bind="{ expanded }">
+  <div 
+    class="accordion-sub" v-bind="{ expanded }"
+    
+  >
     <div
       class="header" 
       @click.prevent="expanded = ! expanded; setLocation();">
         {{ gdata.htmlOutput[groupIndex][groupTitle][eventIndex][5] }}
+    </div>
+    <div
+      v-show="!expanded"
+      class="range-wrapper"
+    >
+      <span
+        v-for="range in ranges"
+        :key="range"
+        class="range"
+      >
+        {{ range }}
+      </span>
     </div>
     <div class="all-gospel">
       <Gospel
@@ -14,9 +29,10 @@
           groupTitle,
           eventIndex,
           gospelIndex,
-          expanded }"
+          expanded,
+          lengthIndex,
+          ranges }"
       />
-      <!-- v-show="lengthIndex + 1 <= gdata.currentParalelGospels" -->
     </div>
   </div>
 </template>
@@ -40,7 +56,30 @@ export default {
   data () {
     return {
       gdata,
-      expanded: false
+      expanded: false,
+      ranges: [],
+    }
+  },
+
+  created() {
+    for (let gospel = 1; gospel <= 4; gospel++) {
+
+      if (gdata.timeline[this.groupIndex][this.groupTitle][
+          this.eventIndex][gospel]) {
+          
+        this.ranges.push(
+          gdata.timeline[this.groupIndex][this.groupTitle][
+            this.eventIndex][gospel][0][0]
+            // https://stackoverflow.com/a/53203953/
+            .replace(/(^.)(.*)/, (_,$1,$2) => $1 + $2.toLowerCase()) + " " +  
+          gdata.timeline[this.groupIndex][this.groupTitle][
+            this.eventIndex][gospel][0][1] + ":" +
+          gdata.timeline[this.groupIndex][this.groupTitle][
+            this.eventIndex][gospel][0][2] + "-" +
+          gdata.timeline[this.groupIndex][this.groupTitle][
+            this.eventIndex][gospel][0][3]
+        );
+      }
     }
   },
 
@@ -83,7 +122,7 @@ export default {
   }
 
   .accordion-sub {
-    /* max-width: var(--singleWidth); */
+    /* max-width: fit-content; */
     /* min-width: 290px; */
     background-color: lemonchiffon;
     border: 0px none lemonchiffon;
@@ -102,6 +141,20 @@ export default {
     display: flex;
     /* max-width: var(--singleWidth); */
     min-width: 200px;
+  }
+
+  .range-wrapper {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: flex-end;
+    /* font-weight: normal; */
+    font-size: 0.9em;
+    font-family: 'Times New Roman', serif;
+  }
+
+  .range {
+    padding-left: 7px;
+    padding-right: 7px;
   }
 
 </style>

@@ -1,6 +1,7 @@
 <template>
   <div
     class="accordion-main"
+    :style="{ 'max-width': gdata.currentParalelGospels * gdata.minGospelWidth + 1 + 'em' }"
     v-bind="{ expanded }">
       <div :class="['header', expanded ? 'expanded' : '']">
         <div
@@ -13,15 +14,15 @@
           <span
             :class="['button-common',
               gdata.currentParalelGospels === 1
-              ? 'active'
-              : 'inactive']"
+              ? 'enabled'
+              : 'disabled']"
             @click.prevent="gdata.currentParalelGospels--"
             >–</span>
           <span
             :class="['button-common',
               gdata.currentParalelGospels < gdata.maxParalelGospels
-              ? 'active'
-              : 'inactive']"
+              ? 'enabled'
+              : 'disabled']"
             @click.prevent="gdata.currentParalelGospels++"
             >+</span>
         </div>
@@ -59,12 +60,6 @@ export default {
       expanded: false
     }
   },
-
-  // methods: {
-  //   addGospel() {
-  //     gdata.currentParalelGospels++
-  //   }
-  // }
   
 }
 </script>
@@ -74,7 +69,7 @@ export default {
   .accordion-main {
     display: flex;
     flex-direction: column;
-    /* max-width: var(--singleWidth); */
+    max-width: fit-content;
     background-color: lemonchiffon;
     border: 1px solid darkkhaki;
     border-radius: 5px;
@@ -102,6 +97,7 @@ export default {
 
   .title {
     display: flex;
+    /* flex-wrap: wrap; */
     flex: 1;
     min-height: 3em;
     align-items: center;
@@ -109,10 +105,6 @@ export default {
     font-weight: bold;
     font-family: 'Times New Roman', serif;
   }
-
-  /* .buttons {
-    display: flex;
-  } */
 
   .button-common {
     display: inline-block;
