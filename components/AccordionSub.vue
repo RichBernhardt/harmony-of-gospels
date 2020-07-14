@@ -1,46 +1,35 @@
 <template>
   <div class="accordion-sub" v-bind="{ expanded }">
-      <div
-        class="header" 
-        @click.prevent="expanded = ! expanded; setLocation();">
-          {{ gdata.htmlOutput[groupIndex][groupTitle][eventIndex][5] }}
-      </div>
-      <div
-        v-show="!expanded"
-        class="range-wrapper"
-        >
-          <span
-            v-for="range in ranges"
-            :key="range"
-            >
-              {{ range }}
-          </span>
-      </div>
-      <div
-        v-show="expanded"
-        class="range-wrapper"
-        >
-        <span>Default | </span>
-        <span
-          v-for="range in ranges"
-          :key="range"
-          >
-            {{ range }}
-        </span>
-      </div>
-        <div
-          v-show="expanded"
-          class="gospel-text"
-          v-html="gdata.htmlOutput[groupIndex][groupTitle][eventIndex][0]"
-        />
+    <div
+      class="header" 
+      @click.prevent="expanded = ! expanded; setLocation();">
+        {{ gdata.htmlOutput[groupIndex][groupTitle][eventIndex][5] }}
+    </div>
+    <div class="all-gospel">
+      <Gospel
+        v-for="(gospelIndex,lengthIndex) in availableGospels"
+        :key="lengthIndex"
+        v-bind="{ 
+          groupIndex,
+          groupTitle,
+          eventIndex,
+          gospelIndex,
+          expanded }"
+      />
+      <!-- v-show="lengthIndex + 1 <= gdata.currentParalelGospels" -->
+    </div>
   </div>
 </template>
 
 <script>
 import { gdata } from "~/components/gdata";
+import Gospel from "~/components/Gospel";
 
 export default {
-  name: "AccordionSub",
+
+  components: {
+    Gospel
+  },
   
   props: {
     groupIndex: Number,
@@ -51,36 +40,20 @@ export default {
   data () {
     return {
       gdata,
-      expanded: false,
-      ranges: []
+      expanded: false
     }
   },
-  
-  created() {
-    for (let gospel = 1; gospel <= 4; gospel++) {
 
-      if (gdata.timeline[this.groupIndex][this.groupTitle][
-          this.eventIndex][gospel]) {
-          
-        this.ranges.push(
-          gdata.timeline[this.groupIndex][this.groupTitle][
-            this.eventIndex][gospel][0][0]
-            // https://stackoverflow.com/a/53203953/
-            .replace(/(^.)(.*)/, (_,$1,$2) => $1 + $2.toLowerCase()) + " " +  
-          gdata.timeline[this.groupIndex][this.groupTitle][
-            this.eventIndex][gospel][0][1] + ":" +
-          gdata.timeline[this.groupIndex][this.groupTitle][
-            this.eventIndex][gospel][0][2] + "-" +
-          gdata.timeline[this.groupIndex][this.groupTitle][
-            this.eventIndex][gospel][0][3]
-        );
-      }
-    }
-
-    if (this.ranges.length > 1) {
-      for (let i = 0; i < this.ranges.length-1; i++) {
-        this.ranges[i] += " | ";
-      }
+  computed: {
+    availableGospels() {
+      const gospels = // [Default,MT,MK,LK,JN]
+        gdata.htmlOutput[this.groupIndex][this.groupTitle][this.eventIndex]
+          .slice(0,5);
+      
+      // getting indexes of available gospels
+      return Array
+        .from(gospels, (_, i) => i)
+        .filter(i => gospels[i]);
     }
   },
 
@@ -108,18 +81,10 @@ export default {
     font-family: 'Times New Roman', serif;
     font-weight: bold;
   }
-  
-  .range-wrapper {
-    float: right;
-    overflow: auto;
-    font-weight: normal;
-    font-size: 0.9em;
-    font-family: 'Times New Roman', serif;
-  }
 
   .accordion-sub {
-    max-width: var(--singleWidth);
-    min-width: 290px;
+    /* max-width: var(--singleWidth); */
+    /* min-width: 290px; */
     background-color: lemonchiffon;
     border: 0px none lemonchiffon;
     border-bottom: 1px solid darkkhaki;
@@ -133,11 +98,10 @@ export default {
     border-bottom-right-radius: 5px;
   }
 
-  /* Shorthand for: flex-grow: 1; flex-shrink: 0; flex-basis: 0; */
-  .gospel-text {
-    margin-top: 1.5em;
-    text-align: justify;
-    line-height: 1.4; /* https://stackoverflow.com/a/20818206/ */
+  .all-gospel {
+    display: flex;
+    /* max-width: var(--singleWidth); */
+    min-width: 200px;
   }
 
 </style>

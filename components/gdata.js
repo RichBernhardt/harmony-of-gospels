@@ -12,7 +12,7 @@ export const gdata = Vue.observable({
   JN: gospels.jn,
   htmlOutput: [],
   currentLocation: "",
-  minGospelWidth: 290, // px
+  minGospelWidth: 200, // px
   currentParalelGospels: 1,
   maxParalelGospels: 1,
   mapOnShow: false,

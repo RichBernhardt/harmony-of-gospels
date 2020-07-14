@@ -48,6 +48,9 @@ export default {
     onResize() {
       gdata.maxParalelGospels = 
         Math.floor( window.innerWidth / gdata.minGospelWidth )
+      if (gdata.currentParalelGospels > gdata.maxParalelGospels) {
+        gdata.currentParalelGospels = gdata.maxParalelGospels
+      }
     }
   }
 

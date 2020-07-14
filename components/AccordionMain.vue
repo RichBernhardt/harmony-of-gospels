@@ -10,13 +10,20 @@
           >
         </div>
         <div class="buttons">
-          <span class="button-common">-</span>
           <span
             :class="['button-common',
-              ! gdata.currentParalelGospels > gdata.maxParalelGospels
+              gdata.currentParalelGospels === 1
               ? 'active'
               : 'inactive']"
-            @click.prevent="addGospel()">+</span>
+            @click.prevent="gdata.currentParalelGospels--"
+            >–</span>
+          <span
+            :class="['button-common',
+              gdata.currentParalelGospels < gdata.maxParalelGospels
+              ? 'active'
+              : 'inactive']"
+            @click.prevent="gdata.currentParalelGospels++"
+            >+</span>
         </div>
       </div>
     <AccordionSub
@@ -53,11 +60,11 @@ export default {
     }
   },
 
-  methods: {
-    addGospel() {
-      gdata.currentParalelGospels++
-    }
-  }
+  // methods: {
+  //   addGospel() {
+  //     gdata.currentParalelGospels++
+  //   }
+  // }
   
 }
 </script>
@@ -67,7 +74,7 @@ export default {
   .accordion-main {
     display: flex;
     flex-direction: column;
-    max-width: var(--singleWidth);
+    /* max-width: var(--singleWidth); */
     background-color: lemonchiffon;
     border: 1px solid darkkhaki;
     border-radius: 5px;
