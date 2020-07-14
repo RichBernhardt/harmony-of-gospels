@@ -10,6 +10,7 @@
 </template>
 
 <script>
+// import { gdata } from "~/components/gdata";
 import timelineBuilder from "~/components/TimelineBuilder";
 import htmlOutput from "~/components/HtmlOutput";
 
@@ -18,7 +19,13 @@ export default {
   components: {
     timelineBuilder,
     htmlOutput
-  }
+  },
+
+  // data () {
+  //   return {
+  //     gdata,
+  //   }
+  // },
 
 }
 </script>
@@ -28,7 +35,7 @@ export default {
   html {
     font-size: 100%;
     font-family: 'Georgia', serif;
-    --singleWidth: 400px;
+    --singleWidth: 400px; /* 1(r)em = 16px */
   }
 
   body {

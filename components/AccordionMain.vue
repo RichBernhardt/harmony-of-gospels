@@ -1,11 +1,23 @@
 <template>
   <div
     class="accordion-main"
-    v-bind="{expanded}">
-      <div
-        :class="['header', expanded ? 'expanded' : '']"
-        @click.prevent="expanded = ! expanded">
-          {{ groupTitle }}
+    v-bind="{ expanded }">
+      <div :class="['header', expanded ? 'expanded' : '']">
+        <div
+          class="title"
+          @click.prevent="expanded = ! expanded"
+          v-text="groupTitle"
+          >
+        </div>
+        <div class="buttons">
+          <span class="button-common">-</span>
+          <span
+            :class="['button-common',
+              ! gdata.currentParalelGospels > gdata.maxParalelGospels
+              ? 'active'
+              : 'inactive']"
+            @click.prevent="addGospel()">+</span>
+        </div>
       </div>
     <AccordionSub
       v-for="(event,eventIndex) in gdata.htmlOutput[groupIndex][groupTitle]"
@@ -39,6 +51,12 @@ export default {
       gdata,
       expanded: false
     }
+  },
+
+  methods: {
+    addGospel() {
+      gdata.currentParalelGospels++
+    }
   }
   
 }
@@ -58,24 +76,44 @@ export default {
 
   .header {
     display: flex;
+    flex-direction: row;
     align-items: center;
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0px;
     z-index: 1;
-    min-height: 3em;
     background-color: #edee90;
     border: 0px none rgba(0,0,0,0);
     border-radius: 5px;
     padding-left: 5px;
     padding-right: 5px;
+  }
+
+  .expanded {
+    border-bottom: 1px solid darkkhaki;
+  }
+
+  .title {
+    display: flex;
+    flex: 1;
+    min-height: 3em;
+    align-items: center;
     text-align: left;
     font-weight: bold;
     font-family: 'Times New Roman', serif;
   }
 
-  .expanded {
-    border-bottom: 1px solid darkkhaki;
+  /* .buttons {
+    display: flex;
+  } */
+
+  .button-common {
+    display: inline-block;
+    text-align: center;
+    width: 1.125em;
+    border: solid gray 1px;
+    border-radius: 1.125em;
+    font-size: 2.25em;
   }
 
 </style>

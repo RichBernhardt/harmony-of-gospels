@@ -6,8 +6,9 @@
           {{ gdata.htmlOutput[groupIndex][groupTitle][eventIndex][5] }}
       </div>
       <div
+        v-show="!expanded"
         class="range-wrapper"
-        v-show="!expanded">
+        >
           <span
             v-for="range in ranges"
             :key="range"
@@ -16,8 +17,8 @@
           </span>
       </div>
       <div
-        class="range-wrapper"
         v-show="expanded"
+        class="range-wrapper"
         >
         <span>Default | </span>
         <span
@@ -28,8 +29,8 @@
         </span>
       </div>
         <div
-          class="gospel-text"
           v-show="expanded"
+          class="gospel-text"
           v-html="gdata.htmlOutput[groupIndex][groupTitle][eventIndex][0]"
         />
   </div>
@@ -65,7 +66,7 @@ export default {
           gdata.timeline[this.groupIndex][this.groupTitle][
             this.eventIndex][gospel][0][0]
             // https://stackoverflow.com/a/53203953/
-            .replace(/(^.)(.*)/, (_,$1,$2) => $1 + $2.toLowerCase()) +
+            .replace(/(^.)(.*)/, (_,$1,$2) => $1 + $2.toLowerCase()) + " " +  
           gdata.timeline[this.groupIndex][this.groupTitle][
             this.eventIndex][gospel][0][1] + ":" +
           gdata.timeline[this.groupIndex][this.groupTitle][
@@ -88,30 +89,13 @@ export default {
       gdata.currentLocation = gdata.htmlOutput[
         this.groupIndex][this.groupTitle][this.eventIndex][6];
     }
-
   },
 
 }
 </script>
 
 <style scoped>
-
-  .accordion-sub {
-    max-width: 100%;
-    min-width: 290px;
-    background-color: lemonchiffon;
-    border: 0px none lemonchiffon;
-    border-bottom: 1px solid darkkhaki;
-    padding: 5px;
-    padding-bottom: 0px;
-  }
-
-  .accordion-sub:last-child {
-    border: 0px none lemonchiffon;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-  }
-  
+ 
   .header {
     position: sticky;
     /* Safari */
@@ -131,6 +115,22 @@ export default {
     font-weight: normal;
     font-size: 0.9em;
     font-family: 'Times New Roman', serif;
+  }
+
+  .accordion-sub {
+    max-width: var(--singleWidth);
+    min-width: 290px;
+    background-color: lemonchiffon;
+    border: 0px none lemonchiffon;
+    border-bottom: 1px solid darkkhaki;
+    padding: 5px;
+    padding-bottom: 0px;
+  }
+
+  .accordion-sub:last-child {
+    border: 0px none lemonchiffon;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
 
   /* Shorthand for: flex-grow: 1; flex-shrink: 0; flex-basis: 0; */

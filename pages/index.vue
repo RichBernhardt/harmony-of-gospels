@@ -1,13 +1,15 @@
 <template>
   <main class="gospels-root">
     <Map />
-    <AccordionMain 
-      v-for="(group,index) in gdata.htmlOutput"
-      :key="index"
-      v-bind="{ 
-        groupIndex: index,
-        groupTitle: (Object.keys(group)).toString()
-      }" />
+    <div id="accordion-wrapper">
+      <AccordionMain 
+        v-for="(group,index) in gdata.htmlOutput"
+        :key="index"
+        v-bind="{ 
+          groupIndex: index,
+          groupTitle: (Object.keys(group)).toString()
+        }" />
+    </div>
     <!-- <ButtonMap /> -->
     <!-- <ButtonMenu /> -->
   </main>
@@ -35,5 +37,27 @@ export default {
     }
   },
 
+  mounted() {
+    // https://stackoverflow.com/a/47219938
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize);
+    })
+  },
+  
+  methods: {
+    onResize() {
+      gdata.maxParalelGospels = 
+        Math.floor( window.innerWidth / gdata.minGospelWidth )
+    }
+  }
+
 }
 </script>
+
+<style scoped>
+
+/* .accordion-wrapper {
+
+} */
+
+</style>
