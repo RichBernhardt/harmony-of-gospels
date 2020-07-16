@@ -1,6 +1,6 @@
 <template>
   <div 
-    v-show="expanded && (lengthIndex + 1 <= gdata.currentParalelGospels)"
+    v-show="expanded && (lengthIndex + 1 <= gdata.gospels.paralelCurrent)"
     class="sole-gospel separator">
       <div
         class="range-wrapper"

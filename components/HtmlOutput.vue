@@ -73,14 +73,14 @@ export default {
                 gdata.htmlOutput[g][gt][e][gospel] += 
                   '<div class="verse-ref"><div>Act</div>' +
                   chapter + ':' + verse + '</div>' +
-                  gdata.LK[chapter-1][verse-1];
+                  gdata.gospels.LK[chapter-1][verse-1];
               }
               else {
 
                 gdata.htmlOutput[g][gt][e][gospel] += 
                 '<div class="verse-ref"><div>' + author + '</div>' +
                 chapter + ':' + verse + '</div>' +
-                gdata[author][chapter-1][verse-1];
+                gdata.gospels[author][chapter-1][verse-1];
               }
             }
           }

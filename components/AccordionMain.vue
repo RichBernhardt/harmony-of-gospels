@@ -1,7 +1,7 @@
 <template>
   <div
     class="accordion-main"
-    :style="{ 'max-width': gdata.currentParalelGospels * gdata.minGospelWidth + 1 + 'em' }"
+    :style="{ 'max-width': gdata.gospels.paralelCurrent * gdata.gospels.widthMin + 1 + 'em' }"
     v-bind="{ expanded }">
       <div :class="['header', expanded ? 'expanded' : '']">
         <div
@@ -13,17 +13,17 @@
         <div class="buttons">
           <span
             :class="['button-common',
-              gdata.currentParalelGospels === 1
+              gdata.gospels.paralelCurrent === 1
               ? 'enabled'
               : 'disabled']"
-            @click.prevent="gdata.currentParalelGospels--"
+            @click.prevent="gdata.gospels.paralelCurrent--"
             >–</span>
           <span
             :class="['button-common',
-              gdata.currentParalelGospels < gdata.maxParalelGospels
+              gdata.gospels.paralelCurrent < gdata.gospels.paralelMax
               ? 'enabled'
               : 'disabled']"
-            @click.prevent="gdata.currentParalelGospels++"
+            @click.prevent="gdata.gospels.paralelCurrent++"
             >+</span>
         </div>
       </div>

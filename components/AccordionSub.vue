@@ -98,7 +98,7 @@ export default {
 
   methods: {
     setLocation() {
-      gdata.currentLocation = gdata.htmlOutput[
+      gdata.map.currentLocation = gdata.htmlOutput[
         this.groupIndex][this.groupTitle][this.eventIndex][6];
     }
   },
