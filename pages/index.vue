@@ -39,13 +39,16 @@ export default {
 
   mounted() {
     // https://stackoverflow.com/a/47219938
+    // https://stackoverflow.com/a/49263255
     this.$nextTick(() => {
       window.addEventListener('resize', this.onResize);
+      gdata.gospels.widthWin = window.innerWidth;
     })
   },
   
   methods: {
     onResize() {
+      gdata.gospels.widthWin = window.innerWidth;
       gdata.gospels.paralelMax = 
         Math.floor( window.innerWidth / gdata.gospels.widthMin );
       if (gdata.gospels.paralelCurrent > gdata.gospels.paralelMax) {

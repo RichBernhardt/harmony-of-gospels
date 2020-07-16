@@ -7,6 +7,7 @@ import timelineRaw from '~/components/timelineRaw.js'
 import gospel from "~/components/gospelsNCV.js"
 
 export const gdata = Vue.observable({
+  // assigning an innitial value is a must
   timeline: timelineRaw,
   htmlOutput: [],
   gospels: {
@@ -18,6 +19,7 @@ export const gdata = Vue.observable({
     paralelMax: 1,
     widthMin: 12, // em
     widthMax: 25, // em
+    widthWin: "",
   },
   map: {
     currentLocation: "",

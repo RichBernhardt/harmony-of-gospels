@@ -1,7 +1,11 @@
 <template>
   <div
     class="accordion-main"
-    :style="{ 'max-width': gdata.gospels.paralelCurrent * gdata.gospels.widthMin + 1 + 'em' }"
+    :style="{ 
+      'min-width': Math.min(
+        gdata.gospels.widthMax, gdata.gospels.widthWin ) + 'em',
+      'max-width': 
+        gdata.gospels.paralelCurrent * gdata.gospels.widthMax + 'em'  }"
     v-bind="{ expanded }">
       <div :class="['header', expanded ? 'expanded' : '']">
         <div
@@ -57,7 +61,7 @@ export default {
   data() {
     return {
       gdata,
-      expanded: false
+      expanded: false,
     }
   },
   
@@ -80,8 +84,9 @@ export default {
     display: flex;
     flex-direction: row;
     align-items: center;
-    position: -webkit-sticky; /* Safari */
     position: sticky;
+    /* Safari */
+    position: -webkit-sticky;
     top: 0px;
     z-index: 1;
     background-color: #edee90;
@@ -97,7 +102,6 @@ export default {
 
   .title {
     display: flex;
-    /* flex-wrap: wrap; */
     flex: 1;
     min-height: 3em;
     align-items: center;

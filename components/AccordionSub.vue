@@ -122,8 +122,6 @@ export default {
   }
 
   .accordion-sub {
-    /* max-width: fit-content; */
-    /* min-width: 290px; */
     background-color: lemonchiffon;
     border: 0px none lemonchiffon;
     border-bottom: 1px solid darkkhaki;
@@ -139,15 +137,11 @@ export default {
 
   .all-gospel {
     display: flex;
-    /* max-width: var(--singleWidth); */
-    min-width: 200px;
   }
 
   .range-wrapper {
     display: flex;
-    /* flex-wrap: wrap; */
     justify-content: flex-end;
-    /* font-weight: normal; */
     font-size: 0.9em;
     font-family: 'Times New Roman', serif;
   }

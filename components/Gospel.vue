@@ -1,23 +1,24 @@
 <template>
   <div 
     v-show="expanded && (lengthIndex + 1 <= gdata.gospels.paralelCurrent)"
-    class="sole-gospel separator">
-      <div
-        class="range-wrapper"
+    class="sole-gospel separator"
+  >
+    <div
+      class="range-wrapper"
+    >
+      <span
+        v-for="range in rangesWithDefault"
+        :key="range"
+        class="range"
       >
-        <span
-          v-for="range in rangesWithDefault"
-          :key="range"
-          class="range"
-        >
-          {{ range }}
-        </span>
-      </div>
-      <div
-        class="gospel-text"
-        v-html="gdata.htmlOutput[groupIndex][groupTitle][eventIndex][gospelIndex]"
-      />
+        {{ range }}
+      </span>
     </div>
+    <div
+      class="gospel-text"
+      v-html="gdata.htmlOutput[groupIndex][groupTitle][eventIndex][gospelIndex]"
+    />
+  </div>
 </template>
 
 <script>
@@ -56,8 +57,6 @@ export default {
 
   .sole-gospel {
     flex: 1;
-    min-width: 10em;
-    max-width: 25em;
     padding-left: 5px;
     padding-right: 5px;
     margin-bottom: 5px;
