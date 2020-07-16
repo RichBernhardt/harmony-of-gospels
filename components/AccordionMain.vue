@@ -2,10 +2,11 @@
   <div
     class="accordion-main"
     :style="{ 
-      'min-width': Math.min(
-        gdata.gospels.widthMax, gdata.gospels.widthWin ) + 'em',
-      'max-width': 
-        gdata.gospels.paralelCurrent * gdata.gospels.widthMax + 'em'  }"
+      'min-width': gdata.gospels.widthMax + 'em',
+      'max-width': Math.min(
+          gdata.gospels.paralelCurrent * gdata.gospels.widthMax,
+          gdata.gospels.widthWin
+        ) + 'em', }"
     v-bind="{ expanded }">
       <div :class="['header', expanded ? 'expanded' : '']">
         <div
@@ -16,18 +17,16 @@
         </div>
         <div class="buttons">
           <span
-            :class="['button-common',
-              gdata.gospels.paralelCurrent === 1
-              ? 'enabled'
-              : 'disabled']"
-            @click.prevent="gdata.gospels.paralelCurrent--"
+            class="button-common"
+            @click.prevent="
+              if( gdata.gospels.paralelCurrent > 1 )
+                gdata.gospels.paralelCurrent--"
             >–</span>
           <span
-            :class="['button-common',
-              gdata.gospels.paralelCurrent < gdata.gospels.paralelMax
-              ? 'enabled'
-              : 'disabled']"
-            @click.prevent="gdata.gospels.paralelCurrent++"
+            class="button-common"
+            @click.prevent="
+              if( gdata.gospels.paralelCurrent < 5 )
+                gdata.gospels.paralelCurrent++"
             >+</span>
         </div>
       </div>
@@ -114,9 +113,12 @@ export default {
     display: inline-block;
     text-align: center;
     width: 1.125em;
-    border: solid gray 1px;
     border-radius: 1.125em;
     font-size: 2.25em;
+  }
+
+  .button-common:active {
+    background-color: orangered;
   }
 
 </style>

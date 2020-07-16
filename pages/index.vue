@@ -48,7 +48,7 @@ export default {
   
   methods: {
     onResize() {
-      gdata.gospels.widthWin = window.innerWidth;
+      gdata.gospels.widthWin = window.innerWidth/16; // px > em
       gdata.gospels.paralelMax = 
         Math.floor( window.innerWidth / gdata.gospels.widthMin );
       if (gdata.gospels.paralelCurrent > gdata.gospels.paralelMax) {

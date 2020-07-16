@@ -19,7 +19,7 @@ export const gdata = Vue.observable({
     paralelMax: 1,
     widthMin: 12, // em
     widthMax: 25, // em
-    widthWin: "",
+    widthWin: "", // em (fed by index.vue)
   },
   map: {
     currentLocation: "",
