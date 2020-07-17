@@ -1,4 +1,6 @@
 
+// NOTE: This is not Vuex, but Simple Store Pattern
+
 // https://stackoverflow.com/questions/62302299/
 // https://vuejs.org/v2/api/#Vue-observable
 
@@ -16,13 +18,14 @@ export const gdata = Vue.observable({
     LK: gospel.lk,
     JN: gospel.jn,
     paralelCurrent: 1,
-    paralelMax: 1,
-    widthMin: 12, // em
+    paralelMax: "",
+    widthMin: 160, // px (=10em)
     widthMax: 25, // em
     widthWin: "", // em (fed by index.vue)
   },
   map: {
     currentLocation: "",
     onShow: false,
-  }  
+  },
+  
 });

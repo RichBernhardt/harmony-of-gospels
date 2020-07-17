@@ -36,16 +36,4 @@ export default {
     margin:0;
   }
 
-  /* https://stackoverflow.com/a/13878902/ */
-  .verse-ref {
-    display: inline-block;
-    vertical-align: middle;
-    text-align: center;
-    font-size: 0.6rem;
-    font-weight: bold;
-    color: dimgray;
-    padding-left: 0.5em;
-    padding-right: 0.3em;
-  }
-
 </style>

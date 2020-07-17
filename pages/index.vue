@@ -1,12 +1,12 @@
 <template>
-  <main class="gospels-root">
+  <main>
     <Map />
-    <div id="accordion-wrapper">
+    <div>
       <AccordionMain 
-        v-for="(group,index) in gdata.htmlOutput"
-        :key="index"
+        v-for="(group,groupIndex) in gdata.htmlOutput"
+        :key="groupIndex"
         v-bind="{ 
-          groupIndex: index,
+          groupIndex,
           groupTitle: (Object.keys(group)).toString()
         }" />
     </div>
@@ -40,17 +40,20 @@ export default {
   mounted() {
     // https://stackoverflow.com/a/47219938
     // https://stackoverflow.com/a/49263255
-    this.$nextTick(() => {
-      window.addEventListener('resize', this.onResize);
-      gdata.gospels.widthWin = window.innerWidth;
-    })
+    window.addEventListener('resize', this.onResize);
+    this.onResize();
   },
   
   methods: {
     onResize() {
-      gdata.gospels.widthWin = window.innerWidth/16; // px > em
-      gdata.gospels.paralelMax = 
-        Math.floor( window.innerWidth / gdata.gospels.widthMin );
+      gdata.gospels.widthWin = window.innerWidth; // px
+
+      gdata.gospels.paralelMax =
+        Math.min(
+          5, // the maximum we need is five: default, mt, mk, lk, jn
+          Math.floor( window.innerWidth / gdata.gospels.widthMin )
+        );
+        
       if (gdata.gospels.paralelCurrent > gdata.gospels.paralelMax) {
         gdata.gospels.paralelCurrent = gdata.gospels.paralelMax
       }
@@ -59,11 +62,3 @@ export default {
 
 }
 </script>
-
-<style scoped>
-
-/* .accordion-wrapper {
-
-} */
-
-</style>

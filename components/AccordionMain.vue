@@ -25,7 +25,7 @@
           <span
             class="button-common"
             @click.prevent="
-              if( gdata.gospels.paralelCurrent < 5 )
+              if( gdata.gospels.paralelCurrent < gdata.gospels.paralelMax )
                 gdata.gospels.paralelCurrent++"
             >+</span>
         </div>

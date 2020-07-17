@@ -95,10 +95,10 @@ export default {
     completeDefault(g,gt,e) {
       switch (gdata.timeline[g][gt][e][0]) {
         // "empty" are for events recorded by a single gospel only
-        case "": gdata.timeline[g][gt][e][0] = 
-          gdata.timeline[g][gt][e][
-            gdata.timeline[g][gt][e].findIndex(i=>i)]; 
-            break;
+        // case "": gdata.timeline[g][gt][e][0] = 
+        //   gdata.timeline[g][gt][e][
+        //     gdata.timeline[g][gt][e].findIndex(i=>i)]; 
+        //     break;
         case "MT": gdata.timeline[g][gt][e][0] = 
           gdata.timeline[g][gt][e][1]; 
           break;
