@@ -2,9 +2,12 @@
   <div
     class="accordion-main"
     :style="{ 
-      'min-width': gdata.gospels.widthMax + 'em',
+      'min-width': Math.min(
+          gdata.gospels.widthMax,
+          gdata.gospels.widthWin
+        ) + 'em',
       'max-width': Math.min(
-          gdata.gospels.paralelCurrent * gdata.gospels.widthMax,
+          gdata.gospels.widthMax * gdata.gospels.paralelCurrent,
           gdata.gospels.widthWin
         ) + 'em', }"
     v-bind="{ expanded }">

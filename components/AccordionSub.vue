@@ -13,20 +13,20 @@
     >
       <span
         v-for="reducedRange in reducedRanges"
-        :key="reducedRange.index"
-        class="range"
+        :key="reducedRange.indexInitial"
+        class="reduced-range"
       >
         {{ reducedRange.range }}
       </span>
     </div>
     <div 
-      class="all-gospel"
       :key="keyToForceRerender"
+      class="all-gospel"
     >
       <div
-        v-for="(verses, versesIndex) in gospels.verses"
-        :key="versesIndex"
-        v-show="expanded && (versesIndex + 1 <= gdata.gospels.paralelCurrent)"
+        v-for="author in gospels.author"
+        v-show="expanded && (author.indexCurrent + 1 <= gdata.gospels.paralelCurrent)"
+        :key="author.indexCurrent"
         class="sole-gospel separator"
       >
         <div
@@ -34,16 +34,24 @@
         >
           <span
             v-for="range in gospels.ranges"
-            :key="range.index"
-            :class="['range', 'selectable', (range.index === versesIndex) ? 'self' : '']"
-            @click.prevent="swapGospels(range.index, versesIndex)"
+            :key="range.indexCurrent"
+            :class="[
+              'range', 
+              (range.indexInitial === author.indexInitial) ? 'self' : 'selectable'
+            ]"
+            @click.prevent="swapGospels({
+              rangeInitial: range.indexInitial,
+              rangeCurrent: range.indexCurrent,
+              authorInitial: author.indexInitial,
+              authorCurrent: author.indexCurrent,
+            })"
           >
             {{ range.range }}
           </span>
         </div>
         <div
           class="gospel-text"
-          v-html="verses"
+          v-html="author.gospel"
         />
       </div>
     </div>
@@ -67,20 +75,15 @@ export default {
       expanded: false,
       gospels: {
         ranges: [],
-        verses: ""
+        author: ""
       },
       // https://michaelnthiessen.com/key-changing-technique/
       keyToForceRerender: 0,
     }
   },
 
-  created() {
-    this.createGospelRanges();
-    this.cloneAvailableGospels();
-  },
 
-
-  computed: {
+computed: {
     // Removing "Default" from the beginning
     reducedRanges() {
       const result = 
@@ -92,11 +95,14 @@ export default {
   },
 
 
+  created() {
+    this.createGospelRanges();
+    this.createAvailableGospels();
+  },
+
+
   methods: {
-
     createGospelRanges() {
-
-      let i = 0;
 
       for (let gospel = 0; gospel <= 4; gospel++) {
 
@@ -105,7 +111,8 @@ export default {
           
           if (gospel === 0) { this.gospels.ranges.push(
             {
-              index: i,
+              indexCurrent: gospel,
+              indexInitial: gospel,
               range: "Default"
             }
           ) }
@@ -113,7 +120,8 @@ export default {
           else {            
             this.gospels.ranges.push(
               {
-                index: i,
+                indexCurrent: gospel,
+                indexInitial: gospel,
                 range: 
                   gdata.timeline[this.groupIndex][this.groupTitle][
                     this.eventIndex][gospel][0][0]
@@ -127,23 +135,25 @@ export default {
                     this.eventIndex][gospel][0][3]
               }
             );
-          }
-
-          i++;
-          
+          }          
         }
       }
     },
 
 
-    cloneAvailableGospels() {
-      const gospels = // [Default,Mt,Mk,Lk,Jn]
+    createAvailableGospels() {
+      this.gospels.author = 
         gdata.htmlOutput[this.groupIndex][this.groupTitle][this.eventIndex]
-          .slice(0,5);
-
-      this.gospels.verses = Array
-        .from(gospels, (v,i,a) => v)
-        .filter( (v,i,a) => gospels[i]);
+          .slice(0,5) // [Default,Mt,Mk,Lk,Jn]
+          .filter( (v,i,a) => a[i] );
+      
+      for (let i = 0; i < this.gospels.author.length; i++) {
+        this.gospels.author[i] = {
+          indexInitial: i,
+          indexCurrent: i,
+          gospel: this.gospels.author[i],
+        }
+      }
     },
 
 
@@ -153,14 +163,29 @@ export default {
     },
 
 
-    swapGospels(rangeIndex, versesIndex) {
-      // https://stackoverflow.com/questions/872310/javascript-swap-array-elements
-      [ this.gospels.ranges[rangeIndex].index, this.gospels.ranges[versesIndex].index ] = 
-        [ this.gospels.ranges[versesIndex].index, this.gospels.ranges[rangeIndex].index ];
-
-      [ this.gospels.verses[rangeIndex], this.gospels.verses[versesIndex] ] = 
-        [ this.gospels.verses[versesIndex], this.gospels.verses[rangeIndex] ];
+    swapGospels({
+      rangeInitial, 
+      rangeCurrent, 
+      authorInitial, 
+      authorCurrent
+    }) {
       
+      // https://stackoverflow.com/questions/872310/javascript-swap-array-elements
+      [ this.gospels.ranges[rangeInitial].indexCurrent, 
+        this.gospels.ranges[authorInitial].indexCurrent ] =
+        [ this.gospels.ranges[authorInitial].indexCurrent,
+        this.gospels.ranges[rangeInitial].indexCurrent ];
+
+      [ this.gospels.author[rangeCurrent].indexCurrent,
+        this.gospels.author[authorCurrent].indexCurrent ] =
+        [ this.gospels.author[authorCurrent].indexCurrent,
+          this.gospels.author[rangeCurrent].indexCurrent ];
+
+      [ this.gospels.author[rangeCurrent],
+        this.gospels.author[authorCurrent] ] =
+        [ this.gospels.author[authorCurrent],
+          this.gospels.author[rangeCurrent] ];
+
       // https://michaelnthiessen.com/key-changing-technique/
       this.keyToForceRerender++;
     },
@@ -219,14 +244,19 @@ export default {
     font-family: 'Times New Roman', serif;
   }
 
-  .range {
+  .reduced-range {
     padding-left: 7px;
     padding-right: 7px;
   }
 
-  .selectable {
+  .range {
+    padding-left: 7px;
+    padding-right: 7px;
     padding-top: 5px;
     padding-bottom: 5px;
+  }
+
+  .selectable {
     color:blue;
     text-decoration: underline;
     cursor: pointer;
