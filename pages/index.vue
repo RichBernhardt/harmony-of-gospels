@@ -3,7 +3,7 @@
     <Map />
     <div>
       <AccordionMain 
-        v-for="(group,groupIndex) in gdata.htmlOutput"
+        v-for="(group,groupIndex) in store.htmlOutput"
         :key="groupIndex"
         v-bind="{ 
           groupIndex,
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { gdata } from "~/components/gdata";
+import { store } from "~/components/store";
 import Map from "~/components/Map"
 import AccordionMain from "~/components/AccordionMain";
 // import ButtonMap from "~/components/ButtonMap"
@@ -33,7 +33,7 @@ export default {
 
   data () {
     return {
-      gdata
+      store
     }
   },
 
@@ -46,16 +46,16 @@ export default {
   
   methods: {
     onResize() {
-      gdata.gospels.widthWin = window.innerWidth; // px
+      store.gospels.widthWin = window.innerWidth; // px
 
-      gdata.gospels.paralelMax =
+      store.gospels.paralelMax =
         Math.min(
           5, // the maximum we need is five: default, mt, mk, lk, jn
-          Math.floor( window.innerWidth / gdata.gospels.widthMin )
+          Math.floor( window.innerWidth / store.gospels.widthMin )
         );
         
-      if (gdata.gospels.paralelCurrent > gdata.gospels.paralelMax) {
-        gdata.gospels.paralelCurrent = gdata.gospels.paralelMax
+      if (store.gospels.paralelCurrent > store.gospels.paralelMax) {
+        store.gospels.paralelCurrent = store.gospels.paralelMax
       }
     }
   }

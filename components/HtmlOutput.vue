@@ -3,33 +3,33 @@
 </template>
 
 <script>
-import { gdata } from "~/components/gdata";
+import { store } from "~/components/store";
 
 export default {
 
   created() {
-    if (!gdata.htmlOutput.length) {
+    if (!store.htmlOutput.length) {
 
-      // The goal is to have the following content in gdata.htmlOutput: 
+      // The goal is to have the following content in store.htmlOutput: 
       // [ { groupTitle: [ [default,mt,mk,lk,jn,week+eventTitle,location],... ] },... ]
       let group, groupTitle, event;
 
       for (
         group = 0; 
-        group < gdata.timeline.length; 
+        group < store.timeline.length; 
         group++) {
 
-        groupTitle = Object.keys(gdata.timeline[group]);
-        gdata.htmlOutput[group] = {};
-        gdata.htmlOutput[group][groupTitle] = [];
+        groupTitle = Object.keys(store.timeline[group]);
+        store.htmlOutput[group] = {};
+        store.htmlOutput[group][groupTitle] = [];
 
         for (
           event = 0; 
-          event < gdata.timeline[group][groupTitle].length; 
+          event < store.timeline[group][groupTitle].length; 
           event++) {
 
           // [default,mt,mk,lk,jn,week,eventTitle,location]
-          gdata.htmlOutput[group][groupTitle][event] = [];
+          store.htmlOutput[group][groupTitle][event] = [];
           // [default,mt,mk,lk,jn,...]
           this.createHTML(group,groupTitle,event);
           // [...,week,eventTitle,location]
@@ -49,38 +49,38 @@ export default {
       for (gospel = 0; gospel < 5; gospel++) {
 
         // avoiding undefined middleware array elements
-        gdata.htmlOutput[g][gt][e][gospel] = "";
+        store.htmlOutput[g][gt][e][gospel] = "";
 
-        if (Array.isArray(gdata.timeline[g][gt][e][gospel])) {
+        if (Array.isArray(store.timeline[g][gt][e][gospel])) {
 
           for ( // [["author",chapter,verseFrom,verseTo],["author",... ],... ]
             entry = 0; 
-            entry < gdata.timeline[g][gt][e][gospel].length; 
+            entry < store.timeline[g][gt][e][gospel].length; 
             entry++) {
 
-            author = gdata.timeline[g][gt][e][gospel][entry][0];
-            chapter = gdata.timeline[g][gt][e][gospel][entry][1];
+            author = store.timeline[g][gt][e][gospel][entry][0];
+            chapter = store.timeline[g][gt][e][gospel][entry][1];
 
             for ( // ["author",chapter,verseFrom,verseTo]
-              verse = gdata.timeline[g][gt][e][gospel][entry][2];
-              verse <= gdata.timeline[g][gt][e][gospel][entry][3];
+              verse = store.timeline[g][gt][e][gospel][entry][2];
+              verse <= store.timeline[g][gt][e][gospel][entry][3];
               verse++) {
 
               // In this for-loop, we have finally reached the bottom of
               // the rabbit's hole and can build the html content.
               if (author === "Act") {
                 
-                gdata.htmlOutput[g][gt][e][gospel] += 
+                store.htmlOutput[g][gt][e][gospel] += 
                   '<div class="verse-ref"><div>Act</div>' +
                   chapter + ':' + verse + '</div>' +
-                  gdata.gospels.LK[chapter-1][verse-1];
+                  store.gospels.LK[chapter-1][verse-1];
               }
               else {
 
-                gdata.htmlOutput[g][gt][e][gospel] += 
+                store.htmlOutput[g][gt][e][gospel] += 
                 '<div class="verse-ref"><div>' + author + '</div>' +
                 chapter + ':' + verse + '</div>' +
-                gdata.gospels[author][chapter-1][verse-1];
+                store.gospels[author][chapter-1][verse-1];
               }
             }
           }
@@ -92,18 +92,18 @@ export default {
     // output: [...,week+eventTitle,location]
     addSpaceTime(g,gt,e) {      
       
-      // Week in gdata is a raw number.
+      // Week in store is a raw number.
       // We concatenate with "Week" and a separator pipe
       // before copying into htmlOutput
-      if (gdata.timeline[g][gt][e][5]) {
-        gdata.timeline[g][gt][e][5] =
-          "Week " + gdata.timeline[g][gt][e][5] + " | ";
+      if (store.timeline[g][gt][e][5]) {
+        store.timeline[g][gt][e][5] =
+          "Week " + store.timeline[g][gt][e][5] + " | ";
       }
 
-      gdata.htmlOutput[g][gt][e][5] = 
-        gdata.timeline[g][gt][e][5] + gdata.timeline[g][gt][e][6];
+      store.htmlOutput[g][gt][e][5] = 
+        store.timeline[g][gt][e][5] + store.timeline[g][gt][e][6];
 
-      gdata.htmlOutput[g][gt][e][6] = gdata.timeline[g][gt][e][7];
+      store.htmlOutput[g][gt][e][6] = store.timeline[g][gt][e][7];
 
     }
 

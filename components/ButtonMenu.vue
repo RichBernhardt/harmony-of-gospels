@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import { gdata } from "~/components/gdata";
+import { store } from "~/components/store";
 
 export default {
   data() {
     return {
-      gdata
+      store
     }
   }
 }

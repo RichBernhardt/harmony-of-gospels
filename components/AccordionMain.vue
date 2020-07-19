@@ -3,12 +3,12 @@
     class="accordion-main"
     :style="{ 
       'min-width': Math.min(
-          gdata.gospels.widthMax,
-          gdata.gospels.widthWin
+          store.gospels.widthMax,
+          store.gospels.widthWin
         ) + 'em',
       'max-width': Math.min(
-          gdata.gospels.widthMax * gdata.gospels.paralelCurrent,
-          gdata.gospels.widthWin
+          store.gospels.widthMax * store.gospels.paralelCurrent,
+          store.gospels.widthWin
         ) + 'em', }"
     v-bind="{ expanded }">
       <div :class="['header', expanded ? 'expanded' : '']">
@@ -22,19 +22,19 @@
           <span
             class="button-common"
             @click.prevent="
-              if( gdata.gospels.paralelCurrent > 1 )
-                gdata.gospels.paralelCurrent--"
+              if( store.gospels.paralelCurrent > 1 )
+                store.gospels.paralelCurrent--"
             >–</span>
           <span
             class="button-common"
             @click.prevent="
-              if( gdata.gospels.paralelCurrent < gdata.gospels.paralelMax )
-                gdata.gospels.paralelCurrent++"
+              if( store.gospels.paralelCurrent < store.gospels.paralelMax )
+                store.gospels.paralelCurrent++"
             >+</span>
         </div>
       </div>
     <AccordionSub
-      v-for="(event,eventIndex) in gdata.htmlOutput[groupIndex][groupTitle]"
+      v-for="(event,eventIndex) in store.htmlOutput[groupIndex][groupTitle]"
       v-show="expanded"
       :key="eventIndex"
       v-bind="{ 
@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import { gdata } from "~/components/gdata";
+import { store } from "~/components/store";
 import AccordionSub from "~/components/AccordionSub";
 
 export default {
@@ -62,7 +62,7 @@ export default {
 
   data() {
     return {
-      gdata,
+      store,
       expanded: false,
     }
   },

@@ -5,7 +5,7 @@
     <div
       class="header" 
       @click.prevent="expanded = ! expanded; setLocation();">
-        {{ gdata.htmlOutput[groupIndex][groupTitle][eventIndex][5] }}
+        {{ store.htmlOutput[groupIndex][groupTitle][eventIndex][5] }}
     </div>
     <div
       v-show="!expanded"
@@ -25,7 +25,7 @@
     >
       <div
         v-for="author in gospels.author"
-        v-show="expanded && (author.indexCurrent + 1 <= gdata.gospels.paralelCurrent)"
+        v-show="expanded && (author.indexCurrent + 1 <= store.gospels.paralelCurrent)"
         :key="author.indexCurrent"
         class="sole-gospel separator"
       >
@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import { gdata } from "~/components/gdata";
+import { store } from "~/components/store";
 
 export default {
   
@@ -71,7 +71,7 @@ export default {
 
   data () {
     return {
-      gdata,
+      store,
       expanded: false,
       gospels: {
         ranges: [],
@@ -106,7 +106,7 @@ computed: {
 
       for (let gospel = 0; gospel <= 4; gospel++) {
 
-        if (gdata.timeline[this.groupIndex][this.groupTitle][
+        if (store.timeline[this.groupIndex][this.groupTitle][
             this.eventIndex][gospel]) {
           
           if (gospel === 0) { this.gospels.ranges.push(
@@ -123,15 +123,15 @@ computed: {
                 indexCurrent: gospel,
                 indexInitial: gospel,
                 range: 
-                  gdata.timeline[this.groupIndex][this.groupTitle][
+                  store.timeline[this.groupIndex][this.groupTitle][
                     this.eventIndex][gospel][0][0]
                     // https://stackoverflow.com/a/53203953/
                     .replace(/(^.)(.*)/, (_,$1,$2) => $1 + $2.toLowerCase()) + " " +  
-                  gdata.timeline[this.groupIndex][this.groupTitle][
+                  store.timeline[this.groupIndex][this.groupTitle][
                     this.eventIndex][gospel][0][1] + ":" +
-                  gdata.timeline[this.groupIndex][this.groupTitle][
+                  store.timeline[this.groupIndex][this.groupTitle][
                     this.eventIndex][gospel][0][2] + "-" +
-                  gdata.timeline[this.groupIndex][this.groupTitle][
+                  store.timeline[this.groupIndex][this.groupTitle][
                     this.eventIndex][gospel][0][3]
               }
             );
@@ -143,7 +143,7 @@ computed: {
 
     createAvailableGospels() {
       this.gospels.author = 
-        gdata.htmlOutput[this.groupIndex][this.groupTitle][this.eventIndex]
+        store.htmlOutput[this.groupIndex][this.groupTitle][this.eventIndex]
           .slice(0,5) // [Default,Mt,Mk,Lk,Jn]
           .filter( (v,i,a) => a[i] );
       
@@ -158,7 +158,7 @@ computed: {
 
 
     setLocation() {
-      gdata.map.currentLocation = gdata.htmlOutput[
+      store.map.currentLocation = store.htmlOutput[
         this.groupIndex][this.groupTitle][this.eventIndex][6];
     },
 

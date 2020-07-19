@@ -1,18 +1,18 @@
 <template>
   <button
     class="map-toggle"
-    @click.prevent="gdata.mapOnShow = ! gdata.mapOnShow"
+    @click.prevent="store.mapOnShow = ! store.mapOnShow"
     >
   </button>
 </template>
 
 <script>
-import { gdata } from "~/components/gdata";
+import { store } from "~/components/store";
 
 export default {
   data() {
     return {
-      gdata
+      store
     }
   }
 }

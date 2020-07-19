@@ -1,11 +1,11 @@
 <script>
-import { gdata } from "~/components/gdata";
+import { store } from "~/components/store";
 
 export default {
 
   data () {
     return {
-      gdata,
+      store,
     }
   },
 }
@@ -113,7 +113,7 @@ export default {
       <g>
         <path 
           id="lake-galilee" 
-          :class="{ 'current-area': gdata.map.currentLocation === 'lake-galilee' }"
+          :class="{ 'current-area': store.map.currentLocation === 'lake-galilee' }"
           d="m198 181c-11.9 3.52-13.8 6.44-15.9 13-.593 8.75 8.77 14.6 8.86 23.2.143 13.7 14.1.65 12.9-6.89-1.53-9.73 4.42-29.2-5.87-29.3" />
         <g transform="translate(195,194)">
           <text id="lake-text" class="center text-water" transform="rotate(45)">Lake</text>
@@ -236,28 +236,28 @@ export default {
       <g>
         <path
           id="galilee"
-          :class="{ 'current-area': gdata.map.currentLocation === 'galilee' }"
+          :class="{ 'current-area': store.map.currentLocation === 'galilee' }"
            d="m154 268c-4.6-3.61 5.88-28.5 13.3-35.1 4.58-3.76 12.6-4.98 17.6-6.22 20.4-3.14 20.7-12.4 19.9-23.9 2.71-25.3-8.67-25.6-5.08-36.8.728-8.49 3.47-14.5-5.65-22.5-5.84-4.09-13.4-4.68-20.3-3.31-13.7-.197-27.6-3.41-41.1.205-8.64 5.28-9.81 16.5-9.33 25.7-.88 24.7-11.8 47.4-19 70.7-1.98 5.34-3.98 8.45-4.61 16.5 17.6 1.64 24 8.57 28.3 18.3 3.95 6.61 14.2 14.1 18.8 1.77 1.3-1.6 2.6-5.69 7.07-5.32" />
         <text transform="translate(147,200)"><textPath class="center text-county" startOffset="50%" xlink:href="#text-countypath">GALILEE</textPath></text>
       </g>
       <g>
         <path 
           id="samaria"
-          :class="{ 'current-area': gdata.map.currentLocation === 'samaria' }"
+          :class="{ 'current-area': store.map.currentLocation === 'samaria' }"
           d="m43.3 364c9.42-32.2 16.8-65 22-98.2 6.54-3.48 15.7-.0186 20.9-6.31 4.65-6 5.88-6.2 13.3-5.93 10.9.387 19.3 5.75 22.8 9.23 4.3 5.46 9.53 19.2 18.9 17.3 5.05-1.16 4.9-11.7 12.5-11.8 7.73 1.21 11.4 9.44 12.8 16.3 2.39 12.9 1.52 14.4 6.53 20.4 5.96 7.06 15-3.66 16.9-5.41 1.32-1.22 3.45 8.94 4.18 13.9 2.13 15.1 2.25 10.3-.548 36.1-1.88 15.5-7.68 8.93-9.79 7.29-3.94-3.91-10.6-13.1-20.6-13-9.15.716-15.5 8.79-21.4 14.9-20.5 18-52.9 18.6-75.3 3.67-5.34-3.59-11.6-1.18-17.2.528-1.93.542-3.91.974-5.93 1.02z" />
         <text transform="translate(95,325)"><textPath class="center text-county" startOffset="50%" xlink:href="#text-countypath">SAMARIA</textPath></text>
       </g>
       <g>
         <path 
           id="judea"
-          :class="{ 'current-area': gdata.map.currentLocation === 'judea' }"
+          :class="{ 'current-area': store.map.currentLocation === 'judea' }"
           d="m171 460c5.72-4.44.378-5.41 7.32-17.6 8.5-14 16.6-6.23 17.4-15.8 1.46-14.4-1.72-36.1-2.37-41.2-.374-6.54-2.48-22.2-1.9-28.5-4.86 9.82-14.2-15.7-28.3-13.7-7.62 1.09-13 5.37-21.4 14.9-5.14 5.22-17.9 11.5-23.6 12.5-13.5 2.11-28.2 3.3-40.8-3.16-21.8-12.4-18.7-5.21-34-4.15-6.63 19.4-12 37.5-15.8 46.1-5.84 14.8-17.1 36.5-24.5 50.6z" />
         <text transform="translate(70,430)"><textPath class="center text-county" startOffset="50%" xlink:href="#text-countypath">JUDEA</textPath></text>
       </g>
       <g>
         <path
           id="decapolis"
-          :class="{ 'current-area': gdata.map.currentLocation === 'decapolis' }"
+          :class="{ 'current-area': store.map.currentLocation === 'decapolis' }"
           d="m270 220c-4.62-1.47-11.8.513-17.8-1.12-6.81-1.83-5.28-3.41-14.7-4.58-9.16-1.35-12.3-4.35-13.7-8.65-1.77-5.98-3.24-10.4-19.1-11.6-.329 6.58.446 11.1-1.03 19.5-1.94 12.9-18.5 11.1-21.9 13.6-5.68 1.52-10.7 1.44-15 5.4-7.55 6.96-18.9 33.4-13.3 35.1 3.91 1.15 3.73 1.15 6.75 3.61 4.98 6.19 6.66 14 7.64 21.5 1.06 7.21 4.21 14.4 11.4 13.6 8.66-1.86 11.7-13.2 21-13.7 13.7-2.26 29.8 1.8 37.7 14 4.44 7.37 2.98 16.3 1.34 24.2-2.33 19 8.56 37.2 4.33 56.2-1.29 7.37-1.63 10.2-1.93 17.4 12.4-1.84 14.3 1.06 28.4-7.39z" />
         <text transform="translate(227,277)"><textPath class="center text-county" startOffset="50%" xlink:href="#text-countypath">DECAPOLIS</textPath></text>
       </g>
@@ -266,21 +266,21 @@ export default {
       <g 
         id="sidon" 
         transform="translate(155,24)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'sidon' }">
+        :class="{ 'current-city': store.map.currentLocation === 'sidon' }">
         <circle r=".1em" />
         <text transform="rotate(45)" x="0.5em" y="0.25em">Sidon</text>
       </g>
       <g 
         id="tyre" 
         transform="translate(122,99)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'tyre' }">
+        :class="{ 'current-city': store.map.currentLocation === 'tyre' }">
         <circle r=".1em" />
         <text transform="rotate(45)" x="0.5em" y="0.25em">Tyre</text>
       </g>
       <g 
         id="caesarea-philippi" 
         transform="translate(207,104)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'caesarea-philippi' }">
+        :class="{ 'current-city': store.map.currentLocation === 'caesarea-philippi' }">
         <circle r=".1em" />
         <text class="end" transform="rotate(45)" x="-0.5em">Caesarea</text>
         <text class="end" transform="rotate(45)" x="-0.5em" y="1em">Philippi</text>
@@ -288,112 +288,112 @@ export default {
       <g 
         id="korazin" 
         transform="translate(182,174)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'korazin' }">
+        :class="{ 'current-city': store.map.currentLocation === 'korazin' }">
         <circle r=".1em" />
         <text class="end" transform="rotate(45)" x="-0.5em" y="0.25em">Korazin</text>
       </g>
       <g 
         id="bethsaida" 
         transform="translate(202,182)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'bethsaida' }">
+        :class="{ 'current-city': store.map.currentLocation === 'bethsaida' }">
         <circle r=".1em" />
         <text transform="rotate(45)" x="0.25em">Bethsaida</text>
       </g>
       <g 
         id="capernaum" 
         transform="translate(191,181)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'capernaum' }">
+        :class="{ 'current-city': store.map.currentLocation === 'capernaum' }">
         <circle r=".1em" />
         <text class="end" transform="rotate(45)" y="-0.5em">Capernaum</text>
       </g>
       <g 
         id="gennesaret" 
         transform="translate(184,186)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'gennesaret' }">
+        :class="{ 'current-city': store.map.currentLocation === 'gennesaret' }">
         <circle r=".1em" />
         <text class="end" transform="rotate(45)" x="-0.5em" y="0.25em">Gennesaret</text>
       </g>
       <g 
         id="magadan" 
         transform="translate(181,193)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'magadan' }">
+        :class="{ 'current-city': store.map.currentLocation === 'magadan' }">
         <circle r=".1em" />
         <text class="end" transform="rotate(45)" x="-0.5em" y="0.25em">Magadan</text>
       </g>
       <g 
         id="magdala" 
         transform="translate(181,198)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'magdala' }">
+        :class="{ 'current-city': store.map.currentLocation === 'magdala' }">
         <circle r=".1em" />
         <text class="end" transform="rotate(45)" y="0.8em">Magdala</text>
       </g>
       <g 
         id="tiberias" 
         transform="translate(185,207)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'tiberias' }">
+        :class="{ 'current-city': store.map.currentLocation === 'tiberias' }">
         <circle r=".1em" />
         <text transform="rotate(45)" y="1em">Tiberias</text>
       </g>
       <g 
         id="gadara" 
         transform="translate(211,230)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'gadara' }">
+        :class="{ 'current-city': store.map.currentLocation === 'gadara' }">
         <circle r=".1em" />
         <text transform="rotate(45)" x="0.5em" y="0.25em">Gadara</text>
       </g>
       <g 
         id="cana" 
         transform="translate(146,214)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'cana' }">
+        :class="{ 'current-city': store.map.currentLocation === 'cana' }">
         <circle r=".1em" />
         <text class="end" transform="rotate(45)" x="-0.5em" y="0.25em">Cana</text>
       </g>
       <g 
         id="nazareth" 
         transform="translate(140,224)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'nazareth' }">
+        :class="{ 'current-city': store.map.currentLocation === 'nazareth' }">
         <circle r=".1em" />
         <text class="end" transform="rotate(45)" x="-0.5em" y="0.25em">Nazareth</text>
       </g>
       <g 
         id="nain" 
         transform="translate(149,239)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'nain' }">
+        :class="{ 'current-city': store.map.currentLocation === 'nain' }">
         <circle r=".1em" />
         <text transform="rotate(45)" x="0.5em" y="0.25em">Nain</text>
       </g>
       <g 
         id="aenon" 
         transform="translate(185,289)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'aenon' }">
+        :class="{ 'current-city': store.map.currentLocation === 'aenon' }">
         <circle r=".1em" />
         <text class="end" transform="rotate(45)" x="-0.5em" y="0.25em">Aenon</text>
       </g>
       <g 
         id="gerasa" 
         transform="translate(255,317)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'gerasa' }">
+        :class="{ 'current-city': store.map.currentLocation === 'gerasa' }">
         <circle r=".1em" />
         <text class="end" transform="rotate(45)" y="1em">Gerasa</text>
       </g>
       <g 
         id="samaria-city" 
         transform="translate(123,318)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'samaria-city' }">
+        :class="{ 'current-city': store.map.currentLocation === 'samaria-city' }">
         <circle r=".1em" />
         <text class="end" transform="rotate(45)" x="-0.5em" y="0.25em">Samaria</text>
       </g>
       <g 
         id="sychar" 
         transform="translate(139,332)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'sychar' }">
+        :class="{ 'current-city': store.map.currentLocation === 'sychar' }">
         <circle r=".1em" />
         <text class="center" transform="rotate(45)" x="-0.3em" y="-0.5em">Sychar</text>
       </g>
       <g 
         id="jacobs-well" 
         transform="translate(141,338)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'jacobs-well' }">
+        :class="{ 'current-city': store.map.currentLocation === 'jacobs-well' }">
         <circle r=".1em" />
         <text transform="rotate(45)" x="0.25em" y="0.8em">Jacob's</text>
         <text transform="rotate(45)" x="1em" y="1.8em">Well</text>
@@ -401,28 +401,28 @@ export default {
       <g 
         id="arimathea" 
         transform="translate(90,377)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'arimathea' }">
+        :class="{ 'current-city': store.map.currentLocation === 'arimathea' }">
         <circle r=".1em" />
         <text class="end" transform="rotate(45)" x="-0.5em" y="0.25em">Arimathea</text>
       </g>
       <g 
         id="ephraim" 
         transform="translate(135,395)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'ephraim' }">
+        :class="{ 'current-city': store.map.currentLocation === 'ephraim' }">
         <circle r=".1em" />
         <text class="end" transform="rotate(45)" x="-0.5em" y="0.25em">Ephraim</text>
       </g>
       <g 
         id="jericho" 
         transform="translate(173,414)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'jericho' }">
+        :class="{ 'current-city': store.map.currentLocation === 'jericho' }">
         <circle r=".1em" />
         <text class="end" transform="rotate(45)" x="-0.5em" y="0.25em">Jericho</text>
       </g>
       <g 
         id="bethany-at-jordan" 
         transform="translate(194,420)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'bethany-at-jordan' }">
+        :class="{ 'current-city': store.map.currentLocation === 'bethany-at-jordan' }">
         <circle r=".1em" />
         <text transform="rotate(45)" x="0.5em">Bethany</text>
         <text transform="rotate(45)" x="0.25em" y="1em">at Jordan</text>
@@ -430,47 +430,47 @@ export default {
       <g 
         id="bethany" 
         transform="translate(138,435)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'bethany' }">
+        :class="{ 'current-city': store.map.currentLocation === 'bethany' }">
         <circle r=".1em" />
         <text transform="rotate(45)" x="-0.5em" y="-0.5em">Bethany</text>
       </g>
       <g 
         id="jerusalem"
         transform="translate(132,433)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'jerusalem' }">
+        :class="{ 'current-city': store.map.currentLocation === 'jerusalem' }">
           <circle r=".1em" />
           <text class="end" transform="rotate(45)" x="-0.5em">Jerusalem</text>
       </g>
       <g 
         id="emmaus" 
         transform="translate(115,425)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'emmaus' }">
+        :class="{ 'current-city': store.map.currentLocation === 'emmaus' }">
         <circle r=".1em" />
         <text class="end" transform="rotate(45)" x="-0.5em" y="0.25em">Emmaus</text>
       </g>
       <g 
         id="bethlehem" 
         transform="translate(127,448)"
-        :class="{ 'current-city': gdata.map.currentLocation === 'bethlehem' }">
+        :class="{ 'current-city': store.map.currentLocation === 'bethlehem' }">
         <circle r=".1em" />
         <text class="end" transform="rotate(45)" x="-0.5em" y="0.8em">Bethlehem</text>
       </g>
       <g class="shores">
         <path 
           id="galilee-shore"
-          :class="{ 'current-shore': gdata.map.currentLocation === 'galilee-shore' }"
+          :class="{ 'current-shore': store.map.currentLocation === 'galilee-shore' }"
           d="m198 181c-11.9 3.52-13.8 6.44-15.9 13-.593 8.75 8.77 14.6 8.86 23.2.0389 3.74 1.1 5.49 2.6 5.91" />
         <path 
           id="decapolis-shore"
-          :class="{ 'current-shore': gdata.map.currentLocation === 'decapolis-shore' }"
+          :class="{ 'current-shore': store.map.currentLocation === 'decapolis-shore' }"
           d="m194 223c1.25.348 2.81-.238 4.33-1.38 3.35-2.5 6.53-7.66 5.93-11.4-.656-4.17.0603-10.1.285-15.6" />
         <path 
           id="jordan-in-judea" 
-          :class="{ 'current-shore': gdata.map.currentLocation === 'jordan-in-judea' }"
+          :class="{ 'current-shore': store.map.currentLocation === 'jordan-in-judea' }"
           d="m190 359c-1.3 24.3 6.99 48.7 3.16 73.5" />
         <circle 
           id="galilee-samaria"
-          :class="{ 'current-shore': gdata.map.currentLocation === 'galilee-samaria' }"
+          :class="{ 'current-shore': store.map.currentLocation === 'galilee-samaria' }"
           cx="141" cy="280" r=".25em" />
       </g>
     </g>
