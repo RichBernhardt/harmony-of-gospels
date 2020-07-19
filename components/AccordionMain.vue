@@ -16,8 +16,7 @@
           class="title"
           @click.prevent="expanded = ! expanded"
           v-text="groupTitle"
-          >
-        </div>
+        />
         <div class="buttons">
           <span
             class="button-common"

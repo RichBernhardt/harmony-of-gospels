@@ -8,7 +8,7 @@ import Vue from 'vue'
 import timelineRaw from '~/components/timelineRaw.js'
 import gospel from "~/components/gospelsNCV.js"
 
-export const gdata = Vue.observable({
+export const store = Vue.observable({
   // assigning an innitial value is a must
   timeline: timelineRaw,
   htmlOutput: [],
