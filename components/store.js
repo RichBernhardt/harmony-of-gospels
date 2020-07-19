@@ -20,8 +20,8 @@ export const store = Vue.observable({
     paralelCurrent: 1,
     paralelMax: "",
     widthMin: 160, // px (=10em)
-    widthMax: 25, // em
-    widthWin: "", // em (fed by index.vue)
+    widthMax: 400, // px (=25em)
+    widthWin: "", // px (fed by index.vue)
   },
   map: {
     currentLocation: "",

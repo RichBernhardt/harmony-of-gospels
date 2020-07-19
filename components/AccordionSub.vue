@@ -4,12 +4,14 @@
   >
     <div
       class="header" 
-      @click.prevent="expanded = ! expanded; setLocation();">
-        {{ store.htmlOutput[groupIndex][groupTitle][eventIndex][5] }}
+      @click.prevent="expanded = ! expanded; setLocation();"
+    >
+      {{ store.htmlOutput[groupIndex][groupTitle][eventIndex][5] }}
     </div>
     <div
       v-show="!expanded"
       class="range-wrapper-header"
+      @click.prevent="expanded = ! expanded; setLocation();"
     >
       <span
         v-for="reducedRange in reducedRanges"
@@ -103,6 +105,7 @@ computed: {
 
   methods: {
     createGospelRanges() {
+      let i = 0;
 
       for (let gospel = 0; gospel <= 4; gospel++) {
 
@@ -111,8 +114,8 @@ computed: {
           
           if (gospel === 0) { this.gospels.ranges.push(
             {
-              indexCurrent: gospel,
-              indexInitial: gospel,
+              indexCurrent: i,
+              indexInitial: i,
               range: "Default"
             }
           ) }
@@ -120,8 +123,8 @@ computed: {
           else {            
             this.gospels.ranges.push(
               {
-                indexCurrent: gospel,
-                indexInitial: gospel,
+                indexCurrent: i,
+                indexInitial: i,
                 range: 
                   store.timeline[this.groupIndex][this.groupTitle][
                     this.eventIndex][gospel][0][0]
@@ -135,7 +138,10 @@ computed: {
                     this.eventIndex][gospel][0][3]
               }
             );
-          }          
+          }
+
+          i++;
+
         }
       }
     },

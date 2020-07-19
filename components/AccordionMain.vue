@@ -5,11 +5,11 @@
       'min-width': Math.min(
           store.gospels.widthMax,
           store.gospels.widthWin
-        ) + 'em',
+        ) + 'px',
       'max-width': Math.min(
           store.gospels.widthMax * store.gospels.paralelCurrent,
           store.gospels.widthWin
-        ) + 'em', }"
+        ) + 'px', }"
     v-bind="{ expanded }">
       <div :class="['header', expanded ? 'expanded' : '']">
         <div
