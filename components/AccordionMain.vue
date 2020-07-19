@@ -3,13 +3,11 @@
     class="accordion-main"
     :style="{ 
       'min-width': Math.min(
-          store.gospels.widthMax,
-          store.gospels.widthWin
-        ) + 'px',
+          store.gospels.widthMax / store.gospels.widthWin,
+          1 ) * 99 + 'vw',
       'max-width': Math.min(
-          store.gospels.widthMax * store.gospels.paralelCurrent,
-          store.gospels.widthWin
-        ) + 'px', }"
+          store.gospels.widthMax * store.gospels.paralelCurrent / store.gospels.widthWin,
+          1 ) * 99 + 'vw', }"
     v-bind="{ expanded }">
       <div :class="['header', expanded ? 'expanded' : '']">
         <div
