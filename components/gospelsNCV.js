@@ -33,13 +33,14 @@ Jehoiachin, Shealtiel,`,
 // 15
 `Eliud, Eleazar, Matthan,`,
 // 16
-`Jacob, and Joseph, the <span style="text-decoration-line:line-through;">husband</span> [father] of Mary, the mother of Jesus, who is called the Messiah.
-<div class="note">
-<strong>Mt 1:16 Should read “father” not “husband” of Mary </strong>
-• To reason the different ancestors comparing to Lk 3:23-38
-• and to give the full 14 generations</div>`,
+`Jacob, and Joseph, the <span style="text-decoration-line:line-through;">husband</span> [father] of Mary, the mother of Jesus, who is called the Messiah.`,
 // 17
-`There were fourteen generations from Abraham to David. There were also fourteen from David to the exile in Babylonia and fourteen more to the birth of the Messiah.`,
+`There were fourteen generations from Abraham to David. There were also fourteen from David to the exile in Babylonia and fourteen more to the birth of the Messiah.
+<p><small class="footnotes">
+<strong>Mt 1:16 Should read "father" not "husband" of Mary </strong></br>
+• To reason the different ancestors comparing to Lk 3:23-38,</br>
+• And to give the full 14 generations
+</small></p>`,
 // 18
 `This is how the birth of Jesus Christ came about. His mother Mary was engaged(d) to marry Joseph, but before they married, she learned she was pregnant by the power of the Holy Spirit.`,
 // 19
@@ -4089,7 +4090,7 @@ John said to them, “Don’t force people to give you money, and don’t lie ab
 // 22
 `and the Holy Spirit came down on him in the form of a dove. Then a voice came from heaven, saying, “You are my Son, whom I love, and I am very pleased with you.”`,
 // 23
-`When Jesus began to preach, he was about thirty years old. Everyone thought he was the son(l) of Joseph. <span style="text-decoration-line:line-through;">But his</span> [Whose] family went back through Heli,`,
+`When Jesus began to preach, he was about thirty years old. Everyone thought he was the son(l) of Joseph. But his [Joseph's] family went back through Heli,`,
 // 24
 `Matthat, Levi, Melchi, Jannai, Joseph,`,
 // 25

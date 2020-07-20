@@ -31,19 +31,24 @@ export default {
     // ButtonMenu
   },
 
+
   data () {
     return {
       store
     }
   },
 
+
   mounted() {
     // https://stackoverflow.com/a/47219938
-    // https://stackoverflow.com/a/49263255
-    window.addEventListener('resize', this.onResize);
-    this.onResize();
+    // https://stackoverflow.com/a/44779316
+    window.addEventListener('resize', () => {
+      requestAnimationFrame(this.onResize)});
+
+    requestAnimationFrame(this.onResize);
   },
   
+
   methods: {
     onResize() {
       store.gospels.widthWin = window.innerWidth; // px
