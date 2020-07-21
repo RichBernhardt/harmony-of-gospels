@@ -1,15 +1,14 @@
 <template>
   <main>
     <Map />
-    <div>
-      <AccordionMain 
-        v-for="(group,groupIndex) in store.htmlOutput"
-        :key="groupIndex"
-        v-bind="{ 
-          groupIndex,
-          groupTitle: (Object.keys(group)).toString()
-        }" />
-    </div>
+    <AccordionMain 
+      v-for="(group,groupIndex) in store.timeline"
+      :key="groupIndex"
+      v-bind="{ 
+        groupIndex,
+        groupTitle: (Object.keys(group)).toString()
+      }"
+    />
     <!-- <ButtonMap /> -->
     <!-- <ButtonMenu /> -->
   </main>
@@ -39,6 +38,11 @@ export default {
   },
 
 
+  created() {
+    this.relocateDefaultGospel();
+  },
+
+  
   mounted() {
     // https://stackoverflow.com/a/47219938
     // https://stackoverflow.com/a/44779316
@@ -62,8 +66,48 @@ export default {
       if (store.gospels.paralelCurrent > store.gospels.paralelMax) {
         store.gospels.paralelCurrent = store.gospels.paralelMax
       }
-    }
+    },
+
+
+    relocateDefaultGospel() {
+      // Relocate the default-gospel to index 2 of each event:
+      // [{groupTitle:
+      //   [eventTitle,location,gospel[default],gospel[i],...],... },... ]
+      let 
+        g,  // group
+        gt, // groupTitle
+        e,  // event
+        aux; // auxiliary
+
+      for ( g = 0; g < store.timeline.length; g++) {
+        gt = Object.keys(store.timeline[g]);
+        for ( e = 0; e < store.timeline[g][gt].length; e++) {
+          if (!Array.isArray(store.timeline[g][gt][e][2])) {
+            for ( aux = 3;
+              store.timeline[g][gt][e][aux][0][0] !== store.timeline[g][gt][e][2];)
+              { aux++ 
+            }
+            store.timeline[g][gt][e][2] = store.timeline[g][gt][e][aux];
+            store.timeline[g][gt][e].splice(aux,1);
+          }
+        }
+      }
+    },
+
   }
 
 }
 </script>
+
+<style>
+
+  html {
+    font-size: 100%;
+    font-family: 'Georgia', serif;
+  }
+
+  body {
+    margin:0;
+  }
+
+</style>

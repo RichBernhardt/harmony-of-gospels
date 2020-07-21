@@ -6,7 +6,7 @@
       class="header" 
       @click.prevent="expanded = ! expanded; setLocation();"
     >
-      {{ store.htmlOutput[groupIndex][groupTitle][eventIndex][5] }}
+      {{ store.timeline[groupIndex][groupTitle][eventIndex][0] }}
     </div>
     <div
       v-show="!expanded"
@@ -26,7 +26,7 @@
       class="all-gospel"
     >
       <div
-        v-for="author in gospels.author"
+        v-for="author in gospels.authors"
         v-show="expanded && (author.indexCurrent + 1 <= store.gospels.paralelCurrent)"
         :key="author.indexCurrent"
         class="sole-gospel separator"
@@ -77,7 +77,7 @@ export default {
       expanded: false,
       gospels: {
         ranges: [],
-        author: ""
+        authors: []
       },
       // https://michaelnthiessen.com/key-changing-technique/
       keyToForceRerender: 0,
@@ -86,10 +86,10 @@ export default {
 
 
 computed: {
-    // Removing "Default" from the beginning
+    // Removing "[Default]" from the beginning
     reducedRanges() {
       const result = 
-        (this.gospels.ranges[0].range === "Default")
+        (this.gospels.ranges[0].range === "[Default]")
         ? this.gospels.ranges.slice(1)
         : this.gospels.ranges.slice(0)
       return result;
@@ -98,74 +98,89 @@ computed: {
 
 
   created() {
-    this.createGospelRanges();
-    this.createAvailableGospels();
+    this.createGospels();
   },
 
 
   methods: {
-    createGospelRanges() {
-      let i = 0;
+    
+    createGospels() {
+    // Create array of html for this particular SubAccordion
+      const g  = this.groupIndex;
+      const gt = this.groupTitle;
+      const e = this.eventIndex;
 
-      for (let gospel = 0; gospel <= 4; gospel++) {
+      let
+        gospel,
+        entry, // default gospels can have multiple entries
+        author,
+        chapter,
+        verse,
+        aux;
 
-        if (store.timeline[this.groupIndex][this.groupTitle][
-            this.eventIndex][gospel]) {
-          
-          if (gospel === 0) { this.gospels.ranges.push(
-            {
-              indexCurrent: i,
-              indexInitial: i,
-              range: "Default"
-            }
-          ) }
+      for (gospel = 2; gospel < store.timeline[g][gt][e].length; gospel++) {
 
-          else {            
-            this.gospels.ranges.push(
-              {
-                indexCurrent: i,
-                indexInitial: i,
-                range: 
-                  store.timeline[this.groupIndex][this.groupTitle][
-                    this.eventIndex][gospel][0][0]
-                    // https://stackoverflow.com/a/53203953/
-                    .replace(/(^.)(.*)/, (_,$1,$2) => $1 + $2.toLowerCase()) + " " +  
-                  store.timeline[this.groupIndex][this.groupTitle][
-                    this.eventIndex][gospel][0][1] + ":" +
-                  store.timeline[this.groupIndex][this.groupTitle][
-                    this.eventIndex][gospel][0][2] + "-" +
-                  store.timeline[this.groupIndex][this.groupTitle][
-                    this.eventIndex][gospel][0][3]
-              }
-            );
+        aux = "";
+
+        for (
+          entry = 0; 
+          entry < store.timeline[g][gt][e][gospel].length; 
+          entry++) {
+
+          // ["author",chapter,verseFrom,verseTo]
+          author = store.timeline[g][gt][e][gospel][entry][0];
+          chapter = store.timeline[g][gt][e][gospel][entry][1];
+
+          for (
+            verse = store.timeline[g][gt][e][gospel][entry][2];
+            verse <= store.timeline[g][gt][e][gospel][entry][3];
+            verse++) {
+
+              aux +=
+                '<div class="verse-ref"><div>' + 
+                author // https://stackoverflow.com/a/53203953/
+                  .replace(/(^.)(.*)/, (_,$1,$2) => $1 + $2.toLowerCase()) +
+                '</div>' + chapter + ':' + verse + '</div>' +
+                store.gospels[author][chapter-1][verse-1];
           }
-
-          i++;
-
         }
-      }
-    },
+
+        this.gospels.authors.push(
+          {
+            indexCurrent: gospel-2,
+            indexInitial: gospel-2,
+            gospel: aux
+          }
+        );
 
 
-    createAvailableGospels() {
-      this.gospels.author = 
-        store.htmlOutput[this.groupIndex][this.groupTitle][this.eventIndex]
-          .slice(0,5) // [Default,Mt,Mk,Lk,Jn]
-          .filter( (v,i,a) => a[i] );
-      
-      for (let i = 0; i < this.gospels.author.length; i++) {
-        this.gospels.author[i] = {
-          indexInitial: i,
-          indexCurrent: i,
-          gospel: this.gospels.author[i],
+        if ( store.timeline[g][gt][e][gospel].length > 1 ) {
+          aux = "[Default]"
         }
+        
+        else {
+          aux = ( gospel === 2 && store.timeline[g][gt][e][3] ) ? "[" : "";
+          aux += // https://stackoverflow.com/a/53203953/
+            author.replace(/(^.)(.*)/, (_,$1,$2) => $1 + $2.toLowerCase()) +
+            " " + chapter + ":" +
+            store.timeline[g][gt][e][gospel][0][2] + "-" + verse;
+          aux += ( gospel === 2 && store.timeline[g][gt][e][3] ) ? "]" : "";
+        }
+
+        this.gospels.ranges.push(
+          {
+            indexCurrent: gospel-2,
+            indexInitial: gospel-2,
+            range: aux
+          }
+        );
       }
     },
 
 
     setLocation() {
-      store.map.currentLocation = store.htmlOutput[
-        this.groupIndex][this.groupTitle][this.eventIndex][6];
+      store.map.currentLocation = store.timeline[
+        this.groupIndex][this.groupTitle][this.eventIndex][1];
     },
 
 
@@ -182,15 +197,15 @@ computed: {
         [ this.gospels.ranges[authorInitial].indexCurrent,
         this.gospels.ranges[rangeInitial].indexCurrent ];
 
-      [ this.gospels.author[rangeCurrent].indexCurrent,
-        this.gospels.author[authorCurrent].indexCurrent ] =
-        [ this.gospels.author[authorCurrent].indexCurrent,
-          this.gospels.author[rangeCurrent].indexCurrent ];
+      [ this.gospels.authors[rangeCurrent].indexCurrent,
+        this.gospels.authors[authorCurrent].indexCurrent ] =
+        [ this.gospels.authors[authorCurrent].indexCurrent,
+          this.gospels.authors[rangeCurrent].indexCurrent ];
 
-      [ this.gospels.author[rangeCurrent],
-        this.gospels.author[authorCurrent] ] =
-        [ this.gospels.author[authorCurrent],
-          this.gospels.author[rangeCurrent] ];
+      [ this.gospels.authors[rangeCurrent],
+        this.gospels.authors[authorCurrent] ] =
+        [ this.gospels.authors[authorCurrent],
+          this.gospels.authors[rangeCurrent] ];
 
       // https://michaelnthiessen.com/key-changing-technique/
       this.keyToForceRerender++;

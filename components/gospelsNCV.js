@@ -6195,47 +6195,8 @@ They said, “About Jesus of Nazareth. He was a prophet who said and did many po
 `They worshiped him and returned to Jerusalem very happy.`,
 // 53
 `They stayed in the Temple all the time, praising God.`
-],
-[ // Acts 1
-`To Theophilus.
-The first book I wrote was about everything Jesus began to do and teach`,
-// 2
-`until the day he was taken up into heaven. Before this, with the help of the Holy Spirit, Jesus told the apostles he had chosen what they should do.`,
-// 3
-`After his death, he showed himself to them and proved in many ways that he was alive. The apostles saw Jesus during the forty days after he was raised from the dead, and he spoke to them about the kingdom of God.`,
-// 4
-`Once when he was eating with them, he told them not to leave Jerusalem. He said, “Wait here to receive the promise from the Father which I told you about.`,
-// 5
-`John baptized people with water, but in a few days you will be baptized with the Holy Spirit.”`,
-// 6
-`When the apostles were all together, they asked Jesus, “Lord, are you now going to give the kingdom back to Israel?”`,
-// 7
-`Jesus said to them, “The Father is the only One who has the authority to decide dates and times. These things are not for you to know.`,
-// 8
-`But when the Holy Spirit comes to you, you will receive power. You will be my witnesses-in Jerusalem, in all of Judea, in Samaria, and in every part of the world.”`,
-// 9
-`After he said this, as they were watching, he was lifted up, and a cloud hid him from their sight.`,
-// 10
-`As he was going, they were looking into the sky. Suddenly, two men wearing white clothes stood beside them.`,
-// 11
-`They said, “Men of Galilee, why are you standing here looking into the sky? Jesus, whom you saw taken up from you into heaven, will come back in the same way you saw him go.”`,
-// 12
-`Then they went back to Jerusalem from the Mount of Olives. (This mountain is about half a mile from Jerusalem.)`,
-// 13
-`When they entered the city, they went to the upstairs room where they were staying. Peter, John, James, Andrew, Philip, Thomas, Bartholomew, Matthew, James son of Alphaeus, Simon (known as the Zealot), and Judas son of James were there.`,
-// 14
-`They all continued praying together with some women, including Mary the mother of Jesus, and Jesus’ brothers.`
-],
-[ // Acts 2
-`When the day of Pentecost came, they were all together in one place.`,
-// 2
-`Suddenly a noise like a strong, blowing wind came from heaven and filled the whole house where they were sitting.`,
-// 3
-`They saw something like flames of fire that were separated and stood over each person there.`,
-// 4
-`They were all filled with the Holy Spirit, and they began to speak different languages(a) by the power the Holy Spirit was giving them.`
 ]
-]
+];
 
 const jn = [
 [ // 1
@@ -8109,4 +8070,46 @@ He said to him, “Feed my sheep.`,
 ]
 ];
 
-export default { mt,mk,lk,jn };
+const act = [
+[ // Acts 1
+`To Theophilus.
+The first book I wrote was about everything Jesus began to do and teach`,
+// 2
+`until the day he was taken up into heaven. Before this, with the help of the Holy Spirit, Jesus told the apostles he had chosen what they should do.`,
+// 3
+`After his death, he showed himself to them and proved in many ways that he was alive. The apostles saw Jesus during the forty days after he was raised from the dead, and he spoke to them about the kingdom of God.`,
+// 4
+`Once when he was eating with them, he told them not to leave Jerusalem. He said, “Wait here to receive the promise from the Father which I told you about.`,
+// 5
+`John baptized people with water, but in a few days you will be baptized with the Holy Spirit.”`,
+// 6
+`When the apostles were all together, they asked Jesus, “Lord, are you now going to give the kingdom back to Israel?”`,
+// 7
+`Jesus said to them, “The Father is the only One who has the authority to decide dates and times. These things are not for you to know.`,
+// 8
+`But when the Holy Spirit comes to you, you will receive power. You will be my witnesses-in Jerusalem, in all of Judea, in Samaria, and in every part of the world.”`,
+// 9
+`After he said this, as they were watching, he was lifted up, and a cloud hid him from their sight.`,
+// 10
+`As he was going, they were looking into the sky. Suddenly, two men wearing white clothes stood beside them.`,
+// 11
+`They said, “Men of Galilee, why are you standing here looking into the sky? Jesus, whom you saw taken up from you into heaven, will come back in the same way you saw him go.”`,
+// 12
+`Then they went back to Jerusalem from the Mount of Olives. (This mountain is about half a mile from Jerusalem.)`,
+// 13
+`When they entered the city, they went to the upstairs room where they were staying. Peter, John, James, Andrew, Philip, Thomas, Bartholomew, Matthew, James son of Alphaeus, Simon (known as the Zealot), and Judas son of James were there.`,
+// 14
+`They all continued praying together with some women, including Mary the mother of Jesus, and Jesus’ brothers.`
+],
+[ // Acts 2
+`When the day of Pentecost came, they were all together in one place.`,
+// 2
+`Suddenly a noise like a strong, blowing wind came from heaven and filled the whole house where they were sitting.`,
+// 3
+`They saw something like flames of fire that were separated and stood over each person there.`,
+// 4
+`They were all filled with the Holy Spirit, and they began to speak different languages(a) by the power the Holy Spirit was giving them.`
+]
+];
+
+export default { mt,mk,lk,jn,act };

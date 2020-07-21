@@ -9,14 +9,14 @@ import timelineRaw from '~/components/timelineRaw.js'
 import gospel from "~/components/gospelsNCV.js"
 
 export const store = Vue.observable({
-  // assigning an innitial value is a must
+  // assigning innitial values is a must
   timeline: timelineRaw,
-  htmlOutput: [],
   gospels: {
     MT: gospel.mt,
     MK: gospel.mk,
     LK: gospel.lk,
     JN: gospel.jn,
+    ACT: gospel.act,
     paralelCurrent: 1,
     paralelMax: "",
     widthMin: 160, // px (=10em)
@@ -25,7 +25,7 @@ export const store = Vue.observable({
   },
   map: {
     currentLocation: "",
-    onShow: false,
+    // onShow: false,
   },
   
 });

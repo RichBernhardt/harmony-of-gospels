@@ -47,6 +47,8 @@ module.exports = {
     'vue/html-indent': 0,
     'vue/max-attributes-per-line': 0,
     'array-bracket-spacing': 0,
+    'no-multi-spaces': 0,
+    'one-var': 0,
     // npm run lint -- --fix
   }
 }

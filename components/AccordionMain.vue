@@ -31,7 +31,7 @@
         </div>
       </div>
     <AccordionSub
-      v-for="(event,eventIndex) in store.htmlOutput[groupIndex][groupTitle]"
+      v-for="(event,eventIndex) in store.timeline[groupIndex][groupTitle]"
       v-show="expanded"
       :key="eventIndex"
       v-bind="{ 
