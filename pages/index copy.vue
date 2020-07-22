@@ -1,9 +1,6 @@
 <template>
     <main class="split-view">
-      <div
-        id="split-left"
-        class="left"
-      >
+      <div class="left">
         <AccordionMain
           v-for="(group,groupIndex) in store.timeline"
           :key="groupIndex"
@@ -13,10 +10,7 @@
           }"
         />
       </div>
-      <div
-        class="right"
-        :style="{'width': splitPosition + 'px'}"
-      ></div>
+      <div class="right"></div>
     <Map />
     <!-- <ButtonMap /> -->
     <!-- <ButtonMenu /> -->
@@ -45,24 +39,6 @@ export default {
       store
     }
   },
-    
-    
-  computed: {
-    splitPosition() { // 0.4 ≈ SVG map height/width x 2/3
-      const style = (
-        // if device is larger than a phone
-        (store.windowHeight > 639) &&
-        // and if there's room for at least
-        // two parallel gospels next to the map
-        ((store.windowWidth - store.windowHeight * 0.4) > 
-          (store.gospels.widthMin * 2))
-      )
-        ? store.windowHeight * 0.4
-        : 0;
-
-      return style;
-    }
-  },
 
 
   created() {
@@ -82,19 +58,16 @@ export default {
 
   methods: {
     onResize() {
-      store.windowWidth = window.innerWidth;
-      store.windowHeight = window.innerHeight;
-      store.gospels.widthSplit = 
-        document.getElementById("split-left").offsetWidth;
+      store.gospels.widthWin = window.innerWidth; // px
 
-      store.gospels.parallelMax =
+      store.gospels.paralelMax =
         Math.min(
           5, // the maximum we need is five: default, mt, mk, lk, jn
-          Math.floor( store.gospels.widthSplit / store.gospels.widthMin )
+          Math.floor( window.innerWidth / store.gospels.widthMin )
         );
         
-      if (store.gospels.parallelCurrent > store.gospels.parallelMax) {
-        store.gospels.parallelCurrent = store.gospels.parallelMax
+      if (store.gospels.paralelCurrent > store.gospels.paralelMax) {
+        store.gospels.paralelCurrent = store.gospels.paralelMax
       }
     },
 

@@ -20,9 +20,8 @@ export default {
     height: 100%; top: 0; right: 0; }
   
   /* https://stackoverflow.com/questions/36681583/ */
-  @media 
-    (orientation: landscape) and (max-width: 33rem),
-    (orientation: landscape) and (max-height: 33rem) {
+  @media
+    (orientation: landscape) and (max-height: 639px) {
     .rootVariable {
       height: 101vw;
       transform: rotate(-90deg) translateY(-20vw) translateX(21vw);

@@ -27,7 +27,7 @@
     >
       <div
         v-for="author in gospels.authors"
-        v-show="expanded && (author.indexCurrent + 1 <= store.gospels.paralelCurrent)"
+        v-show="expanded && (author.indexCurrent + 1 <= store.gospels.parallelCurrent)"
         :key="author.indexCurrent"
         class="sole-gospel separator"
       >
@@ -240,19 +240,6 @@ computed: {
 </script>
 
 <style scoped>
- 
-  .header {
-    position: sticky;
-    /* Safari */
-    position: -webkit-sticky;
-    top: 3em;
-    min-height: 1.5em;
-    border-radius: 5px;
-    border: 0px none lemonchiffon;
-    background-color: lemonchiffon;
-    font-family: 'Times New Roman', serif;
-    font-weight: bold;
-  }
 
   .accordion-sub {
     background-color: lemonchiffon;
@@ -267,14 +254,23 @@ computed: {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
   }
-
-  .all-gospel {
-    display: flex;
+ 
+  .header {
+    position: sticky;
+    /* Safari */
+    position: -webkit-sticky;
+    top: 3em;
+    min-height: 2em;
+    border-radius: 5px;
+    border: 0px none lemonchiffon;
+    background-color: lemonchiffon;
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
   }
 
   .range-wrapper-header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     font-size: 0.9em;
     font-family: 'Times New Roman', serif;
   }
@@ -314,6 +310,10 @@ computed: {
     cursor: none;
     color:inherit;
     text-decoration: inherit;
+  }
+
+  .all-gospel {
+    display: flex;
   }
 
   .sole-gospel {

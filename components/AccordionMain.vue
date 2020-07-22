@@ -1,13 +1,6 @@
 <template>
   <div
     class="accordion-main"
-    :style="{ 
-      'min-width': Math.min(
-          store.gospels.widthMax / store.gospels.widthWin,
-          1 ) * 99 + 'vw',
-      'max-width': Math.min(
-          store.gospels.widthMax * store.gospels.paralelCurrent / store.gospels.widthWin,
-          1 ) * 99 + 'vw', }"
     v-bind="{ expanded }">
       <div :class="['header', expanded ? 'expanded' : '']">
         <div
@@ -19,14 +12,14 @@
           <span
             class="button-common"
             @click.prevent="
-              if( store.gospels.paralelCurrent > 1 )
-                store.gospels.paralelCurrent--"
+              if( store.gospels.parallelCurrent > 1 )
+                store.gospels.parallelCurrent--"
             >–</span>
           <span
             class="button-common"
             @click.prevent="
-              if( store.gospels.paralelCurrent < store.gospels.paralelMax )
-                store.gospels.paralelCurrent++"
+              if( store.gospels.parallelCurrent < store.gospels.parallelMax )
+                store.gospels.parallelCurrent++"
             >+</span>
         </div>
       </div>
@@ -72,7 +65,6 @@ export default {
   .accordion-main {
     display: flex;
     flex-direction: column;
-    max-width: fit-content;
     background-color: lemonchiffon;
     border: 1px solid darkkhaki;
     border-radius: 5px;

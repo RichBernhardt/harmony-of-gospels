@@ -17,15 +17,16 @@ export const store = Vue.observable({
     LK: gospel.lk,
     JN: gospel.jn,
     ACT: gospel.act,
-    paralelCurrent: 1,
-    paralelMax: "",
-    widthMin: 160, // px (=10em)
-    widthMax: 400, // px (=25em)
-    widthWin: "", // px (fed by index.vue)
+    parallelCurrent: 1,
+    parallelMax: "",
+    widthMin: 160,
+    widthMax: 400,
+    widthSplit: "",
   },
   map: {
     currentLocation: "",
     // onShow: false,
   },
-  
+  windowWidth: "", // fed by index.vue
+  windowHeight: "", // fed by index.vue 
 });
