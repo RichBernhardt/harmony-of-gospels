@@ -4,14 +4,14 @@
   >
     <div
       class="header" 
-      @click.prevent="expanded = ! expanded; setLocation();"
+      @click.prevent="atHeaderClick();"
     >
       {{ store.timeline[groupIndex][groupTitle][eventIndex][0] }}
     </div>
     <div
       v-show="!expanded"
       class="range-wrapper-header"
-      @click.prevent="expanded = ! expanded; setLocation();"
+      @click.prevent="atHeaderClick()"
     >
       <span
         v-for="reducedRange in reducedRanges"
@@ -98,12 +98,57 @@ computed: {
 
 
   created() {
-    this.createGospels();
+    this.createRanges();
   },
 
 
   methods: {
     
+    atHeaderClick() {
+      this.expanded = !this.expanded;
+      this.setLocation();
+      if(this.gospels.authors.length === 0) {
+        this.createGospels()
+      };
+    },
+    
+    
+    createRanges() {
+      const g  = this.groupIndex;
+      const gt = this.groupTitle;
+      const e = this.eventIndex;
+      let gospel, aux;
+
+      for (gospel = 2; gospel < store.timeline[g][gt][e].length; gospel++) {
+
+        aux = "";
+
+        if ( store.timeline[g][gt][e][gospel].length > 1 ) {
+          aux = "[Default]"
+        }
+        
+        else {
+          aux = ( gospel === 2 && store.timeline[g][gt][e][3] ) ? "[" : "";
+          aux += // https://stackoverflow.com/a/53203953/
+            store.timeline[g][gt][e][gospel][0][0]
+              .replace(/(^.)(.*)/, (_,$1,$2) => $1 + $2.toLowerCase()) + " " + 
+            store.timeline[g][gt][e][gospel][0][1] + ":" +
+            store.timeline[g][gt][e][gospel][0][2] + "-" +
+            store.timeline[g][gt][e][gospel][0][3];
+          aux += ( gospel === 2 && store.timeline[g][gt][e][3] ) ? "]" : "";
+        }
+
+        this.gospels.ranges.push(
+          {
+            indexCurrent: gospel-2,
+            indexInitial: gospel-2,
+            range: aux
+          }
+        );
+      }
+    },
+
+
     createGospels() {
     // Create array of html for this particular SubAccordion
       const g  = this.groupIndex;
@@ -150,28 +195,6 @@ computed: {
             indexCurrent: gospel-2,
             indexInitial: gospel-2,
             gospel: aux
-          }
-        );
-
-
-        if ( store.timeline[g][gt][e][gospel].length > 1 ) {
-          aux = "[Default]"
-        }
-        
-        else {
-          aux = ( gospel === 2 && store.timeline[g][gt][e][3] ) ? "[" : "";
-          aux += // https://stackoverflow.com/a/53203953/
-            author.replace(/(^.)(.*)/, (_,$1,$2) => $1 + $2.toLowerCase()) +
-            " " + chapter + ":" +
-            store.timeline[g][gt][e][gospel][0][2] + "-" + verse;
-          aux += ( gospel === 2 && store.timeline[g][gt][e][3] ) ? "]" : "";
-        }
-
-        this.gospels.ranges.push(
-          {
-            indexCurrent: gospel-2,
-            indexInitial: gospel-2,
-            range: aux
           }
         );
       }
