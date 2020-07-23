@@ -50,8 +50,8 @@ export default {
   computed: {
     splitPosition() { // 0.4 ≈ SVG map height/width x 2/3
       const style = (
-        // if device is larger than a phone
-        (store.windowHeight > 639) &&
+        // portrait map details are easy to see from:
+        (store.windowHeight > 528) &&
         // and if there's room for at least
         // two parallel gospels next to the map
         ((store.windowWidth - store.windowHeight * 0.4) > 
