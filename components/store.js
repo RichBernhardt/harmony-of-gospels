@@ -20,12 +20,11 @@ export const store = Vue.observable({
     parallelCurrent: 1,
     parallelMax: "",
     widthMin: 160,
-    widthMax: 400,
     widthSplit: "",
   },
   map: {
     currentLocation: "",
-    // onShow: false,
+    onShow: false,
   },
   windowWidth: "", // fed by index.vue
   windowHeight: "", // fed by index.vue 

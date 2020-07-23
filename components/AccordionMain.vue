@@ -2,21 +2,23 @@
   <div
     class="accordion-main"
     v-bind="{ expanded }">
-      <div :class="['header', expanded ? 'expanded' : '']">
+      <div :class="['main-header', expanded ? 'expanded' : '']">
         <div
           class="title"
           @click.prevent="expanded = ! expanded"
           v-text="groupTitle"
         />
-        <div class="buttons">
+        <div
+          v-show="expanded"
+          class="buttons">
           <span
-            class="button-common"
+            class="button"
             @click.prevent="
               if( store.gospels.parallelCurrent > 1 )
                 store.gospels.parallelCurrent--"
             >–</span>
           <span
-            class="button-common"
+            class="button"
             @click.prevent="
               if( store.gospels.parallelCurrent < store.gospels.parallelMax )
                 store.gospels.parallelCurrent++"
@@ -54,6 +56,7 @@ export default {
     return {
       store,
       expanded: false,
+      onSticky: false,
     }
   },
   
@@ -71,7 +74,7 @@ export default {
     margin: 3px;
   }
 
-  .header {
+  .main-header {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -101,15 +104,22 @@ export default {
     font-family: 'Times New Roman', serif;
   }
 
-  .button-common {
+  .buttons {
+    display: flex;
+    align-items: center;
+  }
+
+  .button {
     display: inline-block;
     text-align: center;
     width: 1.125em;
     border-radius: 1.125em;
     font-size: 2.25em;
+    padding: 0;
+    margin: 0;
   }
 
-  .button-common:active {
+  .button:active {
     background-color: orangered;
   }
 

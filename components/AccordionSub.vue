@@ -3,7 +3,7 @@
     class="accordion-sub" v-bind="{ expanded }"
   >
     <div
-      class="header" 
+      class="header"
       @click.prevent="atHeaderClick();"
     >
       {{ store.timeline[groupIndex][groupTitle][eventIndex][0] }}

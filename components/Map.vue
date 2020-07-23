@@ -8,6 +8,14 @@ export default {
       store,
     }
   },
+
+  computed: {
+    ontop() {
+      const zIndex = (store.map.onShow) ? "" : "-";
+      return zIndex;
+    }
+  },
+
 }
 </script>
 
@@ -65,6 +73,7 @@ export default {
 <template>
   <svg
     class="rootConstant rootVariable"
+    :style="{ 'z-index': ontop + '2' }"
     version="1.1"
     viewBox="0 0 270 460"
     xmlns="http://www.w3.org/2000/svg" 

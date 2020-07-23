@@ -49,6 +49,7 @@ module.exports = {
     'array-bracket-spacing': 0,
     'no-multi-spaces': 0,
     'one-var': 0,
+    'camelcase': 0,
     // npm run lint -- --fix
   }
 }

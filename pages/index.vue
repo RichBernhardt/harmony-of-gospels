@@ -1,5 +1,5 @@
 <template>
-    <main class="split-view">
+    <main class="split-view" id="split-view">
       <div
         id="split-left"
         class="left"
@@ -14,11 +14,12 @@
         />
       </div>
       <div
+        id="split-right"
         class="right"
         :style="{'width': splitPosition + 'px'}"
-      ></div>
+      />
     <Map />
-    <!-- <ButtonMap /> -->
+    <ButtonMap />
     <!-- <ButtonMenu /> -->
   </main>
 </template>
@@ -27,7 +28,7 @@
 import { store } from "~/components/store";
 import Map from "~/components/Map"
 import AccordionMain from "~/components/AccordionMain";
-// import ButtonMap from "~/components/ButtonMap"
+import ButtonMap from "~/components/ButtonMap"
 // import ButtonMenu from "~/components/ButtonMenu"
 
 export default {
@@ -35,14 +36,16 @@ export default {
   components: {
     Map,
     AccordionMain,
-    // ButtonMap,
+    ButtonMap,
     // ButtonMenu
   },
 
 
   data () {
     return {
-      store
+      store,
+      // https://stackoverflow.com/a/60888674
+      ResizeObserver: null,
     }
   },
     
@@ -75,6 +78,10 @@ export default {
     // https://stackoverflow.com/a/44779316
     window.addEventListener('resize', () => {
       requestAnimationFrame(this.onResize)});
+    
+    // https://stackoverflow.com/a/60888674
+    this.ResizeObserver = new ResizeObserver(this.onResize)
+      .observe(document.getElementById("split-left"));
 
     requestAnimationFrame(this.onResize);
   },
@@ -164,13 +171,14 @@ export default {
     resize: horizontal;
     overflow: auto;
     /* One reason employing "resize" on the right side panel
-    is that: Any ancestor between the sticky element and its 
-    user-scrollable container with overflow computed as
-    anything but visible/clip will effectively prevent
-    sticking behavior. https://caniuse.com/#feat=css-sticky.
-    And the children (accordions) both have sticky headers.
-    The other reason is that the draggable corner can be on
-    the top center by rotating this right side panel: */
+    is that the children of the other side (left) panel are the
+    accordions which have sticky headers. And sticky headers
+    require overflow to be visible, while resize
+    require overflow to be anything but visible:
+    https://caniuse.com/#feat=css-sticky.
+    The other reason is that by rotating this right side panel the
+    draggable corner can be on the top center which I think is better 
+    than on the bottom right corner (not even on view at page load): */
     transform: rotate(180deg);
     border-right: solid gray 1px;
   }
