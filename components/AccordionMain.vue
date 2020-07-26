@@ -107,6 +107,7 @@ export default {
   .buttons {
     display: flex;
     align-items: center;
+    margin-right: 50px;
   }
 
   .button {
