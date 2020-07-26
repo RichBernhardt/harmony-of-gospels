@@ -58,7 +58,9 @@ export default {
         // and if there's room for at least
         // two parallel gospels next to the map
         ((store.windowWidth - store.windowHeight * 0.4) > 
-          (store.gospels.widthMin * 2))
+          (store.gospels.widthMin * 2)) &&
+        // and if there is a pointing device available
+        (store.hasPointer)
       )
         ? store.windowHeight * 0.4
         : 0;
@@ -74,6 +76,9 @@ export default {
 
   
   mounted() {
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Testing_media_queries
+    store.hasPointer = !window.matchMedia("(pointer: none)").matches;
+
     // https://stackoverflow.com/a/47219938
     // https://stackoverflow.com/a/44779316
     window.addEventListener('resize', () => {
@@ -125,13 +130,13 @@ export default {
             // - can have multiple entries which results an array-in-array
             // structure: [["author",chapter,verseFrom,verseTo],["author",... ].
             // Where there is a reference only, we find and replace it by
-            // the full gospel instead...
+            // the referenced gospel instead...
             for ( aux = 3;
               store.timeline[g][gt][e][aux][0][0] !== store.timeline[g][gt][e][2];)
               { aux++ 
             }
             store.timeline[g][gt][e][2] = store.timeline[g][gt][e][aux];
-            // ...and delete the full gospel from its 
+            // ...and delete the referenced gospel from its 
             // original place to avoid any duplication
             store.timeline[g][gt][e].splice(aux,1);
           }

@@ -27,5 +27,6 @@ export const store = Vue.observable({
     onShow: false,
   },
   windowWidth: "", // fed by index.vue
-  windowHeight: "", // fed by index.vue 
+  windowHeight: "", // fed by index.vue
+  hasPointer: "",
 });
