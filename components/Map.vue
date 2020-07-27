@@ -21,11 +21,17 @@ export default {
 
 <style scoped>
   .rootConstant { 
-    position: fixed; z-index: -1;
-    stroke-linecap:round; stroke-linejoin:round; paint-order:stroke; }
+    position: fixed;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    paint-order:stroke;
+  }
 
   .rootVariable {
-    height: 100%; top: 0; right: 0; }
+    height: 100%;
+    top: 0;
+    right: 0;
+  }
   
   /* https://stackoverflow.com/questions/36681583/ */
   @media

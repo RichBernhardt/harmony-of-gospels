@@ -20,7 +20,8 @@
       />
     <Map />
     <ButtonMap />
-    <!-- <ButtonMenu /> -->
+    <ButtonMenu />
+    <Menu />
   </main>
 </template>
 
@@ -29,7 +30,8 @@ import { store } from "~/components/store";
 import Map from "~/components/Map"
 import AccordionMain from "~/components/AccordionMain";
 import ButtonMap from "~/components/ButtonMap"
-// import ButtonMenu from "~/components/ButtonMenu"
+import ButtonMenu from "~/components/ButtonMenu"
+import Menu from "~/components/Menu"
 
 export default {
 
@@ -37,7 +39,8 @@ export default {
     Map,
     AccordionMain,
     ButtonMap,
-    // ButtonMenu
+    ButtonMenu,
+    Menu
   },
 
 
@@ -54,15 +57,15 @@ export default {
     splitPosition() { // 0.4 ≈ SVG map height/width x 2/3
       const style = (
         // portrait map details are easy to see from:
-        (store.windowHeight > 528) &&
+        (store.media.windowHeight > 528) &&
         // and if there's room for at least
         // two parallel gospels next to the map
-        ((store.windowWidth - store.windowHeight * 0.4) > 
+        ((store.media.windowWidth - store.media.windowHeight * 0.4) > 
           (store.gospels.widthMin * 2)) &&
         // and if there is a pointing device available
-        (store.hasPointer)
+        (store.media.hasPointer)
       )
-        ? store.windowHeight * 0.4
+        ? store.media.windowHeight * 0.4
         : 0;
 
       return style;
@@ -77,7 +80,7 @@ export default {
   
   mounted() {
     // https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Testing_media_queries
-    store.hasPointer = !window.matchMedia("(pointer: none)").matches;
+    store.media.hasPointer = !window.matchMedia("(pointer: none)").matches;
 
     // https://stackoverflow.com/a/47219938
     // https://stackoverflow.com/a/44779316
@@ -94,15 +97,17 @@ export default {
 
   methods: {
     onResize() {
-      store.windowWidth = window.innerWidth;
-      store.windowHeight = window.innerHeight;
-      store.gospels.widthSplit = 
-        document.getElementById("split-left").offsetWidth;
+      store.media.windowWidth = window.innerWidth;
+      store.media.windowHeight = window.innerHeight;
+      store.media.widthSplit = 
+        ( document.getElementById("split-left") )
+        ? document.getElementById("split-left").offsetWidth
+        : store.media.widthSplit;
 
       store.gospels.parallelMax =
         Math.min(
           5, // the maximum we need is five: default, mt, mk, lk, jn
-          Math.floor( store.gospels.widthSplit / store.gospels.widthMin )
+          Math.floor( store.media.widthSplit / store.gospels.widthMin )
         );
         
       if (store.gospels.parallelCurrent > store.gospels.parallelMax) {

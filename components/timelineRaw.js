@@ -17,7 +17,7 @@ const timelineRaw = [
     ["Jesus Grows Up","nazareth",[["LK",2,51,52]]]
   ]},
   {"Week 1-6 | Baptism And First Followers In Judea": [
-    ["w1 | The Baptism","bethany","MT",[["MT",3,13,17]],[["MK",1,9,11]],[["LK",3,21,22]]],
+    ["w1 | The Baptism","bethany-at-jordan","MT",[["MT",3,13,17]],[["MK",1,9,11]],[["LK",3,21,22]]],
     ["w1-6 | The Temptation","judea","MT",[["MT",4,1,11]],[["MK",1,12,13]],[["LK",4,1,13]]],
     ["w1-6 | John The Baptist Prepares for Jesus","bethany-at-jordan",[["LK",3,1,3],["MT",3,2,2],["MK",1,6,6],["JN",1,19,22],["LK",3,4,6],["MT",3,7,10],["LK",3,10,18],["JN",1,28,28]],[["MT",3,1,12]],[["MK",1,1,8]],[["LK",3,1,18]],[["JN",1,19,28]]],
     ["w6 | John Declares: \"The Lamb Of God\"","bethany-at-jordan",[["JN",1,29,34]]],

@@ -1,6 +1,6 @@
 <template>
   <span
-    v-show="(store.windowWidth - store.gospels.widthSplit) < 40"
+    v-show="(store.media.windowWidth - store.media.widthSplit) < 40"
     @click.prevent="store.map.onShow = ! store.map.onShow"
     :class="['map-toggle', (store.map.onShow) ? 'toggleText' : 'toggleMap']"
     >

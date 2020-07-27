@@ -1,12 +1,13 @@
 <template>
-  <button
-    class="menu"
-    @click.prevent=""
+  <span
+    class="toggle-menu"
+    @click.prevent="store.menuOnShow = !store.menuOnShow"
     >
     <hr/>
     <hr/>
     <hr/>
-  </button>
+    <hr/>
+  </span>
 </template>
 
 <script>
@@ -23,13 +24,14 @@ export default {
 
 
 <style scoped>
-  .menu {
+  .toggle-menu {
     position: fixed;
-    z-index: 2;
-    top: 0.5em;
-    right: 2em;
-    width: 3em;
-    height: 3em;
-    background-color: rgba(0,0,0,0);
+    z-index: 3;
+    top: 70px;
+    right: 7px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    border: 1px solid gray;
   }
 </style>
