@@ -35,29 +35,24 @@ export default {
     z-index: 3;
     top: 3%;
     right: 70px;
-    width: 300px;
+    width: min(300px, 94% - 70px); 
     height: 94%;
     border-radius: 10px;
-    /* padding: 5px; */
-    /* border: 1px solid gray; */
-    background-color: rgba(0,0,0,50%);
-    /* color: ivory; */
+    background-color: rgba(255, 250, 205,70%);
     font-family: 'DejaVu Serif', serif;
-    box-shadow: 0px 0px 5px 5px rgba(0,0,0,50%);
+    box-shadow: 0px 0px 3px 3px rgba(0,0,0,50%);
     font-size: 2em;
   }
 
   .page {
     display: flex;
     justify-content: center;
-    align-items: center;  
-    /* min-height: 3em; */
-    /* border: 1px solid gray; */
+    align-items: center;
     border-radius: 5px;
     cursor: pointer;
-    background-color: rgba(0,0,0,20%);
+    background-color: hsla(61,73%,30%,70%);
     margin: 10px;
-    box-shadow: 0px 0px 3px 3px rgba(0,0,0,20%);
+    box-shadow: 0px 0px 2px 2px hsla(61,73%,30%,70%);
     padding: 5px;
     color: ivory;
     text-decoration: none;
@@ -65,8 +60,8 @@ export default {
   }
 
   .page:hover {
-    background-color: rgba(0,0,0,40%);
-    box-shadow: 0px 0px 3px 3px rgba(0,0,0,40%);
+    background-color: hsla(61,73%,15%,70%);
+    box-shadow: 0px 0px 2px 2px hsla(61,73%,15%,70%);
   }
 
 </style>

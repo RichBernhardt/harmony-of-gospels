@@ -245,8 +245,8 @@ computed: {
     background-color: lemonchiffon;
     border: 0px none lemonchiffon;
     border-bottom: 1px solid darkkhaki;
-    padding: 5px;
-    padding-bottom: 0px;
+    /* padding: 5px; */
+    /* padding-bottom: 0px; */
   }
 
   .accordion-sub:last-child {
@@ -256,10 +256,14 @@ computed: {
   }
  
   .header {
+    display: flex;
+    align-items: center;
     position: sticky;
     /* Safari */
     position: -webkit-sticky;
     top: 3em;
+    padding-left: 5px;
+    padding-right: 5px;
     min-height: 2em;
     border-radius: 5px;
     border: 0px none lemonchiffon;
@@ -318,8 +322,8 @@ computed: {
 
   .sole-gospel {
     flex: 1;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
     margin-bottom: 5px;
   }
 
