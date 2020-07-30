@@ -4,7 +4,14 @@
     v-show="store.menuOnShow">
     <!-- https://github.com/nuxt/nuxt.js/issues/1786#issuecomment-334446353 -->
     <nuxt-link
-      @click.native="store.menuOnShow = !store.menuOnShow"
+      @click.prevent.native="store.menuOnShow = !store.menuOnShow"
+      to="/"
+      class="page"
+    >
+      Gospels
+    </nuxt-link>
+    <nuxt-link
+      @click.prevent.native="store.menuOnShow = !store.menuOnShow"
       to="/about"
       class="page"
     >
@@ -22,7 +29,7 @@ export default {
     return {
       store
     }
-  }
+  },
 
 }
 </script>

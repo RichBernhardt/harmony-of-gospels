@@ -101,7 +101,7 @@ export default {
       store.media.windowHeight = window.innerHeight;
       // This is not too elegant for bypassing '"split-left" is null' when
       // switching to the About page, but I haven't found any better yet.
-      store.media.widthSplit = 
+      store.media.widthSplit =
         ( document.getElementById("split-left") )
         ? document.getElementById("split-left").offsetWidth
         : store.media.widthSplit;
