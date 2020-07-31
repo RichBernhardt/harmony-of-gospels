@@ -8,6 +8,7 @@
       >
         <div class="aspect-ratio-box">
           <iframe
+            class="aspect-ratio-box-inside"
             title="Jesus Of Nazareth (1977) - full movie"
             allowfullscreen="true"
             src="https://www.youtube.com/embed/50IiF1rTTGQ?controls=1">
@@ -177,7 +178,6 @@
             Thank you!
           </p>
       </section>
-      <div style="height: 50%;"/>
       <ButtonMenu />
       <Menu />
     </div>
@@ -227,26 +227,24 @@ export default {
   .content {
     margin-top: 2em;
     width: min(800px, 70%);
+    height: 100%;
   }
 
 
 .aspect-ratio-box {
-  background: white;
-}
-.aspect-ratio-box::before {
-  content: "";
-  width: 1px;
-  margin-left: -1px;
-  float: left;
   height: 0;
+  overflow: hidden;
   padding-top: 5/3 * 100%;
+  background: white;
+  position: relative;
 }
-.aspect-ratio-box::after { /* to clear float */
-  content: "";
-  display: table;
-  clear: both;
+.aspect-ratio-box-inside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
-
   section {
     padding: 10px;
     padding-bottom: 2em;
