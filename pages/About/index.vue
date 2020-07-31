@@ -2,17 +2,25 @@
 <!-- The folder (About) must start with capital letter! -->
   <div class="root">
     <div class="content">
-      <h2 @click="movie = ! movie">Movie</h2>
+      <h2 @click="youtube = ! youtube">Movie</h2>
       <section
-        v-show="movie"
+        v-show="youtube"
       >
-        <div class="aspect-ratio-box">
+        <div 
+          style="width: 100%;"
+          :style="{ 
+            'height': Math.min(store.media.windowWidth * 0.7 , 800) * 3/5 + 'px' }"
+        >
           <iframe
-            class="aspect-ratio-box-inside"
             title="Jesus Of Nazareth (1977) - full movie"
+            type="text/html"
+            width="100%"
+            height="100%"
+            border="none"
+            frameborder="0"
             allowfullscreen="true"
-            src="https://www.youtube.com/embed/50IiF1rTTGQ?controls=1">
-          </iframe>
+            src="https://www.youtube.com/embed/50IiF1rTTGQ?controls=1"
+          />
         </div>
       </section>
       
@@ -186,6 +194,7 @@
 
 <script>
 import { Disqus } from 'vue-disqus'
+import { store } from "~/components/store";
 import ButtonMenu from "~/components/ButtonMenu"
 import Menu from "~/components/Menu"
 
@@ -198,13 +207,15 @@ export default {
 
   data() {
     return {
-      movie: false,
+      store,
+      youtube: false,
       copyright: false,
       connection: false,
       about: false,
       donation: false
     }
-  }
+  },
+
 }
 </script>
 
@@ -227,24 +238,9 @@ export default {
   .content {
     margin-top: 2em;
     width: min(800px, 70%);
-    height: 100%;
+    margin-bottom: 60vh;
   }
 
-
-.aspect-ratio-box {
-  height: 0;
-  overflow: hidden;
-  padding-top: 5/3 * 100%;
-  background: white;
-  position: relative;
-}
-.aspect-ratio-box-inside {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
   section {
     padding: 10px;
     padding-bottom: 2em;
