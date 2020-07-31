@@ -6,7 +6,7 @@
       <section
         v-show="movie"
       >
-        <div style="aspect-ratio-box">
+        <div class="aspect-ratio-box">
           <iframe
             title="Jesus Of Nazareth (1977) - full movie"
             allowfullscreen="true"
