@@ -6,7 +6,7 @@
       <section
         v-show="movie"
       >
-        <div style="--aspect-ratio:5/3;">
+        <div style="aspect-ratio-box">
           <iframe
             title="Jesus Of Nazareth (1977) - full movie"
             allowfullscreen="true"
@@ -93,7 +93,7 @@
             rel="noopener noreferrer"
           >
             gospelsharmony@gmail.com
-          </a>.
+          </a>
         </p>
       </section>
 
@@ -177,6 +177,7 @@
             Thank you!
           </p>
       </section>
+      <div style="height: 50%;"/>
       <ButtonMenu />
       <Menu />
     </div>
@@ -228,30 +229,23 @@ export default {
     width: min(800px, 70%);
   }
 
-/* https://css-tricks.com/aspect-ratio-boxes/#using-custom-properties */
-/* Works even with v-show="false" */
-  [style*="--aspect-ratio"] > :first-child {
-  width: 100%;
-  }
-  [style*="--aspect-ratio"] > img {  
-    height: auto;
-  } 
-  @supports (--custom:property) {
-    [style*="--aspect-ratio"] {
-      position: relative;
-    }
-    [style*="--aspect-ratio"]::before {
-      content: "";
-      display: block;
-      padding-bottom: calc(100% / (var(--aspect-ratio)));
-    }  
-    [style*="--aspect-ratio"] > :first-child {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-    }  
-  }
+
+.aspect-ratio-box {
+  background: white;
+}
+.aspect-ratio-box::before {
+  content: "";
+  width: 1px;
+  margin-left: -1px;
+  float: left;
+  height: 0;
+  padding-top: 5/3 * 100%;
+}
+.aspect-ratio-box::after { /* to clear float */
+  content: "";
+  display: table;
+  clear: both;
+}
 
   section {
     padding: 10px;
