@@ -42,7 +42,9 @@ Jehoiachin, Shealtiel,`,
 • And to give the full 14 generations
 </small></p>`,
 // 18
-`This is how the birth of Jesus Christ came about. His mother Mary was engaged(d) to marry Joseph, but before they married, she learned she was pregnant by the power of the Holy Spirit.`,
+`This is how the birth of Jesus Christ came about. His mother Mary was 
+<u title="For the Jewish people an engagement was a lasting agreement, which could only be broken by a divorce. If a bride-to-be was unfaithful, it was considered adultery, and she could be put to death.">engaged</u> 
+to marry Joseph, but before they married, she learned she was pregnant by the power of the Holy Spirit.`,
 // 19
 `Because Mary’s husband, Joseph, was a good man, he did not want to disgrace her in public, so he planned to divorce her secretly.`,
 // 20

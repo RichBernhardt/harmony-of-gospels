@@ -1,16 +1,15 @@
 <template>
 <!-- The folder (About) must start with capital letter! -->
   <div class="root">
-    <div class="content">
-      <h2 @click="youtube = ! youtube">Movie</h2>
-      <section
-        v-show="youtube"
-      >
-        <div 
-          style="width: 100%;"
-          :style="{ 
-            'height': Math.min(store.media.windowWidth * 0.7 , 800) * 3/5 + 'px' }"
+    <main>
+
+      <details>
+        <summary>Movie</summary>
+        <section 
+          class="aspect-ratio"
         >
+          <!-- :style="{ 
+            'height': Math.min(store.media.windowWidth * 0.7 , 800) * 3/5 + 'px' }" -->
           <iframe
             title="Jesus Of Nazareth (1977) - full movie"
             type="text/html"
@@ -21,11 +20,12 @@
             allowfullscreen="true"
             src="https://www.youtube.com/embed/50IiF1rTTGQ?controls=1"
           />
-        </div>
-      </section>
+        </section>
+      </details>
       
-      <h2 @click="about = ! about">About</h2>
-      <section v-show="about">
+      <details>
+        <summary>About</summary>
+        <section>
           <p>
             The goal of this project is to present the four Gospels (Jesus 
             words and acts) in an attractive and easy to understand way.
@@ -72,123 +72,130 @@
             the reason for displaying verses with full reference (author, chapter, verse) 
             instead of verse numbers only.
           </p>
-      </section>
+        </section>
+      </details>
 
-      <h2 @click="connection = ! connection">Connection</h2>
-      <section v-show="connection">
-        <p>
-          Chronological order can be made in more than one way. 
-          Merging verses of the same event from multiple 
-          authors in a way that they provide completeness and a smooth 
-          reading experience at the same time, is also not straightforward. 
-          Locations and reference week ranges are not always obvious either. 
-          Main titles, subtitles are also subjective.
-          We can make the content of this site really good together only.
-        </p>
-        <p>
-          Should you want to discuss your observations or thoughts, 
-          please feel free to start or join a topic in this forum.
-        </p>
-        <p>
-          <!-- https://ktquez.github.io/vue-disqus/setup.html#installation -->
-          <!-- https://harmony-of-gospels.disqus.com/admin/install/settings/ -->
-          <Disqus shortname='harmony-of-gospels' />
-        </p>
-        <p>
-          In case the nature of your say is private, you can get in contact via 
-          <a 
-            href="mailto:gospelsharmony@gmail.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            gospelsharmony@gmail.com
-          </a>
-        </p>
-      </section>
-
-      <h2 @click="copyright = ! copyright">Copyrights</h2>
-      <section v-show="copyright">
-        <p>
-          The current Bible version is New Century Version® (NCV). 
-          Copyright © 2005 by Thomas Nelson, Inc.
-          <br/>
-          Except chapter 'The Family History Of Jesus', which uses the 
-          Contemporary English Version (CEV) for brevity. Copyright © 
-          1995 by American Bible Society.
-        </p>
-        <p>
-          The chronological order is mainly based on thoughts shared on 
-          <a 
-            href="http://4gospels.info/"
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            4gospels.info
-            <!-- https://stackoverflow.com/a/5409373 -->
-            <!-- https://stackoverflow.com/a/15551842 -->
-            <!-- https://mathiasbynens.github.io/rel-noopener -->
-            <span style="display: inline-block; transform: scale(-1,1);">⇱</span>
-          </a>
-          which was inspired by Michael Rood's observations. 
-          However, no direct knowledge of Michael Rood's 
-          works influenced the content of this site.
-        </p>
-        <p>
-          This project employs an Attribution - Non-Commercial - Share Alike 
-          4.0 International Creative Common License, which allows adaptations 
-          of content to be shared as long as others share alike, but does not 
-          allow commercial uses of its content.
-        </p>
-        <p>
-          <a 
-            href="https://github.com/RichBernhardt/harmony-of-gospels"
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            Source code
-            <span style="display: inline-block; transform: scale(-1,1);">⇱</span>
-          </a>
-        </p>
-      </section>
-
-      <h2 @click="donation = ! donation">Giving</h2>
-      <section v-show="donation">
-        <p>
-          Should the content of this site be valuable enough to you, 
-          that you feel the urge to express your gratitude in an Earthly manner too, 
-          then a monetary opportunity has been provided as follows.
-        </p>
-        <!-- https://www.paypal.com/donate/buttons/ -->
-        <!-- https://youtu.be/AtZGoueL4Vs -->
-        <!-- https://github.com/fireship-io/193-paypal-checkout-v2-demos/blob/master/vue-app/src/components/HelloWorld.vue -->
-          <form 
-            action="https://www.paypal.com/cgi-bin/webscr" 
-            method="post" 
-            target="_top"
-          >
-            <input type="hidden" name="cmd" value="_s-xclick" />
-            <input type="hidden" name="hosted_button_id" value="DSHSNWKSTSUAA" />
-            <input 
-              type="image" 
-              src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" 
-              border="0" 
-              name="submit" 
-              title="PayPal - The safer, easier way to pay online!" 
-              alt="Donate with PayPal button" />
-            <img 
-              alt="" 
-              border="0" 
-              src="https://www.paypal.com/en_GB/i/scr/pixel.gif" 
-              width="1" 
-              height="1" />
-          </form>
+      <details>
+        <summary>Connection</summary>
+        <section>
           <p>
-            Thank you!
+            Chronological order can be made in more than one way. 
+            Merging verses of the same event from multiple 
+            authors in a way that they provide completeness and a smooth 
+            reading experience at the same time, is also not straightforward. 
+            Locations and reference week ranges are not always obvious either. 
+            Main titles, subtitles are also subjective.
+            We can make the content of this site really good together only.
           </p>
-      </section>
+          <p>
+            Should you want to discuss your observations or thoughts, 
+            please feel free to start or join a topic in this forum.
+          </p>
+          <p>
+            <!-- https://ktquez.github.io/vue-disqus/setup.html#installation -->
+            <!-- https://harmony-of-gospels.disqus.com/admin/install/settings/ -->
+            <Disqus shortname='harmony-of-gospels' />
+          </p>
+          <p>
+            In case the nature of your say is private, you can get in contact via 
+            <a 
+              href="mailto:gospelsharmony@gmail.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              gospelsharmony@gmail.com
+            </a>
+          </p>
+        </section>
+      </details>
+
+      <details>
+        <summary>Copyrights</summary>
+        <section>
+          <p>
+            The current Bible version is New Century Version® (NCV). 
+            Copyright © 2005 by Thomas Nelson, Inc.
+            <br/>
+            Except chapter 'The Family History Of Jesus', which uses the 
+            Contemporary English Version (CEV) for brevity. Copyright © 
+            1995 by American Bible Society.
+          </p>
+          <p>
+            The chronological order is mainly based on thoughts shared on 
+            <a 
+              href="http://4gospels.info/"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              4gospels.info
+              <!-- https://stackoverflow.com/a/5409373 -->
+              <!-- https://stackoverflow.com/a/15551842 -->
+              <!-- https://mathiasbynens.github.io/rel-noopener -->
+              <span style="display: inline-block; transform: scale(-1,1);">⇱</span>
+            </a>
+            which was inspired by Michael Rood's observations. 
+            However, no direct knowledge of Michael Rood's 
+            works influenced the content of this site.
+          </p>
+          <p>
+            This project employs an Attribution - Non-Commercial - Share Alike 
+            4.0 International Creative Common License, which allows adaptations 
+            of content to be shared as long as others share alike, but does not 
+            allow commercial uses of its content.
+          </p>
+          <p>
+            <a 
+              href="https://github.com/RichBernhardt/harmony-of-gospels"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              Source code
+              <span style="display: inline-block; transform: scale(-1,1);">⇱</span>
+            </a>
+          </p>
+        </section>
+      </details>
+      
+      <details>
+        <summary>Giving</summary>
+        <section>
+          <p>
+            Should the content of this site be valuable enough to you, 
+            that you feel the urge to express your gratitude in an Earthly manner too, 
+            then a monetary opportunity has been provided as follows.
+          </p>
+          <!-- https://www.paypal.com/donate/buttons/ -->
+            <form 
+              action="https://www.paypal.com/cgi-bin/webscr" 
+              method="post" 
+              target="_top"
+            >
+              <input type="hidden" name="cmd" value="_s-xclick" />
+              <input type="hidden" name="hosted_button_id" value="DSHSNWKSTSUAA" />
+              <input 
+                type="image" 
+                src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" 
+                border="0" 
+                name="submit" 
+                title="PayPal - The safer, easier way to pay online!" 
+                alt="Donate with PayPal button" />
+              <img 
+                alt="" 
+                border="0" 
+                src="https://www.paypal.com/en_GB/i/scr/pixel.gif" 
+                width="1" 
+                height="1" />
+            </form>
+            <p>
+              Thank you!
+            </p>
+        </section>
+      </details>
+
       <ButtonMenu />
       <Menu />
-    </div>
+
+    </main>
   </div>
 </template>
 
@@ -208,11 +215,6 @@ export default {
   data() {
     return {
       store,
-      youtube: false,
-      copyright: false,
-      connection: false,
-      about: false,
-      donation: false
     }
   },
 
@@ -228,36 +230,60 @@ export default {
   .root {
     display:flex;
     justify-content: center;
-    min-height: 100vh;
     background-color: lemonchiffon;
+    padding: 10px;
     font-family: 'DejaVu Serif', serif;
     /* https://stackoverflow.com/a/20818206/ */
     line-height: 1.4;
   }
 
-  .content {
+  main {
     margin-top: 2em;
-    width: min(800px, 70%);
+    width: min(900px, 70%);
     margin-bottom: 60vh;
+  }
+
+  summary {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    outline: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary:hover {
+    background-color: #edee90;
+    border-radius: 5px;
   }
 
   section {
     padding: 10px;
     padding-bottom: 2em;
-  }
-
-  h2 {
-    margin: 0;
-    padding: 10px;
-  }
-
-  h2:hover {
-    background-color: #edee90;
-    border-radius: 5px;
+    text-align: justify;
   }
 
   form {
     padding: 2em;
+  }
+
+  .aspect-ratio {
+    width: 100%;
+    height: calc(min(900px, 70vw) * 3/5);
+  }
+
+  @media (max-width: 640px) {
+    main {
+      width: 100%;
+    }
+    .aspect-ratio {
+    height: 60vw;
+  }
+
   }
 
 </style>
