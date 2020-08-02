@@ -3,10 +3,6 @@
     class="toggle-menu"
     @click.prevent="store.menuOnShow = !store.menuOnShow"
     >
-    <hr/>
-    <hr/>
-    <hr/>
-    <hr/>
   </span>
 </template>
 
@@ -33,5 +29,7 @@ export default {
     height: 50px;
     border-radius: 25px;
     border: 1px solid gray;
+    background-image: url('~assets/toggleMenu.svg');
   }
+
 </style>

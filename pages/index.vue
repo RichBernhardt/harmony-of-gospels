@@ -21,7 +21,6 @@
     <Map />
     <ButtonMap />
     <ButtonMenu />
-    <Menu />
   </main>
 </template>
 
@@ -31,7 +30,6 @@ import Map from "~/components/Map"
 import AccordionMain from "~/components/AccordionMain";
 import ButtonMap from "~/components/ButtonMap"
 import ButtonMenu from "~/components/ButtonMenu"
-import Menu from "~/components/Menu"
 
 export default {
 
@@ -40,7 +38,6 @@ export default {
     AccordionMain,
     ButtonMap,
     ButtonMenu,
-    Menu
   },
 
 

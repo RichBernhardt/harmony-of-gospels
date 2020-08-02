@@ -1,0 +1,21 @@
+<svg width="100%" height="100%" version="1.1" viewBox="-24 -16 140 140" xmlns="http://www.w3.org/2000/svg">
+ <g fill="none" stroke-width=".1">
+  <circle cx="46" cy="54" r="70" fill="rgba(255,250,205,70%)" stroke="#000" stroke-width=".1"/>
+ </g>
+ <clipPath id="s">
+  <path d="m0 0v30h60v-30z"/>
+ </clipPath>
+ <clipPath id="t">
+  <path d="m30 15h30v15zm0 0v15h-30zm0 0h-30v-15zm0 0v-15h30z"/>
+ </clipPath>
+ <g transform="translate(-6,12)" clip-path="url(#s)">
+  <path d="m0 0v30h60v-30z" fill="#012169"/>
+  <path d="m0 0 60 30m0-30-60 30" stroke="#fff" stroke-width="6"/>
+  <path d="m0 0 60 30m0-30-60 30" clip-path="url(#t)" stroke="#c8102e" stroke-width="4"/>
+  <path d="m30 0v30m-30-15h60" stroke="#fff" stroke-width="10"/>
+  <path d="m30 0v30m-30-15h60" stroke="#c8102e" stroke-width="6"/>
+ </g>
+ <circle cx="76" cy="22" r="12" fill="none" stroke="#000" stroke-width="6"/>
+ <path d="m86 32 15 15" fill="none" stroke="#000" stroke-linecap="round" stroke-width="6"/>
+ <text x="-12" y="83" fill="#000" font-family="sans-serif" font-size="40px" style="line-height:1.25">About</text>
+</svg>

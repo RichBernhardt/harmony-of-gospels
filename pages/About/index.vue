@@ -8,8 +8,6 @@
         <section 
           class="aspect-ratio"
         >
-          <!-- :style="{ 
-            'height': Math.min(store.media.windowWidth * 0.7 , 800) * 3/5 + 'px' }" -->
           <iframe
             title="Jesus Of Nazareth (1977) - full movie"
             type="text/html"
@@ -44,8 +42,8 @@
               rel="noopener noreferrer"
               href="http://4gospels.info/"
             >
-              4gospels.info.
-              <span style="display: inline-block; transform: scale(-1,1);">⇱</span>
+              4gospels.info.<span 
+                style="display: inline-block; transform: scale(-1,1);">⇱</span>
             </a> 
             There are many alterations regarding the timeline, 
             however, the basic principle that organising the events based on feasts, 
@@ -127,11 +125,11 @@
               target="_blank" 
               rel="noopener noreferrer"
             >
-              4gospels.info
               <!-- https://stackoverflow.com/a/5409373 -->
               <!-- https://stackoverflow.com/a/15551842 -->
               <!-- https://mathiasbynens.github.io/rel-noopener -->
-              <span style="display: inline-block; transform: scale(-1,1);">⇱</span>
+              4gospels.info<span 
+                style="display: inline-block; transform: scale(-1,1);">⇱</span>
             </a>
             which was inspired by Michael Rood's observations. 
             However, no direct knowledge of Michael Rood's 
@@ -193,7 +191,6 @@
       </details>
 
       <ButtonMenu />
-      <Menu />
 
     </main>
   </div>
@@ -201,21 +198,12 @@
 
 <script>
 import { Disqus } from 'vue-disqus'
-import { store } from "~/components/store";
 import ButtonMenu from "~/components/ButtonMenu"
-import Menu from "~/components/Menu"
 
 export default {
   components: {
     Disqus,
     ButtonMenu,
-    Menu,
-  },
-
-  data() {
-    return {
-      store,
-    }
   },
 
 }
@@ -272,7 +260,8 @@ export default {
   }
 
   .aspect-ratio {
-    width: 100%;
+    /* to compensate <section> paddings */
+    width: calc(100% - 20px);
     height: calc(min(900px, 70vw) * 3/5);
   }
 
