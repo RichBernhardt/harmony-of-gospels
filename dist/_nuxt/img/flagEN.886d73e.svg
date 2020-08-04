@@ -1,0 +1,54 @@
+<svg
+  viewBox="-135 -90 270 180" version="1.1" 
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+
+  <defs>
+    <path id="s" d="m-3 4 3-9 3 9-8-6h10z" fill="ivory" stroke="none"/>
+    <clipPath id="w">
+      <rect x="-135" y="-90" width="270" height="180"/>
+    </clipPath>
+  </defs>
+
+  <rect x="-135" y="-90" width="270" height="180" fill="#012169"/>
+
+  <path id="p0" d="m-135 0h270"/>
+  <use stroke="ivory" stroke-width="41" xlink:href="#p0"/>
+  <use stroke="red" stroke-width="20" xlink:href="#p0"/>
+
+  <g id="p1m">
+    <path id="p1" d="m-135 40h90c90 0 90 40 180 40" fill="none"/>
+    <use stroke="ivory" stroke-width="41" xlink:href="#p1"/>
+    <use stroke="red" stroke-width="20" xlink:href="#p1"/>
+  </g>
+  <use transform="scale(1,-1)" xlink:href="#p1m"/>
+  
+  <g id="p2m">
+    <path id="p2" d="m-135 80h90c90 0 90 80 180 80" fill="none" clip-path="url(#w)"/>
+    <use stroke="ivory" stroke-width="41" xlink:href="#p2"/>
+    <use stroke="red" stroke-width="20" xlink:href="#p2"/>
+  </g>
+  <use transform="scale(1,-1)" xlink:href="#p2m"/>
+  
+  <rect x="-135" y="-90" width="125" height="100" fill="#012169"/>
+
+  <g id="s18" >
+    <g id="s9" >
+      <g id="s5" >
+        <g id="s4" transform="translate(-125,0)" >
+          <use xlink:href="#s" y="-80" />
+          <use xlink:href="#s" y="-60" />
+          <use xlink:href="#s" y="-40" />
+          <use xlink:href="#s" y="-20" />
+        </g>
+        <use xlink:href="#s" x="-125"/>
+      </g>
+      <use xlink:href="#s4" x="10" y="10" />
+    </g>
+    <use xlink:href="#s9" x="20" />
+  </g>
+  <use xlink:href="#s18" x="40" />
+  <use xlink:href="#s9" x="80" />
+  <use xlink:href="#s5" x="100" />
+  
+</svg>
