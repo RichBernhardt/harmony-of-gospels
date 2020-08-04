@@ -111,14 +111,6 @@
         <summary>Copyrights</summary>
         <section>
           <p>
-            The current Bible version is New Century Version® (NCV). 
-            Copyright © 2005 by Thomas Nelson, Inc.
-            <br/>
-            Except chapter 'The Family History Of Jesus', which uses the 
-            Contemporary English Version (CEV) for brevity. Copyright © 
-            1995 by American Bible Society.
-          </p>
-          <p>
             The chronological order is mainly based on thoughts shared on 
             <a 
               href="http://4gospels.info/"
@@ -134,6 +126,51 @@
             which was inspired by Michael Rood's observations. 
             However, no direct knowledge of Michael Rood's 
             works influenced the content of this site.
+          </p>
+          <p>
+            The English version is the New Century Version® (NCV). 
+            Copyright © 2005 by Thomas Nelson, Inc.
+            <br/>
+            Except chapter 'The Family History Of Jesus', which uses the 
+            Contemporary English Version (CEV) for brevity. Copyright © 
+            1995 by American Bible Society.
+          </p>
+          <p>
+            The Hungarian version uses the Easy-to-Read Version (ERV-HU). 
+            Copyright © 2003, 2012 by World Bible Translation Center. 
+            With the following alterations:
+            <ul>
+              <li>
+                <p>
+                  Wherever word "spirit" is used in positive meaning, 
+                the "szellem" has been replaced by "lélek" in line with the 
+                Hungarian common sense. E.g.: szellemidézés, szelleműzés, 
+                szellemváros, but(!) 
+                lélekgondozás, lelkiismeret, lélekmentő, lélekvándorlás,
+                a lelkére beszél,...
+                </p>
+              </li>
+              <li>
+                <p>
+                  The family name of Maria Magdalene can be translated to Hungarian 
+                in two ways: someone from the village of Magdala or as a first name: 
+                "Magdolna". Wherever "from Magdala" is used it has been replaced 
+                by "Magdolna".
+                </p>
+              </li>
+              <li>
+                <p>
+                  In ERV-HU, some verses are merged with dashed verse references 
+                (e.g. 12-13) in line with common  sense and/or for better 
+                understanding. However, due to the operation of the web site 
+                builder program, the verses must be standalone. The separation 
+                has required some translation which uses either the same words 
+                as the original or if this was not possible then the words of 
+                the Hungarian New Translation (NT-HU), Copyright © 1975, 1990 
+                Hungarian Bible Society.
+                </p>
+              </li>
+            </ul>
           </p>
           <p>
             This project employs an Attribution - Non-Commercial - Share Alike 
@@ -190,20 +227,16 @@
         </section>
       </details>
 
-      <ButtonMenu />
-
     </main>
   </div>
 </template>
 
 <script>
 import { Disqus } from 'vue-disqus'
-import ButtonMenu from "~/components/ButtonMenu"
 
 export default {
   components: {
     Disqus,
-    ButtonMenu,
   },
 
 }
@@ -235,8 +268,7 @@ export default {
     font-size: 1.5em;
     font-weight: bold;
     margin: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px;
     outline: none;
   }
 
@@ -245,7 +277,9 @@ export default {
   }
 
   summary:hover {
-    background-color: #edee90;
+    /* background-color: #edee90; */
+    background-color: hsla(61,73%,30%,70%);
+    box-shadow: 0px 0px 2px 2px hsla(61,73%,30%,70%);
     border-radius: 5px;
   }
 

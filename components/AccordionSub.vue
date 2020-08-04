@@ -245,8 +245,6 @@ computed: {
     background-color: lemonchiffon;
     border: 0px none lemonchiffon;
     border-bottom: 1px solid darkkhaki;
-    /* padding: 5px; */
-    /* padding-bottom: 0px; */
   }
 
   .accordion-sub:last-child {

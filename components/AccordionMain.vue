@@ -39,13 +39,8 @@
 
 <script>
 import { store } from "~/components/store";
-import AccordionSub from "~/components/AccordionSub";
 
 export default {
-
-  components: {
-    AccordionSub
-  },
 
   props: {
     groupIndex: Number,

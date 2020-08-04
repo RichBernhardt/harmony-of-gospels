@@ -1,4 +1,4 @@
-const timelineRaw = [
+const timeline = [
   {"Before Jesus' Public Ministry": [
     ["The Word Became Human","n/a","JN",[["LK",1,1,4]],[["JN",1,1,18]]],
     ["Angel Gabriel Appear To Zechariah, The Father Of John The Baptist","jerusalem",[["LK",1,5,25]]],
@@ -351,4 +351,4 @@ const timelineRaw = [
     ["The Apostles Tell The Good News To Eeveryone In The World","galilee",[["MK",16,20,20]]]
   ]}
 ];
-export { timelineRaw as default };
+export { timeline as default };

@@ -1,9 +1,21 @@
 <template>
-  <span
+  <svg 
+    width="100%" height="100%" viewBox="-70 -70 140 140" version="1.1" 
+    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
     class="toggle-menu"
     @click.prevent="store.menuOnShow = !store.menuOnShow"
-    >
-  </span>
+  >
+    <g fill="none" stroke-width=".1">
+      <circle r="70" fill="rgba(255,250,205,70%)" stroke="#000" stroke-width=".1"/>
+    </g>
+    <image xlink:href="~assets/flagEN.svg" x="-50" y="-50" width="40%" height="40%" />
+    <g fill="none" stroke="#000" stroke-width="6" transform="translate(30,-30)">
+      <circle r="12" />
+      <path d="m10 10 15 15" stroke-linecap="round" />
+    </g>
+    <text x="0" y="40" fill="#000" font-family="serif" font-size="40px" 
+    text-anchor="middle" textLength="75%">About</text>
+  </svg>
 </template>
 
 <script>
@@ -29,7 +41,7 @@ export default {
     height: 50px;
     border-radius: 25px;
     border: 1px solid gray;
-    background-image: url('~assets/toggleMenu.svg');
+    cursor: pointer;
   }
 
 </style>

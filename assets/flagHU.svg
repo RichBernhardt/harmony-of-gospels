@@ -1,0 +1,15 @@
+<svg
+  viewBox="-135 -90 270 180" version="1.1" 
+  xmlns="http://www.w3.org/2000/svg" 
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+
+  <defs>
+    <path id="p" d="m-135 0h270" stroke-width="60"/>
+  </defs>
+
+  <use xlink:href="#p" stroke="red" y="-60" />
+  <use xlink:href="#p" stroke="ivory" />
+  <use xlink:href="#p" stroke="green" y="60"/>
+  
+</svg>

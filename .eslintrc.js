@@ -50,6 +50,7 @@ module.exports = {
     'no-multi-spaces': 0,
     'one-var': 0,
     'camelcase': 0,
+    'no-irregular-whitespace': 0,
     // npm run lint -- --fix
   }
 }

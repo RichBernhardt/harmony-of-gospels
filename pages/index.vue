@@ -1,8 +1,9 @@
 <template>
-    <main class="split-view" id="split-view">
+    <main class="split-view"
+        :key="store.gospels.keyToRerenderOnVersionSwitch" >
       <div
         id="split-left"
-        class="left"
+        class="left" 
       >
         <AccordionMain
           v-for="(group,groupIndex) in store.timeline"
@@ -14,32 +15,17 @@
         />
       </div>
       <div
-        id="split-right"
         class="right"
         :style="{'width': splitPosition + 'px'}"
       />
     <Map />
     <ButtonMap />
-    <ButtonMenu />
   </main>
 </template>
 
 <script>
 import { store } from "~/components/store";
-import Map from "~/components/Map"
-import AccordionMain from "~/components/AccordionMain";
-import ButtonMap from "~/components/ButtonMap"
-import ButtonMenu from "~/components/ButtonMenu"
-
 export default {
-
-  components: {
-    Map,
-    AccordionMain,
-    ButtonMap,
-    ButtonMenu,
-  },
-
 
   data () {
     return {
@@ -71,7 +57,7 @@ export default {
 
 
   created() {
-    this.relocateDefaultGospel();
+    store.relocateDefaultGospel();
   },
 
   
@@ -111,40 +97,6 @@ export default {
         
       if (store.gospels.parallelCurrent > store.gospels.parallelMax) {
         store.gospels.parallelCurrent = store.gospels.parallelMax
-      }
-    },
-
-
-    relocateDefaultGospel() {
-      // Relocate the default-gospel to index 2 in each event:
-      // [{groupTitle:
-      //   [eventTitle,location,DEFAULT-GOSPEL,gospel[i],...],... },... ]
-      let 
-        g,  // group
-        gt, // groupTitle
-        e,  // event
-        aux; // auxiliary
-
-      for ( g = 0; g < store.timeline.length; g++) {
-        gt = Object.keys(store.timeline[g]);
-        for ( e = 0; e < store.timeline[g][gt].length; e++) {
-          if (!Array.isArray(store.timeline[g][gt][e][2])) {
-            // In TimelineRaw, the default record:
-            // - can store only a reference to the selected gospel ("MT") or
-            // - can have multiple entries which results an array-in-array
-            // structure: [["author",chapter,verseFrom,verseTo],["author",... ].
-            // Where there is a reference only, we find and replace it by
-            // the referenced gospel instead...
-            for ( aux = 3;
-              store.timeline[g][gt][e][aux][0][0] !== store.timeline[g][gt][e][2];)
-              { aux++ 
-            }
-            store.timeline[g][gt][e][2] = store.timeline[g][gt][e][aux];
-            // ...and delete the referenced gospel from its 
-            // original place to avoid any duplication
-            store.timeline[g][gt][e].splice(aux,1);
-          }
-        }
       }
     },
 

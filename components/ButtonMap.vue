@@ -32,6 +32,7 @@ export default {
     height: 50px;
     border-radius: 25px;
     border: 1px solid gray;
+    cursor: pointer;
   }
 
   /* Alternatively: https://medium.com/js-dojo/how-to-pass-variable-to-inline-background-image-in-vue-12150f25bd60 */
