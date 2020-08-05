@@ -83,8 +83,6 @@ export default {
       store.gospels.JN = this[selected].jn;
       store.gospels.ACT = this[selected].act;
 
-      store.relocateDefaultGospel();
-
       store.gospels.keyToRerenderOnVersionSwitch++;
     }
   }

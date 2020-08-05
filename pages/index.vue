@@ -55,11 +55,6 @@ export default {
     }
   },
 
-
-  created() {
-    store.relocateDefaultGospel();
-  },
-
   
   mounted() {
     // https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Testing_media_queries
