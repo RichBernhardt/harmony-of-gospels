@@ -1,8 +1,8 @@
 <template>
   <svg 
-    width="100%" height="100%" viewBox="-70 -70 140 140" version="1.1" 
     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-    class="toggle-menu"
+    width="100%" height="100%" viewBox="-70 -70 140 140" version="1.1"
+    :style="{right: buttonMapOnShow}"
     @click.prevent="store.menuOnShow = !store.menuOnShow"
   >
     <g fill="none" stroke-width=".1">
@@ -26,17 +26,28 @@ export default {
     return {
       store
     }
+  },
+
+  computed: {
+    buttonMapOnShow() {
+      const right = 
+        (store.media.windowWidth - store.media.widthSplit) < 40 
+          ? "64px" 
+          : "7px";
+
+      return right;
+    }
   }
+
 }
 </script>
 
 
 <style scoped>
-  .toggle-menu {
+  svg {
     position: fixed;
     z-index: 3;
-    top: 70px;
-    right: 7px;
+    bottom: 10px;
     width: 50px;
     height: 50px;
     border-radius: 25px;

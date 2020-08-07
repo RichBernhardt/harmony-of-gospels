@@ -1,6 +1,6 @@
 <template>
   <div
-    class="modal"
+    class="modal horizontal"
     v-show="store.menuOnShow">
     <div class="accordion">
       <div 
@@ -97,15 +97,29 @@ export default {
     position: fixed;
     z-index: 3;
     top: 3%;
-    right: 70px;
-    width: min(300px, 94% - 70px); 
-    height: 94%;
+    /* right: 3%; */
+    width: min(300px, 94%); 
+    height: calc(94% - 64px);
     border-radius: 10px;
     border: 1px solid darkkhaki;
     background-color: rgba(255, 250, 205,70%);
     font-family: 'DejaVu Serif', serif;
     box-shadow: 6px 6px 3px 3px rgba(0,0,0,50%);
     font-size: 1.5em;
+  }
+
+  @media (max-width: 319px) {
+    /* https://stackoverflow.com/a/25829529 */
+    .horizontal {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (min-width: 320px) {
+    .horizontal {
+      right: 2%;
+    }
   }
 
   .selectable {

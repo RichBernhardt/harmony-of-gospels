@@ -20,6 +20,7 @@ export const store = Vue.observable({
     parallelCurrent: 1,
     parallelMax: "",
     widthMin: 160,
+    // https://michaelnthiessen.com/key-changing-technique/
     keyToRerenderOnVersionSwitch: 0,
   },
   map: {
