@@ -17,6 +17,10 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
+    // https://stackoverflow.com/a/48239378
+    htmlAttrs: {
+      lang: 'en'
+    },
     // title: process.env.npm_package_name || '',
     title: 'Harmony of Gospels',
     meta: [

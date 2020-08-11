@@ -33,6 +33,9 @@ export const store = Vue.observable({
     hasPointer: "",
     widthSplit: "",
   },
-  menuOnShow: false,
+  menu: {
+    initialLoad: false,
+    onShow: false,
+  }
 
 });

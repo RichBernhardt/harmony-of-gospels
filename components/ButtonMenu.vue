@@ -4,10 +4,16 @@
     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
     width="100%" height="100%" viewBox="-70 -70 140 140" version="1.1"
     :style="{right: buttonMapOnShow}"
-    @click.prevent="store.menuOnShow = !store.menuOnShow"
-    @keyup.space="store.menuOnShow = !store.menuOnShow"
-    @keyup.enter="store.menuOnShow = true"
-    @keyup.esc="store.menuOnShow = false"
+    @click.prevent="
+      store.menu.onShow = !store.menu.onShow;
+      store.menu.initialLoad = true;"
+    @keyup.space="
+      store.menu.onShow = !store.menu.onShow;
+      store.menu.initialLoad = true;"
+    @keyup.enter="
+      store.menu.onShow = true;
+      store.menu.initialLoad = true;"
+    @keyup.esc="store.menu.onShow = false"
   >
     <g fill="none" stroke-width=".1">
       <circle r="70" fill="rgba(255,250,205,70%)" stroke="#000" stroke-width=".1"/>

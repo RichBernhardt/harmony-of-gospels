@@ -1,8 +1,8 @@
 <template>
   <div
     class="modal horizontal"
-    v-show="store.menuOnShow"
-    @keyup.esc="store.menuOnShow = false"
+    v-show="store.menu.onShow"
+    @keyup.esc="store.menu.onShow = false"
   >
     <div class="accordion">
       <div 
@@ -19,11 +19,11 @@
         v-show="versionsOnShow"
         tabindex="0"
         @click.prevent="
-          store.menuOnShow = !store.menuOnShow;
+          store.menu.onShow = !store.menu.onShow;
           versionsOnShow = !versionsOnShow;
           switchVersion('NCV');"
         @keyup.enter="
-          store.menuOnShow = !store.menuOnShow;
+          store.menu.onShow = !store.menu.onShow;
           versionsOnShow = !versionsOnShow;
           switchVersion('NCV');"
       >
@@ -35,11 +35,11 @@
         v-show="versionsOnShow"
         tabindex="0"
         @click.prevent="
-          store.menuOnShow = !store.menuOnShow;
+          store.menu.onShow = !store.menu.onShow;
           versionsOnShow = !versionsOnShow;
           switchVersion('ERV');"
         @keyup.enter="
-          store.menuOnShow = !store.menuOnShow;
+          store.menu.onShow = !store.menu.onShow;
           versionsOnShow = !versionsOnShow;
           switchVersion('ERV');"
       >
@@ -49,16 +49,16 @@
     </div>
     <!-- https://github.com/nuxt/nuxt.js/issues/1786#issuecomment-334446353 -->
     <nuxt-link
-      @click.prevent.native="store.menuOnShow = !store.menuOnShow"
-      @keyup.enter="store.menuOnShow = !store.menuOnShow"
+      @click.prevent.native="store.menu.onShow = !store.menu.onShow"
+      @keyup.enter="store.menu.onShow = !store.menu.onShow"
       to="/about"
       class="selectable"
     >
       About
     </nuxt-link>
     <nuxt-link
-      @click.prevent.native="store.menuOnShow = !store.menuOnShow"
-      @keyup.enter="store.menuOnShow = !store.menuOnShow"
+      @click.prevent.native="store.menu.onShow = !store.menu.onShow"
+      @keyup.enter="store.menu.onShow = !store.menu.onShow"
       to="/"
       class="selectable"
     >
@@ -70,8 +70,8 @@
 <script>
 import { store } from "~/components/store";
 import timelineNCV from "~/components/timelineNCV";
-import timelineERV from "~/components/timelineERV";
 import NCV from "~/components/gospelsNCV";
+import timelineERV from "~/components/timelineERV";
 import ERV from "~/components/gospelsERV";
 
 export default {
@@ -84,7 +84,6 @@ export default {
       timelineERV,
       NCV,
       ERV,
-      menuOnShow: store.menuOnShow,
     }
   },
 
