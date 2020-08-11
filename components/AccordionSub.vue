@@ -1,17 +1,19 @@
 <template>
   <div 
-    class="accordion-sub" v-bind="{ expanded }"
+    class="accordion-sub" v-bind="{ expanded }"    
   >
     <div
       class="header"
+      tabindex="0"
       @click.prevent="atHeaderClick();"
+      @keyup.space="atHeaderClick();"
     >
       {{ store.timeline[groupIndex][groupTitle][eventIndex][0] }}
     </div>
     <div
       v-show="!expanded"
       class="range-wrapper-header"
-      @click.prevent="atHeaderClick()"
+      @click.prevent="atHeaderClick();"
     >
       <span
         v-for="reducedRange in reducedRanges"
@@ -37,11 +39,18 @@
           <span
             v-for="range in gospels.ranges"
             :key="range.indexCurrent"
+            tabindex="0"
             :class="[
               'range', 
               (range.indexInitial === author.indexInitial) ? 'self' : 'selectable'
             ]"
             @click.prevent="swapGospels({
+              rangeInitial: range.indexInitial,
+              rangeCurrent: range.indexCurrent,
+              authorInitial: author.indexInitial,
+              authorCurrent: author.indexCurrent,
+            })"
+            @keyup.space="swapGospels({
               rangeInitial: range.indexInitial,
               rangeCurrent: range.indexCurrent,
               authorInitial: author.indexInitial,
@@ -86,7 +95,7 @@ export default {
 
 
 computed: {
-    // Removing "[Default]" from the beginning
+    // Remove "[Default]" from the beginning
     reducedRanges() {
       const result = 
         (this.gospels.ranges[0].range === "[Default]")

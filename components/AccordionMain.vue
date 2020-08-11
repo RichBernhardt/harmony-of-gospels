@@ -1,11 +1,17 @@
 <template>
   <div
     class="accordion-main"
-    v-bind="{ expanded }">
-      <div :class="['main-header', expanded ? 'expanded' : '']">
+    v-bind="{ expanded }"
+  >
+      <div 
+        :class="['main-header', expanded ? 'expanded' : '']"
+        tabindex="0"
+        @keyup.space="expanded = ! expanded; expandFirst = true;"
+      
+      >
         <div
           class="title"
-          @click.prevent="expanded = ! expanded"
+          @click.prevent="expanded = ! expanded; expandFirst = true;"
           v-text="groupTitle"
         />
         <div
@@ -13,27 +19,38 @@
           class="buttons">
           <span
             class="button"
+            tabindex="0"
             @click.prevent="
+              if( store.gospels.parallelCurrent > 1 )
+                store.gospels.parallelCurrent--"
+            @keyup.space="
               if( store.gospels.parallelCurrent > 1 )
                 store.gospels.parallelCurrent--"
             >–</span>
           <span
             class="button"
+            tabindex="0"
             @click.prevent="
+              if( store.gospels.parallelCurrent < store.gospels.parallelMax )
+                store.gospels.parallelCurrent++"
+            @keyup.space="
               if( store.gospels.parallelCurrent < store.gospels.parallelMax )
                 store.gospels.parallelCurrent++"
             >+</span>
         </div>
       </div>
-    <AccordionSub
-      v-for="(event,eventIndex) in store.timeline[groupIndex][groupTitle]"
-      v-show="expanded"
-      :key="eventIndex"
-      v-bind="{ 
-        groupIndex,
-        groupTitle,
-        eventIndex }"
-    />
+    <!-- Minimise initial DOM nodes for quick page loading -->
+    <template v-if="expandFirst">
+      <AccordionSub
+        v-for="(event,eventIndex) in store.timeline[groupIndex][groupTitle]"
+        v-show="expanded"
+        :key="eventIndex"
+        v-bind="{ 
+          groupIndex,
+          groupTitle,
+          eventIndex }"
+      />
+    </template>
   </div>
 </template>
 
@@ -51,6 +68,7 @@ export default {
     return {
       store,
       expanded: false,
+      expandFirst: false,
     }
   },
   
@@ -111,6 +129,7 @@ export default {
     font-size: 2.25em;
     padding: 0;
     margin: 0;
+    cursor: pointer;
   }
 
   .button:active {

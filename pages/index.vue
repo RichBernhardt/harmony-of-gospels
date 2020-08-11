@@ -102,6 +102,12 @@ export default {
 
 <style>
 
+  /* https://css-tricks.com/forums/topic/border-radius-for-outline/ */
+  :focus {
+    outline: none;
+    /* box-shadow: 0 0 3px 0 black; */
+  }
+
   html {
     font-size: 100%;
     font-family: 'Georgia', serif;

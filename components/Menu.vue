@@ -1,19 +1,28 @@
 <template>
   <div
     class="modal horizontal"
-    v-show="store.menuOnShow">
+    v-show="store.menuOnShow"
+    @keyup.esc="store.menuOnShow = false"
+  >
     <div class="accordion">
       <div 
         class="selectable"
         style="margin: 0;"
         @click.prevent="versionsOnShow = !versionsOnShow"
+        @keyup.space="versionsOnShow = !versionsOnShow"
+        tabindex="0"
       >Switch Version
       <img src="~assets/flagEN.svg" />
       </div>
       <div 
         class="version"
         v-show="versionsOnShow"
+        tabindex="0"
         @click.prevent="
+          store.menuOnShow = !store.menuOnShow;
+          versionsOnShow = !versionsOnShow;
+          switchVersion('NCV');"
+        @keyup.enter="
           store.menuOnShow = !store.menuOnShow;
           versionsOnShow = !versionsOnShow;
           switchVersion('NCV');"
@@ -24,7 +33,12 @@
       <div 
         class="version"
         v-show="versionsOnShow"
+        tabindex="0"
         @click.prevent="
+          store.menuOnShow = !store.menuOnShow;
+          versionsOnShow = !versionsOnShow;
+          switchVersion('ERV');"
+        @keyup.enter="
           store.menuOnShow = !store.menuOnShow;
           versionsOnShow = !versionsOnShow;
           switchVersion('ERV');"
@@ -36,6 +50,7 @@
     <!-- https://github.com/nuxt/nuxt.js/issues/1786#issuecomment-334446353 -->
     <nuxt-link
       @click.prevent.native="store.menuOnShow = !store.menuOnShow"
+      @keyup.enter="store.menuOnShow = !store.menuOnShow"
       to="/about"
       class="selectable"
     >
@@ -43,6 +58,7 @@
     </nuxt-link>
     <nuxt-link
       @click.prevent.native="store.menuOnShow = !store.menuOnShow"
+      @keyup.enter="store.menuOnShow = !store.menuOnShow"
       to="/"
       class="selectable"
     >
@@ -68,6 +84,7 @@ export default {
       timelineERV,
       NCV,
       ERV,
+      menuOnShow: store.menuOnShow,
     }
   },
 
@@ -98,7 +115,7 @@ export default {
     z-index: 3;
     top: 3%;
     /* right: 3%; */
-    width: min(300px, 94%); 
+    /* width: min(300px, 94%);  */
     height: calc(94% - 64px);
     border-radius: 10px;
     border: 1px solid darkkhaki;
@@ -108,17 +125,19 @@ export default {
     font-size: 1.5em;
   }
 
-  @media (max-width: 319px) {
+  @media (max-width: 399px) {
     /* https://stackoverflow.com/a/25829529 */
     .horizontal {
       left: 50%;
       transform: translateX(-50%);
+      width: 94%;
     }
   }
 
-  @media (min-width: 320px) {
+  @media (min-width: 400px) {
     .horizontal {
       right: 2%;
+      width: 300px;
     }
   }
 

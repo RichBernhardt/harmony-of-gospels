@@ -1,9 +1,13 @@
 <template>
-  <svg 
+  <svg
+    tabindex="0"
     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
     width="100%" height="100%" viewBox="-70 -70 140 140" version="1.1"
     :style="{right: buttonMapOnShow}"
     @click.prevent="store.menuOnShow = !store.menuOnShow"
+    @keyup.space="store.menuOnShow = !store.menuOnShow"
+    @keyup.enter="store.menuOnShow = true"
+    @keyup.esc="store.menuOnShow = false"
   >
     <g fill="none" stroke-width=".1">
       <circle r="70" fill="rgba(255,250,205,70%)" stroke="#000" stroke-width=".1"/>
@@ -54,5 +58,10 @@ export default {
     border: 1px solid gray;
     cursor: pointer;
   }
+
+  /* svg:focus {
+    border: 1px solid black;
+  } */
+
 
 </style>

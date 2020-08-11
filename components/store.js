@@ -19,7 +19,7 @@ export const store = Vue.observable({
     ACT: gospel.act,
     parallelCurrent: 1,
     parallelMax: "",
-    widthMin: 160,
+    widthMin: 160, // = 20ch
     // https://michaelnthiessen.com/key-changing-technique/
     keyToRerenderOnVersionSwitch: 0,
   },
