@@ -145,4 +145,10 @@ export default {
     border-right: solid gray 1px;
   }
 
+  .right::-webkit-resizer {
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent orangered orangered transparent;
+  }
+
 </style>
