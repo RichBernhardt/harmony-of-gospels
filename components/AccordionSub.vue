@@ -359,4 +359,49 @@ computed: {
     padding-right: 0.3em;
   }
 
+  .gospel-text >>> summary {
+    text-decoration: underline;
+  }
+
+  .gospel-text >>> summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .gospel-text >>> details {
+    display: inline;
+    --popup: goldenrod;
+    --summary: darkgoldenrod;
+  }
+
+  /* conditionally styling <summary> with pure CSS:
+    https://stackoverflow.com/a/55032002 */
+  .gospel-text >>> details[open] summary {
+    background-color: var(--summary);
+    border-radius: 1px;
+    box-shadow: 0 2px 0 2px var(--summary);
+  }
+
+  .gospel-text >>> details span {
+    position: absolute;
+    z-index: 1;
+    background-color: var(--popup);
+    padding: 5px;
+    box-shadow: 6px 6px 3px 3px rgba(0,0,0,50%);
+    margin-right: 10px;
+  }
+
+  /* "outline-radius" without box-shadow:
+    https://stackoverflow.com/a/11426967 */
+  .gospel-text >>> details span:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    border-radius: 5px;
+    border: 2px solid var(--summary);
+  }
+
 </style>

@@ -18,25 +18,27 @@ export default {
   */
   head: {
     // https://stackoverflow.com/a/48239378
-    htmlAttrs: {
-      lang: 'en'
-    },
-    // title: process.env.npm_package_name || '',
+    htmlAttrs: { lang: 'en' },
     title: 'Harmony of Gospels',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Gospels are paired, chronological, supported by interactive map, and completed by a merged extra "gospel" for logic and completeness'
+      },
+      { 
+        hid: 'keywords',
+        name: 'keywords', 
+        content: 'harmony, gospels, synoptic, four, interactive, map, chronological, event'
+      }
+      // title: process.env.npm_package_name || '',
       // { 
       //   hid: 'description', 
       //   name: 'description', 
       //   content: process.env.npm_package_description || '' 
       // }
-      {
-        hid: 'description',
-        name: 'description',
-        content: `Gospels are event based, synchronised, supported by interactive map, 
-        and completed by a merged extra "gospel" for ease of reading in its completeness`
-      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

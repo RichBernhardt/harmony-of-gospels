@@ -33,17 +33,28 @@ Jehoiachin, Shealtiel,`,
 // 15
 `Eliud, Eleazar, Matthan,`,
 // 16
-`Jacob, and Joseph, the <span style="text - decoration - line:line - through;">husband</span> [father] of Mary, the mother of Jesus, who is called the Messiah.`,
+`Jacob, and Joseph, the
+<details>
+  <summary>husband</summary>
+  <span>
+  Should read "father of Mary" (not husband)</br>
+  • To reason the different ancestors comparing to Lk 3:23-38,</br>
+  • And to give the full 14 generations</br>
+  </br>
+  <small><strong>/ This note is not part of the New Century Version /</strong></small>
+  </span>
+</details> 
+ of Mary, the mother of Jesus, who is called the Messiah.`,
 // 17
-`There were fourteen generations from Abraham to David. There were also fourteen from David to the exile in Babylonia and fourteen more to the birth of the Messiah.
-<p><small class="footnotes">
-<strong>Mt 1:16 Should read "father" not "husband" of Mary </strong></br>
-• To reason the different ancestors comparing to Lk 3:23 - 38,</br>
-• And to give the full 14 generations
-</small></p>`,
+`There were fourteen generations from Abraham to David. There were also fourteen from David to the exile in Babylonia and fourteen more to the birth of the Messiah.`,
 // 18
 `This is how the birth of Jesus Christ came about. His mother Mary was 
-<u title="For the Jewish people an engagement was a lasting agreement, which could only be broken by a divorce. If a bride-to-be was unfaithful, it was considered adultery, and she could be put to death.">engaged</u> 
+<details>
+  <summary>engaged</summary>
+  <span>
+    For the Jewish people an engagement was a lasting agreement, which could only be broken by a divorce. If a bride-to-be was unfaithful, it was considered adultery, and she could be put to death.
+  </span>
+</details> 
 to marry Joseph, but before they married, she learned she was pregnant by the power of the Holy Spirit.`,
 // 19
 `Because Mary’s husband, Joseph, was a good man, he did not want to disgrace her in public, so he planned to divorce her secretly.`,
@@ -4092,7 +4103,16 @@ John said to them, “Don’t force people to give you money, and don’t lie ab
 // 22
 `and the Holy Spirit came down on him in the form of a dove. Then a voice came from heaven, saying, “You are my Son, whom I love, and I am very pleased with you.”`,
 // 23
-`When Jesus began to preach, he was about thirty years old. Everyone thought he was the son(l) of Joseph. But his [Joseph's] family went back through Heli,`,
+`When Jesus began to preach, he was about thirty years old. Everyone thought he was the son(l) of Joseph. But
+<details>
+  <summary>his</summary>
+  <span>
+  Joseph's</br>
+  </br>
+  <small><strong>/ This note is not part of the New Century Version /</strong></small>
+  </span>
+</details>
+family went back through Heli,`,
 // 24
 `Matthat, Levi, Melchi, Jannai, Joseph,`,
 // 25
@@ -6653,12 +6673,20 @@ The day this happened was a Sabbath day.`,
 // 3
 `Jesus went up on a hill and sat down there with his followers.`,
 // 4
-`It was almost the time for the Jewish <span style="text - decoration - line:line - through;">Passover</span> [Trumpets] Feast.
-<p><small class="footnotes">
-<strong>John 6:4 misidentifies Trumpets as Passover.</strong>
-The event is in Bethsaida, 130+ km away from Jerusalem (at Passover everyone should be in Jerusalem by the Torah).
-Also, Jesus is feeding the crowd with leavened bread (not allowed at Passover).
-</small></p>`,
+`It was almost the time for the Jewish
+<details>
+  <summary>Passover Feast.</summary>
+  <span>
+  Should read "Feast of Trumpets" (not Passover)</br>
+  • During Passover, everyone should be in Jerusalem by the Torah, 
+    but the event is in Bethsaida, 120+ km away from Jerusalem.</br>
+  • Jesus is feeding the crowd with leavened bread (not allowed at Passover).</br>
+  • The Last Day and People's Resurrection are themes of Feast of Trumpets, not Passover 
+    (See the next day at Jn6:39,40,44,54)</br>
+  </br>
+  <small><strong>/ This note is not part of the New Century Version /</strong></small>
+  </span>
+</details>`,
 // 5
 `When Jesus looked up and saw a large crowd coming toward him, he said to Philip, “Where can we buy enough bread for all these people to eat?”`,
 // 6
@@ -6728,9 +6756,9 @@ Also, Jesus is feeding the crowd with leavened bread (not allowed at Passover).
 // 38
 `I came down from heaven to do what God wants me to do, not what I want to do.`,
 // 39
-`Here is what the One who sent me wants me to do: I must not lose even one whom God gave me, but <strong>I must raise them all on the last day</strong>.`,
+`Here is what the One who sent me wants me to do: I must not lose even one whom God gave me, but I must raise them all on the last day.`,
 // 40
-`Those who see the Son and believe in him have eternal life, and <strong>I will raise them on the last day</strong>. This is what my Father wants.”`,
+`Those who see the Son and believe in him have eternal life, and I will raise them on the last day. This is what my Father wants.”`,
 // 41
 `Some people began to complain about Jesus because he said, “I am the bread that comes down from heaven.”`,
 // 42
@@ -6738,7 +6766,7 @@ Also, Jesus is feeding the crowd with leavened bread (not allowed at Passover).
 // 43
 `But Jesus answered, “Stop complaining to each other.`,
 // 44
-`The Father is the One who sent me. No one can come to me unless the Father draws him to me, and <strong>I will raise that person up on the last day</strong>.`,
+`The Father is the One who sent me. No one can come to me unless the Father draws him to me, and I will raise that person up on the last day.`,
 // 45
 `It is written in the prophets, ‘They will all be taught by God.’(z) Everyone who listens to the Father and learns from him comes to me.`,
 // 46
@@ -6758,7 +6786,7 @@ Also, Jesus is feeding the crowd with leavened bread (not allowed at Passover).
 // 53
 `Jesus said, “I tell you the truth, you must eat the flesh of the Son of Man and drink his blood. Otherwise, you won’t have real life in you.`,
 // 54
-`Those who eat my flesh and drink my blood have eternal life, and <strong>I will raise them up on the last day.</strong>`,
+`Those who eat my flesh and drink my blood have eternal life, and I will raise them up on the last day.`,
 // 55
 `My flesh is true food, and my blood is true drink.`,
 // 56
@@ -6792,11 +6820,7 @@ Also, Jesus is feeding the crowd with leavened bread (not allowed at Passover).
 // 70
 `Then Jesus answered, “I chose all twelve of you, but one of you is a devil.”`,
 // 71
-`Jesus was talking about Judas, the son of Simon Iscariot. Judas was one of the twelve, but later he was going to turn against Jesus.
-<p><small class="footnotes">
-<strong>John 6:4 misidentifies Trumpets as Passover.</strong>
-The Last Day and People's Resurrection are themes of Feast of Trumpets, not Passover
-</small></p>`
+`Jesus was talking about Judas, the son of Simon Iscariot. Judas was one of the twelve, but later he was going to turn against Jesus.`
 ],
 [ // 7
 `After this, Jesus traveled around Galilee. He did not want to travel in Judea, because some evil people there wanted to kill him.`,
