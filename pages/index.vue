@@ -129,6 +129,8 @@ export default {
   }
 
   .right { 
+    /* The combination of the following two commands does not work in
+    Firefox due to a bug, but priority has been given to simplicity */
     display: table-cell;
     resize: horizontal;
     overflow: auto;

@@ -380,13 +380,17 @@ computed: {
     box-shadow: 0 2px 0 2px var(--summary);
   }
 
+  /* popup */
   .gospel-text >>> details span {
     position: absolute;
     z-index: 1;
     background-color: var(--popup);
     padding: 5px;
     box-shadow: 6px 6px 3px 3px rgba(0,0,0,50%);
-    margin-right: 10px;
+    /* https://stackoverflow.com/a/46547461 */
+    margin: 0 auto 0 0;
+    left: 10px;
+    right: 10px;
   }
 
   /* "outline-radius" without box-shadow:

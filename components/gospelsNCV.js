@@ -37,11 +37,11 @@ Jehoiachin, Shealtiel,`,
 <details>
   <summary>husband</summary>
   <span>
-  Should read "father of Mary" (not husband)</br>
-  • To reason the different ancestors comparing to Lk 3:23-38,</br>
-  • And to give the full 14 generations</br>
-  </br>
-  <small><strong>/ This note is not part of the New Century Version /</strong></small>
+    Should read "father of Mary" (not husband)</br>
+    • To reason the different ancestors comparing to Lk 3:23-38,</br>
+    • And to give the full 14 generations</br>
+    </br>
+    <small><strong>This note is not part of the New Century Version</strong></small>
   </span>
 </details> 
  of Mary, the mother of Jesus, who is called the Messiah.`,
@@ -4107,9 +4107,9 @@ John said to them, “Don’t force people to give you money, and don’t lie ab
 <details>
   <summary>his</summary>
   <span>
-  Joseph's</br>
-  </br>
-  <small><strong>/ This note is not part of the New Century Version /</strong></small>
+    Joseph's</br>
+    </br>
+    <small><strong>This note is not part of the New Century Version</strong></small>
   </span>
 </details>
 family went back through Heli,`,
@@ -6677,14 +6677,14 @@ The day this happened was a Sabbath day.`,
 <details>
   <summary>Passover Feast.</summary>
   <span>
-  Should read "Feast of Trumpets" (not Passover)</br>
-  • During Passover, everyone should be in Jerusalem by the Torah, 
-    but the event is in Bethsaida, 120+ km away from Jerusalem.</br>
-  • Jesus is feeding the crowd with leavened bread (not allowed at Passover).</br>
-  • The Last Day and People's Resurrection are themes of Feast of Trumpets, not Passover 
-    (See the next day at Jn6:39,40,44,54)</br>
-  </br>
-  <small><strong>/ This note is not part of the New Century Version /</strong></small>
+    Should read "Feast of Trumpets" (not Passover)</br>
+    • During Passover, everyone should be in Jerusalem by the Torah, 
+        but the event is in Bethsaida, 120+ km away from Jerusalem.</br>
+    • Jesus is feeding the crowd with leavened bread (not allowed at Passover).</br>
+    • The Last Day and People's Resurrection are themes of Feast of Trumpets, not Passover 
+        (See the next day at Jn6:39,40,44,54)</br>
+    </br>
+    <small><strong>This note is not part of the New Century Version</strong></small>
   </span>
 </details>`,
 // 5

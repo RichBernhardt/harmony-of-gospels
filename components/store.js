@@ -5,7 +5,7 @@
 // https://vuejs.org/v2/api/#Vue-observable
 
 import Vue from 'vue'
-import timeline from '~/components/timelineNCV.js'
+import timeline from "~/components/timelineNCV.js"
 import gospel from "~/components/gospelsNCV.js"
 
 export const store = Vue.observable({

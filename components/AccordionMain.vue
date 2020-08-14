@@ -95,7 +95,7 @@ export default {
     position: -webkit-sticky;
     top: 0px;
     z-index: 1;
-    background-color: hsl(75, 90%, 70%);
+    background-color: hsl(63, 90%, 75%);
     border-radius: 5px;
     padding-left: 5px;
     padding-right: 5px;
