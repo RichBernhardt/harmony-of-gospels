@@ -251,13 +251,13 @@ computed: {
 <style scoped>
 
   .accordion-sub {
-    background-color: lemonchiffon;
-    border: 0px none lemonchiffon;
+    --bg: hsl(60, 100%, 84%);
+    background-color: var(--bg);
     border-bottom: 1px solid darkkhaki;
   }
 
   .accordion-sub:last-child {
-    border: 0px none lemonchiffon;
+    border: none;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
   }
@@ -273,8 +273,7 @@ computed: {
     padding-right: 5px;
     min-height: 2em;
     border-radius: 5px;
-    border: 0px none lemonchiffon;
-    background-color: lemonchiffon;
+    background-color: var(--bg);
     font-family: 'Times New Roman', serif;
     font-weight: bold;
   }

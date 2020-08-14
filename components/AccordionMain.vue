@@ -80,7 +80,7 @@ export default {
   .accordion-main {
     display: flex;
     flex-direction: column;
-    background-color: lemonchiffon;
+    /* background-color: lemonchiffon; */
     border: 1px solid darkkhaki;
     border-radius: 5px;
     margin: 3px;
@@ -95,8 +95,7 @@ export default {
     position: -webkit-sticky;
     top: 0px;
     z-index: 1;
-    background-color: #edee90;
-    border: 0px none rgba(0,0,0,0);
+    background-color: hsl(75, 90%, 70%);
     border-radius: 5px;
     padding-left: 5px;
     padding-right: 5px;
