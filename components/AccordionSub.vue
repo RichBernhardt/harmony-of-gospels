@@ -34,7 +34,7 @@
         class="sole-gospel separator"
       >
         <div
-          class="ranges sticky"
+          class="ranges sticky-ranges"
         >
           <span
             v-for="range in gospels.ranges"
@@ -285,14 +285,13 @@ computed: {
     font-family: 'Times New Roman', serif;
   }
 
-  .sticky {
+  .sticky-ranges {
     justify-content: center;
     position: sticky;
     /* Safari */
     position: -webkit-sticky;
     top: 5em;
     background-color: var(--bg);
-
   }
 
   .reduced-range {
