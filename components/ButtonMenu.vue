@@ -2,8 +2,8 @@
   <svg
     tabindex="0"
     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-    width="100%" height="100%" viewBox="-70 -70 140 140" version="1.1"
-    :style="{right: buttonMapOnShow}"
+    viewBox="-70 -70 140 140" version="1.1"
+    :style="{'right': right}"
     @click.prevent="
       store.menu.onShow = !store.menu.onShow;
       store.menu.initialLoad = true;"
@@ -16,7 +16,7 @@
     @keyup.esc="store.menu.onShow = false"
   >
     <g fill="none" stroke-width=".1">
-      <circle r="70" fill="rgba(255,250,205,70%)" stroke="#000" stroke-width=".1"/>
+      <circle r="70" fill="hsla(44,100%,88%,70%)" stroke="#000" stroke-width=".1"/>
     </g>
     <image xlink:href="~assets/flagEN.svg" x="-50" y="-50" width="40%" height="40%" />
     <g fill="none" stroke="#000" stroke-width="6" transform="translate(30,-30)">
@@ -32,22 +32,29 @@
 import { store } from "~/components/store";
 
 export default {
+  props: {
+    right: {
+      type: String,
+      default: '7px'
+    }
+  },
+
   data() {
     return {
       store
     }
   },
 
-  computed: {
-    buttonMapOnShow() {
-      const right = 
-        (store.media.windowWidth - store.media.widthSplit) < 40 
-          ? "64px" 
-          : "7px";
+  // computed: {
+  //   buttonMapOnShow() {
+  //     const right = 
+  //       (store.media.windowWidth - store.media.widthSplit) < 40 
+  //         ? "64px" 
+  //         : "7px";
 
-      return right;
-    }
-  }
+  //     return right;
+  //   }
+  // }
 
 }
 </script>
@@ -64,10 +71,5 @@ export default {
     border: 1px solid gray;
     cursor: pointer;
   }
-
-  /* svg:focus {
-    border: 1px solid black;
-  } */
-
 
 </style>

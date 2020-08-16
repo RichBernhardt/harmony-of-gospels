@@ -42,9 +42,9 @@
               rel="noopener noreferrer"
               href="http://4gospels.info/"
             >
-              4gospels.info.<span 
+              4gospels.info<span 
                 style="display: inline-block; transform: scale(-1,1);">⇱</span>
-            </a> 
+            </a>. 
             There are many alterations regarding the timeline, 
             however, the basic principle that organising the events based on feasts, 
             has been greatly utilised. Time is referenced in weeks and clearly 
@@ -228,6 +228,7 @@
       </details>
 
     </main>
+    <ButtonMenu />
   </div>
 </template>
 
@@ -251,7 +252,7 @@ export default {
   .root {
     display:flex;
     justify-content: center;
-    background-color: lemonchiffon;
+    background-color: hsl(44,100%,88%);
     padding: 10px;
     font-family: 'DejaVu Serif', serif;
     /* https://stackoverflow.com/a/20818206/ */
@@ -267,8 +268,8 @@ export default {
   summary {
     font-size: 1.5em;
     font-weight: bold;
-    margin: 0;
-    padding: 10px;
+    margin: 10px;
+    padding: 5px;
     outline: none;
   }
 

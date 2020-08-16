@@ -12,7 +12,7 @@
     </div>
     <div
       v-show="!expanded"
-      class="range-wrapper-header"
+      class="ranges"
       @click.prevent="atHeaderClick();"
     >
       <span
@@ -34,7 +34,7 @@
         class="sole-gospel separator"
       >
         <div
-          class="range-wrapper-gospel"
+          class="ranges sticky"
         >
           <span
             v-for="range in gospels.ranges"
@@ -251,7 +251,7 @@ computed: {
 <style scoped>
 
   .accordion-sub {
-    --bg: hsl(60, 100%, 84%);
+    --bg: hsl(44, 100%, 88%);
     background-color: var(--bg);
     border-bottom: 1px solid darkkhaki;
   }
@@ -269,29 +269,30 @@ computed: {
     /* Safari */
     position: -webkit-sticky;
     top: 3em;
+    background-color: var(--bg);
     padding-left: 5px;
     padding-right: 5px;
     min-height: 2em;
     border-radius: 5px;
-    background-color: var(--bg);
     font-family: 'Times New Roman', serif;
     font-weight: bold;
   }
 
-  .range-wrapper-header {
+  .ranges {
     display: flex;
-    justify-content: flex-start;
+    flex-wrap: wrap;
     font-size: 0.9em;
     font-family: 'Times New Roman', serif;
   }
 
-  .range-wrapper-gospel {
-    display: flex;
-    flex-wrap: wrap;
+  .sticky {
     justify-content: center;
-    font-weight: normal;
-    font-size: 0.9em;
-    font-family: 'Times New Roman', serif;
+    position: sticky;
+    /* Safari */
+    position: -webkit-sticky;
+    top: 5em;
+    background-color: var(--bg);
+
   }
 
   .reduced-range {

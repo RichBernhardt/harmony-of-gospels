@@ -138,7 +138,7 @@ const timeline = [
   {"Week 18-31 | The Galilean Ministry Goes On":
     [
       ["w18-31 | Jesus Calms A Storm","lake-galilee",[["LK",8,23,25]],[["MT",8,24,27]],[["MK",4,37,41]]],
-      ["w18-31 | The Demoniacs Of Gadara","gadara",[["MK",5,1,20]],[["MT",8,28,34]],[["LK",8,26,39]]],
+      ["w18-31 | The Demoniacs Of Gadara","decapolis-shore",[["MK",5,1,20]],[["MT",8,28,34]],[["LK",8,26,39]]],
       ["w18-31 | Back To The Galilee Side Of The Lake","galilee-shore",[["LK",8,40,40]],[["MT",9,1,1]],[["MK",5,21,21]]],
       ["w18-31 | Raises Jairus' Daughter","galilee",[["MK",5,22,24],["LK",8,43,56]],[["MT",9,18,26]],[["MK",5,22,43]],[["LK",8,41,56]]],
       ["w18-31 | John Asks For Affirmation From Jesus","galilee",[["MT",11,2,6]],[["LK",7,18,23]]],

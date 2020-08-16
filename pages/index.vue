@@ -20,6 +20,7 @@
       />
     <Map />
     <ButtonMap />
+    <ButtonMenu v-bind="{right: buttonMenuPosition}" />
   </main>
 </template>
 
@@ -52,7 +53,16 @@ export default {
         : 0;
 
       return style;
-    }
+    },
+
+    buttonMenuPosition() {
+      const right = 
+        (store.media.windowWidth - store.media.widthSplit) < 40 
+          ? "64px" 
+          : "7px";
+      return right;
+    },
+
   },
 
   
@@ -77,7 +87,7 @@ export default {
     onResize() {
       store.media.windowWidth = window.innerWidth;
       store.media.windowHeight = window.innerHeight;
-      // This is not too elegant for bypassing '"split-left" is null' when
+      // This is not too elegant to bypass '"split-left" is null' when
       // switching to the About page, but I haven't found any better yet.
       store.media.widthSplit =
         ( document.getElementById("split-left") )

@@ -6807,7 +6807,7 @@ Mivel ez szombaton történt,`,
 // 25  ~ Én vagyok az élet kenyere ~ 
 `Amikor rátaláltak Jézusra a túlsó parton, megkérdezték tőle: „Mester, mikor jöttél ide?”`,
 // 26  
-`Jézus ezt válaszolta: „Igazán mondom nektek: nem azért kerestek engem, mert láttátok csodákat, hanem mert ettetek a kenyérből, és jóllaktatok.`,
+`Jézus ezt válaszolta: „Igazán mondom nektek: nem azért kerestek engem, mert láttatok csodákat, hanem mert ettetek a kenyérből, és jóllaktatok.`,
 // 27  
 `Ne azon igyekezzetek, hogy ilyen földi kenyeret kapjatok, amely mulandó! Inkább arra törekedjetek, hogy olyan kenyeret szerezzetek, amely örökké megmarad, és örök életet ad! Ezt a kenyeret majd az Emberfia adja nektek, mert ő az, akit Isten erre felhatalmazott.”`,
 // 28  

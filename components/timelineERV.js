@@ -138,7 +138,7 @@ const timeline = [
   {"18-31. Hét | A Galileai Szolgálat Folytatódik":
     [
       ["18-31. Hét | Jézus Lecsendesíti A Vihart","lake-galilee",[["LK",8,23,25]],[["MT",8,24,27]],[["MK",4,37,41]]],
-      ["18-31. Hét | Gadarai Démonok","gadara",[["MK",5,1,20]],[["MT",8,28,34]],[["LK",8,26,39]]],
+      ["18-31. Hét | Gadarai Démonok","decapolis-shore",[["MK",5,1,20]],[["MT",8,28,34]],[["LK",8,26,39]]],
       ["18-31. Hét | Vissza A Tó Galileai Partjára","galilee-shore",[["LK",8,40,40]],[["MT",9,1,1]],[["MK",5,21,21]]],
       ["18-31. Hét | Feltámasztja Jairus Lányát","galilee",[["MK",5,22,24],["LK",8,43,56]],[["MT",9,18,26]],[["MK",5,22,43]],[["LK",8,41,56]]],
       ["18-31. Hét | János Megerősítést Kér Jézustól","galilee",[["MT",11,2,6]],[["LK",7,18,23]]],
