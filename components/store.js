@@ -18,7 +18,7 @@ export const store = Vue.observable({
     JN: gospel.jn,
     ACT: gospel.act,
     parallelCurrent: 1,
-    parallelMax: "",
+    parallelMax: 1,
     widthMin: 160, // = 20ch
     // https://michaelnthiessen.com/key-changing-technique/
     keyToRerenderOnVersionSwitch: 0,
@@ -28,10 +28,9 @@ export const store = Vue.observable({
     onShow: false,
   },
   media: {
-    windowWidth: "", // fed by index.vue
-    windowHeight: "", // fed by index.vue
-    hasPointer: "",
-    widthSplit: "",
+    windowWidth: 0, // fed by index.vue
+    windowHeight: 0, // fed by index.vue
+    splitWidth: 0,
   },
   menu: {
     initialLoad: false,

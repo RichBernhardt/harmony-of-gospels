@@ -1,9 +1,11 @@
 <template>
-    <main class="split-view"
-        :key="store.gospels.keyToRerenderOnVersionSwitch" >
+    <main
+      id="split-view"
+      :key="store.gospels.keyToRerenderOnVersionSwitch"
+    >
       <div
-        id="split-left"
-        class="left" 
+        class="split-cell"
+        :style="{'width': store.media.splitWidth + 'px'}"
       >
         <AccordionMain
           v-for="(group,groupIndex) in store.timeline"
@@ -14,13 +16,16 @@
           }"
         />
       </div>
-      <div
-        class="right"
-        :style="{'width': splitPosition + 'px'}"
-      />
+      <div class="split-cell" />
     <Map />
-    <ButtonMap />
-    <ButtonMenu v-bind="{right: buttonMenuPosition}" />
+    <ButtonMap v-bind="{ buttonMapOnShow }" />
+    <ButtonMenu v-bind="{ buttonMapOnShow }" />
+    <input
+      id="split-grabber"
+      v-model="store.media.splitWidth"
+      type="range" 
+      :max="store.media.windowWidth-16"
+    >
   </main>
 </template>
 
@@ -28,56 +33,30 @@
 import { store } from "~/components/store";
 export default {
 
-  data () {
-    return {
-      store,
-      // https://stackoverflow.com/a/60888674
-      ResizeObserver: null,
-    }
-  },
+  data: () => ({
+    store
+  }),
     
     
   computed: {
-    splitPosition() { // 0.4 ≈ SVG map height/width x 2/3
-      const style = (
-        // portrait map details are easy to see from:
-        (store.media.windowHeight > 528) &&
-        // and if there's room for at least
-        // two parallel gospels next to the map
-        ((store.media.windowWidth - store.media.windowHeight * 0.4) > 
-          (store.gospels.widthMin * 2)) &&
-        // and if there is a pointing device available
-        (store.media.hasPointer)
-      )
-        ? store.media.windowHeight * 0.4
-        : 0;
-
-      return style;
+    buttonMapOnShow() {
+      return store.media.splitWidth > 
+          store.media.windowWidth - store.media.windowHeight * 0.4
     },
+  },
 
-    buttonMenuPosition() {
-      const right = 
-        (store.media.windowWidth - store.media.widthSplit) < 40 
-          ? "64px" 
-          : "7px";
-      return right;
-    },
 
+  watch: {
+    'store.media.splitWidth': 'setParallelGospels'
   },
 
   
   mounted() {
-    // https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Testing_media_queries
-    store.media.hasPointer = !window.matchMedia("(pointer: none)").matches;
-
     // https://stackoverflow.com/a/47219938
     // https://stackoverflow.com/a/44779316
-    window.addEventListener('resize', () => {
-      requestAnimationFrame(this.onResize)});
-    
-    // https://stackoverflow.com/a/60888674
-    this.ResizeObserver = new ResizeObserver(this.onResize)
-      .observe(document.getElementById("split-left"));
+    window
+      .addEventListener('resize', () => {
+        requestAnimationFrame(this.onResize)});
 
     requestAnimationFrame(this.onResize);
   },
@@ -87,17 +66,29 @@ export default {
     onResize() {
       store.media.windowWidth = window.innerWidth;
       store.media.windowHeight = window.innerHeight;
-      // This is not too elegant to bypass '"split-left" is null' when
-      // switching to the About page, but I haven't found any better yet.
-      store.media.widthSplit =
-        ( document.getElementById("split-left") )
-        ? document.getElementById("split-left").offsetWidth
-        : store.media.widthSplit;
+     
+      // The treshold of width of split view
+      ( // portrait map details are easy to see from:
+        (store.media.windowHeight > 528) &&
+        // and if there's room for at least
+        // two parallel gospels next to the map
+        // (0.4 ≈ SVG map height/width x 2/3)
+        ((store.media.windowWidth - store.media.windowHeight * 0.4) > 
+          (store.gospels.widthMin * 2))
+      )
+        ? store.media.splitWidth = 
+            store.media.windowWidth - store.media.windowHeight * 0.4
+        : store.media.splitWidth = store.media.windowWidth;
+      
+      this.setParallelGospels();
+    },
 
+
+    setParallelGospels() {
       store.gospels.parallelMax =
         Math.min(
           5, // the maximum we need is five: default, mt, mk, lk, jn
-          Math.floor( store.media.widthSplit / store.gospels.widthMin )
+          Math.floor( store.media.splitWidth / store.gospels.widthMin )
         );
         
       if (store.gospels.parallelCurrent > store.gospels.parallelMax) {
@@ -129,38 +120,46 @@ export default {
 
   /* https://stackoverflow.com/a/34569741 */
   /* https://stackoverflow.com/questions/12266262/position-sticky-on-thead#comment88299740_12456444 */
-  .split-view {
+  #split-view {
     width: 100%;
     display: table;
   }
 
-  .left {
+  .split-cell {
     display: table-cell;
   }
 
-  .right { 
-    /* The combination of the following two commands does not work in
-    Firefox due to a bug, but priority has been given to simplicity */
-    display: table-cell;
-    resize: horizontal;
-    overflow: auto;
-    /* One reason employing "resize" on the right side panel
-    is that the children of the other side (left) panel are the
-    accordions which have sticky headers. And sticky headers
-    require overflow to be visible, while resize
-    require overflow to be anything but visible:
-    https://caniuse.com/#feat=css-sticky.
-    The other reason is that by rotating this right side panel the
-    draggable corner can be on the top center which I think is better 
-    than on the bottom right corner (not even on view at page load): */
-    transform: rotate(180deg);
-    border-right: solid gray 1px;
+  #split-grabber {
+    pointer-events: none;
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 100vh;
+    background: transparent;
+    outline: none;
   }
 
-  .right::-webkit-resizer {
-    border-width: 8px;
-    border-style: solid;
-    border-color: transparent orangered orangered transparent;
+  #split-grabber::-webkit-slider-thumb {
+    pointer-events: auto;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 5px;
+    height: 100vh;
+    background: lightgray;
+    box-shadow: 1px 2px 2px 0px gray;
+    cursor: col-resize;
+  }
+
+  #split-grabber::-moz-range-thumb {
+    pointer-events: auto;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 4px;
+    height: 100vh;
+    background: lightgray;
+    box-shadow: 1px 0px 1px 1px gray;
+    cursor: col-resize;
   }
 
 </style>

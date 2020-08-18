@@ -1,5 +1,5 @@
 <svg
-  viewBox="-135 -90 270 180" version="1.1" 
+  viewBox="-135 -90 270 180" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   >
 
@@ -17,7 +17,7 @@
   <use stroke="red" stroke-width="20" xlink:href="#p0"/>
 
   <g id="p1m">
-    <path id="p1" d="m-135 40h90c90 0 90 40 180 40" fill="none"/>
+    <path id="p1" d="m-135 40h90c90 0 90 40 180 40" fill="none" clip-path="url(#w)"/>
     <use stroke="ivory" stroke-width="41" xlink:href="#p1"/>
     <use stroke="red" stroke-width="20" xlink:href="#p1"/>
   </g>

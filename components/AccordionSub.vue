@@ -77,7 +77,7 @@ export default {
   props: {
     groupIndex: Number,
     groupTitle: String,
-    eventIndex: Number
+    eventIndex: Number,
   },
 
   data () {

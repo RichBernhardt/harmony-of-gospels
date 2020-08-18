@@ -1,16 +1,19 @@
 <template>
   <span
-    v-show="(store.media.windowWidth - store.media.widthSplit) < 40"
-    @click.prevent="store.map.onShow = ! store.map.onShow"
+    v-show="buttonMapOnShow"
     :class="['map-toggle', (store.map.onShow) ? 'toggleText' : 'toggleMap']"
-    >
-  </span>
+    @click.prevent="store.map.onShow = ! store.map.onShow"
+  />
 </template>
 
 <script>
 import { store } from "~/components/store";
 
 export default {
+
+  props: {
+    buttonMapOnShow: Boolean
+  },
 
   data() {
     return {
@@ -26,7 +29,6 @@ export default {
   .map-toggle {
     position: fixed;
     z-index: 3;
-    /* top: 10px; */
     bottom: 10px;
     right: 7px;
     width: 50px;

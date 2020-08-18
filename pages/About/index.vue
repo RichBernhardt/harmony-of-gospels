@@ -2,7 +2,6 @@
 <!-- The folder (About) must start with capital letter! -->
   <div class="root">
     <main>
-
       <details>
         <summary>Movie</summary>
         <section 
@@ -92,7 +91,7 @@
           <p>
             <!-- https://ktquez.github.io/vue-disqus/setup.html#installation -->
             <!-- https://harmony-of-gospels.disqus.com/admin/install/settings/ -->
-            <Disqus shortname='harmony-of-gospels' />
+            <Disqus shortname="harmony-of-gospels" />
           </p>
           <p>
             In case the nature of your say is private, you can get in contact via 
@@ -130,7 +129,7 @@
           <p>
             The English version is the New Century Version® (NCV). 
             Copyright © 2005 by Thomas Nelson, Inc.
-            <br/>
+            <br>
             Except chapter 'The Family History Of Jesus', which uses the 
             Contemporary English Version (CEV) for brevity. Copyright © 
             1995 by American Bible Society.
@@ -205,28 +204,27 @@
               method="post" 
               target="_top"
             >
-              <input type="hidden" name="cmd" value="_s-xclick" />
-              <input type="hidden" name="hosted_button_id" value="9E49B7XKJ347S" />
+              <input type="hidden" name="cmd" value="_s-xclick">
+              <input type="hidden" name="hosted_button_id" value="9E49B7XKJ347S">
               <input 
                 type="image" 
                 src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" 
                 border="0" 
                 name="submit" 
                 title="PayPal - The safer, easier way to pay online!" 
-                alt="Donate with PayPal button" />
+                alt="Donate with PayPal button">
               <img 
                 alt="" 
                 border="0" 
                 src="https://www.paypal.com/en_GB/i/scr/pixel.gif" 
                 width="1" 
-                height="1" />
+                height="1">
             </form>
             <p>
               Thank you!
             </p>
         </section>
       </details>
-
     </main>
     <ButtonMenu />
   </div>

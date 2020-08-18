@@ -48,7 +48,8 @@
         v-bind="{ 
           groupIndex,
           groupTitle,
-          eventIndex }"
+          eventIndex
+        }"
       />
     </template>
   </div>
@@ -61,7 +62,7 @@ export default {
 
   props: {
     groupIndex: Number,
-    groupTitle: String
+    groupTitle: String,
   },
 
   data() {
@@ -80,7 +81,6 @@ export default {
   .accordion-main {
     display: flex;
     flex-direction: column;
-    /* background-color: lemonchiffon; */
     border: 1px solid darkkhaki;
     border-radius: 5px;
     margin: 3px;

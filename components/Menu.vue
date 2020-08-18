@@ -1,22 +1,23 @@
 <template>
   <div
-    class="modal horizontal"
     v-show="store.menu.onShow"
+    class="modal horizontal"
     @keyup.esc="store.menu.onShow = false"
   >
     <div class="accordion">
       <div 
         class="selectable"
         style="margin: 0;"
+        tabindex="0"
         @click.prevent="versionsOnShow = !versionsOnShow"
         @keyup.space="versionsOnShow = !versionsOnShow"
-        tabindex="0"
-      >Switch Version
-      <img src="~assets/flagEN.svg" />
+      >
+        Switch Version
+      <img src="~assets/flagEN.svg">
       </div>
       <div 
-        class="version"
         v-show="versionsOnShow"
+        class="version"
         tabindex="0"
         @click.prevent="
           store.menu.onShow = !store.menu.onShow;
@@ -27,12 +28,12 @@
           versionsOnShow = !versionsOnShow;
           switchVersion('NCV');"
       >
-        <img src="~assets/flagEN.svg" />
+        <img src="~assets/flagEN.svg">
         EN-NCV
       </div>
       <div 
-        class="version"
         v-show="versionsOnShow"
+        class="version"
         tabindex="0"
         @click.prevent="
           store.menu.onShow = !store.menu.onShow;
@@ -43,24 +44,24 @@
           versionsOnShow = !versionsOnShow;
           switchVersion('ERV');"
       >
-        <img src="~assets/flagHU.svg" />
+        <img src="~assets/flagHU.svg">
         HU-ERV
       </div>
     </div>
     <!-- https://github.com/nuxt/nuxt.js/issues/1786#issuecomment-334446353 -->
     <nuxt-link
-      @click.prevent.native="store.menu.onShow = !store.menu.onShow"
-      @keyup.enter="store.menu.onShow = !store.menu.onShow"
       to="/about"
       class="selectable"
+      @click.prevent.native="store.menu.onShow = !store.menu.onShow"
+      @keyup.enter="store.menu.onShow = !store.menu.onShow"
     >
       About
     </nuxt-link>
     <nuxt-link
-      @click.prevent.native="store.menu.onShow = !store.menu.onShow"
-      @keyup.enter="store.menu.onShow = !store.menu.onShow"
       to="/"
       class="selectable"
+      @click.prevent.native="store.menu.onShow = !store.menu.onShow"
+      @keyup.enter="store.menu.onShow = !store.menu.onShow"
     >
       Gospels
     </nuxt-link>
@@ -181,8 +182,8 @@ export default {
   }
 
   img {
-    width: 15%;
-    height:15%;
+    width: 3rem;
+    height:1.5rem;
   }
 
 </style>
