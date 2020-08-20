@@ -1,5 +1,4 @@
 # gospelsharmony
-Harmony of Gospels
 https://harmony-of-gospels.com
 
 To do:
