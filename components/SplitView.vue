@@ -10,11 +10,12 @@
 
     <article />
 
+    <!-- https://stackoverflow.com/a/63473733/ -->
     <input
       id="split-grabber"
       v-model="store.media.splitWidth"
       type="range"
-      :max="store.media.windowWidth-16"
+      :max="store.media.windowWidth * 0.98"
     >
   </main>
 </template>
@@ -100,9 +101,10 @@ export default {
   #split-grabber {
     pointer-events: none;
     position: fixed;
-    top: 0; right: 0; bottom: 0; left: 0;
+    top: 0; bottom: 0; left: 0;
     -webkit-appearance: none;
-    width: 100%;
+    /* Safari allows dragging behind scroll bar */
+    width: calc(100% - 12px);
     height: 100vh;
     background: transparent;
     outline: none;
