@@ -1,20 +1,22 @@
 <template>
-  <main id="split-view">
+  <main>
     <article
       id="split-left"
       :key="store.gospels.keyToRerenderOnVersionSwitch"
-      :style="{'width': store.media.splitWidth + 'px'}"
+      :style="{'flex': flexRatio}"
     >
       <slot />
     </article>
 
-    <article />
+    <article
+      :style="{'flex': 1-flexRatio}"
+    />
 
     <input
       id="split-grabber"
       v-model="store.media.splitWidth"
       type="range"
-      :max="store.media.windowWidth-16"
+      :max="store.media.windowWidth"
     >
   </main>
 </template>
@@ -41,6 +43,13 @@ export default {
         requestAnimationFrame(this.onWindowResize)});
 
     requestAnimationFrame(this.onWindowResize);
+  },
+
+
+  computed: {
+    flexRatio() {
+      return store.media.splitWidth / store.media.windowWidth * 0.99;
+    }
   },
 
 
@@ -88,13 +97,9 @@ export default {
 
   /* https://stackoverflow.com/a/34569741 */
   /* https://stackoverflow.com/questions/12266262/position-sticky-on-thead#comment88299740_12456444 */
-  #split-view {
+  main {
+    display: flex;
     width: 100%;
-    display: table;
-  }
-
-  article {
-    display: table-cell;
   }
 
   #split-grabber {
@@ -102,7 +107,8 @@ export default {
     position: fixed;
     top: 0; right: 0; bottom: 0; left: 0;
     -webkit-appearance: none;
-    width: 100%;
+    /* Safari allows dragging behind scroll bar */
+    width: calc(100% - 12px);
     height: 100vh;
     background: transparent;
     outline: none;
