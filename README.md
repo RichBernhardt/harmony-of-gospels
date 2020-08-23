@@ -1,4 +1,3 @@
-# gospelsharmony
 https://harmony-of-gospels.com
 
 https://harmony-of-gospels.netlify.app
@@ -16,4 +15,4 @@ To do:
   <li>Search field</li>
 </ul>
 
-I am looking for a job: https://my.indeed.com/p/richb-2lbaxux
+<h2>I am looking for a job: https://my.indeed.com/p/richb-2lbaxux<h2>
