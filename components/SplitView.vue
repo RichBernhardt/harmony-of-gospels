@@ -17,7 +17,7 @@
       id="split-grabber"
       v-model="store.media.splitWidth"
       type="range"
-      :max="store.media.windowWidth * 0.98"
+      :max="store.media.windowWidth"
     >
   </main>
 </template>
