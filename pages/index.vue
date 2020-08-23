@@ -40,7 +40,7 @@ export default {
   /* https://css-tricks.com/forums/topic/border-radius-for-outline/ */
   :focus {
     outline: none;
-    /* box-shadow: 0 0 3px 0 black; */
+    filter: brightness(95%);
   }
 
   html {

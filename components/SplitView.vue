@@ -49,7 +49,7 @@ export default {
 
   computed: {
     flexRatio() {
-      return store.media.splitWidth / store.media.windowWidth * 0.99;
+      return store.media.splitWidth / store.media.windowWidth * 0.989;
     }
   },
 

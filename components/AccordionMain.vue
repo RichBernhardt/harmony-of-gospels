@@ -1,49 +1,30 @@
 <template>
-  <div
-    class="accordion-main"
-    v-bind="{ expanded }"
-  >
-      <div 
-        :class="['main-header', expanded ? 'expanded' : '']"
-        tabindex="0"
-        @keyup.space="expanded = ! expanded; expandFirst = true;"
-      
-      >
+  <details>
+    <summary @click="expandFirst = true">
+        <!-- Safari can render <summary> width single root only -->
+      <header>
         <div
           class="title"
-          @click.prevent="expanded = ! expanded; expandFirst = true;"
           v-text="groupTitle"
         />
-        <div
-          v-show="expanded"
-          class="buttons">
-          <span
-            class="button"
-            tabindex="0"
-            @click.prevent="
+        <nav>
+          <button
+            @click="
               if( store.gospels.parallelCurrent > 1 )
                 store.gospels.parallelCurrent--"
-            @keyup.space="
-              if( store.gospels.parallelCurrent > 1 )
-                store.gospels.parallelCurrent--"
-            >–</span>
-          <span
-            class="button"
-            tabindex="0"
-            @click.prevent="
+            >–</button>
+          <button
+            @click="
               if( store.gospels.parallelCurrent < store.gospels.parallelMax )
                 store.gospels.parallelCurrent++"
-            @keyup.space="
-              if( store.gospels.parallelCurrent < store.gospels.parallelMax )
-                store.gospels.parallelCurrent++"
-            >+</span>
-        </div>
-      </div>
-    <!-- Minimise initial DOM nodes for quick page loading -->
+            >+</button>
+        </nav>
+      </header>
+    </summary>
+
     <template v-if="expandFirst">
       <AccordionSub
         v-for="(event,eventIndex) in store.timeline[groupIndex][groupTitle]"
-        v-show="expanded"
         :key="eventIndex"
         v-bind="{ 
           groupIndex,
@@ -52,7 +33,8 @@
         }"
       />
     </template>
-  </div>
+
+  </details>
 </template>
 
 <script>
@@ -68,7 +50,6 @@ export default {
   data() {
     return {
       store,
-      expanded: false,
       expandFirst: false,
     }
   },
@@ -78,49 +59,66 @@ export default {
 
 <style scoped>
 
-  .accordion-main {
+  details {
+    all: unset;
     display: flex;
-    flex-direction: column;
     border: 1px solid darkkhaki;
     border-radius: 5px;
     margin: 3px;
+    cursor: default;
   }
 
-  .main-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary {
     position: sticky;
     /* Safari */
     position: -webkit-sticky;
     top: 0px;
     z-index: 1;
-    background-color: hsl(63, 90%, 75%);
     border-radius: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
   }
 
-  .expanded {
+  details[open] summary {
     border-bottom: 1px solid darkkhaki;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: hsl(63, 90%, 75%);
+    border-radius: 5px;
   }
 
   .title {
     display: flex;
+    align-items: center;
     flex: 1;
     min-height: 3em;
-    align-items: center;
     text-align: left;
     font-weight: bold;
     font-family: 'Times New Roman', serif;
   }
 
-  .buttons {
+  nav {
     display: flex;
     align-items: center;
   }
 
-  .button {
+  details[open] nav {
+    visibility: visible;
+  }
+
+  details:not([open]) nav {
+    visibility: hidden;
+  }
+
+  button {
+    all: unset;
     display: inline-block;
     text-align: center;
     width: 1.125em;
@@ -129,10 +127,15 @@ export default {
     padding: 0;
     margin: 0;
     cursor: pointer;
+    background-color: hsl(63, 90%, 75%);
   }
 
-  .button:active {
-    background-color: orangered;
+  button:active {
+    background-color: hsl(16, 100%, 75%);
+  }
+
+  button:focus {
+    filter: brightness(95%);
   }
 
 </style>
