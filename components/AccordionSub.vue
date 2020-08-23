@@ -1,48 +1,41 @@
 <template>
-  <div 
-    class="accordion-sub" v-bind="{ expanded }"    
-  >
-    <div
-      class="header"
-      tabindex="0"
-      @click.prevent="atHeaderClick();"
-      @keyup.space="atHeaderClick();"
-    >
-      {{ store.timeline[groupIndex][groupTitle][eventIndex][0] }}
-    </div>
-    <div
-      v-show="!expanded"
-      class="ranges"
-      @click.prevent="atHeaderClick();"
-    >
-      <span
-        v-for="reducedRange in reducedRanges"
-        :key="reducedRange.indexInitial"
-        class="reduced-range"
-      >
-        {{ reducedRange.range }}
-      </span>
-    </div>
-    <div 
-      :key="keyToForceRerender"
-      class="all-gospel"
-    >
+  <details>
+    <summary @click="atHeaderClick()">
+      <!-- Safari can render <summary> width single root only -->
+      <header>
+        <div
+          class="title"
+          v-text="store.timeline[groupIndex][groupTitle][eventIndex][0]"
+        />
+        <div class="ranges">
+          <span
+            v-for="reducedRange in reducedRanges"
+            :key="reducedRange.indexInitial"
+            class="reduced-range"
+            v-text="reducedRange.range"
+          />
+        </div>
+      </header>
+    </summary>
+
+    <section :key="keyToForceRerender">
       <div
         v-for="author in gospels.authors"
-        v-show="expanded && (author.indexCurrent + 1 <= store.gospels.parallelCurrent)"
+        v-show="author.indexCurrent + 1 <= store.gospels.parallelCurrent"
         :key="author.indexCurrent"
-        class="sole-gospel separator"
+        class="gospel"
       >
-        <div
-          class="ranges sticky-ranges"
-        >
-          <span
+        <div class="ranges sticky-ranges">
+            <!-- tabindex="0" -->
+          <!-- https://stackoverflow.com/a/925252 -->
+          <a
             v-for="range in gospels.ranges"
             :key="range.indexCurrent"
-            tabindex="0"
+            href="javascript:"
+            v-text="range.range"
             :class="[
               'range', 
-              (range.indexInitial === author.indexInitial) ? 'self' : 'selectable'
+              (range.indexInitial === author.indexInitial) ? 'self' : ''
             ]"
             @click.prevent="swapGospels({
               rangeInitial: range.indexInitial,
@@ -56,17 +49,16 @@
               authorInitial: author.indexInitial,
               authorCurrent: author.indexCurrent,
             })"
-          >
-            {{ range.range }}
-          </span>
+          />
         </div>
         <div
           class="gospel-text"
+          tabindex="-1"
           v-html="author.gospel"
         />
       </div>
-    </div>
-  </div>
+    </section>
+  </details>
 </template>
 
 <script>
@@ -83,7 +75,6 @@ export default {
   data () {
     return {
       store,
-      expanded: false,
       gospels: {
         ranges: [],
         authors: []
@@ -114,8 +105,14 @@ computed: {
   methods: {
     
     atHeaderClick() {
-      this.expanded = !this.expanded;
+      // this.expanded = !this.expanded;
       this.setLocation();
+      // https://www.w3schools.com/jsref/prop_details_open.asp
+      // https://stackoverflow.com/a/52607333/  
+      // if(this.parentElement.getAttribute('open')!='open')
+      // https://github.com/wet-boew/wet-boew/issues/5369
+      // if (details.open) { details.open = false; }
+      // else { details.open = true; }
       if(this.gospels.authors.length === 0) {
         this.createGospels()
       };
@@ -250,39 +247,62 @@ computed: {
 
 <style scoped>
 
-  .accordion-sub {
+  details {
+    all: unset;
+    display: flex;
     --bg: hsl(44, 100%, 88%);
     background-color: var(--bg);
     border-bottom: 1px solid darkkhaki;
+    cursor: default;
   }
 
-  .accordion-sub:last-child {
+  details:last-child {
     border: none;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
   }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
  
-  .header {
-    display: flex;
-    align-items: center;
+  summary {
     position: sticky;
     /* Safari */
     position: -webkit-sticky;
     top: 3em;
     background-color: var(--bg);
-    padding-left: 5px;
-    padding-right: 5px;
-    min-height: 2em;
     border-radius: 5px;
     font-family: 'Times New Roman', serif;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
     font-weight: bold;
+    min-height: 2em;
   }
 
   .ranges {
     display: flex;
     flex-wrap: wrap;
     font-size: 0.9em;
-    font-family: 'Times New Roman', serif;
+  }
+
+  details[open] header .ranges {
+    display: none;
+  }
+
+  details:not([open]) header .ranges {
+    display: flex;
   }
 
   .sticky-ranges {
@@ -295,8 +315,7 @@ computed: {
   }
 
   .reduced-range {
-    padding-left: 7px;
-    padding-right: 7px;
+    padding-right: 14px;
   }
 
   .range {
@@ -304,29 +323,24 @@ computed: {
     padding-right: 7px;
     padding-top: 5px;
     padding-bottom: 5px;
+    background-color: var(--bg);
   }
 
-  .selectable {
+  a:visited {
     color:blue;
-    text-decoration: underline;
-    cursor: pointer;
   }
 
   .self {
     font-weight: bold;
-    /* https://stackoverflow.com/a/28083939 */
-    /* https://css-tricks.com/almanac/properties/p/pointer-events/ */
-    pointer-events: none;
-    cursor: none;
     color:inherit;
     text-decoration: inherit;
   }
 
-  .all-gospel {
+  section {
     display: flex;
   }
 
-  .sole-gospel {
+  .gospel {
     flex: 1;
     padding-left: 7px;
     padding-right: 7px;
@@ -334,7 +348,7 @@ computed: {
   }
 
   /* https://stackoverflow.com/a/47824568 */
-  .separator:not(:first-child) {
+  .gospel:not(:first-child) {
     border-left: solid gray 1px;
   }
 
