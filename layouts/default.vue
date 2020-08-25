@@ -15,3 +15,12 @@ export default {
     })
 }
 </script>
+
+<style>
+
+:root {
+  --bg-light: hsl(44, 100%, 88%);
+  --bg-main-accordion-header: hsl(63, 90%, 75%);
+}
+
+</style>

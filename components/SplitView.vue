@@ -9,11 +9,13 @@
     </article>
 
     <article
+      v-show="isSplitView"
       :style="{'flex': 1-flexRatio}"
     />
 
     <!-- https://stackoverflow.com/a/63473733/ -->
     <input
+      v-show="isSplitView"
       id="split-grabber"
       v-model="store.media.splitWidth"
       type="range"
@@ -24,13 +26,32 @@
 
 <script>
 import { store } from "~/components/store";
-export default {
 
+export default {
   data: () => ({
     store
   }),
     
-      
+
+  computed: {
+    flexRatio() {
+      // return store.media.splitWidth / (store.media.windowWidth + 18);
+      return store.media.splitWidth / store.media.windowWidth * 0.987;
+    },
+
+    isSplitView() {
+      return (
+        // Portrait map details are easy to see from:
+        store.media.windowHeight > 528) &&
+        // and if there's room for at least
+        // two parallel gospels next to the map
+        // (0.4 ≈ SVG map height/width x 2/3)
+        ((store.media.windowWidth - store.media.windowHeight * 0.4) > 
+          (store.gospels.widthMin * 2))
+    }
+  },
+
+
   watch: {
     'store.media.splitWidth': 'onSplitViewResize'
   },
@@ -47,28 +68,13 @@ export default {
   },
 
 
-  computed: {
-    flexRatio() {
-      return store.media.splitWidth / store.media.windowWidth * 0.989;
-    }
-  },
-
-
   methods: {
 
     onWindowResize() {
       store.media.windowWidth = window.innerWidth;
       store.media.windowHeight = window.innerHeight;
      
-      // The treshold-width of split view.
-      ( // Portrait map details are easy to see from:
-        (store.media.windowHeight > 528) &&
-        // and if there's room for at least
-        // two parallel gospels next to the map
-        // (0.4 ≈ SVG map height/width x 2/3)
-        ((store.media.windowWidth - store.media.windowHeight * 0.4) > 
-          (store.gospels.widthMin * 2))
-      )
+      (this.isSplitView)
         ? store.media.splitWidth = 
             store.media.windowWidth - store.media.windowHeight * 0.4
         : store.media.splitWidth = store.media.windowWidth;
@@ -95,9 +101,6 @@ export default {
 </script>
 
 <style scoped>
-
-  /* https://stackoverflow.com/a/34569741 */
-  /* https://stackoverflow.com/questions/12266262/position-sticky-on-thead#comment88299740_12456444 */
   main {
     display: flex;
     width: 100%;
@@ -113,6 +116,7 @@ export default {
     height: 100vh;
     background: transparent;
     outline: none;
+    margin: 0;
   }
 
   #split-grabber::-webkit-slider-thumb {

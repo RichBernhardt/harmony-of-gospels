@@ -11,7 +11,7 @@
         />
     </SplitView>
     <Map />
-    <ButtonMap v-bind="{ buttonMapOnShow }" />
+    <ButtonMap v-show="buttonMapOnShow" />
     <ButtonMenu v-bind="{ buttonMapOnShow }" />
   </div>
 </template>
