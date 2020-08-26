@@ -35,8 +35,11 @@ export default {
 
   computed: {
     flexRatio() {
-      // return store.media.splitWidth / (store.media.windowWidth + 18);
-      return store.media.splitWidth / store.media.windowWidth * 0.987;
+      if (this.isSplitView) {
+        // return store.media.splitWidth / (store.media.windowWidth + 18);
+        return store.media.splitWidth / store.media.windowWidth * 0.987;
+      }
+      else { return 1 }
     },
 
     isSplitView() {
