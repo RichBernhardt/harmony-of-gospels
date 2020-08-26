@@ -1,40 +1,64 @@
 <template>
-  <details>
-    <summary @click="expandFirst = true">
-        <!-- Safari can render <summary> width single root only -->
-      <header>
+  <section
+    class="accordion-main"
+    v-bind="{ expanded }"
+  >
+    <button
+      @click.prevent="
+        hasEverExpanded = true;
+        expanded = ! expanded;"
+      :class="['header-as-button', expanded ? 'header-border-bottom' : '']"
+    >
         <div
           class="title"
           v-text="groupTitle"
         />
-        <nav>
+        <nav v-show="expanded">
           <button
-            @click="
+            @click.stop="
               if( store.gospels.parallelCurrent > 1 )
                 store.gospels.parallelCurrent--"
-            >–</button>
+            class="button-parallels"
+          >
+            –
+          </button>
           <button
-            @click="
+            @click.stop="
               if( store.gospels.parallelCurrent < store.gospels.parallelMax )
                 store.gospels.parallelCurrent++"
-            >+</button>
+            class="button-parallels"
+          >
+            +
+          </button>
         </nav>
-      </header>
-    </summary>
+    </button>
 
-    <template v-if="expandFirst">
-      <AccordionSub
-        v-for="(event,eventIndex) in store.timeline[groupIndex][groupTitle]"
-        :key="eventIndex"
-        v-bind="{ 
-          groupIndex,
-          groupTitle,
-          eventIndex
-        }"
-      />
-    </template>
-
-  </details>
+<!-- https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks -->
+    <transition
+      @enter="enter"
+      @leave="leave"
+    >
+      <section
+        ref="section"
+        v-show="expanded"
+        class="sub-accordions"
+      >
+        <!-- Minimise initial DOM nodes for quick page loading -->
+        <template v-if="hasEverExpanded">
+          <AccordionSub
+            v-for="(event,eventIndex) in store.timeline[groupIndex][groupTitle]"
+            :key="eventIndex"
+            v-bind="{ 
+              groupIndex,
+              groupTitle,
+              eventIndex
+            }"
+            @parent-transition-required="setHeight"
+          />
+        </template>
+      </section>
+    </transition>
+  </section>
 </template>
 
 <script>
@@ -47,51 +71,79 @@ export default {
     groupTitle: String,
   },
 
+
   data() {
     return {
       store,
-      expandFirst: false,
+      expanded: false,
+      hasEverExpanded: false,
+      expandAnySubAccordion: 0,
     }
+  },
+
+
+  mounted() {
+    this.$refs.section.style.height = 0;
+  },
+
+
+  methods: {
+
+    // https://stackoverflow.com/q/56537331
+    enter(el) {
+      // https://stackoverflow.com/a/54422687
+      requestAnimationFrame(() => {
+        el.style.height = el.scrollHeight + "px";
+      });    
+    },
+
+
+    leave(el) {
+      el.style.height = 0;
+    },
+
+
+    setHeight(heightDiff) {
+      this.$refs.section.style.height = 
+        Number(this.$refs.section.style.height.slice(0,-2)) + heightDiff + 'px';
+    },
+
   },
   
 }
 </script>
 
 <style scoped>
+  .sub-accordions {
+    transition: height 400ms;
+    /* overflow: hidden; */
+  }
 
-  details {
-    all: unset;
+  .accordion-main {
     display: flex;
+    flex-direction: column;
     border: 1px solid darkkhaki;
     border-radius: 5px;
     margin: 3px;
     cursor: default;
   }
 
-  summary::-webkit-details-marker {
-    display: none;
-  }
-
-  summary {
+  .header-as-button {
+    all: unset;
     position: sticky;
-    /* Safari */
     position: -webkit-sticky;
-    top: 0px;
+    top: 0;
     z-index: 1;
-    border-radius: 5px;
-  }
-
-  details[open] summary {
-    border-bottom: 1px solid darkkhaki;
-  }
-
-  header {
     display: flex;
     align-items: center;
     padding-left: 5px;
     padding-right: 5px;
-    background-color: hsl(63, 90%, 75%);
+    background-color: var(--bg-main-accordion-header);
     border-radius: 5px;
+  }
+
+  .header-border-bottom {
+    border-bottom: 1px solid darkkhaki;
   }
 
   .title {
@@ -109,15 +161,7 @@ export default {
     align-items: center;
   }
 
-  details[open] nav {
-    visibility: visible;
-  }
-
-  details:not([open]) nav {
-    visibility: hidden;
-  }
-
-  button {
+  .button-parallels {
     all: unset;
     display: inline-block;
     text-align: center;
@@ -127,14 +171,14 @@ export default {
     padding: 0;
     margin: 0;
     cursor: pointer;
-    background-color: hsl(63, 90%, 75%);
+    background-color: var(--bg-main-accordion-header);
   }
 
-  button:active {
+  .button-parallels:active {
     background-color: hsl(16, 100%, 75%);
   }
 
-  button:focus {
+  .button-parallels:focus, .header-as-button:focus {
     filter: brightness(95%);
   }
 

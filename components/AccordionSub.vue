@@ -1,64 +1,72 @@
 <template>
-  <details>
-    <summary @click="atHeaderClick()">
-      <!-- Safari can render <summary> width single root only -->
-      <header>
-        <div
-          class="title"
-          v-text="store.timeline[groupIndex][groupTitle][eventIndex][0]"
-        />
-        <div class="ranges">
-          <span
-            v-for="reducedRange in reducedRanges"
-            :key="reducedRange.indexInitial"
-            class="reduced-range"
-            v-text="reducedRange.range"
-          />
-        </div>
-      </header>
-    </summary>
-
-    <section :key="keyToForceRerender">
+  <section
+    class="accordion-sub"
+    v-bind="{ expanded }"
+  >
+    <button 
+      @click="onHeaderClick()"
+      class="header-as-button"
+    >
       <div
-        v-for="author in gospels.authors"
-        v-show="author.indexCurrent + 1 <= store.gospels.parallelCurrent"
-        :key="author.indexCurrent"
-        class="gospel"
+        class="title"
+        v-text="store.timeline[groupIndex][groupTitle][eventIndex][0]"
+      />
+      <div
+        ref="ranges"
+        class="ranges"
+        v-show="!expanded"  
       >
-        <div class="ranges sticky-ranges">
-            <!-- tabindex="0" -->
-          <!-- https://stackoverflow.com/a/925252 -->
-          <a
-            v-for="range in gospels.ranges"
-            :key="range.indexCurrent"
-            href="javascript:"
-            v-text="range.range"
-            :class="[
-              'range', 
-              (range.indexInitial === author.indexInitial) ? 'self' : ''
-            ]"
-            @click.prevent="swapGospels({
-              rangeInitial: range.indexInitial,
-              rangeCurrent: range.indexCurrent,
-              authorInitial: author.indexInitial,
-              authorCurrent: author.indexCurrent,
-            })"
-            @keyup.space="swapGospels({
-              rangeInitial: range.indexInitial,
-              rangeCurrent: range.indexCurrent,
-              authorInitial: author.indexInitial,
-              authorCurrent: author.indexCurrent,
-            })"
-          />
-        </div>
-        <div
-          class="gospel-text"
-          tabindex="-1"
-          v-html="author.gospel"
+        <span
+          v-for="reducedRange in reducedRanges"
+          :key="reducedRange.indexInitial"
+          class="reduced-range"
+          v-text="reducedRange.range"
         />
       </div>
-    </section>
-  </details>
+    </button>
+
+    <transition
+      @enter="enter"
+      @leave="leave"
+    >
+      <section
+        ref="gospels"
+        v-show="expanded"
+        :key="keyToForceRerender"
+        class="gospels"
+      >
+        <div
+          v-for="author in gospels.authors"
+          v-show="author.indexCurrent + 1 <= store.gospels.parallelCurrent"
+          :key="author.indexCurrent"
+          class="gospel"
+        >
+          <div class="ranges sticky-ranges">
+            <!-- https://stackoverflow.com/a/925252 -->
+            <a
+              v-for="range in gospels.ranges"
+              :key="range.indexCurrent"
+              href="javascript:"
+              :class="[(range.indexInitial === author.indexInitial)
+                ? 'self' : '']"
+              @click.prevent="swapGospels({
+                rangeInitial: range.indexInitial,
+                rangeCurrent: range.indexCurrent,
+                authorInitial: author.indexInitial,
+                authorCurrent: author.indexCurrent,
+              })"
+              v-text="range.range"
+            />
+          </div>
+          <div
+            class="gospel-text"
+            tabindex="-1"
+            v-html="author.gospel"
+          />
+        </div>
+      </section>
+    </transition>
+  </section>
 </template>
 
 <script>
@@ -75,6 +83,7 @@ export default {
   data () {
     return {
       store,
+      expanded: false,
       gospels: {
         ranges: [],
         authors: []
@@ -102,23 +111,26 @@ computed: {
   },
 
 
+  // mounted() {
+  //   this.$refs.section.style.height = 0;
+  // },
+
+
   methods: {
-    
-    atHeaderClick() {
-      // this.expanded = !this.expanded;
-      this.setLocation();
-      // https://www.w3schools.com/jsref/prop_details_open.asp
-      // https://stackoverflow.com/a/52607333/  
-      // if(this.parentElement.getAttribute('open')!='open')
-      // https://github.com/wet-boew/wet-boew/issues/5369
-      // if (details.open) { details.open = false; }
-      // else { details.open = true; }
-      if(this.gospels.authors.length === 0) {
-        this.createGospels()
-      };
+
+    // https://stackoverflow.com/q/56537331
+    enter(el) {
+      // https://stackoverflow.com/a/54422687
+      requestAnimationFrame(() => {
+        el.style.height = el.scrollHeight + "px";
+      });    
     },
-    
-    
+
+    leave(el) {
+      el.style.height = 0;
+    },
+
+
     createRanges() {
       const g  = this.groupIndex;
       const gt = this.groupTitle;
@@ -152,6 +164,36 @@ computed: {
           }
         );
       }
+    },
+
+
+    onHeaderClick() {
+      this.expanded = !this.expanded;
+      
+      this.requestTransitionOnHeaderClick();
+      
+      this.setLocation();
+      
+      if(this.gospels.authors.length === 0) {
+        this.createGospels()
+      };
+    },
+
+
+    requestTransitionOnHeaderClick() {
+      const gospelsClosed = this.$refs.gospels.scrollHeight;
+      const rangesOpened = this.$refs.ranges.scrollHeight;
+
+      requestAnimationFrame(() => {
+        const gospelsOpened = this.$refs.gospels.scrollHeight;
+        const rangesClosed = this.$refs.ranges.scrollHeight;
+
+        const toEmit = (this.expanded)
+          ? gospelsOpened - rangesOpened
+          : rangesClosed - gospelsClosed;
+
+        this.$emit('parent-transition-required', toEmit);
+      });
     },
 
 
@@ -238,6 +280,23 @@ computed: {
 
       // https://michaelnthiessen.com/key-changing-technique/
       this.keyToForceRerender++;
+
+      this.requestTransitionOnSwapGospels();
+    },
+
+
+    requestTransitionOnSwapGospels() {
+      const gospelsPrevious = this.$refs.gospels.scrollHeight;
+
+      requestAnimationFrame(() => {
+        const gospelsCurrent = this.$refs.gospels.scrollHeight;
+        const heightDiff = gospelsCurrent - gospelsPrevious;
+        this.$emit('parent-transition-required', heightDiff);
+        this.$refs.gospels.style.height = 
+          gospelsCurrent + 'px';
+          // Number(this.$refs.gospels.style.height.slice(0,-2)) +
+          //   heightDiff + 'px';
+      });
     },
 
   },
@@ -247,36 +306,27 @@ computed: {
 
 <style scoped>
 
-  details {
-    all: unset;
+  .accordion-sub {
     display: flex;
-    --bg: hsl(44, 100%, 88%);
-    background-color: var(--bg);
+    flex-direction: column;
+    background-color: var(--bg-light);
     border-bottom: 1px solid darkkhaki;
     cursor: default;
   }
 
-  details:last-child {
+  .accordion-sub:last-child {
     border: none;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
   }
-
-  summary::-webkit-details-marker {
-    display: none;
-  }
  
-  summary {
+  .header-as-button {
+    all: unset;
     position: sticky;
-    /* Safari */
     position: -webkit-sticky;
     top: 3em;
-    background-color: var(--bg);
-    border-radius: 5px;
+    background-color: var(--bg-light);
     font-family: 'Times New Roman', serif;
-  }
-
-  header {
     display: flex;
     flex-direction: column;
     padding-left: 5px;
@@ -297,33 +347,24 @@ computed: {
     font-size: 0.9em;
   }
 
-  details[open] header .ranges {
-    display: none;
-  }
-
-  details:not([open]) header .ranges {
-    display: flex;
-  }
-
   .sticky-ranges {
     justify-content: center;
     position: sticky;
-    /* Safari */
     position: -webkit-sticky;
     top: 5em;
-    background-color: var(--bg);
+    background-color: var(--bg-light);
   }
 
   .reduced-range {
     padding-right: 14px;
   }
 
-  .range {
+  a {
     padding-left: 7px;
     padding-right: 7px;
     padding-top: 5px;
     padding-bottom: 5px;
-    background-color: var(--bg);
+    background-color: var(--bg-light);
   }
 
   a:visited {
@@ -336,8 +377,9 @@ computed: {
     text-decoration: inherit;
   }
 
-  section {
+  .gospels {
     display: flex;
+    transition: height 400ms;
   }
 
   .gospel {
@@ -353,6 +395,7 @@ computed: {
   }
 
   .gospel-text {
+    transition: height 400ms;
     margin-top: 1em;
     text-align: justify;
     /* https://stackoverflow.com/a/20818206/ */
