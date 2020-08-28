@@ -5001,7 +5001,7 @@ Ne engedd, hogy kísértésekkel próbára tegyenek bennünket!”`,
 // 12  
 `Vagy ha tojást kér, talán skorpiót ad neki?`,
 // 13  
-`Ha tehát még ti is tudtok jó ajándékot adni a gyerekeiteknek, bár gonoszak vagyok, mennyivel inkább fog Mennyei Atyátok Szentlelket adni azoknak, akik kérik tőle!”`,
+`Ha tehát még ti is tudtok jó ajándékot adni a gyerekeiteknek, bár gonoszak vagytok, mennyivel inkább fog Mennyei Atyátok Szentlelket adni azoknak, akik kérik tőle!”`,
 // 14  ~ Kinek a hatalmával űzi ki Jézus a gonosz szellemeket? (#D) ~ 
 `Történt egyszer, hogy Jézus gonosz szellemet űzött ki egy emberből, aki nem tudott beszélni. Miután kiment belőle a gonosz szellem, a néma megszólalt. Ezen mindenki szerfölött elcsodálkozott.`,
 // 15  

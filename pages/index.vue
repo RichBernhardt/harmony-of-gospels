@@ -3,11 +3,13 @@
     <SplitView>
         <AccordionMain
           v-for="(group,groupIndex) in store.timeline"
+          ref="mainaccordion"
           :key="groupIndex"
           v-bind="{ 
             groupIndex,
             groupTitle: (Object.keys(group)).toString()
           }"
+          @on-main-accordion-header-click="updateExpandedMainAccordion"
         />
     </SplitView>
     <Map />
@@ -21,7 +23,8 @@ import { store } from "~/components/store";
 export default {
 
   data: () => ({
-    store
+    store,
+    expandedMainAccordionIncumbent: null,
   }),
 
 
@@ -30,6 +33,24 @@ export default {
       return store.media.splitWidth > 
           store.media.windowWidth - store.media.windowHeight * 0.4
     },
+  },
+
+
+  methods: {
+    updateExpandedMainAccordion(indexClicked) {
+      const indexIncumbent =
+        (this.expandedMainAccordionIncumbent !== null)
+          ? this.expandedMainAccordionIncumbent
+          : indexClicked;
+
+      requestAnimationFrame(() => {
+        if (indexIncumbent !== indexClicked) {
+          this.$refs.mainaccordion[indexIncumbent].expanded = false;
+        }
+          
+        this.expandedMainAccordionIncumbent = indexClicked;
+      });
+    }
   },
 
 }

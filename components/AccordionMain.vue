@@ -4,10 +4,8 @@
     v-bind="{ expanded }"
   >
     <button
-      @click.prevent="
-        hasEverExpanded = true;
-        expanded = ! expanded;"
       :class="['header-as-button', expanded ? 'header-border-bottom' : '']"
+      @click="onMainAccordionHeaderClick()"
     >
         <div
           class="title"
@@ -15,45 +13,48 @@
         />
         <nav v-show="expanded">
           <button
+            class="button-parallels"
             @click.stop="
               if( store.gospels.parallelCurrent > 1 )
-                store.gospels.parallelCurrent--"
-            class="button-parallels"
+                store.gospels.parallelCurrent--;
+              onParalelGospelsButtonClick()"
           >
             –
           </button>
           <button
+            class="button-parallels"
             @click.stop="
               if( store.gospels.parallelCurrent < store.gospels.parallelMax )
-                store.gospels.parallelCurrent++"
-            class="button-parallels"
+                store.gospels.parallelCurrent++;
+              onParalelGospelsButtonClick()"
           >
             +
           </button>
         </nav>
     </button>
 
-<!-- https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks -->
     <transition
-      @enter="enter"
-      @leave="leave"
+      @enter="showSubAccordions"
+      @leave="hideSubAccordions"
     >
       <section
-        ref="section"
         v-show="expanded"
+        ref="subaccordions"
         class="sub-accordions"
       >
         <!-- Minimise initial DOM nodes for quick page loading -->
         <template v-if="hasEverExpanded">
           <AccordionSub
             v-for="(event,eventIndex) in store.timeline[groupIndex][groupTitle]"
+            ref="subaccordion"
             :key="eventIndex"
             v-bind="{ 
               groupIndex,
               groupTitle,
               eventIndex
             }"
-            @parent-transition-required="setHeight"
+            @on-sub-accordion-header-click="onSubAccordionHeaderClick"
+            @on-sub-accordion-gospel-swap="mainToFollowSubHeightChange"
           />
         </template>
       </section>
@@ -77,35 +78,102 @@ export default {
       store,
       expanded: false,
       hasEverExpanded: false,
-      expandAnySubAccordion: 0,
+      expandedSubAccordionIncumbent: null,
     }
   },
 
 
   mounted() {
-    this.$refs.section.style.height = 0;
+    this.$refs.subaccordions.style.height = 0;
   },
 
 
   methods: {
 
+    onMainAccordionHeaderClick() {
+      this.hasEverExpanded = true;
+      this.expanded = !this.expanded;
+      // Index.vue closes the previously open Main-Accordion:
+      this.$emit('on-main-accordion-header-click', this.groupIndex);
+
+      // Initialising for future transition needs...
+      this.$refs.subaccordions.style.height = 
+        this.$refs.subaccordions.scrollHeight + 'px';
+    },
+
+
+    // TRANSITION METHODS
+    // https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks
     // https://stackoverflow.com/q/56537331
-    enter(el) {
+    showSubAccordions(el) {
       // https://stackoverflow.com/a/54422687
       requestAnimationFrame(() => {
         el.style.height = el.scrollHeight + "px";
       });    
     },
-
-
-    leave(el) {
+    hideSubAccordions(el) {
       el.style.height = 0;
     },
 
 
-    setHeight(heightDiff) {
-      this.$refs.section.style.height = 
-        Number(this.$refs.section.style.height.slice(0,-2)) + heightDiff + 'px';
+    onSubAccordionHeaderClick(indexClicked) {
+      const indexIncumbent =
+        (this.expandedSubAccordionIncumbent !== null)
+          ? this.expandedSubAccordionIncumbent
+          : indexClicked;
+
+      const gospelsIncumbent = 
+        this.$refs.subaccordion[indexIncumbent].$refs.gospels.scrollHeight;
+
+      const rangesIncumbent =
+        this.$refs.subaccordion[indexIncumbent].$refs.ranges.scrollHeight;
+      
+      requestAnimationFrame(() => {      
+        const gospelsClicked =
+          this.$refs.subaccordion[indexClicked].$refs.gospels.scrollHeight;
+
+        const rangesClicked =
+          this.$refs.subaccordion[indexClicked].$refs.ranges.scrollHeight;
+
+        const heightDiff =
+          (gospelsClicked+rangesClicked) - (gospelsIncumbent+rangesIncumbent);
+
+        this.$refs.subaccordions.style.height = Number(
+          this.$refs.subaccordions.style.height.slice(0,-2)) + heightDiff + 'px';
+        
+        // Update current Sub-Accordion reference
+        if (indexIncumbent !== indexClicked) {
+          this.$refs.subaccordion[indexIncumbent].expanded = false;
+        }
+        this.expandedSubAccordionIncumbent = indexClicked;
+      });      
+    },
+
+
+    onParalelGospelsButtonClick() {
+      const gospelsIncumbent = this.$refs.subaccordion[
+        this.expandedSubAccordionIncumbent].$refs.gospels.scrollHeight;
+
+      requestAnimationFrame(() => {
+        const gospelsClicked = this.$refs.subaccordion[
+          this.expandedSubAccordionIncumbent].$refs.gospels.scrollHeight;
+        
+        const heightDiff = gospelsClicked - gospelsIncumbent;
+
+        this.$refs.subaccordion[this.expandedSubAccordionIncumbent]
+          .$refs.gospels.style.height = 
+            gospelsClicked + 'px';
+            // Number(this.$refs.subaccordion[this.expandedSubAccordionIncumbent]
+            // .$refs.gospels.style.height.slice(0,-2)) + heightDiff + 'px';
+            
+          this.mainToFollowSubHeightChange(heightDiff);
+       });
+    },
+
+
+    mainToFollowSubHeightChange(heightDiff) {
+      this.$refs.subaccordions.style.height = Number(
+          this.$refs.subaccordions.style.height.slice(0,-2)) + heightDiff + 'px';
     },
 
   },
@@ -116,7 +184,6 @@ export default {
 <style scoped>
   .sub-accordions {
     transition: height 400ms;
-    /* overflow: hidden; */
   }
 
   .accordion-main {
@@ -163,8 +230,10 @@ export default {
 
   .button-parallels {
     all: unset;
-    display: inline-block;
-    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     width: 1.125em;
     border-radius: 1.125em;
     font-size: 2.25em;

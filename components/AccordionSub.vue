@@ -4,17 +4,17 @@
     v-bind="{ expanded }"
   >
     <button 
-      @click="onHeaderClick()"
       class="header-as-button"
+      @click="onSubAccordionHeaderClick()"
     >
       <div
         class="title"
         v-text="store.timeline[groupIndex][groupTitle][eventIndex][0]"
       />
       <div
+        v-show="!expanded"  
         ref="ranges"
         class="ranges"
-        v-show="!expanded"  
       >
         <span
           v-for="reducedRange in reducedRanges"
@@ -26,12 +26,13 @@
     </button>
 
     <transition
-      @enter="enter"
-      @leave="leave"
+      @enter="showGospels"
+      @leave="hideGospels"
+      @after-leave="reinstateOverflow"
     >
       <section
-        ref="gospels"
         v-show="expanded"
+        ref="gospels"
         :key="keyToForceRerender"
         class="gospels"
       >
@@ -111,23 +112,53 @@ computed: {
   },
 
 
-  // mounted() {
-  //   this.$refs.section.style.height = 0;
-  // },
-
-
   methods: {
 
+    // TRANSITION METHODS (Transitions on header click)
+
+    // https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks
     // https://stackoverflow.com/q/56537331
-    enter(el) {
+    showGospels(el) {
       // https://stackoverflow.com/a/54422687
       requestAnimationFrame(() => {
         el.style.height = el.scrollHeight + "px";
-      });    
+      });
     },
 
-    leave(el) {
+    hideGospels(el) {
       el.style.height = 0;
+      el.style.overflow = "hidden";
+    },
+
+    reinstateOverflow(el) {
+      el.style.overflow = "visible";
+    },
+
+
+    // OTHER METHODS
+
+    onSubAccordionHeaderClick() {
+      this.expanded = !this.expanded;
+
+      // Main-Accordion closes the previously open Sub-Accordion
+      // ...and perform height transition on itself.
+      // (Sub-Accordion transition is automatic by CSS)
+      this.$emit('on-sub-accordion-header-click', this.eventIndex);
+      
+      this.setLocation();
+      
+      if(this.gospels.authors.length === 0) {
+        this.createGospels()
+
+      // Initialising for future requestParentTransitionForSwapGospels()
+      this.$refs.gospels.style.height = this.$refs.gospels.scrollHeight + 'px';
+      };
+    },
+    
+
+    setLocation() {
+      store.map.currentLocation = store.timeline[
+        this.groupIndex][this.groupTitle][this.eventIndex][1];
     },
 
 
@@ -164,36 +195,6 @@ computed: {
           }
         );
       }
-    },
-
-
-    onHeaderClick() {
-      this.expanded = !this.expanded;
-      
-      this.requestTransitionOnHeaderClick();
-      
-      this.setLocation();
-      
-      if(this.gospels.authors.length === 0) {
-        this.createGospels()
-      };
-    },
-
-
-    requestTransitionOnHeaderClick() {
-      const gospelsClosed = this.$refs.gospels.scrollHeight;
-      const rangesOpened = this.$refs.ranges.scrollHeight;
-
-      requestAnimationFrame(() => {
-        const gospelsOpened = this.$refs.gospels.scrollHeight;
-        const rangesClosed = this.$refs.ranges.scrollHeight;
-
-        const toEmit = (this.expanded)
-          ? gospelsOpened - rangesOpened
-          : rangesClosed - gospelsClosed;
-
-        this.$emit('parent-transition-required', toEmit);
-      });
     },
 
 
@@ -249,12 +250,6 @@ computed: {
     },
 
 
-    setLocation() {
-      store.map.currentLocation = store.timeline[
-        this.groupIndex][this.groupTitle][this.eventIndex][1];
-    },
-
-
     swapGospels({
       rangeInitial, 
       rangeCurrent, 
@@ -281,21 +276,20 @@ computed: {
       // https://michaelnthiessen.com/key-changing-technique/
       this.keyToForceRerender++;
 
-      this.requestTransitionOnSwapGospels();
+      this.requestParentTransitionForSwapGospels();
     },
 
 
-    requestTransitionOnSwapGospels() {
+    requestParentTransitionForSwapGospels() {
       const gospelsPrevious = this.$refs.gospels.scrollHeight;
 
       requestAnimationFrame(() => {
         const gospelsCurrent = this.$refs.gospels.scrollHeight;
-        const heightDiff = gospelsCurrent - gospelsPrevious;
-        this.$emit('parent-transition-required', heightDiff);
-        this.$refs.gospels.style.height = 
-          gospelsCurrent + 'px';
-          // Number(this.$refs.gospels.style.height.slice(0,-2)) +
-          //   heightDiff + 'px';
+        
+        this.$emit('on-sub-accordion-gospel-swap', 
+          gospelsCurrent - gospelsPrevious);
+        
+        this.$refs.gospels.style.height = gospelsCurrent + 'px';
       });
     },
 
@@ -395,7 +389,7 @@ computed: {
   }
 
   .gospel-text {
-    transition: height 400ms;
+    overflow: hidden;
     margin-top: 1em;
     text-align: justify;
     /* https://stackoverflow.com/a/20818206/ */
