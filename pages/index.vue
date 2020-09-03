@@ -13,7 +13,7 @@
         />
     </SplitView>
     <Map />
-    <ButtonMap v-show="buttonMapOnShow" />
+    <ButtonMap v-bind="{ buttonMapOnShow }" />
     <ButtonMenu v-bind="{ buttonMapOnShow }" />
   </div>
 </template>
@@ -43,7 +43,7 @@ export default {
           ? this.expandedMainAccordionIncumbent
           : indexClicked;
 
-      requestAnimationFrame(() => {
+      setTimeout(() => {
         if (indexIncumbent !== indexClicked) {
           this.$refs.mainaccordion[indexIncumbent].expanded = false;
         }

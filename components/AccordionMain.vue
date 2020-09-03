@@ -11,26 +11,6 @@
           class="title"
           v-text="groupTitle"
         />
-        <nav v-show="expanded">
-          <button
-            class="button-parallels"
-            @click.stop="
-              if( store.gospels.parallelCurrent > 1 )
-                store.gospels.parallelCurrent--;
-              onParalelGospelsButtonClick()"
-          >
-            –
-          </button>
-          <button
-            class="button-parallels"
-            @click.stop="
-              if( store.gospels.parallelCurrent < store.gospels.parallelMax )
-                store.gospels.parallelCurrent++;
-              onParalelGospelsButtonClick()"
-          >
-            +
-          </button>
-        </nav>
     </button>
 
     <transition
@@ -54,7 +34,7 @@
               eventIndex
             }"
             @on-sub-accordion-header-click="onSubAccordionHeaderClick"
-            @on-sub-accordion-gospel-swap="mainToFollowSubHeightChange"
+            @on-sub-accordion-gospel-change="mainToFollowSubHeightChange"
           />
         </template>
       </section>
@@ -78,28 +58,76 @@ export default {
       store,
       expanded: false,
       hasEverExpanded: false,
-      expandedSubAccordionIncumbent: null,
+      subAccordionIncumbent: null,
     }
-  },
-
-
-  mounted() {
-    this.$refs.subaccordions.style.height = 0;
   },
 
 
   methods: {
 
     onMainAccordionHeaderClick() {
-      this.hasEverExpanded = true;
+      if (this.hasEverExpanded === false) {
+        this.hasEverExpanded = true;
+        this.$refs.subaccordions.style.height = 
+          this.$refs.subaccordions.scrollHeight + 'px';
+      }
+      
       this.expanded = !this.expanded;
-      // Index.vue closes the previously open Main-Accordion:
+      // Call Index.vue to close the previously opened Main-Accordion:
       this.$emit('on-main-accordion-header-click', this.groupIndex);
 
-      // Initialising for future transition needs...
+      // Initialise for future Sub-Accordion transition requests
       this.$refs.subaccordions.style.height = 
         this.$refs.subaccordions.scrollHeight + 'px';
     },
+
+
+    onSubAccordionHeaderClick(received) { // received: { indexClicked, heightDiff }  
+      const heightDiff = received.heightDiff;
+      const indexClicked = received.indexClicked;
+
+      // Init
+      const indexIncumbent = (this.subAccordionIncumbent !== null)
+        ? this.subAccordionIncumbent
+        : indexClicked;
+      
+      // Update reference of clicked Sub-Accordion
+      this.subAccordionIncumbent = indexClicked;
+
+      // Set Main-Accordion's height for transition
+      if (indexIncumbent === indexClicked) {
+        this.mainToFollowSubHeightChange(heightDiff);
+      }
+
+      // Collapse previously expanded (incumbent) Sub-Accordion
+      else {
+        // Get heightDiff of Sub-Accordion to collapse
+        const heightDiffCollapse =
+          this.$refs.subaccordion[indexIncumbent].collapsedGospelsHeight -
+            Number(this.$refs.subaccordion[indexIncumbent]
+              .$refs.gospels.style.height.slice(0,-2));
+        
+        // Set Main-Accordion's height for transition
+        const deltaHeight = heightDiff + heightDiffCollapse;
+        this.mainToFollowSubHeightChange(deltaHeight);
+
+        // Trigger Sub-Accordion to start collapse-transition
+        this.$refs.subaccordion[indexIncumbent].$refs.gospels.style.height = 
+          this.$refs.subaccordion[indexIncumbent].collapsedGospelsHeight + 'px';
+        
+        // Once transition finished, hide transitioned section
+        setTimeout( () => {
+          this.$refs.subaccordion[indexIncumbent].expanded = false;
+        }, 1000);
+      }
+    },
+
+
+    mainToFollowSubHeightChange(heightDiff) {
+      this.$refs.subaccordions.style.height = Number(
+          this.$refs.subaccordions.style.height.slice(0,-2)) + heightDiff + 'px';
+    },
+
 
 
     // TRANSITION METHODS
@@ -107,73 +135,13 @@ export default {
     // https://stackoverflow.com/q/56537331
     showSubAccordions(el) {
       // https://stackoverflow.com/a/54422687
-      requestAnimationFrame(() => {
+      setTimeout(() => {
         el.style.height = el.scrollHeight + "px";
-      });    
+      });
     },
+    
     hideSubAccordions(el) {
       el.style.height = 0;
-    },
-
-
-    onSubAccordionHeaderClick(indexClicked) {
-      const indexIncumbent =
-        (this.expandedSubAccordionIncumbent !== null)
-          ? this.expandedSubAccordionIncumbent
-          : indexClicked;
-
-      const gospelsIncumbent = 
-        this.$refs.subaccordion[indexIncumbent].$refs.gospels.scrollHeight;
-
-      const rangesIncumbent =
-        this.$refs.subaccordion[indexIncumbent].$refs.ranges.scrollHeight;
-      
-      requestAnimationFrame(() => {      
-        const gospelsClicked =
-          this.$refs.subaccordion[indexClicked].$refs.gospels.scrollHeight;
-
-        const rangesClicked =
-          this.$refs.subaccordion[indexClicked].$refs.ranges.scrollHeight;
-
-        const heightDiff =
-          (gospelsClicked+rangesClicked) - (gospelsIncumbent+rangesIncumbent);
-
-        this.$refs.subaccordions.style.height = Number(
-          this.$refs.subaccordions.style.height.slice(0,-2)) + heightDiff + 'px';
-        
-        // Update current Sub-Accordion reference
-        if (indexIncumbent !== indexClicked) {
-          this.$refs.subaccordion[indexIncumbent].expanded = false;
-        }
-        this.expandedSubAccordionIncumbent = indexClicked;
-      });      
-    },
-
-
-    onParalelGospelsButtonClick() {
-      const gospelsIncumbent = this.$refs.subaccordion[
-        this.expandedSubAccordionIncumbent].$refs.gospels.scrollHeight;
-
-      requestAnimationFrame(() => {
-        const gospelsClicked = this.$refs.subaccordion[
-          this.expandedSubAccordionIncumbent].$refs.gospels.scrollHeight;
-        
-        const heightDiff = gospelsClicked - gospelsIncumbent;
-
-        this.$refs.subaccordion[this.expandedSubAccordionIncumbent]
-          .$refs.gospels.style.height = 
-            gospelsClicked + 'px';
-            // Number(this.$refs.subaccordion[this.expandedSubAccordionIncumbent]
-            // .$refs.gospels.style.height.slice(0,-2)) + heightDiff + 'px';
-            
-          this.mainToFollowSubHeightChange(heightDiff);
-       });
-    },
-
-
-    mainToFollowSubHeightChange(heightDiff) {
-      this.$refs.subaccordions.style.height = Number(
-          this.$refs.subaccordions.style.height.slice(0,-2)) + heightDiff + 'px';
     },
 
   },
@@ -183,7 +151,7 @@ export default {
 
 <style scoped>
   .sub-accordions {
-    transition: height 400ms;
+    transition: height 1s;
   }
 
   .accordion-main {
@@ -221,34 +189,6 @@ export default {
     text-align: left;
     font-weight: bold;
     font-family: 'Times New Roman', serif;
-  }
-
-  nav {
-    display: flex;
-    align-items: center;
-  }
-
-  .button-parallels {
-    all: unset;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    width: 1.125em;
-    border-radius: 1.125em;
-    font-size: 2.25em;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    background-color: var(--bg-main-accordion-header);
-  }
-
-  .button-parallels:active {
-    background-color: hsl(16, 100%, 75%);
-  }
-
-  .button-parallels:focus, .header-as-button:focus {
-    filter: brightness(95%);
   }
 
 </style>

@@ -36,8 +36,5 @@ export const store = Vue.observable({
     initialLoad: false,
     onShow: false,
   },
-  // writes: accordion main
-  // reads: index.vue
-  // expandedMainAccordionIncumbent: -1,
 
 });

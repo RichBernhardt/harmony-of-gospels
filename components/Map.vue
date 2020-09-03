@@ -25,6 +25,7 @@ export default {
     stroke-linecap:round;
     stroke-linejoin:round;
     paint-order:stroke;
+    transition: z-index 400ms;
   }
 
   .rootVariable {

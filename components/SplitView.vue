@@ -63,9 +63,8 @@ export default {
   mounted() {
     // https://stackoverflow.com/a/47219938
     // https://stackoverflow.com/a/44779316
-    window
-      .addEventListener('resize', () => {
-        requestAnimationFrame(this.onWindowResize)});
+    window.addEventListener('resize', () => {
+      requestAnimationFrame(this.onWindowResize)});
 
     requestAnimationFrame(this.onWindowResize);
   },
@@ -97,6 +96,7 @@ export default {
         store.gospels.parallelCurrent = store.gospels.parallelMax
       }
     },
+
     
   }
   

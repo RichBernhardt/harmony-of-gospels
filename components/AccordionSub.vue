@@ -1,56 +1,67 @@
 <template>
-  <section
+  <div
     class="accordion-sub"
     v-bind="{ expanded }"
   >
     <button 
-      class="header-as-button"
-      @click="onSubAccordionHeaderClick()"
+      class="header"
+      @click="onHeaderClick()"
     >
       <div
         class="title"
         v-text="store.timeline[groupIndex][groupTitle][eventIndex][0]"
       />
-      <div
-        v-show="!expanded"  
-        ref="ranges"
-        class="ranges"
-      >
-        <span
-          v-for="reducedRange in reducedRanges"
-          :key="reducedRange.indexInitial"
-          class="reduced-range"
-          v-text="reducedRange.range"
-        />
-      </div>
+      <transition name="button-parallels">
+        <nav v-show="expanded && gospels.ranges.length > 1">
+          <button
+            class="button-parallels"
+            @click.stop="onParallelGospelsChange('minus')"
+          >
+            –
+          </button>
+          <button 
+            class="button-parallels"
+            @click.stop="onParallelGospelsChange('plus')"
+          >
+            +
+          </button>
+        </nav>
+      </transition>
     </button>
-
-    <transition
-      @enter="showGospels"
-      @leave="hideGospels"
-      @after-leave="reinstateOverflow"
+    <section
+      ref="gospels"
+      class="gospels"
     >
-      <section
-        v-show="expanded"
-        ref="gospels"
-        :key="keyToForceRerender"
-        class="gospels"
+      <div
+        v-for="author in gospels.authors"
+        v-show="
+          expanded && author.indexCurrent + 1 <= store.gospels.parallelCurrent
+          || !expanded && author.indexCurrent === 0
+        "
+        :key="author.indexCurrent"
+        class="gospel"
       >
-        <div
-          v-for="author in gospels.authors"
-          v-show="author.indexCurrent + 1 <= store.gospels.parallelCurrent"
-          :key="author.indexCurrent"
-          class="gospel"
-        >
-          <div class="ranges sticky-ranges">
+        <div class="range-container">
+          <div
+            ref="range" 
+            :class="['range', (expanded) ? 'range-expanded' : '']"
+          >
             <!-- https://stackoverflow.com/a/925252 -->
             <a
               v-for="range in gospels.ranges"
+              v-show="(expanded || 
+                !(!expanded 
+                  && author.indexInitial === 0 
+                  && range.range === '[Default]')
+              )"
               :key="range.indexCurrent"
               href="javascript:"
-              :class="[(range.indexInitial === author.indexInitial)
-                ? 'self' : '']"
-              @click.prevent="swapGospels({
+              :class="[
+                (expanded)
+                ? (range.indexInitial === author.indexInitial) ? 'self' : ''
+                : 'a-collapsed'
+              ]"
+              @click.prevent="onGospelsSwap({
                 rangeInitial: range.indexInitial,
                 rangeCurrent: range.indexCurrent,
                 authorInitial: author.indexInitial,
@@ -59,15 +70,21 @@
               v-text="range.range"
             />
           </div>
-          <div
-            class="gospel-text"
-            tabindex="-1"
-            v-html="author.gospel"
+          <div :class="[(expanded) 
+                ? 'range-dummy-expanded' 
+                : 'range-dummy-collapsed']" 
           />
         </div>
-      </section>
-    </transition>
-  </section>
+        <div
+          v-show="expanded"
+          ref="text"
+          class="gospel-text"
+          tabindex="-1"
+          v-html="author.gospel"
+        />
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -87,78 +104,146 @@ export default {
       expanded: false,
       gospels: {
         ranges: [],
-        authors: []
+        authors: [],
       },
-      // https://michaelnthiessen.com/key-changing-technique/
-      keyToForceRerender: 0,
-    }
-  },
-
-
-computed: {
-    // Remove "[Default]" from the beginning
-    reducedRanges() {
-      const result = 
-        (this.gospels.ranges[0].range === "[Default]")
-        ? this.gospels.ranges.slice(1)
-        : this.gospels.ranges.slice(0)
-      return result;
+      collapsedGospelsHeight: undefined,
     }
   },
 
 
   created() {
     this.createRanges();
+    this.createGospels();
   },
 
 
   methods: {
 
-    // TRANSITION METHODS (Transitions on header click)
+    onHeaderClick() {
+      // Set location
+      store.map.currentLocation = store.timeline[
+        this.groupIndex][this.groupTitle][this.eventIndex][1];
 
-    // https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks
-    // https://stackoverflow.com/q/56537331
-    showGospels(el) {
-      // https://stackoverflow.com/a/54422687
-      requestAnimationFrame(() => {
-        el.style.height = el.scrollHeight + "px";
+      // Transitions https://stackoverflow.com/q/56537331
+      if (!this.expanded) { this.onHeaderClickTransitionExpand(); }
+      else { this.onHeaderClickTransitionCollapse(); }
+    },
+
+
+    onHeaderClickTransitionExpand() {
+      // Store collapsed height
+      this.collapsedGospelsHeight = this.$refs.gospels.scrollHeight;
+      // Apply collapsed height
+      this.$refs.gospels.style.height = this.collapsedGospelsHeight + 'px';
+      // Turn transitioned section visible
+      this.expanded = true;
+
+      setTimeout( () => {
+        // Call Main-Accordion to start expand-transition
+        this.$emit(
+          'on-sub-accordion-header-click', 
+          {
+            indexClicked: this.eventIndex,
+            heightDiff: this.$refs.gospels.scrollHeight - this.collapsedGospelsHeight
+          }
+        );
+        // Trigger Sub-Accordion to start expand-transition
+        this.$refs.gospels.style.height = this.$refs.gospels.scrollHeight + 'px';
+      });
+    },  
+
+
+    onHeaderClickTransitionCollapse() {
+      // Call Main-Accordion to start collapse-transition
+      this.$emit(
+        'on-sub-accordion-header-click', 
+        {
+          indexClicked: this.eventIndex,
+          heightDiff: this.collapsedGospelsHeight - this.$refs.gospels.scrollHeight
+        }
+      );
+      // Trigger Sub-Accordion to start collapse-transition
+      this.$refs.gospels.style.height = this.collapsedGospelsHeight + 'px';     
+
+      // Once transition finished, hide transitioned section
+      setTimeout( () => {
+        this.expanded = false;
+      }, 1000);
+    },
+
+
+    onParallelGospelsChange(eventSource) {
+
+      this.$refs.gospels.style.height = 
+        this.$refs.gospels.scrollHeight + 'px';
+
+      const heightBefore = 
+        this.getHeightOnParallelGospelsChange("text") + 
+          this.getHeightOnParallelGospelsChange("range");
+
+      // on button "-"
+      if (eventSource === "minus") {
+        if( store.gospels.parallelCurrent > 1 ) {
+          store.gospels.parallelCurrent--; }
+      }
+      // on button "+"
+      if (eventSource === "plus") {
+        if( store.gospels.parallelCurrent < store.gospels.parallelMax ) {
+          store.gospels.parallelCurrent++; }
+      }
+
+      setTimeout(() => {
+
+        const heightAfter = 
+          this.getHeightOnParallelGospelsChange("text") +
+            this.getHeightOnParallelGospelsChange("range");
+
+        const heightDiff = heightAfter - heightBefore;
+
+        this.$refs.gospels.style.height =
+          Number(this.$refs.gospels.style.height.slice(0,-2)) + 
+            heightDiff + 'px';
+
+        this.$emit('on-sub-accordion-gospel-change', heightDiff);
       });
     },
 
-    hideGospels(el) {
-      el.style.height = 0;
-      el.style.overflow = "hidden";
+
+    getHeightOnParallelGospelsChange(ref) {
+      const refHeights = [];
+
+      for (let i = 0; i < this.$refs[ref].length; i++) {
+        refHeights.push(this.$refs[ref][i].scrollHeight);
+      }
+
+      return Math.max( ...refHeights );
     },
 
-    reinstateOverflow(el) {
-      el.style.overflow = "visible";
-    },
 
-
-    // OTHER METHODS
-
-    onSubAccordionHeaderClick() {
-      this.expanded = !this.expanded;
-
-      // Main-Accordion closes the previously open Sub-Accordion
-      // ...and perform height transition on itself.
-      // (Sub-Accordion transition is automatic by CSS)
-      this.$emit('on-sub-accordion-header-click', this.eventIndex);
+    onGospelsSwap({
+      rangeInitial, 
+      rangeCurrent, 
+      authorInitial, 
+      authorCurrent
+      }) {
       
-      this.setLocation();
-      
-      if(this.gospels.authors.length === 0) {
-        this.createGospels()
+      // https://stackoverflow.com/questions/872310/javascript-swap-array-elements
+      [ this.gospels.ranges[rangeInitial].indexCurrent, 
+        this.gospels.ranges[authorInitial].indexCurrent ] =
+        [ this.gospels.ranges[authorInitial].indexCurrent,
+        this.gospels.ranges[rangeInitial].indexCurrent ];
 
-      // Initialising for future requestParentTransitionForSwapGospels()
-      this.$refs.gospels.style.height = this.$refs.gospels.scrollHeight + 'px';
-      };
-    },
-    
+      [ this.gospels.authors[rangeCurrent].indexCurrent,
+        this.gospels.authors[authorCurrent].indexCurrent ] =
+        [ this.gospels.authors[authorCurrent].indexCurrent,
+          this.gospels.authors[rangeCurrent].indexCurrent ];
 
-    setLocation() {
-      store.map.currentLocation = store.timeline[
-        this.groupIndex][this.groupTitle][this.eventIndex][1];
+      [ this.gospels.authors[rangeCurrent],
+        this.gospels.authors[authorCurrent] ] =
+        [ this.gospels.authors[authorCurrent],
+          this.gospels.authors[rangeCurrent] ];
+
+      this.onParallelGospelsChange();
     },
 
 
@@ -198,8 +283,7 @@ computed: {
     },
 
 
-    createGospels() {
-    // Create array of html for this particular SubAccordion
+    createGospels() { // Create array of html for this particular SubAccordion
       const g  = this.groupIndex;
       const gt = this.groupTitle;
       const e = this.eventIndex;
@@ -249,50 +333,6 @@ computed: {
       }
     },
 
-
-    swapGospels({
-      rangeInitial, 
-      rangeCurrent, 
-      authorInitial, 
-      authorCurrent
-    }) {
-      
-      // https://stackoverflow.com/questions/872310/javascript-swap-array-elements
-      [ this.gospels.ranges[rangeInitial].indexCurrent, 
-        this.gospels.ranges[authorInitial].indexCurrent ] =
-        [ this.gospels.ranges[authorInitial].indexCurrent,
-        this.gospels.ranges[rangeInitial].indexCurrent ];
-
-      [ this.gospels.authors[rangeCurrent].indexCurrent,
-        this.gospels.authors[authorCurrent].indexCurrent ] =
-        [ this.gospels.authors[authorCurrent].indexCurrent,
-          this.gospels.authors[rangeCurrent].indexCurrent ];
-
-      [ this.gospels.authors[rangeCurrent],
-        this.gospels.authors[authorCurrent] ] =
-        [ this.gospels.authors[authorCurrent],
-          this.gospels.authors[rangeCurrent] ];
-
-      // https://michaelnthiessen.com/key-changing-technique/
-      this.keyToForceRerender++;
-
-      this.requestParentTransitionForSwapGospels();
-    },
-
-
-    requestParentTransitionForSwapGospels() {
-      const gospelsPrevious = this.$refs.gospels.scrollHeight;
-
-      requestAnimationFrame(() => {
-        const gospelsCurrent = this.$refs.gospels.scrollHeight;
-        
-        this.$emit('on-sub-accordion-gospel-swap', 
-          gospelsCurrent - gospelsPrevious);
-        
-        this.$refs.gospels.style.height = gospelsCurrent + 'px';
-      });
-    },
-
   },
 
 }
@@ -308,72 +348,79 @@ computed: {
     cursor: default;
   }
 
-  .accordion-sub:last-child {
+  .accordion-sub:last-child, .accordion-sub:last-child .gospels {
     border: none;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
   }
  
-  .header-as-button {
+  .header {
     all: unset;
+    display: flex;
+    align-items: center;
     position: sticky;
     position: -webkit-sticky;
     top: 3em;
     background-color: var(--bg-light);
-    font-family: 'Times New Roman', serif;
-    display: flex;
-    flex-direction: column;
+    border-radius: 5px;
     padding-left: 5px;
     padding-right: 5px;
-    border-radius: 5px;
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
   }
 
   .title {
     display: flex;
     align-items: center;
-    font-weight: bold;
-    min-height: 2em;
+    flex: 1;
+    min-height: 2.3em;
+    text-align: left;
   }
 
-  .ranges {
+  nav {
     display: flex;
-    flex-wrap: wrap;
-    font-size: 0.9em;
+    align-items: center;
+    padding: 0;
+    margin: 0;
   }
 
-  .sticky-ranges {
+  .button-parallels {
+    all: unset;
+    display: inline-flex;
     justify-content: center;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 5em;
+    align-items: center;
+    align-content: center;
+    width: 2ch;
+    height: 1em;
+    border-radius: 1em;
+    font-size: 2.3em;
+    cursor: pointer;
     background-color: var(--bg-light);
   }
 
-  .reduced-range {
-    padding-right: 14px;
+  .button-parallels:active {
+    background-color: hsl(16, 100%, 75%);
   }
 
-  a {
-    padding-left: 7px;
-    padding-right: 7px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-color: var(--bg-light);
+  .button-parallels:focus, .header-as-button:focus {
+    filter: brightness(95%);
   }
 
-  a:visited {
-    color:blue;
+  .button-parallels-enter-active, .button-parallels-leave-active {
+    transition: opacity 400ms;
+  }
+  
+  .button-parallels-enter, .button-parallels-leave-to {
+    opacity: 0;
   }
 
-  .self {
-    font-weight: bold;
-    color:inherit;
-    text-decoration: inherit;
-  }
+/* ################################################# */
 
   .gospels {
     display: flex;
-    transition: height 400ms;
+    transition: height 1s;
+    /* alternative to overflow */
+    background-color: var(--bg-light);
   }
 
   .gospel {
@@ -388,8 +435,62 @@ computed: {
     border-left: solid gray 1px;
   }
 
+  .range-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .range {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 5em;
+    background-color: var(--bg-light);
+    font-size: 0.9em;
+    max-width: fit-content;
+  }
+
+  .range-expanded {
+    flex-wrap: wrap;
+  }
+
+  .range-dummy-expanded {
+    flex: 0;
+    transition: flex 400ms;
+  }
+
+  .range-dummy-collapsed {
+    flex: auto;
+    transition: flex 400ms;
+  }
+
+  a {
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-bottom: 7px;
+    background-color: var(--bg-light);
+    white-space: nowrap;
+  }
+
+  .a-collapsed {
+    text-decoration: none;
+    color: black;
+  }
+
+  a:visited {
+    color:blue;
+  }
+
+  .self {
+    font-weight: bold;
+    color:inherit;
+    text-decoration: inherit;
+  }
+
   .gospel-text {
-    overflow: hidden;
+    z-index: -1;
     margin-top: 1em;
     text-align: justify;
     /* https://stackoverflow.com/a/20818206/ */
@@ -408,6 +509,8 @@ computed: {
     padding-left: 0.5em;
     padding-right: 0.3em;
   }
+
+  /* POPUPS */
 
   .gospel-text >>> summary {
     text-decoration: underline;
@@ -431,7 +534,6 @@ computed: {
     box-shadow: 0 2px 0 2px var(--summary);
   }
 
-  /* popup */
   .gospel-text >>> details span {
     position: absolute;
     z-index: 1;

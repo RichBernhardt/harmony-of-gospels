@@ -1,14 +1,20 @@
 <template>
-  <button
-    :class="[store.map.onShow ? 'toggleText' : 'toggleMap']"
-    @click.prevent="store.map.onShow = ! store.map.onShow"
-  />
+  <transition name="button">
+    <button
+      v-show="buttonMapOnShow"
+      :class="[store.map.onShow ? 'toggleText' : 'toggleMap']"
+      @click.prevent="store.map.onShow = ! store.map.onShow"
+    />
+  </transition>
 </template>
 
 <script>
 import { store } from "~/components/store";
 
 export default {
+  props: {
+    buttonMapOnShow: Boolean
+  },
 
   data() {
     return {
@@ -44,4 +50,12 @@ export default {
     background-image: url('~assets/toggleMap.jpg');
   }
   
+  .button-enter-active, .button-leave-active {
+    transition: opacity 400ms;
+  }
+  
+  .button-enter, .button-leave-to {
+    opacity: 0;
+  }
+
 </style>
