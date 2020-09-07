@@ -17,6 +17,7 @@
       @enter="showSubAccordions"
       @leave="hideSubAccordions"
     >
+        <!-- :style="{'transition': `height ${transitionDuration}` }" -->
       <section
         v-show="expanded"
         ref="subaccordions"
@@ -34,7 +35,7 @@
               eventIndex
             }"
             @on-sub-accordion-header-click="onSubAccordionHeaderClick"
-            @on-sub-accordion-gospel-change="mainToFollowSubHeightChange"
+            @on-sub-accordion-gospel-change="setMainaccordionHeight"
           />
         </template>
       </section>
@@ -58,74 +59,153 @@ export default {
       store,
       expanded: false,
       hasEverExpanded: false,
-      subAccordionIncumbent: null,
+      subaccordionIncumbent: null,
+      mainaccordionHeight: 0,
+      firstSubaccordion: true,
+      // transitionHeightDiff: 0,
     }
   },
 
 
-  methods: {
+  mounted() {
+    window.addEventListener('scroll', this.setScrollBy);
+  },
 
+
+  // computed: {
+  //   transitionDuration() {
+  //     return this.transitionHeightDiff / store.transitionSpeed + 'ms';
+  //   }
+  // },
+
+
+  methods: {
     onMainAccordionHeaderClick() {
       if (this.hasEverExpanded === false) {
         this.hasEverExpanded = true;
-        this.$refs.subaccordions.style.height = 
-          this.$refs.subaccordions.scrollHeight + 'px';
+        this.$refs.subaccordions.style.height = 0;
       }
-      
-      this.expanded = !this.expanded;
-      // Call Index.vue to close the previously opened Main-Accordion:
-      this.$emit('on-main-accordion-header-click', this.groupIndex);
 
-      // Initialise for future Sub-Accordion transition requests
-      this.$refs.subaccordions.style.height = 
-        this.$refs.subaccordions.scrollHeight + 'px';
+      // To expand
+      if (!this.expanded) {
+        this.expanded = true;
+
+        setTimeout(() => {
+          // Call Index.vue to close the previously opened main-accordion:
+          this.$emit('on-main-accordion-header-click', this.groupIndex);
+
+          // Initialise for future sub-accordion transition requests
+          this.setMainaccordionHeight();
+        });
+
+      // To collapse
+      } else {
+        this.mainaccordionHeight = 0;
+        this.expanded = false;
+      }
     },
 
 
-    onSubAccordionHeaderClick(received) { // received: { indexClicked, heightDiff }  
-      const heightDiff = received.heightDiff;
-      const indexClicked = received.indexClicked;
-
-      // Init
-      const indexIncumbent = (this.subAccordionIncumbent !== null)
-        ? this.subAccordionIncumbent
-        : indexClicked;
-      
-      // Update reference of clicked Sub-Accordion
-      this.subAccordionIncumbent = indexClicked;
-
-      // Set Main-Accordion's height for transition
-      if (indexIncumbent === indexClicked) {
-        this.mainToFollowSubHeightChange(heightDiff);
+    onSubAccordionHeaderClick(indexClicked) {
+      // If no sub-accordion has ever been clicked before
+      if (this.subaccordionIncumbent === null) {
+        // Update reference of clicked sub-accordion
+        this.subaccordionIncumbent = indexClicked;
       }
 
-      // Collapse previously expanded (incumbent) Sub-Accordion
       else {
-        // Get heightDiff of Sub-Accordion to collapse
-        const heightDiffCollapse =
-          this.$refs.subaccordion[indexIncumbent].collapsedGospelsHeight -
-            Number(this.$refs.subaccordion[indexIncumbent]
-              .$refs.gospels.style.height.slice(0,-2));
-        
-        // Set Main-Accordion's height for transition
-        const deltaHeight = heightDiff + heightDiffCollapse;
-        this.mainToFollowSubHeightChange(deltaHeight);
+        const indexIncumbent = this.subaccordionIncumbent;
 
-        // Trigger Sub-Accordion to start collapse-transition
-        this.$refs.subaccordion[indexIncumbent].$refs.gospels.style.height = 
-          this.$refs.subaccordion[indexIncumbent].collapsedGospelsHeight + 'px';
-        
-        // Once transition finished, hide transitioned section
-        setTimeout( () => {
-          this.$refs.subaccordion[indexIncumbent].expanded = false;
-        }, 1000);
+        const subaccordionPrevious = 
+          this.$refs.subaccordion[indexIncumbent];
+
+        if (indexClicked !== indexIncumbent) {
+          // Set sub-accordion header height
+          subaccordionPrevious.$refs.header.style.height = 
+            subaccordionPrevious.headerHeightCollapsed + 'px';
+          // Trigger sub-accordion to start collapse-transition
+          subaccordionPrevious.$refs.gospels.style.height = 
+            subaccordionPrevious.gospelsHeightCollapsed + 'px';
+
+          this.subaccordionIncumbent = indexClicked;
+          subaccordionPrevious.expanding = false;
+      
+          // // Calc transition duration of sub-accordion collapse
+          // const transitionDuration = 
+          //   heightDiffToCollapse / store.transitionSpeed + 'ms';
+          // Once transition finished, hide transitioned section
+          setTimeout( () => {
+            subaccordionPrevious.expanded = false;
+          }, 1000);
+        }
       }
+
+      this.setMainaccordionHeight();
     },
 
 
-    mainToFollowSubHeightChange(heightDiff) {
-      this.$refs.subaccordions.style.height = Number(
-          this.$refs.subaccordions.style.height.slice(0,-2)) + heightDiff + 'px';
+    setMainaccordionHeight(preventScroll) {
+      let mainaccordionHeight = 0; let i = 0;
+
+      for (i; i < this.$refs.subaccordion.length; i++) {
+        if (this.$refs.subaccordion[i].expanding) {
+            mainaccordionHeight += 
+              this.getExpandedSubaccordionHeight(this.$refs.subaccordion[i]) - 1;
+        }
+        else { mainaccordionHeight += 
+          this.getCollapsedSubaccordionHeight(this.$refs.subaccordion[i]); }
+      }
+
+      // Add borders
+      const borders = this.$refs.subaccordion.length;
+      mainaccordionHeight += borders;
+
+      // Adjust height
+      this.$refs.subaccordions.style.height =
+        mainaccordionHeight + 'px';
+
+      // // Adjust scroll position
+      if (this.subaccordionIncumbent === null || preventScroll) {
+        this.mainaccordionHeight = mainaccordionHeight;
+      }
+      if (this.subaccordionIncumbent !== null && this.firstSubaccordion) {
+        this.mainaccordionHeight = mainaccordionHeight;
+        this.firstSubaccordion = false;
+      }
+
+      const heightDiff = (this.mainaccordionHeight <= mainaccordionHeight)
+        ? this.mainaccordionHeight - mainaccordionHeight
+        : mainaccordionHeight - this.mainaccordionHeight;
+
+      this.setScrollBy(heightDiff);
+
+      // Set height
+      this.mainaccordionHeight = mainaccordionHeight;
+
+    },
+
+
+    getExpandedSubaccordionHeight(subaccordion) {
+      subaccordion = subaccordion || 
+        this.$refs.subaccordion[this.subaccordionIncumbent];
+
+      return subaccordion.$refs.header.scrollHeight +
+        subaccordion.getGospelsHeight();
+        // + subaccordion.marginsAndBorders;
+    },
+
+
+    getCollapsedSubaccordionHeight(subaccordion) {
+      subaccordion = subaccordion || 
+        this.$refs.subaccordion[this.subaccordionIncumbent];
+        
+      return subaccordion.headerHeightCollapsed +
+        subaccordion.gospelsHeightCollapsed;
+    },
+
+
+    setScrollBy(heightDiff) {
+      window.scrollBy(0,heightDiff);
     },
 
 
@@ -136,7 +216,8 @@ export default {
     showSubAccordions(el) {
       // https://stackoverflow.com/a/54422687
       setTimeout(() => {
-        el.style.height = el.scrollHeight + "px";
+      //   el.style.height = el.scrollHeight + "px";
+      el.style.height = this.mainaccordionHeight + "px";
       });
     },
     

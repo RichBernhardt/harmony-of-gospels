@@ -36,5 +36,6 @@ export const store = Vue.observable({
     initialLoad: false,
     onShow: false,
   },
+  transitionSpeed: 1, // pixel/millisecond
 
 });

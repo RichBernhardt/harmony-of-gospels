@@ -3,7 +3,8 @@
     class="accordion-sub"
     v-bind="{ expanded }"
   >
-    <button 
+    <button
+      ref="header"
       class="header"
       @click="onHeaderClick()"
     >
@@ -41,23 +42,23 @@
         :key="author.indexCurrent"
         class="gospel"
       >
-        <div class="range-container">
+        <div ref="ranges" class="range-container">
           <div
             ref="range" 
-            :class="['range', (expanded) ? 'range-expanded' : '']"
+            :class="['range', (expanding) ? 'range-expanded' : '']"
           >
             <!-- https://stackoverflow.com/a/925252 -->
             <a
               v-for="range in gospels.ranges"
-              v-show="(expanded || 
-                !(!expanded 
+              v-show="(expanding || 
+                !(!expanding 
                   && author.indexInitial === 0 
                   && range.range === '[Default]')
               )"
               :key="range.indexCurrent"
               href="javascript:"
               :class="[
-                (expanded)
+                (expanding)
                 ? (range.indexInitial === author.indexInitial) ? 'self' : ''
                 : 'a-collapsed'
               ]"
@@ -70,7 +71,7 @@
               v-text="range.range"
             />
           </div>
-          <div :class="[(expanded) 
+          <div :class="[(expanding) 
                 ? 'range-dummy-expanded' 
                 : 'range-dummy-collapsed']" 
           />
@@ -101,12 +102,20 @@ export default {
   data () {
     return {
       store,
+      expanding: false,
       expanded: false,
       gospels: {
         ranges: [],
         authors: [],
       },
-      collapsedGospelsHeight: undefined,
+      // Needs to be separate when main-accordion access them
+      headerHeightCollapsed: undefined,
+      gospelsHeightCollapsed: undefined,
+      // ScrollHeight excludes borders and margins.
+      // We handle them explicitely.
+      // Having no border in the scope, we add margins only.
+      marginsAndBorders: 5, // pixels
+      // marginsAndBorders takes into account only in expanded gospels
     }
   },
 
@@ -114,6 +123,12 @@ export default {
   created() {
     this.createRanges();
     this.createGospels();
+  },
+
+
+  mounted() {
+    this.headerHeightCollapsed = this.$refs.header.scrollHeight;
+    this.gospelsHeightCollapsed = this.getGospelsHeight();
   },
 
 
@@ -125,45 +140,53 @@ export default {
         this.groupIndex][this.groupTitle][this.eventIndex][1];
 
       // Transitions https://stackoverflow.com/q/56537331
+
       if (!this.expanded) { this.onHeaderClickTransitionExpand(); }
+      
       else { this.onHeaderClickTransitionCollapse(); }
     },
 
 
     onHeaderClickTransitionExpand() {
-      // Store collapsed height
-      this.collapsedGospelsHeight = this.$refs.gospels.scrollHeight;
-      // Apply collapsed height
-      this.$refs.gospels.style.height = this.collapsedGospelsHeight + 'px';
+      // Store collapsed header & gospels height
+      this.headerHeightCollapsed = this.$refs.header.scrollHeight;
+      this.gospelsHeightCollapsed = this.getGospelsHeight();
+
+      // Update gospels height in case it is 
+      // out of sync by any prior activity.
+      this.$refs.gospels.style.height = this.gospelsHeightCollapsed + 'px';
+
       // Turn transitioned section visible
+      this.expanding = true;
       this.expanded = true;
 
       setTimeout( () => {
+        // Get gospels expanded height
+        // const gospelsHeightExpanded = this.getGospelsHeight();
+
         // Call Main-Accordion to start expand-transition
-        this.$emit(
-          'on-sub-accordion-header-click', 
-          {
-            indexClicked: this.eventIndex,
-            heightDiff: this.$refs.gospels.scrollHeight - this.collapsedGospelsHeight
-          }
-        );
-        // Trigger Sub-Accordion to start expand-transition
-        this.$refs.gospels.style.height = this.$refs.gospels.scrollHeight + 'px';
+        this.$emit('on-sub-accordion-header-click', this.eventIndex);
+
+        // Trigger sub-accordion to start expand-transition
+        this.$refs.gospels.style.height = this.getGospelsHeight() + 'px';
       });
     },  
 
 
     onHeaderClickTransitionCollapse() {
+      // const expandedGospelsHeight = this.getGospelsHeight();
+
       // Call Main-Accordion to start collapse-transition
-      this.$emit(
-        'on-sub-accordion-header-click', 
-        {
-          indexClicked: this.eventIndex,
-          heightDiff: this.collapsedGospelsHeight - this.$refs.gospels.scrollHeight
-        }
-      );
-      // Trigger Sub-Accordion to start collapse-transition
-      this.$refs.gospels.style.height = this.collapsedGospelsHeight + 'px';     
+      this.expanding = false;
+      this.$emit('on-sub-accordion-header-click', this.eventIndex);
+
+      // Trigger sub-accordion to start collapse-transition
+      this.$refs.gospels.style.height = this.gospelsHeightCollapsed + 'px';
+
+      // Calc transition duration
+      // const transitionDuration = 
+      //   ( expandedGospelsHeight - this.gospelsHeightCollapsed ) / 
+      //   store.transitionSpeed + 'ms';
 
       // Once transition finished, hide transitioned section
       setTimeout( () => {
@@ -173,13 +196,13 @@ export default {
 
 
     onParallelGospelsChange(eventSource) {
+      // Header height does not matter in this process.
+      // Get gospels height before change.
+      // const gospelsHeightBefore = this.getGospelsHeight();
 
-      this.$refs.gospels.style.height = 
-        this.$refs.gospels.scrollHeight + 'px';
-
-      const heightBefore = 
-        this.getHeightOnParallelGospelsChange("text") + 
-          this.getHeightOnParallelGospelsChange("range");
+      // Update gospels height in case it is 
+      // out of sync by any prior activity. 
+      this.$refs.gospels.style.height = this.getGospelsHeight() + 'px';
 
       // on button "-"
       if (eventSource === "minus") {
@@ -193,30 +216,37 @@ export default {
       }
 
       setTimeout(() => {
+        // Get gospels height after change.
+        // const gospelsHeightAfter = this.getGospelsHeight();
 
-        const heightAfter = 
-          this.getHeightOnParallelGospelsChange("text") +
-            this.getHeightOnParallelGospelsChange("range");
+        // Trigger sub-accordion to start transition
 
-        const heightDiff = heightAfter - heightBefore;
+        // Set gospels height after change.
+        this.$refs.gospels.style.height = this.getGospelsHeight() + 'px';
 
-        this.$refs.gospels.style.height =
-          Number(this.$refs.gospels.style.height.slice(0,-2)) + 
-            heightDiff + 'px';
-
-        this.$emit('on-sub-accordion-gospel-change', heightDiff);
+        // Call Main-Accordion to start transition
+        // const heightDiff = gospelsHeightAfter - gospelsHeightBefore;
+        const preventScroll = true;
+        this.$emit('on-sub-accordion-gospel-change', preventScroll);
       });
     },
 
 
-    getHeightOnParallelGospelsChange(ref) {
-      const refHeights = [];
-
-      for (let i = 0; i < this.$refs[ref].length; i++) {
-        refHeights.push(this.$refs[ref][i].scrollHeight);
+    getGospelsHeight() {
+      // elements with v-for and v-show together does not update
+      // their scrollHeight properly. Therefore we go for the
+      // sum of their nested elements' own scrollHeights instead.
+      const getListHeight = (ref) => {
+        const refHeights = [];
+        for (let i = 0; i < this.$refs[ref].length; i++) {
+          refHeights.push(this.$refs[ref][i].scrollHeight);
+        }
+        return Math.max( ...refHeights );
       }
 
-      return Math.max( ...refHeights );
+      return getListHeight("range") + 
+        getListHeight("text") + this.marginsAndBorders;
+
     },
 
 
@@ -380,8 +410,8 @@ export default {
   nav {
     display: flex;
     align-items: center;
-    padding: 0;
-    margin: 0;
+    /* padding: 0;
+    margin: 0; */
   }
 
   .button-parallels {
@@ -391,9 +421,10 @@ export default {
     align-items: center;
     align-content: center;
     width: 2ch;
+    /* Need both height & font-size */
     height: 1em;
+    font-size: 2.1em;
     border-radius: 1em;
-    font-size: 2.3em;
     cursor: pointer;
     background-color: var(--bg-light);
   }
@@ -414,7 +445,7 @@ export default {
     opacity: 0;
   }
 
-/* ################################################# */
+/* ######################## GOSPELS ######################### */
 
   .gospels {
     display: flex;
@@ -438,16 +469,16 @@ export default {
   .range-container {
     display: flex;
     justify-content: center;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 5em;
+    background-color: var(--bg-light);
   }
 
   .range {
     flex: 1;
     display: flex;
     justify-content: center;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 5em;
-    background-color: var(--bg-light);
     font-size: 0.9em;
     max-width: fit-content;
   }
@@ -491,7 +522,7 @@ export default {
 
   .gospel-text {
     z-index: -1;
-    margin-top: 1em;
+    padding-top: 1em;
     text-align: justify;
     /* https://stackoverflow.com/a/20818206/ */
     line-height: 1.4;
@@ -510,7 +541,7 @@ export default {
     padding-right: 0.3em;
   }
 
-  /* POPUPS */
+/* ###################### POPUPS ########################### */
 
   .gospel-text >>> summary {
     text-decoration: underline;
