@@ -8,7 +8,7 @@ To do:
   <li><s>Loading Time Optimisation</s></li>
   <li><s>Foot notes' integration as popups (control & CSS only, no content yet)</s></li>
   <li><s>Split screen</s></li>
-  <li>Transitions</li>
+  <li><s>Transitions (for main page)</s></li>
   <li>Event specific URLs</li>
   <li>To include English version foot notes</li>
   <li>To include Hungarian version foot notes</li>
