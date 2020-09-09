@@ -502,7 +502,9 @@ export default {
     margin-right: 7px;
     padding-bottom: 7px;
     background-color: var(--bg-light);
+    overflow: hidden;
     white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   .a-collapsed {
