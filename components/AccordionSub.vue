@@ -498,11 +498,11 @@ export default {
   }
 
   a {
-    padding-left: 7px;
-    padding-right: 7px;
+    margin-left: 7px;
+    margin-right: 7px;
     padding-bottom: 7px;
     background-color: var(--bg-light);
-    /* white-space: nowrap; */
+    white-space: nowrap;
   }
 
   .a-collapsed {
