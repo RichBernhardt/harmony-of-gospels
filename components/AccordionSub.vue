@@ -502,7 +502,7 @@ export default {
     padding-right: 7px;
     padding-bottom: 7px;
     background-color: var(--bg-light);
-    white-space: nowrap;
+    /* white-space: nowrap; */
   }
 
   .a-collapsed {
