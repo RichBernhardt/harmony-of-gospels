@@ -21,7 +21,6 @@
 <script>
 import { store } from "~/components/store";
 export default {
-
   data: () => ({
     store,
     expandedMainAccordionIncumbent: null,
@@ -33,6 +32,12 @@ export default {
       return store.media.splitWidth > 
           store.media.windowWidth - store.media.windowHeight * 0.4
     },
+  },
+
+
+  mounted() {
+    // https://nuxtjs.org/guides/directory-structure/plugins
+    window.addEventListener('scroll', this.$setScrollBy);
   },
 
 

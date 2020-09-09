@@ -67,11 +67,6 @@ export default {
   },
 
 
-  mounted() {
-    window.addEventListener('scroll', this.setScrollBy);
-  },
-
-
   // computed: {
   //   transitionDuration() {
   //     return this.transitionHeightDiff / store.transitionSpeed + 'ms';
@@ -177,7 +172,7 @@ export default {
         ? this.mainaccordionHeight - mainaccordionHeight
         : mainaccordionHeight - this.mainaccordionHeight;
 
-      this.setScrollBy(heightDiff);
+      this.$setScrollBy(heightDiff);
 
       // Set height
       this.mainaccordionHeight = mainaccordionHeight;
@@ -202,12 +197,6 @@ export default {
       return subaccordion.headerHeightCollapsed +
         subaccordion.gospelsHeightCollapsed;
     },
-
-
-    setScrollBy(heightDiff) {
-      window.scrollBy(0,heightDiff);
-    },
-
 
 
     // TRANSITION METHODS
