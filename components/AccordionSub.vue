@@ -57,10 +57,12 @@
               )"
               :key="range.indexCurrent"
               href="javascript:"
-              :class="[
+              :class="['link',
                 (expanding)
-                ? (range.indexInitial === author.indexInitial) ? 'self' : ''
-                : 'a-collapsed'
+                ? (range.indexInitial === author.indexInitial) 
+                  ? 'link-expanded link-self' 
+                  : 'link-expanded'
+                : 'link-collapsed'
               ]"
               @click.prevent="onGospelsSwap({
                 rangeInitial: range.indexInitial,
@@ -478,13 +480,14 @@ export default {
   .range {
     flex: 1;
     display: flex;
-    justify-content: center;
     font-size: 0.9em;
+    /* Need for 'flex' transition */
     max-width: fit-content;
   }
 
   .range-expanded {
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .range-dummy-expanded {
@@ -497,26 +500,31 @@ export default {
     transition: flex 400ms;
   }
 
-  a {
-    margin-left: 7px;
-    margin-right: 7px;
+  .link {
     padding-bottom: 7px;
     background-color: var(--bg-light);
-    overflow: hidden;
     white-space: nowrap;
-    text-overflow: ellipsis;
   }
 
-  .a-collapsed {
+  .link-expanded {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  .link-collapsed {
     text-decoration: none;
     color: black;
   }
 
-  a:visited {
+  .link:visited {
     color:blue;
   }
 
-  .self {
+  .link-collapsed:not(:last-child) {
+    padding-right: 10px;
+  }
+
+  .link-self {
     font-weight: bold;
     color:inherit;
     text-decoration: inherit;
