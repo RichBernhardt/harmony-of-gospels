@@ -61,11 +61,18 @@ to marry Joseph, but before they married, she learned she was pregnant by the po
 // 20
 `While Joseph thought about these things, an angel of the Lord came to him in a dream. The angel said, “Joseph, descendant of David, don’t be afraid to take Mary as your wife, because the baby in her is from the Holy Spirit.`,
 // 21
-`She will give birth to a son, and you will name him Jesus,(e) because he will save his people from their sins.”`,
+`She will give birth to a son, and you will name him
+<details>
+  <summary>Jesus,</summary>
+  <span>
+    The name “Jesus” means “salvation.”
+  </span>
+</details> 
+because he will save his people from their sins.”`,
 // 22
 `All this happened to bring about what the Lord had said through the prophet:`,
 // 23
-`“The virgin will be pregnant. She will have a son, and they will name him Immanuel,”(f) which means “God is with us.”`,
+`“The virgin will be pregnant. She will have a son, and they will name him Immanuel” (Isaiah 7:14) - which means “God is with us.”`,
 // 24
 `When Joseph woke up, he did what the Lord’s angel had told him to do. Joseph took Mary as his wife,`,
 // 25
@@ -104,7 +111,7 @@ A ruler will come from you
 // 14
 `So Joseph got up and left for Egypt during the night with the child and his mother.`,
 // 15
-`And Joseph stayed in Egypt until Herod died. This happened to bring about what the Lord had said through the prophet: “I called my son out of Egypt.”(g)`,
+`And Joseph stayed in Egypt until Herod died. This happened to bring about what the Lord had said through the prophet: “I called my son out of Egypt.”(Hosea 11:1)`,
 // 16
 `When Herod saw that the wise men had tricked him, he was furious. So he gave an order to kill all the baby boys in Bethlehem and in the surrounding area who were two years old or younger. This was in keeping with the time he learned from the wise men.`,
 // 17
@@ -125,7 +132,13 @@ Rachel crying for her children.
 // 22
 `But he heard that Archelaus was now king in Judea since his father Herod had died. So Joseph was afraid to go there. After being warned in a dream, he went to the area of Galilee,`,
 // 23
-`to a town called Nazareth, and lived there. And so what God had said through the prophets came true: “He will be called a Nazarene.”(h)`
+`to a town called Nazareth, and lived there. And so what God had said through the prophets came true:
+<details>
+  <summary>“He will be called a Nazarene.”</summary>
+  <span>
+    A person from the town of Nazareth. Matthew may be referring to Isaiah 11:1, where the Hebrew word translated “branch” sounds like “Nazarene.”
+  </span>
+</details>`
 ],
 [ // 3
 `About that time John the Baptist began preaching in the desert area of Judea.`,
@@ -151,11 +164,26 @@ Rachel crying for her children.
 // 9
 `And don’t think you can say to yourselves, ‘Abraham is our father.’ I tell you that God could make children for Abraham from these rocks.`,
 // 10
-`The ax is now ready to cut down the trees, and every tree that does not produce good fruit will be cut down and thrown into the fire.(i)`,
+`<details>
+  <summary>
+    The ax is now ready to cut down the trees, and every tree that does not produce good fruit will be cut down and thrown into the fire.
+  </summary>
+  <span>
+    This means that God is ready to punish his people who do not obey him.
+  </span>
+</details>`,
 // 11
 `“I baptize you with water to show that your hearts and lives have changed. But there is one coming after me who is greater than I am, whose sandals I am not good enough to carry. He will baptize you with the Holy Spirit and fire.`,
 // 12
-`He will come ready to clean the grain, separating the good grain from the chaff. He will put the good part of the grain into his barn, but he will burn the chaff with a fire that cannot be put out.”(j)`,
+`He will come ready to clean the grain, separating the good grain from the chaff.
+<details>
+  <summary>
+    He will put the good part of the grain into his barn, but he will burn the chaff with a fire that cannot be put out.”
+  </summary>
+  <span>
+    This means that Jesus will come to separate good people from bad people, saving the good and punishing the bad.
+  </span>
+</details>`,
 // 13
 `At that time Jesus came from Galilee to the Jordan River and wanted John to baptize him.`,
 // 14
@@ -174,7 +202,7 @@ Rachel crying for her children.
 // 3
 `The devil came to Jesus to tempt him, saying, “If you are the Son of God, tell these rocks to become bread.”`,
 // 4
-`Jesus answered, “It is written in the Scriptures, ‘A person lives not on bread alone, but by everything God says.’”(k)`,
+`Jesus answered, “It is written in the Scriptures, ‘A person lives not on bread alone, but by everything God says.’” (Deuteronomy 8:3)`,
 // 5
 `Then the devil led Jesus to the holy city of Jerusalem and put him on a high place of the Temple.`,
 // 6
@@ -184,13 +212,13 @@ Rachel crying for her children.
 so that you will not hit your foot on a rock.’”
 (Psalm 91:11 - 12)`,
 // 7
-`Jesus answered him, “It also says in the Scriptures, ‘Do not test the Lord your God.’”(l)`,
+`Jesus answered him, “It also says in the Scriptures, ‘Do not test the Lord your God.’” (Deuteronomy 6:16)`,
 // 8
 `Then the devil led Jesus to the top of a very high mountain and showed him all the kingdoms of the world and all their splendor.`,
 // 9
 `The devil said, “If you will bow down and worship me, I will give you all these things.”`,
 // 10
-`Jesus said to the devil, “Go away from me, Satan! It is written in the Scriptures, ‘You must worship the Lord your God and serve only him.’”(m)`,
+`Jesus said to the devil, “Go away from me, Satan! It is written in the Scriptures, ‘You must worship the Lord your God and serve only him.’” (Deuteronomy 6:13)`,
 // 11
 `So the devil left Jesus, and angels came and took care of him.`,
 // 12
@@ -225,9 +253,27 @@ They live in a place covered with the shadows of death,
 // 23
 `Jesus went everywhere in Galilee, teaching in the synagogues, preaching the Good News about the kingdom of heaven, and healing all the people’s diseases and sicknesses.`,
 // 24
-`The news about Jesus spread all over Syria, and people brought all the sick to him. They were suffering from different kinds of diseases. Some were in great pain, some had demons, some were epileptics,(n) and some were paralyzed. Jesus healed all of them.`,
+`The news about Jesus spread all over Syria, and people brought all the sick to him. They were suffering from different kinds of diseases. Some were in great pain, some had demons, some were
+<details>
+  <summary>
+    epileptics,
+  </summary>
+  <span>
+    People with a disease that causes them sometimes to lose control of their bodies and maybe faint, shake strongly, or not be able to move.
+  </span>
+</details>
+and some were paralyzed. Jesus healed all of them.`,
 // 25
-`Many people from Galilee, the Ten Towns,(o) Jerusalem, Judea, and the land across the Jordan River followed him.`
+`Many people from Galilee, the
+<details>
+  <summary>
+    Ten Towns,
+  </summary>
+  <span>
+    In Greek, called “Decapolis.” It was an area east of Lake Galilee that once had ten main towns.
+  </span>
+</details>
+Jerusalem, Judea, and the land across the Jordan River followed him.`
 ],
 [ // 5
 `When Jesus saw the crowds, he went up on a hill and sat down. His followers came to him,`,

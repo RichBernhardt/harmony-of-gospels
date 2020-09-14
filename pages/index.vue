@@ -9,7 +9,6 @@
             groupIndex,
             groupTitle: (Object.keys(group)).toString()
           }"
-          @on-main-accordion-header-click="updateExpandedMainAccordion"
         />
     </SplitView>
     <Map />
@@ -22,8 +21,7 @@
 import { store } from "~/components/store";
 export default {
   data: () => ({
-    store,
-    expandedMainAccordionIncumbent: null,
+    store
   }),
 
 
@@ -38,24 +36,6 @@ export default {
   mounted() {
     // https://nuxtjs.org/guides/directory-structure/plugins
     window.addEventListener('scroll', this.$setScrollBy);
-  },
-
-
-  methods: {
-    updateExpandedMainAccordion(indexClicked) {
-      const indexIncumbent =
-        (this.expandedMainAccordionIncumbent !== null)
-          ? this.expandedMainAccordionIncumbent
-          : indexClicked;
-
-      setTimeout(() => {
-        if (indexIncumbent !== indexClicked) {
-          this.$refs.mainaccordion[indexIncumbent].expanded = false;
-        }
-          
-        this.expandedMainAccordionIncumbent = indexClicked;
-      });
-    }
   },
 
 }

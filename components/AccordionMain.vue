@@ -1,45 +1,39 @@
 <template>
   <section
+    ref="mainaccordion"
     class="accordion-main"
     v-bind="{ expanded }"
   >
     <button
       :class="['header-as-button', expanded ? 'header-border-bottom' : '']"
-      @click="onMainAccordionHeaderClick()"
+      @click="onHeaderClick()"
     >
         <div
           class="title"
           v-text="groupTitle"
         />
     </button>
-
-    <transition
-      @enter="showSubAccordions"
-      @leave="hideSubAccordions"
+      <!-- :style="{'transition': `height ${transitionDuration}` }" -->
+    <section
+      v-show="expanded"
+      ref="subaccordions"
+      class="sub-accordions"
     >
-        <!-- :style="{'transition': `height ${transitionDuration}` }" -->
-      <section
-        v-show="expanded"
-        ref="subaccordions"
-        class="sub-accordions"
-      >
-        <!-- Minimise initial DOM nodes for quick page loading -->
-        <template v-if="hasEverExpanded">
-          <AccordionSub
-            v-for="(event,eventIndex) in store.timeline[groupIndex][groupTitle]"
-            ref="subaccordion"
-            :key="eventIndex"
-            v-bind="{ 
-              groupIndex,
-              groupTitle,
-              eventIndex
-            }"
-            @on-sub-accordion-header-click="onSubAccordionHeaderClick"
-            @on-sub-accordion-gospel-change="setMainaccordionHeight"
-          />
-        </template>
-      </section>
-    </transition>
+      <!-- Minimise initial DOM nodes for quick page loading -->
+      <template v-if="hasSubaccordionsCreated">
+        <AccordionSub
+          v-for="(event,eventIndex) in store.timeline[groupIndex][groupTitle]"
+          ref="subaccordion"
+          :key="eventIndex"
+          v-bind="{ 
+            groupIndex,
+            groupTitle,
+            eventIndex
+          }"
+          @update-height="setMainaccordionHeight"
+        />
+      </template>
+    </section>
   </section>
 </template>
 
@@ -58,10 +52,10 @@ export default {
     return {
       store,
       expanded: false,
-      hasEverExpanded: false,
+      heightOld: 0,
+      heightNew: 0,
+      hasSubaccordionsCreated: false,
       subaccordionIncumbent: null,
-      mainaccordionHeight: 0,
-      firstSubaccordion: true,
       // transitionHeightDiff: 0,
     }
   },
@@ -75,108 +69,116 @@ export default {
 
 
   methods: {
-    onMainAccordionHeaderClick() {
-      if (this.hasEverExpanded === false) {
-        this.hasEverExpanded = true;
-        this.$refs.subaccordions.style.height = 0;
+    onHeaderClick() {
+      // OPTIONS (incumbent refers to previously clicked):
+      // 1. Open first ever (no incumbent)
+      // 2. Open another (auto close incumbent)
+      // 3. Close opened (re-click on incumbent)
+      // 4. Re-open user-closed (re-click on incumbent)
+
+      // 1. Open first ever (no incumbent)
+      if (store.mainaccordionIncumbent === null) {
+
+        store.mainaccordionIncumbent = this.groupIndex;
+
+        this.toExpand();
       }
 
-      // To expand
-      if (!this.expanded) {
-        this.expanded = true;
+      // 2. Open another (auto close incumbent)
+      else if (store.mainaccordionIncumbent !== this.groupIndex) {
+        
+        // It's really ugly, I know, but want to confine all
+        // relevant code to the component, and have no better idea.
+        this.$parent.$parent.$refs.mainaccordion[
+          store.mainaccordionIncumbent].toCollapse();
 
-        setTimeout(() => {
-          // Call Index.vue to close the previously opened main-accordion:
-          this.$emit('on-main-accordion-header-click', this.groupIndex);
+        store.mainaccordionIncumbent = this.groupIndex;
 
-          // Initialise for future sub-accordion transition requests
-          this.setMainaccordionHeight();
-        });
-
-      // To collapse
-      } else {
-        this.mainaccordionHeight = 0;
-        this.expanded = false;
-      }
-    },
-
-
-    onSubAccordionHeaderClick(indexClicked) {
-      // If no sub-accordion has ever been clicked before
-      if (this.subaccordionIncumbent === null) {
-        // Update reference of clicked sub-accordion
-        this.subaccordionIncumbent = indexClicked;
+        this.toExpand();
       }
 
-      else {
-        const indexIncumbent = this.subaccordionIncumbent;
-
-        const subaccordionPrevious = 
-          this.$refs.subaccordion[indexIncumbent];
-
-        if (indexClicked !== indexIncumbent) {
-          // Set sub-accordion header height
-          subaccordionPrevious.$refs.header.style.height = 
-            subaccordionPrevious.headerHeightCollapsed + 'px';
-          // Trigger sub-accordion to start collapse-transition
-          subaccordionPrevious.$refs.gospels.style.height = 
-            subaccordionPrevious.gospelsHeightCollapsed + 'px';
-
-          this.subaccordionIncumbent = indexClicked;
-          subaccordionPrevious.expanding = false;
+      // 3. Close opened (re-click on incumbent)
+      else if (this.expanded) { 
+        this.toCollapse(); 
+      }
       
-          // // Calc transition duration of sub-accordion collapse
-          // const transitionDuration = 
-          //   heightDiffToCollapse / store.transitionSpeed + 'ms';
-          // Once transition finished, hide transitioned section
-          setTimeout( () => {
-            subaccordionPrevious.expanded = false;
-          }, 1000);
-        }
+      // 4. Re-open user-closed (re-click on incumbent)
+      else { 
+        this.toExpand(); 
       }
 
-      this.setMainaccordionHeight();
+      // Always do
+      setTimeout( () => {
+        // Scroll content into view
+        this.setScrollBy();
+        // Update stored height
+        this.heightOld = this.heightNew;
+
+      }, store.transitionDuration);
     },
 
 
-    setMainaccordionHeight(preventScroll) {
-      let mainaccordionHeight = 0; let i = 0;
+    setScrollBy() {
+      const scrollDiff = 
+        this.$refs.mainaccordion.getBoundingClientRect().top;
 
-      for (i; i < this.$refs.subaccordion.length; i++) {
-        if (this.$refs.subaccordion[i].expanding) {
-            mainaccordionHeight += 
-              this.getExpandedSubaccordionHeight(this.$refs.subaccordion[i]) - 1;
-        }
-        else { mainaccordionHeight += 
-          this.getCollapsedSubaccordionHeight(this.$refs.subaccordion[i]); }
-      }
+      this.$setScrollBy(scrollDiff);
+    },
 
-      // Add borders
-      const borders = this.$refs.subaccordion.length;
-      mainaccordionHeight += borders;
 
-      // Adjust height
-      this.$refs.subaccordions.style.height =
-        mainaccordionHeight + 'px';
+    toCollapse() {
+      // Trigger self to start collapse-transition
+      this.$refs.subaccordions.style.height = 0;
+      
+      // Update stored height
+      this.heightNew = 0;
 
-      // // Adjust scroll position
-      if (this.subaccordionIncumbent === null || preventScroll) {
-        this.mainaccordionHeight = mainaccordionHeight;
-      }
-      if (this.subaccordionIncumbent !== null && this.firstSubaccordion) {
-        this.mainaccordionHeight = mainaccordionHeight;
-        this.firstSubaccordion = false;
-      }
+      this.setScrollBy();
 
-      const heightDiff = (this.mainaccordionHeight <= mainaccordionHeight)
-        ? this.mainaccordionHeight - mainaccordionHeight
-        : mainaccordionHeight - this.mainaccordionHeight;
+      // Once transition finished, hide transitioned section
+      setTimeout( () => {
+        this.expanded = false;
+      }, store.transitionDuration);
+    },
 
-      this.$setScrollBy(heightDiff);
+
+    toExpand() {
+      // Create Subaccordion (if not exist yet)
+      this.hasSubaccordionsCreated = true;
 
       // Set height
-      this.mainaccordionHeight = mainaccordionHeight;
+      this.$refs.subaccordions.style.height = 0;
 
+      this.expanded = true;
+
+      setTimeout( () => {
+        this.setMainaccordionHeight();
+      });
+    },
+
+
+    setMainaccordionHeight() {
+      this.heightNew = 0; let i = 0;
+
+      for (i; i < this.$refs.subaccordion.length; i++) {
+        
+        if (this.$refs.subaccordion[i].expanding) {
+          this.heightNew += 
+            this.getExpandedSubaccordionHeight(this.$refs.subaccordion[i]);
+        }
+        else { 
+          this.heightNew += 
+            this.getCollapsedSubaccordionHeight(this.$refs.subaccordion[i]); 
+        }
+      }
+
+      // Take borders into account for height 
+      // difference (1px per subaccordion)
+      this.heightNew += this.$refs.subaccordion.length;
+
+      // Update height
+      this.$refs.subaccordions.style.height =
+        this.heightNew + 'px';
     },
 
 
@@ -184,9 +186,8 @@ export default {
       subaccordion = subaccordion || 
         this.$refs.subaccordion[this.subaccordionIncumbent];
 
-      return subaccordion.$refs.header.scrollHeight +
+      return subaccordion.$refs.header.getBoundingClientRect().height +
         subaccordion.getGospelsHeight();
-        // + subaccordion.marginsAndBorders;
     },
 
 
@@ -198,22 +199,6 @@ export default {
         subaccordion.gospelsHeightCollapsed;
     },
 
-
-    // TRANSITION METHODS
-    // https://vuejs.org/v2/guide/transitions.html#JavaScript-Hooks
-    // https://stackoverflow.com/q/56537331
-    showSubAccordions(el) {
-      // https://stackoverflow.com/a/54422687
-      setTimeout(() => {
-      //   el.style.height = el.scrollHeight + "px";
-      el.style.height = this.mainaccordionHeight + "px";
-      });
-    },
-    
-    hideSubAccordions(el) {
-      el.style.height = 0;
-    },
-
   },
   
 }
@@ -221,7 +206,7 @@ export default {
 
 <style scoped>
   .sub-accordions {
-    transition: height 1s;
+    transition: height var(--transition-duration);
   }
 
   .accordion-main {

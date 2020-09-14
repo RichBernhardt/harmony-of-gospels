@@ -36,6 +36,7 @@ export const store = Vue.observable({
     initialLoad: false,
     onShow: false,
   },
-  transitionSpeed: 1, // pixel/millisecond
+  mainaccordionIncumbent: null,
+  transitionDuration: 700, // millisecond
 
 });

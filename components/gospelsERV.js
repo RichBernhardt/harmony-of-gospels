@@ -54,9 +54,18 @@ Jákin fia Elihud,`,
 Eleázár fia Mattán,
 Mattán fia Jákób.`,
 // 16  
-`Jákób fia József,
-aki annak a Máriának a férje volt,
-akitől Jézus, a Messiás született.`,
+`Jákób fia József, aki annak a Máriának a 
+<details>
+  <summary>férje</summary>
+  <span>
+    Valószínűleg Mária "apja"-ként értendő ("férje" helyett)</br>
+    • Egyfelől hogy értelmet nyerjen a felmenők eltérése Lk 3:23-38 -hoz képest,</br>
+    • Valamint hogy kiadódjon a teljes 14 generáció</br>
+    </br>
+    <small><strong>Ez a megjegyzés nem része az ERV-HU Biblia fordításnak</strong></small>
+  </span>
+</details> 
+volt, akitől Jézus, a Messiás született.`,
 // 17  
 `A nemzedékek száma tehát Ábrahámtól Dávidig tizennégy, Dávidtól a babiloni fogságba vitelig szintén tizennégy, a babiloni fogságba viteltől a Messiás születéséig ismét tizennégy.`,
 // 18  ~ Jézus születése (#B) ~ 
@@ -6763,7 +6772,21 @@ Mivel ez szombaton történt,`,
 // 3  
 `Jézus felment a hegyoldalra, és a tanítványaival együtt letelepedett.`,
 // 4  
-`Ekkor már közel volt a páska, a zsidók nagy ünnepe.`,
+`Ekkor már közel volt a 
+<details>
+  <summary>páska,</summary>
+  <span>
+    Ez valószínűleg a "Harsonák Napjának ünnepe" (nem páska / húsvét)</br>
+    • A páska ünnepe alatt mindenkinek Jeruzsálemben kell lennie a Tóra szerint.
+          Ez az esemény azonban Betsaidában van, Jeruzsálemtől több mint 120 km-re.</br>
+    • Jézus kovászos kenyeret ad az embereknek (amit a páska ünnepén tilos fogyasztani).</br>
+    • Az "utolsó nap" és az "emberek feltámadása" a Harsonák Napjának alapelemei, nem a páskájé 
+          (lsd. a másnapi események következő igehelyeit: Jn6:39,40,44,54)</br>
+    </br>
+    <small><strong>Ez a megjegyzés nem része az ERV-HU Biblia fordításnak</strong></small>
+  </span>
+</details>
+a zsidók nagy ünnepe.`,
 // 5  
 `Amikor Jézus körülnézett és látta, hogy mekkora tömeg közeledik feléjük, megkérdezte Fülöptől: „Honnan vegyünk annyi kenyeret, hogy mindannyian ehessenek?”`,
 // 6  

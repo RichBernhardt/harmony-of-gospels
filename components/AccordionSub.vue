@@ -44,16 +44,15 @@
       >
         <div ref="ranges" class="range-container">
           <div
-            ref="range" 
+            v-show="author.indexCurrent === 0 || expanded === expanding"
+            ref="range"
             :class="['range', (expanding) ? 'range-expanded' : '']"
           >
             <!-- https://stackoverflow.com/a/925252 -->
             <a
               v-for="range in gospels.ranges"
               v-show="(expanding || 
-                !(!expanding 
-                  && author.indexInitial === 0 
-                  && range.range === '[Default]')
+                !(!expanding && range.range === '[Default]')
               )"
               :key="range.indexCurrent"
               href="javascript:"
@@ -81,7 +80,11 @@
         <div
           v-show="expanded"
           ref="text"
-          class="gospel-text"
+          :class="['gospel-text',
+            (expanding)
+              ? 'gospel-text-expanded'
+              : 'gospel-text-collapsed'
+          ]"
           tabindex="-1"
           v-html="author.gospel"
         />
@@ -114,10 +117,8 @@ export default {
       headerHeightCollapsed: undefined,
       gospelsHeightCollapsed: undefined,
       // ScrollHeight excludes borders and margins.
-      // We handle them explicitely.
-      // Having no border in the scope, we add margins only.
-      marginsAndBorders: 5, // pixels
-      // marginsAndBorders takes into account only in expanded gospels
+      // Having no border in the scope, we handle margins only.
+      margins: 5, // pixels (see in $refs: gospel)
     }
   },
 
@@ -129,8 +130,8 @@ export default {
 
 
   mounted() {
-    this.headerHeightCollapsed = this.$refs.header.scrollHeight;
-    this.gospelsHeightCollapsed = this.getGospelsHeight();
+    // Store collapsed header & gospels height
+      this.storeCollapsedHeight();
   },
 
 
@@ -143,16 +144,79 @@ export default {
 
       // Transitions https://stackoverflow.com/q/56537331
 
-      if (!this.expanded) { this.onHeaderClickTransitionExpand(); }
+      // OPTIONS (incumbent refers to previously clicked):
+      // 1. Open first ever (no incumbent)
+      // 2. Open another (auto close incumbent)
+      // 3. Close opened (re-click on incumbent)
+      // 4. Re-open user-closed (re-click on incumbent)
+
+      // 1. Open first ever (no incumbent)
+      if (this.$parent.subaccordionIncumbent === null) {
+
+        this.$parent.subaccordionIncumbent = this.eventIndex;
+
+        this.toExpand();
+      }
+
+      // 2. Open another (auto close incumbent)
+      else if (this.$parent.subaccordionIncumbent !== this.eventIndex) {
+
+        this.$parent.$refs.subaccordion[
+          this.$parent.subaccordionIncumbent].toCollapse(false);
+
+        this.$parent.subaccordionIncumbent = this.eventIndex;
+
+        this.toExpand();
+      }
+
+      // 3. Close opened (re-click on incumbent)
+      else if (this.expanded) { 
+        this.toCollapse(true); 
+      }
       
-      else { this.onHeaderClickTransitionCollapse(); }
+      // 4. Re-open user-closed (re-click on incumbent)
+      else { 
+        this.toExpand(); 
+      }
+
+      // Always do
+      setTimeout( () => {
+        // Scroll the content into view
+        this.setScrollBy();
+      }, store.transitionDuration + 100);
     },
 
 
-    onHeaderClickTransitionExpand() {
-      // Store collapsed header & gospels height
-      this.headerHeightCollapsed = this.$refs.header.scrollHeight;
-      this.gospelsHeightCollapsed = this.getGospelsHeight();
+    setScrollBy() {
+      const scrollDiff = 
+        this.$refs.gospels.getBoundingClientRect().top - 100;
+
+      this.$setScrollBy(scrollDiff);
+    },
+
+
+    toCollapse(alertMainaccordion) {
+      // Call Main-Accordion to start transition
+      this.expanding = false;
+      if (alertMainaccordion) { this.$emit('update-height'); }
+
+      // Trigger self to start collapse-transition
+      this.$refs.gospels.style.height = 
+        this.gospelsHeightCollapsed + 'px';
+      
+      this.setScrollBy();
+
+      // Once transition finished, hide transitioned section
+      setTimeout( () => {
+        this.expanded = false;
+      }, store.transitionDuration);
+    },
+
+
+    toExpand() { 
+      // Get collapsed height in case it is 
+      // out of sync by any prior activity.
+      this.storeCollapsedHeight();
 
       // Update gospels height in case it is 
       // out of sync by any prior activity.
@@ -163,48 +227,30 @@ export default {
       this.expanded = true;
 
       setTimeout( () => {
-        // Get gospels expanded height
-        // const gospelsHeightExpanded = this.getGospelsHeight();
-
-        // Call Main-Accordion to start expand-transition
-        this.$emit('on-sub-accordion-header-click', this.eventIndex);
-
         // Trigger sub-accordion to start expand-transition
-        this.$refs.gospels.style.height = this.getGospelsHeight() + 'px';
+        this.$refs.gospels.style.height = 
+          this.getGospelsHeight() + 'px';
+        
+        // Call Main-Accordion to start transition
+        this.$emit('update-height');
       });
     },  
 
 
-    onHeaderClickTransitionCollapse() {
-      // const expandedGospelsHeight = this.getGospelsHeight();
-
-      // Call Main-Accordion to start collapse-transition
-      this.expanding = false;
-      this.$emit('on-sub-accordion-header-click', this.eventIndex);
-
-      // Trigger sub-accordion to start collapse-transition
-      this.$refs.gospels.style.height = this.gospelsHeightCollapsed + 'px';
-
-      // Calc transition duration
-      // const transitionDuration = 
-      //   ( expandedGospelsHeight - this.gospelsHeightCollapsed ) / 
-      //   store.transitionSpeed + 'ms';
-
-      // Once transition finished, hide transitioned section
-      setTimeout( () => {
-        this.expanded = false;
-      }, 1000);
+    storeCollapsedHeight() {
+      // Store collapsed header & gospels height
+      this.headerHeightCollapsed = 
+        this.$refs.header.getBoundingClientRect().height;
+      
+      this.gospelsHeightCollapsed = this.getGospelsHeight();
     },
 
 
     onParallelGospelsChange(eventSource) {
-      // Header height does not matter in this process.
-      // Get gospels height before change.
-      // const gospelsHeightBefore = this.getGospelsHeight();
-
-      // Update gospels height in case it is 
-      // out of sync by any prior activity. 
-      this.$refs.gospels.style.height = this.getGospelsHeight() + 'px';
+      // Update gospels height before change,
+      // in case it is out of sync by any prior activity. 
+      this.$refs.gospels.style.height = 
+        this.getGospelsHeight() + 'px';
 
       // on button "-"
       if (eventSource === "minus") {
@@ -218,18 +264,14 @@ export default {
       }
 
       setTimeout(() => {
-        // Get gospels height after change.
-        // const gospelsHeightAfter = this.getGospelsHeight();
+        // Update gospels height after change,
+        // which triggers self transition
+        this.$refs.gospels.style.height = 
+          this.getGospelsHeight() + 'px';
+        
+        this.$emit('update-height');
 
-        // Trigger sub-accordion to start transition
-
-        // Set gospels height after change.
-        this.$refs.gospels.style.height = this.getGospelsHeight() + 'px';
-
-        // Call Main-Accordion to start transition
-        // const heightDiff = gospelsHeightAfter - gospelsHeightBefore;
-        const preventScroll = true;
-        this.$emit('on-sub-accordion-gospel-change', preventScroll);
+        this.setScrollBy();
       });
     },
 
@@ -241,13 +283,12 @@ export default {
       const getListHeight = (ref) => {
         const refHeights = [];
         for (let i = 0; i < this.$refs[ref].length; i++) {
-          refHeights.push(this.$refs[ref][i].scrollHeight);
+          refHeights.push(this.$refs[ref][i].getBoundingClientRect().height);
         }
         return Math.max( ...refHeights );
       }
 
-      return getListHeight("range") + 
-        getListHeight("text") + this.marginsAndBorders;
+      return getListHeight("range") + getListHeight("text") + this.margins;
 
     },
 
@@ -412,8 +453,6 @@ export default {
   nav {
     display: flex;
     align-items: center;
-    /* padding: 0;
-    margin: 0; */
   }
 
   .button-parallels {
@@ -451,8 +490,8 @@ export default {
 
   .gospels {
     display: flex;
-    transition: height 1s;
-    /* alternative to overflow */
+    transition: height var(--transition-duration);
+    /* alternative to overflow: hidden */
     background-color: var(--bg-light);
   }
 
@@ -531,11 +570,20 @@ export default {
   }
 
   .gospel-text {
+    transition: opacity var(--transition-duration);
     z-index: -1;
     padding-top: 1em;
     text-align: justify;
     /* https://stackoverflow.com/a/20818206/ */
     line-height: 1.4;
+  }
+
+  .gospel-text-expanded {
+    opacity: 1;
+  }
+
+  .gospel-text-collapsed {
+    opacity: 0;
   }
 
   /* https://stackoverflow.com/a/13878902/ */
