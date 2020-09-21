@@ -522,18 +522,19 @@ export default {
   }
 
   .range {
-    flex: 1;
+    flex: 4;
     font-size: 0.9em;
     background-color: var(--bg-light);
-    max-width: calc(100vw - 24px);
   }
 
   .range-expanded {
-    overflow-wrap: break-word;
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .range-collapsed {
+    max-width: calc(100vw - 24px);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
