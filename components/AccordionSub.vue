@@ -238,7 +238,7 @@ export default {
         
         // Call Main-Accordion to start transition
         this.$emit('update-height');
-      });
+      }, store.transitionDuration);
     },  
 
 
@@ -522,15 +522,15 @@ export default {
   }
 
   .range {
-    flex: 4;
+    flex: 8;
     font-size: 0.9em;
     background-color: var(--bg-light);
   }
 
   .range-expanded {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .range-collapsed {
@@ -580,6 +580,7 @@ export default {
     font-weight: bold;
     color:inherit;
     text-decoration: inherit;
+    /* pointer-events: none; */
   }
 
   .gospel-text {

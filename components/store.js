@@ -37,6 +37,6 @@ export const store = Vue.observable({
     onShow: false,
   },
   mainaccordionIncumbent: null,
-  transitionDuration: 700, // millisecond
+  transitionDuration: 500, // millisecond
 
 });

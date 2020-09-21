@@ -24,7 +24,7 @@ export default {
   /* LemonChiffon: hsl(54, 100%, 90%) */
   --bg-light: LemonChiffon;
 
-  --transition-duration: 700ms;
+  --transition-duration: 500ms;
 }
 
 </style>
