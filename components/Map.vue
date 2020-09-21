@@ -38,8 +38,10 @@ export default {
   @media
     (orientation: landscape) and (max-height: 528px) {
     .rootVariable {
-      height: 101vw;
-      transform: rotate(-90deg) translateY(-20vw) translateX(21vw);
+      /* https://stackoverflow.com/a/51742059 */
+      height: 98vw;
+      transform-origin: top right;
+      transform: rotate(-90deg) translateY(-100%);
     }
   }
 

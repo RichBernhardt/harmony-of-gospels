@@ -43,10 +43,14 @@
         class="gospel"
       >
         <div ref="ranges" class="range-container">
+          <div :class="['range-dummy', (expanding) 
+                ? 'range-dummy-expanded' 
+                : 'range-dummy-collapsed']" 
+          />
           <div
             v-show="author.indexCurrent === 0 || expanded === expanding"
             ref="range"
-            :class="['range', (expanding) ? 'range-expanded' : '']"
+            :class="['range', (expanding) ? 'range-expanded' : 'range-collapsed']"
           >
             <!-- https://stackoverflow.com/a/925252 -->
             <a
@@ -183,13 +187,14 @@ export default {
       setTimeout( () => {
         // Scroll the content into view
         this.setScrollBy();
-      }, store.transitionDuration + 100);
+      }, store.transitionDuration);
     },
 
 
     setScrollBy() {
       const scrollDiff = 
-        this.$refs.gospels.getBoundingClientRect().top - 100;
+        this.$refs.gospels.getBoundingClientRect().top - (5.3 * 16);
+    // 5.3 * 16: accordion header min-widths in pixels (main: 3em, sub: 2.3em)
 
       this.$setScrollBy(scrollDiff);
     },
@@ -204,7 +209,7 @@ export default {
       this.$refs.gospels.style.height = 
         this.gospelsHeightCollapsed + 'px';
       
-      this.setScrollBy();
+      // this.setScrollBy();
 
       // Once transition finished, hide transitioned section
       setTimeout( () => {
@@ -283,7 +288,7 @@ export default {
       const getListHeight = (ref) => {
         const refHeights = [];
         for (let i = 0; i < this.$refs[ref].length; i++) {
-          refHeights.push(this.$refs[ref][i].getBoundingClientRect().height);
+          refHeights.push( this.$refs[ref][i].getBoundingClientRect().height );
         }
         return Math.max( ...refHeights );
       }
@@ -448,19 +453,20 @@ export default {
     flex: 1;
     min-height: 2.3em;
     text-align: left;
+    background-color: var(--bg-light);
   }
 
   nav {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
   }
 
   .button-parallels {
     all: unset;
     display: inline-flex;
     justify-content: center;
-    align-items: center;
-    align-content: center;
+    /* align-items: center; */
+    /* align-content: center; */
     width: 2ch;
     /* Need both height & font-size */
     height: 1em;
@@ -509,34 +515,40 @@ export default {
 
   .range-container {
     display: flex;
-    justify-content: center;
     position: sticky;
     position: -webkit-sticky;
-    top: 5em;
+    top: 5.3em;
     background-color: var(--bg-light);
   }
 
   .range {
     flex: 1;
-    display: flex;
     font-size: 0.9em;
-    /* Need for 'flex' transition */
-    max-width: fit-content;
+    background-color: var(--bg-light);
+    max-width: calc(100vw - 24px);
   }
 
   .range-expanded {
-    flex-wrap: wrap;
-    justify-content: center;
+    overflow-wrap: break-word;
+    text-align: center;
+  }
+
+  .range-collapsed {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .range-dummy {
+    transition: flex var(--transition-duration);
   }
 
   .range-dummy-expanded {
-    flex: 0;
-    transition: flex 400ms;
+    flex: auto;
   }
 
   .range-dummy-collapsed {
-    flex: auto;
-    transition: flex 400ms;
+    flex: 0;
   }
 
   .link {
@@ -613,6 +625,7 @@ export default {
     display: inline;
     --popup: goldenrod;
     --summary: darkgoldenrod;
+    /* added */
   }
 
   /* conditionally styling <summary> with pure CSS:
