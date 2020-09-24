@@ -185,7 +185,7 @@ export default {
 
       // Always do
       setTimeout( () => {
-        // Scroll the content into view
+        // Scroll the content into view once transitions have finished
         this.setScrollBy();
       }, store.transitionDuration);
     },
@@ -194,8 +194,8 @@ export default {
     setScrollBy() {
       const scrollDiff = 
         this.$refs.gospels.getBoundingClientRect().top - (5.3 * 16);
-    // 5.3 * 16: accordion header min-widths in pixels (main: 3em, sub: 2.3em)
-
+        // 5.3 is the min-widths of accordion headers (main:3em + sub:2.3em)
+        // 16 transforms unit from 'em' to 'px'
       this.$setScrollBy(scrollDiff);
     },
 
@@ -238,7 +238,20 @@ export default {
         
         // Call Main-Accordion to start transition
         this.$emit('update-height');
+      });
+      
+      // We re-run the height update when transition has finished
+      // because if display of "range" is set to flex, then
+      // scrollHeight is not reliable before transition completion. 
+      setTimeout( () => {
+        // Trigger sub-accordion to start expand-transition
+        this.$refs.gospels.style.height = 
+          this.getGospelsHeight() + 'px';
+        
+        // Call Main-Accordion to start transition
+        this.$emit('update-height');
       }, store.transitionDuration);
+
     },  
 
 
