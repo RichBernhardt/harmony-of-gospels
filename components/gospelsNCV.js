@@ -164,14 +164,17 @@ Rachel crying for her children.
 // 9
 `And don’t think you can say to yourselves, ‘Abraham is our father.’ I tell you that God could make children for Abraham from these rocks.`,
 // 10
-`<details>
-  <summary>
+// `<details>
+//   <summary>
+//     The ax is now ready to cut down the trees, and every tree that does not produce good fruit will be cut down and thrown into the fire.
+//   </summary>
+//   <span>
+//     This means that God is ready to punish his people who do not obey him.
+//   </span>
+// </details>`,
+`<span class="tooltip" data-tooltip="This means that God is ready to punish his people who do not obey him.">
     The ax is now ready to cut down the trees, and every tree that does not produce good fruit will be cut down and thrown into the fire.
-  </summary>
-  <span>
-    This means that God is ready to punish his people who do not obey him.
-  </span>
-</details>`,
+</span>`,
 // 11
 `“I baptize you with water to show that your hearts and lives have changed. But there is one coming after me who is greater than I am, whose sandals I am not good enough to carry. He will baptize you with the Holy Spirit and fire.`,
 // 12

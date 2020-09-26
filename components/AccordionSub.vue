@@ -242,7 +242,7 @@ export default {
       
       // We re-run the height update when transition has finished
       // because if display of "range" is set to flex, then
-      // scrollHeight is not reliable before transition completion. 
+      // scrollHeight is not reliable during transition. 
       setTimeout( () => {
         // Trigger sub-accordion to start expand-transition
         this.$refs.gospels.style.height = 
@@ -447,6 +447,7 @@ export default {
  
   .header {
     all: unset;
+    z-index: 1;
     display: flex;
     align-items: center;
     position: sticky;
@@ -527,6 +528,7 @@ export default {
   }
 
   .range-container {
+    z-index: 1;
     display: flex;
     position: sticky;
     position: -webkit-sticky;
@@ -603,6 +605,10 @@ export default {
     text-align: justify;
     /* https://stackoverflow.com/a/20818206/ */
     line-height: 1.4;
+    /* for tooltips below */
+    --tooltip-bg: goldenrod;
+    --tooltip-border: darkgoldenrod;
+
   }
 
   .gospel-text-expanded {
@@ -628,7 +634,35 @@ export default {
 
 /* ###################### POPUPS ########################### */
 
+  .gospel-text >>> .tooltip {
+    border-bottom: 1px dotted;
+  }
+
+  .gospel-text >>> .tooltip[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    animation: fadeIn 0.3s;
+    position: absolute;
+    z-index: 1;
+    background-color: var(--tooltip-bg);
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid var(--tooltip-border);
+    box-shadow: 6px 6px 3px 3px rgba(0,0,0,50%);
+    /* https://stackoverflow.com/a/46547461 */
+    left: 10px;
+    right: 10px;
+    margin: 0 auto 0 0;
+  }
+
+  @keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+  
+/* ###################### OLD ########################### */
+
   .gospel-text >>> summary {
+    display: contents;
     text-decoration: underline;
   }
 
@@ -637,24 +671,23 @@ export default {
   }
 
   .gospel-text >>> details {
-    display: inline;
-    --popup: goldenrod;
-    --summary: darkgoldenrod;
-    /* added */
+    display: contents;
+    --tooltip-bg: goldenrod;
+    --tooltip-border: darkgoldenrod;
   }
 
   /* conditionally styling <summary> with pure CSS:
     https://stackoverflow.com/a/55032002 */
   .gospel-text >>> details[open] summary {
-    background-color: var(--summary);
+    background-color: var(--tooltip-border);
     border-radius: 1px;
-    box-shadow: 0 2px 0 2px var(--summary);
+    box-shadow: 0 2px 0 2px var(--tooltip-border);
   }
 
   .gospel-text >>> details span {
     position: absolute;
     z-index: 1;
-    background-color: var(--popup);
+    background-color: var(--tooltip-bg);
     padding: 5px;
     box-shadow: 6px 6px 3px 3px rgba(0,0,0,50%);
     /* https://stackoverflow.com/a/46547461 */
@@ -667,14 +700,14 @@ export default {
     https://stackoverflow.com/a/11426967 */
   .gospel-text >>> details span:after {
     content: '';
-    display: block;
+    /* display: block; */
     position: absolute;
     top: -2px;
     bottom: -2px;
     left: -2px;
     right: -2px;
     border-radius: 5px;
-    border: 2px solid var(--summary);
+    border: 2px solid var(--tooltip-border);
   }
 
 </style>

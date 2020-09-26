@@ -223,7 +223,7 @@ export default {
     position: sticky;
     position: -webkit-sticky;
     top: 0;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     align-items: center;
     padding-left: 5px;
