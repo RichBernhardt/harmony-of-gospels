@@ -431,6 +431,8 @@ export default {
 
 <style scoped>
 
+/* ######################## HEADER ######################### */
+
   .accordion-sub {
     display: flex;
     flex-direction: column;
@@ -520,6 +522,8 @@ export default {
     padding-left: 7px;
     padding-right: 7px;
     margin-bottom: 5px;
+    /* for tooltips below */
+    position: relative;
   }
 
   /* https://stackoverflow.com/a/47824568 */
@@ -632,82 +636,33 @@ export default {
     padding-right: 0.3em;
   }
 
-/* ###################### POPUPS ########################### */
+/* ###################### TOOLTIPS ########################### */
+
+  .gospel-text >>> .has-tooltip {
+    border-bottom: 1px dotted;
+    cursor: pointer;
+  }
 
   .gospel-text >>> .tooltip {
-    border-bottom: 1px dotted;
-  }
-
-  .gospel-text >>> .tooltip[data-tooltip]:hover::after {
-    content: attr(data-tooltip);
-    animation: fadeIn 0.3s;
     position: absolute;
+    visibility: hidden;
+    left: 3px;
+    right: 3px;
+    margin: 0 auto;
+    transform: translateY(-200%);
     z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
     background-color: var(--tooltip-bg);
     padding: 5px;
     border-radius: 5px;
     border: 2px solid var(--tooltip-border);
     box-shadow: 6px 6px 3px 3px rgba(0,0,0,50%);
-    /* https://stackoverflow.com/a/46547461 */
-    left: 10px;
-    right: 10px;
-    margin: 0 auto 0 0;
   }
 
-  @keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
-}
-  
-/* ###################### OLD ########################### */
-
-  .gospel-text >>> summary {
-    display: contents;
-    text-decoration: underline;
-  }
-
-  .gospel-text >>> summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .gospel-text >>> details {
-    display: contents;
-    --tooltip-bg: goldenrod;
-    --tooltip-border: darkgoldenrod;
-  }
-
-  /* conditionally styling <summary> with pure CSS:
-    https://stackoverflow.com/a/55032002 */
-  .gospel-text >>> details[open] summary {
-    background-color: var(--tooltip-border);
-    border-radius: 1px;
-    box-shadow: 0 2px 0 2px var(--tooltip-border);
-  }
-
-  .gospel-text >>> details span {
-    position: absolute;
-    z-index: 1;
-    background-color: var(--tooltip-bg);
-    padding: 5px;
-    box-shadow: 6px 6px 3px 3px rgba(0,0,0,50%);
-    /* https://stackoverflow.com/a/46547461 */
-    margin: 0 auto 0 0;
-    left: 10px;
-    right: 10px;
-  }
-
-  /* "outline-radius" without box-shadow:
-    https://stackoverflow.com/a/11426967 */
-  .gospel-text >>> details span:after {
-    content: '';
-    /* display: block; */
-    position: absolute;
-    top: -2px;
-    bottom: -2px;
-    left: -2px;
-    right: -2px;
-    border-radius: 5px;
-    border: 2px solid var(--tooltip-border);
+  .gospel-text >>> .has-tooltip:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
   }
 
 </style>
