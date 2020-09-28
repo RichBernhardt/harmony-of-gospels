@@ -51,7 +51,7 @@ export default {
   }
   
   .button-enter-active, .button-leave-active {
-    transition: opacity 400ms;
+    transition: opacity var(--transition-duration);
   }
   
   .button-enter, .button-leave-to {

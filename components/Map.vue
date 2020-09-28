@@ -25,7 +25,7 @@ export default {
     stroke-linecap:round;
     stroke-linejoin:round;
     paint-order:stroke;
-    transition: z-index 400ms;
+    transition: z-index var(--transition-duration);
   }
 
   .rootVariable {
@@ -39,7 +39,7 @@ export default {
     (orientation: landscape) and (max-height: 528px) {
     .rootVariable {
       /* https://stackoverflow.com/a/51742059 */
-      height: 98vw;
+      height: 100vw;
       transform-origin: top right;
       transform: rotate(-90deg) translateY(-100%);
     }

@@ -65,7 +65,7 @@ export default {
     border-radius: 25px;
     border: 1px solid gray;
     cursor: pointer;
-    transition: right 400ms;
+    transition: right var(--transition-duration);
   }
 
 </style>
