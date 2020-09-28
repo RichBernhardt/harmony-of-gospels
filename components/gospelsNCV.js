@@ -713,13 +713,18 @@ They answered, “Yes, Lord.”`,
 // 36
 `When he saw the crowds, he felt sorry for them because they were hurting and helpless, like sheep without a shepherd.`,
 // 37
-`Jesus said to his followers, “There are many people to harvest but only a few workers to help harvest them.`,
-// 38
-`Pray to the Lord, who owns the harvest, that he will send more workers 
+`Jesus said to his followers,
 <span  class="has-tooltip">
-    to gather his harvest.”
+“There are many people to harvest but only a few workers to help harvest them.
   <div class="tooltip">
-  “There are many people... to gather his harvest": As a farmer sends workers to harvest the grain, Jesus sends his followers to bring people to God.
+  “There are...harvest.": As a farmer sends workers to harvest the grain, Jesus sends his followers to bring people to God.
+  </div>
+</span>`,
+// 38
+`<span  class="has-tooltip">
+  Pray to the Lord, who owns the harvest, that he will send more workers to gather his harvest.”
+  <div class="tooltip">
+  “There are...harvest.": As a farmer sends workers to harvest the grain, Jesus sends his followers to bring people to God.
   </div>
 </span>`
 ],

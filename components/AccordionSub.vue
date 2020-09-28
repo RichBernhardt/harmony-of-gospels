@@ -13,7 +13,7 @@
         v-text="store.timeline[groupIndex][groupTitle][eventIndex][0]"
       />
       <transition name="button-parallels">
-        <nav v-show="expanded && gospels.ranges.length > 1">
+        <nav v-show="expanding && gospels.ranges.length > 1">
           <button
             class="button-parallels"
             @click.stop="onParallelGospelsChange('minus')"
@@ -463,6 +463,10 @@ export default {
     font-weight: bold;
   }
 
+  .header:focus {
+    filter: brightness(95%);
+  }
+
   .title {
     display: flex;
     align-items: center;
@@ -471,18 +475,15 @@ export default {
     text-align: left;
     background-color: var(--bg-light);
   }
-
   nav {
     display: flex;
-    /* align-items: center; */
   }
 
   .button-parallels {
     all: unset;
     display: inline-flex;
     justify-content: center;
-    /* align-items: center; */
-    /* align-content: center; */
+    align-items: center;
     width: 2ch;
     /* Need both height & font-size */
     height: 1em;
@@ -522,8 +523,10 @@ export default {
     padding-left: 7px;
     padding-right: 7px;
     margin-bottom: 5px;
-    /* for tooltips below */
+    /* for tooltips */
     position: relative;
+    --tooltip-bg: goldenrod;
+    --tooltip-border: darkgoldenrod;
   }
 
   /* https://stackoverflow.com/a/47824568 */
@@ -604,15 +607,12 @@ export default {
 
   .gospel-text {
     transition: opacity var(--transition-duration);
-    z-index: -1;
     padding-top: 1em;
     text-align: justify;
+    /* alternative to overflow: hidden */
+    z-index: -1;
     /* https://stackoverflow.com/a/20818206/ */
     line-height: 1.4;
-    /* for tooltips below */
-    --tooltip-bg: goldenrod;
-    --tooltip-border: darkgoldenrod;
-
   }
 
   .gospel-text-expanded {

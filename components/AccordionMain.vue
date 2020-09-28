@@ -13,7 +13,6 @@
           v-text="groupTitle"
         />
     </button>
-      <!-- :style="{'transition': `height ${transitionDuration}` }" -->
     <section
       v-show="expanded"
       ref="subaccordions"
@@ -56,16 +55,8 @@ export default {
       heightNew: 0,
       hasSubaccordionsCreated: false,
       subaccordionIncumbent: null,
-      // transitionHeightDiff: 0,
     }
   },
-
-
-  // computed: {
-  //   transitionDuration() {
-  //     return this.transitionHeightDiff / store.transitionSpeed + 'ms';
-  //   }
-  // },
 
 
   methods: {
@@ -113,8 +104,8 @@ export default {
         this.setScrollBy();
         // Update stored height
         this.heightOld = this.heightNew;
-
       }, store.transitionDuration);
+
     },
 
 

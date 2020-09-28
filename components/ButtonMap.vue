@@ -30,7 +30,7 @@ export default {
   button {
     all: unset;
     position: fixed;
-    z-index: 3;
+    z-index: 4;
     bottom: 10px;
     right: 7px;
     width: 50px;

@@ -58,7 +58,7 @@ export default {
 <style scoped>
   svg {
     position: fixed;
-    z-index: 1;
+    z-index: 3;
     bottom: 10px;
     width: 50px;
     height: 50px;

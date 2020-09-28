@@ -82,7 +82,7 @@ export default {
 <template>
   <svg
     class="rootConstant rootVariable"
-    :style="{ 'z-index': ontop + '3' }"
+    :style="{ 'z-index': ontop + '4' }"
     version="1.1"
     viewBox="0 0 270 460"
     xmlns="http://www.w3.org/2000/svg" 
