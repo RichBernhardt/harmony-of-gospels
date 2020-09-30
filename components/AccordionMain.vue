@@ -68,22 +68,22 @@ export default {
       // 4. Re-open user-closed (re-click on incumbent)
 
       // 1. Open first ever (no incumbent)
-      if (store.mainaccordionIncumbent === null) {
+      if (store.incumbents.main === null) {
 
-        store.mainaccordionIncumbent = this.groupIndex;
+        store.incumbents.main = this.groupIndex;
 
         this.toExpand();
       }
 
       // 2. Open another (auto close incumbent)
-      else if (store.mainaccordionIncumbent !== this.groupIndex) {
+      else if (store.incumbents.main !== this.groupIndex) {
         
         // It's really ugly, I know, but want to confine all
         // relevant code to the component, and have no better idea.
         this.$parent.$parent.$refs.mainaccordion[
-          store.mainaccordionIncumbent].toCollapse();
+          store.incumbents.main].toCollapse();
 
-        store.mainaccordionIncumbent = this.groupIndex;
+        store.incumbents.main = this.groupIndex;
 
         this.toExpand();
       }

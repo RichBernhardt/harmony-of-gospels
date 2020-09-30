@@ -34,8 +34,17 @@ export default {
 
 
   mounted() {
+    this.createIncumbents();
     // https://nuxtjs.org/guides/directory-structure/plugins
     window.addEventListener('scroll', this.$setScrollBy);
+  },
+
+  methods: {
+    createIncumbents() {
+      for (let i = 0; i < store.timeline.length; i++) {
+        store.incumbents.subs.push(null);        
+      }
+    }
   },
 
 }

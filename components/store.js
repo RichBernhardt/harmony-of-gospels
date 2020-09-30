@@ -36,7 +36,11 @@ export const store = Vue.observable({
     initialLoad: false,
     onShow: false,
   },
-  mainaccordionIncumbent: null,
+  // track expanded accordions
+  incumbents: {
+    main: null,
+    subs: []
+  },
   transitionDuration: 500, // millisecond
 
 });

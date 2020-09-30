@@ -155,20 +155,20 @@ export default {
       // 4. Re-open user-closed (re-click on incumbent)
 
       // 1. Open first ever (no incumbent)
-      if (this.$parent.subaccordionIncumbent === null) {
+      if (store.incumbents.subs[this.groupIndex] === null) {
 
-        this.$parent.subaccordionIncumbent = this.eventIndex;
+        store.incumbents.subs[this.groupIndex] = this.eventIndex;
 
         this.toExpand();
       }
 
       // 2. Open another (auto close incumbent)
-      else if (this.$parent.subaccordionIncumbent !== this.eventIndex) {
+      else if (store.incumbents.subs[this.groupIndex] !== this.eventIndex) {
 
         this.$parent.$refs.subaccordion[
-          this.$parent.subaccordionIncumbent].toCollapse(false);
+          store.incumbents.subs[this.groupIndex]].toCollapse(false);
 
-        this.$parent.subaccordionIncumbent = this.eventIndex;
+        store.incumbents.subs[this.groupIndex] = this.eventIndex;
 
         this.toExpand();
       }
