@@ -81,6 +81,7 @@
                 : 'range-dummy-collapsed']" 
           />
         </div>
+          <!-- tabindex="-1" -->
         <div
           v-show="expanded"
           ref="text"
@@ -89,7 +90,6 @@
               ? 'gospel-text-expanded'
               : 'gospel-text-collapsed'
           ]"
-          tabindex="-1"
           v-html="author.gospel"
         />
       </div>
@@ -523,10 +523,6 @@ export default {
     padding-left: 7px;
     padding-right: 7px;
     margin-bottom: 5px;
-    /* for tooltips */
-    position: relative;
-    --tooltip-bg: goldenrod;
-    --tooltip-border: darkgoldenrod;
   }
 
   /* https://stackoverflow.com/a/47824568 */
@@ -609,10 +605,12 @@ export default {
     transition: opacity var(--transition-duration);
     padding-top: 1em;
     text-align: justify;
-    /* alternative to overflow: hidden */
-    z-index: -1;
     /* https://stackoverflow.com/a/20818206/ */
     line-height: 1.4;
+    /* for tooltips */
+    position: relative;
+    --tooltip-bg: goldenrod;
+    --tooltip-border: darkgoldenrod;
   }
 
   .gospel-text-expanded {
@@ -638,30 +636,30 @@ export default {
 
 /* ###################### TOOLTIPS ########################### */
 
+/* https://stackoverflow.com/a/64198437 */
+
   .gospel-text >>> .has-tooltip {
     border-bottom: 1px dotted;
     cursor: pointer;
   }
 
-  .gospel-text >>> .tooltip {
+  .gospel-text >>> .has-tooltip::before {
+    transform: translateY(calc(-100% - 5px));
     position: absolute;
-    visibility: hidden;
-    left: 3px;
-    right: 3px;
-    margin: 0 auto;
-    transform: translateY(-200%);
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.3s;
+    pointer-events: none;
+    content: attr(data-tooltip);
+    left: 0;
+    right: 0;
     background-color: var(--tooltip-bg);
     padding: 5px;
     border-radius: 5px;
     border: 2px solid var(--tooltip-border);
     box-shadow: 6px 6px 3px 3px rgba(0,0,0,50%);
+    opacity: 0;
+    transition: opacity var(--transition-duration);
   }
 
-  .gospel-text >>> .has-tooltip:hover .tooltip {
-    visibility: visible;
+  .gospel-text >>> .has-tooltip:hover::before {
     opacity: 1;
   }
 

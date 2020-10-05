@@ -353,7 +353,7 @@ const timeline = [
       ["63. Hét | Pilátus Ártatlannak Ítéli Jézust","jerusalem",[["LK",23,13,16]]],
       ["63. Hét | Jézus Vagy Barabbás","jerusalem",[["MK",15,6,7],["MT",27,17,20],["LK",23,18,18],["LK",23,20,22]],[["MT",27,15,23]],[["MK",15,6,14]],[["LK",23,17,22]],[["JN",18,39,40]]],
       ["63. Hét | Pilátus Megkorbácsoltatja, A Katonák Gyalázzák Jézust","jerusalem",[["MT",27,27,30]],[["MK",15,16,19]],[["JN",19,1,3]]],
-      ["63. Hét | Pilátus Jézusért Érvvel A Nép Ellen","jerusalem",[["JN",19,4,15]]],
+      ["63. Hét | Pilátus Jézusért Érvel A Nép Ellen","jerusalem",[["JN",19,4,15]]],
       ["63. Hét | Pilátus Mossa Kezeit","jerusalem",[["MT",27,24,25],["JN",19,16,16]],[["MT",27,24,26]],[["MK",15,15,15]],[["LK",23,23,25]],[["JN",19,16,16]]],
       ["63. Hét | A Katonák Visszaadatják Jézusra A Saját Ruháját","jerusalem",[["MK",15,20,20]],[["MT",27,31,31]]],
       ["63. Hét | A Golgotához Vezető Úton","jerusalem",[["MT",27,32,32],["LK",23,27,32],["MK",15,22,23]],[["MT",27,32,34]],[["MK",15,21,23]],[["LK",23,26,32]],[["JN",19,17,17]]],

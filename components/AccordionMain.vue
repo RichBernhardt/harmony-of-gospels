@@ -54,7 +54,6 @@ export default {
       heightOld: 0,
       heightNew: 0,
       hasSubaccordionsCreated: false,
-      subaccordionIncumbent: null,
     }
   },
 

@@ -34,22 +34,28 @@ Jehoiachin, Shealtiel,`,
 `Eliud, Eleazar, Matthan,`,
 // 16
 `Jacob, and Joseph, the
-<span  class="has-tooltip">husband<div class="tooltip">
-    Should read "father of Mary" (not husband)</br>
-    • To reason the different ancestors comparing to Lk 3:23-38,</br>
-    • And to give the full 14 generations</br>
-    </br>
-    <small><strong>This note is not part of the New Century Version</strong></small>
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+Should read "father of Mary" (not husband)</br>
+• To reason the different ancestors comparing to Lk 3:23-38,</br>
+• And to give the full 14 generations</br>
+</br>
+<small><strong>This note is not part of the New Century Version</strong></small>
+">
+husband
 </span> 
  of Mary, the mother of Jesus, who is called the Messiah.`,
 // 17
 `There were fourteen generations from Abraham to David. There were also fourteen from David to the exile in Babylonia and fourteen more to the birth of the Messiah.`,
 // 18
 `This is how the birth of Jesus Christ came about. His mother Mary was 
-<span  class="has-tooltip">engaged<div class="tooltip">
-    For the Jewish people an engagement was a lasting agreement, which could only be broken by a divorce. If a bride-to-be was unfaithful, it was considered adultery, and she could be put to death.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+For the Jewish people an engagement was a lasting agreement, which could only be broken by a divorce. If a bride-to-be was unfaithful, it was considered adultery, and she could be put to death.
+">
+engaged
 </span> 
 to marry Joseph, but before they married, she learned she was pregnant by the power of the Holy Spirit.`,
 // 19
@@ -58,9 +64,12 @@ to marry Joseph, but before they married, she learned she was pregnant by the po
 `While Joseph thought about these things, an angel of the Lord came to him in a dream. The angel said, “Joseph, descendant of David, don’t be afraid to take Mary as your wife, because the baby in her is from the Holy Spirit.`,
 // 21
 `She will give birth to a son, and you will name him
-<span  class="has-tooltip">Jesus,<div class="tooltip">
-    The name “Jesus” means “salvation.”
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+The name “Jesus” means “salvation.”
+">
+Jesus,
 </span> 
 because he will save his people from their sins.”`,
 // 22
@@ -127,9 +136,12 @@ Rachel crying for her children.
 `But he heard that Archelaus was now king in Judea since his father Herod had died. So Joseph was afraid to go there. After being warned in a dream, he went to the area of Galilee,`,
 // 23
 `to a town called Nazareth, and lived there. And so what God had said through the prophets came true:
-<span  class="has-tooltip">“He will be called a Nazarene.”<div class="tooltip">
-    A person from the town of Nazareth. Matthew may be referring to Isaiah 11:1, where the Hebrew word translated “branch” sounds like “Nazarene.”
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+A person from the town of Nazareth. Matthew may be referring to Isaiah 11:1, where the Hebrew word translated “branch” sounds like “Nazarene.”
+">
+“He will be called a Nazarene.”
 </span>`
 ],
 [ // 3
@@ -156,22 +168,24 @@ Rachel crying for her children.
 // 9
 `And don’t think you can say to yourselves, ‘Abraham is our father.’ I tell you that God could make children for Abraham from these rocks.`,
 // 10
-`<span  class="has-tooltip">
-  The ax is now ready to cut down the trees, and every tree that does 
-  not produce good fruit will be cut down and thrown into the fire.
-  <div class="tooltip">
-    This means that God is ready to punish his people who do not obey him.
-  </div>
+`<span 
+class="has-tooltip"
+data-tooltip="
+This means that God is ready to punish his people who do not obey him.
+">
+The ax is now ready to cut down the trees, and every tree that does 
+not produce good fruit will be cut down and thrown into the fire.
 </span>`,
 // 11
 `“I baptize you with water to show that your hearts and lives have changed. But there is one coming after me who is greater than I am, whose sandals I am not good enough to carry. He will baptize you with the Holy Spirit and fire.`,
 // 12
 `He will come ready to clean the grain, separating the good grain from the chaff.
-<span  class="has-tooltip">
-    He will put the good part of the grain into his barn, but he will burn the chaff with a fire that cannot be put out.”
-  <div class="tooltip">
-    This means that Jesus will come to separate good people from bad people, saving the good and punishing the bad.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+This means that Jesus will come to separate good people from bad people, saving the good and punishing the bad.
+">
+He will put the good part of the grain into his barn, but he will burn the chaff with a fire that cannot be put out.”
 </span>`,
 // 13
 `At that time Jesus came from Galilee to the Jordan River and wanted John to baptize him.`,
@@ -243,20 +257,22 @@ They live in a place covered with the shadows of death,
 `Jesus went everywhere in Galilee, teaching in the synagogues, preaching the Good News about the kingdom of heaven, and healing all the people’s diseases and sicknesses.`,
 // 24
 `The news about Jesus spread all over Syria, and people brought all the sick to him. They were suffering from different kinds of diseases. Some were in great pain, some had demons, some were
-<span  class="has-tooltip">
-    epileptics,
-  <div class="tooltip">
-    People with a disease that causes them sometimes to lose control of their bodies and maybe faint, shake strongly, or not be able to move.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+People with a disease that causes them sometimes to lose control of their bodies and maybe faint, shake strongly, or not be able to move.
+">
+epileptics,
 </span>
 and some were paralyzed. Jesus healed all of them.`,
 // 25
 `Many people from Galilee, the
-<span  class="has-tooltip">
-    Ten Towns,
-  <div class="tooltip">
-    In Greek, called “Decapolis.” It was an area east of Lake Galilee that once had ten main towns.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+In Greek, called “Decapolis.” It was an area east of Lake Galilee that once had ten main towns.
+">
+Ten Towns,
 </span>
 Jerusalem, Judea, and the land across the Jordan River followed him.`
 ],
@@ -312,11 +328,12 @@ Jerusalem, Judea, and the land across the Jordan River followed him.`
 `“You have heard that it was said to our people long ago, ‘You must not murder anyone.(Exodus 20:13, Deuteronomy 5:17) Anyone who murders another will be judged.’`,
 // 22
 `But I tell you, if you are angry with a brother or sister,
-<span  class="has-tooltip">
-    (without a reason)
-  <div class="tooltip">
-    Some Greek copies continue
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+Some Greek copies continue
+">
+(without a reason)
 </span>
 you will be judged. If you say bad things to a brother or sister, you will be judged by the council. And if you call someone a fool, you will be in danger of the fire of hell.`,
 // 23
@@ -363,11 +380,12 @@ you will be judged. If you say bad things to a brother or sister, you will be ju
 `“You have heard that it was said, ‘Love your neighbor(Leviticus 19:18) and hate your enemies.’`,
 // 44
 `But I say to you, love your enemies. Pray for those who hurt you.
-<span  class="has-tooltip">
-    (Bless those who curse you, do good to those who hate you.)
-  <div class="tooltip">
-    Some Greek copies continue
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+Some Greek copies continue
+">
+(Bless those who curse you, do good to those who hate you.)
 </span>`,
 // 45
 `If you do this, you will be true children of your Father in heaven. He causes the sun to rise on good people and on evil people, and he sends rain to those who do right and to those who do wrong.`,
@@ -411,10 +429,12 @@ and what you want be done,
 `And do not cause us to be tempted,
 but save us from the Evil One.’
 <span  class="has-tooltip">
-    (The kingdom, the power, and the glory are yours forever. Amen.)
-  <div class="tooltip">
-    Some Greek copies do not contain the bracketed text.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+Some Greek copies do not contain the bracketed text.
+">
+(The kingdom, the power, and the glory are yours forever. Amen.)
 </span>`,
 // 14
 `Yes, if you forgive others for their sins, your Father in heaven will also forgive you for your sins.`,
@@ -422,12 +442,13 @@ but save us from the Evil One.’
 `But if you don’t forgive others, your Father in heaven will not forgive your sins.`,
 // 16
 `“When you
-<span  class="has-tooltip">
-    fast,
-  <div class="tooltip">
-    The people would give up eating for a special time of prayer and worship to God.
-    It was also done to show sadness and disappointment.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+The people would give up eating for a special time of prayer and worship to God.
+It was also done to show sadness and disappointment.
+">
+fast,
 </span>
 don’t put on a sad face like the hypocrites. They make their faces look sad to show people they are fasting. I tell you the truth, those hypocrites already have their full reward.`,
 // 17
@@ -534,18 +555,20 @@ don’t put on a sad face like the hypocrites. They make their faces look sad to
 `Jesus reached out his hand and touched the man and said, “I will. Be healed!” And immediately the man was healed from his disease.`,
 // 4
 `Then Jesus said to him, “Don’t tell anyone about this. But go and
-<span  class="has-tooltip">
-    show yourself to the priest
-  <div class="tooltip">
-    The Law of Moses said a priest must say when a Jewish person with a skin disease was well.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+The Law of Moses said a priest must say when a Jewish person with a skin disease was well.
+">
+show yourself to the priest
 </span>
 and offer the gift
-<span  class="has-tooltip">
-    Moses commanded
-  <div class="tooltip">
-    Read about this in Leviticus 14:1–32.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+Read about this in Leviticus 14:1–32.
+">
+Moses commanded
 </span>
 for people who are made well. This will show the people what I have done.”`,
 // 5
@@ -599,11 +622,12 @@ for people who are made well. This will show the people what I have done.”`,
 `The men were amazed and said, “What kind of man is this? Even the wind and the waves obey him!”`,
 // 28
 `When Jesus arrived at the other side of the lake in the area of the
-<span  class="has-tooltip">
-    Gadarene
-  <div class="tooltip">
-    From Gadara, an area southeast of Lake Galilee. The exact location is uncertain and some Greek copies read “Gergesene”; others read “Gerasene.”
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+From Gadara, an area southeast of Lake Galilee. The exact location is uncertain and some Greek copies read “Gergesene”; others read “Gerasene.”
+">
+Gadarene
 </span>
 people, two men who had demons in them met him. These men lived in the burial caves and were so dangerous that people could not use the road by those caves.`,
 // 29
@@ -625,11 +649,12 @@ people, two men who had demons in them met him. These men lived in the burial ca
 `Some people brought to Jesus a man who was paralyzed and lying on a mat. When Jesus saw the faith of these people, he said to the paralyzed man, “Be encouraged, young man. Your sins are forgiven.”`,
 // 3
 `Some of the teachers of the law said to themselves, “This man speaks as if he were God. That is
-<span  class="has-tooltip">
-    blasphemy!”
-  <div class="tooltip">
-  Saying things against God or not showing respect for God.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+Saying things against God or not showing respect for God.
+">
+blasphemy!”
 </span>`,
 // 4
 `Knowing their thoughts, Jesus said, “Why are you thinking evil thoughts?`,
@@ -653,18 +678,20 @@ people, two men who had demons in them met him. These men lived in the burial ca
 `Go and learn what this means: ‘I want kindness more than I want animal sacrifices.’(Hosea 6:6) I did not come to invite good people but to invite sinners.”`,
 // 14
 `Then the followers of
-<span  class="has-tooltip">
-    John
-  <div class="tooltip">
-    John the Baptist, who preached to people about Christ’s coming (Matthew 3, Luke 3).
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+John the Baptist, who preached to people about Christ’s coming (Matthew 3, Luke 3).
+">
+John
 </span>
 came to Jesus and said, “Why do we and the Pharisees often
-<span  class="has-tooltip">
-    fast
-  <div class="tooltip">
-    The people would give up eating for a special time of prayer and worship to God. It was also done to show sadness and disappointment.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+The people would give up eating for a special time of prayer and worship to God. It was also done to show sadness and disappointment.
+">
+fast
 </span>
 for a certain time, but your followers don’t?”`,
 // 15
@@ -714,18 +741,20 @@ They answered, “Yes, Lord.”`,
 `When he saw the crowds, he felt sorry for them because they were hurting and helpless, like sheep without a shepherd.`,
 // 37
 `Jesus said to his followers,
-<span  class="has-tooltip">
+<span 
+  class="has-tooltip"
+  data-tooltip="
+“There are...harvest.": As a farmer sends workers to harvest the grain, Jesus sends his followers to bring people to God.
+">
 “There are many people to harvest but only a few workers to help harvest them.
-  <div class="tooltip">
-  “There are...harvest.": As a farmer sends workers to harvest the grain, Jesus sends his followers to bring people to God.
-  </div>
 </span>`,
 // 38
-`<span  class="has-tooltip">
-  Pray to the Lord, who owns the harvest, that he will send more workers to gather his harvest.”
-  <div class="tooltip">
+`<span 
+  class="has-tooltip"
+  data-tooltip="
   “There are...harvest.": As a farmer sends workers to harvest the grain, Jesus sends his followers to bring people to God.
-  </div>
+">
+  Pray to the Lord, who owns the harvest, that he will send more workers to gather his harvest.”
 </span>`
 ],
 [ // 10
@@ -756,19 +785,21 @@ They answered, “Yes, Lord.”`,
 `If the people there welcome you, let your peace stay there. But if they don’t welcome you, take back the peace you wished for them.`,
 // 14
 `And if a home or town refuses to welcome you or listen to you, leave that place and
-<span  class="has-tooltip">
-    shake its dust off your feet.
-  <div class="tooltip">
-    A warning. It showed that they had rejected these people.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+A warning. It showed that they had rejected these people.
+">
+shake its dust off your feet.
 </span>`,
 // 15
 `I tell you the truth, on the Judgment Day it will be better for the towns of
-<span  class="has-tooltip">
-    Sodom and Gomorrah
-  <div class="tooltip">
-    Two cities that God destroyed because the people were so evil.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+Two cities that God destroyed because the people were so evil.
+">
+Sodom and Gomorrah
 </span>
 than for the people of that town.`,
 // 16
@@ -844,11 +875,12 @@ a daughter - in - law will be against her mother - in - law.`,
 `Those who do not stumble in their faith because of me are blessed.”`,
 // 7
 `As John’s followers were leaving, Jesus began talking to the people about John. Jesus said, “What did you go out into the desert to see? A
-<span  class="has-tooltip">
-    reed
-  <div class="tooltip">
-    It means that John was not ordinary or weak like grass blown by the wind.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+It means that John was not ordinary or weak like grass blown by the wind.
+">
+reed
 </span>
 blown by the wind?`,
 // 8
@@ -883,29 +915,32 @@ blown by the wind?`,
 `Then Jesus criticized the cities where he did most of his miracles, because the people did not change their lives and stop sinning.`,
 // 21
 `He said, “How terrible for you, Korazin! How terrible for you, Bethsaida! If the same miracles I did in you had happened in
-<span  class="has-tooltip">
-    Tyre and Sidon,
-  <div class="tooltip">
-    Towns where wicked people lived.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+Towns where wicked people lived.
+">
+Tyre and Sidon,
 </span>
 those people would have changed their lives a long time ago. They would have worn rough cloth and put ashes on themselves to show they had changed.`,
 // 22
 `But I tell you, on the Judgment Day it will be better for Tyre and Sidon than for you.`,
 // 23
 `And you,
-<span  class="has-tooltip">
-    Capernaum,
-  <div class="tooltip">
-    Korazin... Bethsaida... Capernaum: Towns by Lake Galilee where Jesus preached to the people.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+Korazin... Bethsaida... Capernaum: Towns by Lake Galilee where Jesus preached to the people.
+">
+Capernaum,
 </span>
 will you be lifted up to heaven? No, you will be thrown down to the depths. If the miracles I did in you had happened in
-<span  class="has-tooltip">
-    Sodom,
-  <div class="tooltip">
-    A city that God destroyed because the people were so evil.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+A city that God destroyed because the people were so evil.
+">
+Sodom,
 </span>
 its people would have stopped sinning, and it would still be a city today.`,
 // 24
@@ -943,11 +978,12 @@ its people would have stopped sinning, and it would still be a city today.`,
 `Jesus left there and went into their synagogue,`,
 // 10
 `where there was a man with a crippled hand. They were looking for a reason to accuse Jesus, so they asked him,
-<span  class="has-tooltip">
-    “Is it right to heal on the Sabbath day?”
-  <div class="tooltip">
-    It was against Jewish Law to work on the Sabbath day.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+It was against Jewish Law to work on the Sabbath day.
+">
+“Is it right to heal on the Sabbath day?”
 </span>`,
 // 11
 `Jesus answered, “If any of you has a sheep, and it falls into a ditch on the Sabbath day, you will help it out of the ditch.`,
@@ -1018,20 +1054,22 @@ until he makes justice win the victory.`,
 `Jonah was in the stomach of the big fish for three days and three nights. In the same way, the Son of Man will be in the grave three days and three nights.`,
 // 41
 `On the Judgment Day the people from
-<span  class="has-tooltip">
-    Nineveh
-  <div class="tooltip">
-    The city where Jonah preached to warn the people. Read Jonah 3.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+The city where Jonah preached to warn the people. Read Jonah 3.
+">
+Nineveh
 </span>
 will stand up with you people who live now, and they will show that you are guilty. When Jonah preached to them, they were sorry and changed their lives. And I tell you that someone greater than Jonah is here.`,
 // 42
 `On the Judgment Day, the
-<span  class="has-tooltip">
-    Queen of the South
-  <div class="tooltip">
-    The Queen of Sheba. She traveled a thousand miles to learn God’s wisdom from Solomon. Read 1 Kings 10:1–13.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+The Queen of Sheba. She traveled a thousand miles to learn God’s wisdom from Solomon. Read 1 Kings 10:1–13.
+">
+Queen of the South
 </span>
 will stand up with you people who live today. She will show that you are guilty, because she came from far away to listen to Solomon’s wise teaching. And I tell you that someone greater than Solomon is here.`,
 // 43
@@ -1043,11 +1081,13 @@ will stand up with you people who live today. She will show that you are guilty,
 // 46
 `While Jesus was talking to the people, his mother and brothers stood outside, trying to find a way to talk to him.`,
 // 47
-`<span  class="has-tooltip">
-    Someone told Jesus, “Your mother and brothers are standing outside, and they want to talk to you.”
-  <div class="tooltip">
-    Some Greek copies do not have verse 47.
-  </div>
+`<span 
+class="has-tooltip"
+tabindex="0"
+data-tooltip="
+Some Greek copies do not have verse 47.
+">
+Someone told Jesus, “Your mother and brothers are standing outside, and they want to talk to you.”
 </span>`,
 // 48
 `He answered, “Who is my mother? Who are my brothers?”`,
@@ -1110,11 +1150,12 @@ They might really understand in their minds
 `But he does not let the teaching go deep into his life, so he keeps it only a short time. When trouble or persecution comes because of the teaching he accepted, he quickly gives up.`,
 // 22
 `And what is the seed that fell among the thorny weeds? That seed is like the person who hears the teaching but lets worries about this life and the temptation of wealth stop that teaching from growing. So the teaching does not
-<span  class="has-tooltip">
-    produce fruit
-  <div class="tooltip">
-    To produce fruit means to have in your life the good things God wants.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+To produce fruit means to have in your life the good things God wants.
+">
+produce fruit
 </span>
 in that person’s life.`,
 // 23
@@ -1300,11 +1341,12 @@ And Peter left the boat and walked on the water to Jesus.`,
 `Jesus answered, “Every plant that my Father in heaven has not planted himself will be pulled up by the roots.`,
 // 14
 `Stay away from the Pharisees; they are blind leaders
-<span  class="has-tooltip">
-    (of blind people.)
-  <div class="tooltip">
-    Some Greek copies continue.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+Some Greek copies continue.
+">
+(of blind people.)
 </span>
 And if a blind person leads a blind person, both will fall into a ditch.”`,
 // 15
@@ -1363,28 +1405,31 @@ They answered, “Seven, and a few small fish.”`,
 `The Pharisees and Sadducees came to Jesus, wanting to trick him. So they asked him to show them a miracle from God.`,
 // 2
 `Jesus answered,
-<span  class="has-tooltip">
-    “At sunset you say we will have good weather, because the sky is red.
-  <div class="tooltip">
-    Some Greek copies do not have the rest of verse 2 
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+Some Greek copies do not have the rest of verse 2 
+">
+“At sunset you say we will have good weather, because the sky is red.
 </span>`,
 // 3
-`<span  class="has-tooltip">  
-    And in the morning you say that it will be a rainy day, because the sky is dark and red.
-    You see these signs in the sky and know what they mean.
-    In the same way, you see the things that I am doing now, but you don’t know their meaning.
-  <div class="tooltip">
-    Some Greek copies do not have the verse 3. 
-  </div>
+`<span 
+  class="has-tooltip"
+  data-tooltip="
+Some Greek copies do not have the verse 3. 
+">
+And in the morning you say that it will be a rainy day, because the sky is dark and red.
+You see these signs in the sky and know what they mean.
+In the same way, you see the things that I am doing now, but you don’t know their meaning.
 </span>`,
 // 4
 `Evil and sinful people ask for a miracle as a sign, but they will not be given any sign, except the
-<span  class="has-tooltip">  
-    sign of Jonah.”
-  <div class="tooltip">
-    Jonah’s three days in the fish are like Jesus’ three days in the tomb. The story about Jonah is in the Book of Jonah.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+Jonah’s three days in the fish are like Jesus’ three days in the tomb. The story about Jonah is in the Book of Jonah.
+">
+sign of Jonah.”
 </span>
 Then Jesus left them and went away.`,
 // 5
@@ -1415,11 +1460,12 @@ Then Jesus left them and went away.`,
 `Jesus answered, “You are blessed, Simon son of Jonah, because no person taught you that. My Father in heaven showed you who I am.`,
 // 18
 `So I tell you, you are
-<span  class="has-tooltip">  
-    Peter.
-  <div class="tooltip">
-    The Greek name “Peter,” like the Aramaic name “Cephas,” means “rock.”
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+The Greek name “Peter,” like the Aramaic name “Cephas,” means “rock.”
+">
+Peter.
 </span>
 On this rock I will build my church, and the power of death will not be able to defeat it.`,
 // 19
@@ -1432,11 +1478,12 @@ On this rock I will build my church, and the power of death will not be able to 
 `Peter took Jesus aside and told him not to talk like that. He said, “God save you from those things, Lord! Those things will never happen to you!”`,
 // 23
 `Then Jesus said to Peter, “Go away from me,
-<span  class="has-tooltip">  
-    Satan!
-  <div class="tooltip">
-    Name for the devil, meaning “the enemy.” Jesus means that Peter was talking like Satan.
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+Name for the devil, meaning “the enemy.” Jesus means that Peter was talking like Satan.
+">
+Satan!
 </span>
 You are not helping me! You don’t care about the things of God, but only about the things people think are important.”`,
 // 24
@@ -4330,11 +4377,14 @@ John said to them, “Don’t force people to give you money, and don’t lie ab
 `and the Holy Spirit came down on him in the form of a dove. Then a voice came from heaven, saying, “You are my Son, whom I love, and I am very pleased with you.”`,
 // 23
 `When Jesus began to preach, he was about thirty years old. Everyone thought he was the son(l) of Joseph. But
-<span  class="has-tooltip">his<div class="tooltip">
-    Joseph's</br>
-    </br>
-    <small><strong>This note is not part of the New Century Version</strong></small>
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+Joseph's</br>
+</br>
+<small><strong>This note is not part of the New Century Version</strong></small>
+">
+his
 </span>
 family went back through Heli,`,
 // 24
@@ -6898,16 +6948,19 @@ The day this happened was a Sabbath day.`,
 `Jesus went up on a hill and sat down there with his followers.`,
 // 4
 `It was almost the time for the Jewish
-<span  class="has-tooltip">Passover Feast.<div class="tooltip">
-    Should read "Feast of Trumpets" (not Passover)</br>
-    • During Passover, everyone should be in Jerusalem by the Torah, 
-        but the event is in Bethsaida, 120+ km away from Jerusalem.</br>
-    • Jesus is feeding the crowd with leavened bread (not allowed at Passover).</br>
-    • The Last Day and People's Resurrection are themes of Feast of Trumpets, not Passover 
-        (See the next day at Jn6:39,40,44,54)</br>
-    </br>
-    <small><strong>This note is not part of the New Century Version</strong></small>
-  </div>
+<span 
+  class="has-tooltip"
+  data-tooltip="
+Should read "Feast of Trumpets" (not Passover)</br>
+• During Passover, everyone should be in Jerusalem by the Torah, 
+but the event is in Bethsaida, 120+ km away from Jerusalem.</br>
+• Jesus is feeding the crowd with leavened bread (not allowed at Passover).</br>
+• The Last Day and People's Resurrection are themes of Feast of Trumpets, not Passover 
+(See the next day at Jn6:39,40,44,54)</br>
+</br>
+<small><strong>This note is not part of the New Century Version</strong></small>
+">
+Passover Feast.
 </span>`,
 // 5
 `When Jesus looked up and saw a large crowd coming toward him, he said to Philip, “Where can we buy enough bread for all these people to eat?”`,
