@@ -2,13 +2,11 @@
 // https://nuxtjs.org/guides/directory-structure/plugins
 
 export default ({ app }, inject) => {
-  inject(
-    'setScrollBy', 
-    (scrollDiff) => window.scrollBy({
+  inject("setScrollBy", (scrollDiff) =>
+    window.scrollBy({
       left: 0,
       top: scrollDiff,
-      behavior: 'smooth'
+      behavior: "smooth",
     })
-  )
-}
-
+  );
+};

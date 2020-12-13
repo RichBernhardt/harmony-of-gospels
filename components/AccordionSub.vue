@@ -657,6 +657,7 @@ export default {
     box-shadow: 6px 6px 3px 3px rgba(0,0,0,50%);
     opacity: 0;
     transition: opacity var(--transition-duration);
+    white-space: pre-wrap;
   }
 
   .gospel-text >>> .has-tooltip:hover::before {

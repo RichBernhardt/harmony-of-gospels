@@ -1,12 +1,11 @@
-
 // NOTE: This is not Vuex, but Simple Store Pattern
 
 // https://stackoverflow.com/questions/62302299/
 // https://vuejs.org/v2/api/#Vue-observable
 
-import Vue from 'vue'
-import timeline from "~/components/timelineNCV.js"
-import gospel from "~/components/gospelsNCV.js"
+import Vue from "vue";
+import timeline from "~/components/timelineNCV.js";
+import gospel from "~/components/gospelsNCV.js";
 
 export const store = Vue.observable({
   // assigning innitial values is a must
@@ -39,8 +38,7 @@ export const store = Vue.observable({
   // track expanded accordions
   incumbents: {
     main: null,
-    subs: []
+    subs: [],
   },
   transitionDuration: 500, // millisecond
-
 });
