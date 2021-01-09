@@ -638,13 +638,20 @@ export default {
 
 /* https://stackoverflow.com/a/64198437 */
 
-  .gospel-text >>> .has-tooltip {
+  .gospel-text >>> .has-tooltip-before,
+  .gospel-text >>> .has-tooltip-after {
     border-bottom: 1px dotted;
     cursor: pointer;
   }
 
-  .gospel-text >>> .has-tooltip::before {
-    transform: translateY(calc(-100% - 5px));
+/* https://stackoverflow.com/a/14978871 */
+  .gospel-text >>> .has-tooltip-before:hover,
+  .gospel-text >>> .has-tooltip-after:hover {
+    text-shadow: -0.4px 0 black, 0.4px 0 black;
+  }
+
+  .gospel-text >>> .has-tooltip-before::before,
+  .gospel-text >>> .has-tooltip-after::after {
     position: absolute;
     pointer-events: none;
     content: attr(data-tooltip);
@@ -658,9 +665,19 @@ export default {
     opacity: 0;
     transition: opacity var(--transition-duration);
     white-space: pre-wrap;
+    text-shadow: none;
   }
 
-  .gospel-text >>> .has-tooltip:hover::before {
+  .gospel-text >>> .has-tooltip-before::before {
+    transform: translateY(calc(-100% - 5px));
+  }
+
+  .gospel-text >>> .has-tooltip-after::after {
+    transform: translateY(calc(1em + 5px));
+  }
+
+  .gospel-text >>> .has-tooltip-before:hover::before,
+  .gospel-text >>> .has-tooltip-after:hover::after {
     opacity: 1;
   }
 

@@ -36,28 +36,23 @@ Jehoiachin, Shealtiel,`,
     // 16
     `Jacob, and Joseph, the
 <span 
-  class="has-tooltip"
+  class="has-tooltip-before"
   data-tooltip="Should read 'father of Mary' (not husband)
 • To reason the different ancestors comparing to Lk 3:23-38,
 • And to give the full 14 generations
 
-This note is not part of the New Century Version
-">
-husband
-</span> 
- of Mary, the mother of Jesus, who is called the Messiah.`,
+This note is not part of the New Century Version"
+>husband</span> 
+    of Mary, the mother of Jesus, who is called the Messiah.`,
     // 17
     `There were fourteen generations from Abraham to David. There were also fourteen from David to the exile in Babylonia and fourteen more to the birth of the Messiah.`,
     // 18
     `This is how the birth of Jesus Christ came about. His mother Mary was 
 <span 
-  class="has-tooltip"
-  data-tooltip="
-For the Jewish people an engagement was a lasting agreement, which could only be broken by a divorce. If a bride-to-be was unfaithful, it was considered adultery, and she could be put to death.
-">
-engaged
-</span> 
-to marry Joseph, but before they married, she learned she was pregnant by the power of the Holy Spirit.`,
+  class="has-tooltip-before"
+  data-tooltip="For the Jewish people an engagement was a lasting agreement, which could only be broken by a divorce. If a bride-to-be was unfaithful, it was considered adultery, and she could be put to death."
+>engaged</span> 
+    to marry Joseph, but before they married, she learned she was pregnant by the power of the Holy Spirit.`,
     // 19
     `Because Mary’s husband, Joseph, was a good man, he did not want to disgrace her in public, so he planned to divorce her secretly.`,
     // 20
@@ -65,13 +60,10 @@ to marry Joseph, but before they married, she learned she was pregnant by the po
     // 21
     `She will give birth to a son, and you will name him
 <span 
-  class="has-tooltip"
-  data-tooltip="
-The name “Jesus” means “salvation.”
-">
-Jesus,
-</span> 
-because he will save his people from their sins.”`,
+  class="has-tooltip-before"
+  data-tooltip="The name “Jesus” means “salvation.”"
+>Jesus</span>, 
+    because he will save his people from their sins.”`,
     // 22
     `All this happened to bring about what the Lord had said through the prophet:`,
     // 23
@@ -79,7 +71,7 @@ because he will save his people from their sins.”`,
     // 24
     `When Joseph woke up, he did what the Lord’s angel had told him to do. Joseph took Mary as his wife,`,
     // 25
-    `but he did not have sexual relations with her until she gave birth to the son. And Joseph named him Jesus.`,
+    `but he did not have sexual relations with her until she gave birth to the son. And Joseph named him Jesus.`
   ],
   [
     // 2
@@ -138,12 +130,9 @@ Rachel crying for her children.
     // 23
     `to a town called Nazareth, and lived there. And so what God had said through the prophets came true:
 <span 
-  class="has-tooltip"
-  data-tooltip="
-A person from the town of Nazareth. Matthew may be referring to Isaiah 11:1, where the Hebrew word translated “branch” sounds like “Nazarene.”
-">
-“He will be called a Nazarene.”
-</span>`,
+  class="has-tooltip-before"
+  data-tooltip="A person from the town of Nazareth. Matthew may be referring to Isaiah 11:1, where the Hebrew word translated “branch” sounds like “Nazarene.”"
+>“He will be called a Nazarene.</span>”`
   ],
   [
     // 3
@@ -170,25 +159,19 @@ A person from the town of Nazareth. Matthew may be referring to Isaiah 11:1, whe
     // 9
     `And don’t think you can say to yourselves, ‘Abraham is our father.’ I tell you that God could make children for Abraham from these rocks.`,
     // 10
-    `<span 
-class="has-tooltip"
-data-tooltip="
-This means that God is ready to punish his people who do not obey him.
-">
-The ax is now ready to cut down the trees, and every tree that does 
-not produce good fruit will be cut down and thrown into the fire.
-</span>`,
+    `
+<span 
+  class="has-tooltip-before"
+  data-tooltip="This means that God is ready to punish his people who do not obey him."
+>The ax is now ready to cut down the trees, and every tree that does not produce good fruit will be cut down and thrown into the fire</span>.`,
     // 11
     `“I baptize you with water to show that your hearts and lives have changed. But there is one coming after me who is greater than I am, whose sandals I am not good enough to carry. He will baptize you with the Holy Spirit and fire.`,
     // 12
-    `He will come ready to clean the grain, separating the good grain from the chaff.
+    `
 <span 
-  class="has-tooltip"
-  data-tooltip="
-This means that Jesus will come to separate good people from bad people, saving the good and punishing the bad.
-">
-He will put the good part of the grain into his barn, but he will burn the chaff with a fire that cannot be put out.”
-</span>`,
+  class="has-tooltip-before"
+  data-tooltip="This means that Jesus will come to separate good people from bad people, saving the good and punishing the bad."
+>He will come ready to clean the grain, separating the good grain from the chaff. He will put the good part of the grain into his barn, but he will burn the chaff with a fire that cannot be put out.</span>”`,
     // 13
     `At that time Jesus came from Galilee to the Jordan River and wanted John to baptize him.`,
     // 14
@@ -198,7 +181,7 @@ He will put the good part of the grain into his barn, but he will burn the chaff
     // 16
     `As soon as Jesus was baptized, he came up out of the water. Then heaven opened, and he saw God’s Spirit coming down on him like a dove.`,
     // 17
-    `And a voice from heaven said, “This is my Son, whom I love, and I am very pleased with him.”`,
+    `And a voice from heaven said, “This is my Son, whom I love, and I am very pleased with him.”`
   ],
   [
     // 4
@@ -261,23 +244,17 @@ They live in a place covered with the shadows of death,
     // 24
     `The news about Jesus spread all over Syria, and people brought all the sick to him. They were suffering from different kinds of diseases. Some were in great pain, some had demons, some were
 <span 
-  class="has-tooltip"
-  data-tooltip="
-People with a disease that causes them sometimes to lose control of their bodies and maybe faint, shake strongly, or not be able to move.
-">
-epileptics,
-</span>
-and some were paralyzed. Jesus healed all of them.`,
+  class="has-tooltip-before"
+  data-tooltip="People with a disease that causes them sometimes to lose control of their bodies and maybe faint, shake strongly, or not be able to move."
+>epileptics</span>,
+    and some were paralyzed. Jesus healed all of them.`,
     // 25
     `Many people from Galilee, the
 <span 
-  class="has-tooltip"
-  data-tooltip="
-In Greek, called “Decapolis.” It was an area east of Lake Galilee that once had ten main towns.
-">
-Ten Towns,
-</span>
-Jerusalem, Judea, and the land across the Jordan River followed him.`,
+  class="has-tooltip-before"
+  data-tooltip="In Greek, called “Decapolis.” It was an area east of Lake Galilee that once had ten main towns."
+>Ten Towns</span>,
+    Jerusalem, Judea, and the land across the Jordan River followed him.`
   ],
   [
     // 5
@@ -333,13 +310,10 @@ Jerusalem, Judea, and the land across the Jordan River followed him.`,
     // 22
     `But I tell you, if you are angry with a brother or sister,
 <span 
-  class="has-tooltip"
-  data-tooltip="
-Some Greek copies continue
-">
-(without a reason)
-</span>
-you will be judged. If you say bad things to a brother or sister, you will be judged by the council. And if you call someone a fool, you will be in danger of the fire of hell.`,
+  class="has-tooltip-before"
+  data-tooltip="Some Greek copies continue"
+>(without a reason)</span>
+    you will be judged. If you say bad things to a brother or sister, you will be judged by the council. And if you call someone a fool, you will be in danger of the fire of hell.`,
     // 23
     `“So when you offer your gift to God at the altar, and you remember that your brother or sister has something against you,`,
     // 24
@@ -385,12 +359,9 @@ you will be judged. If you say bad things to a brother or sister, you will be ju
     // 44
     `But I say to you, love your enemies. Pray for those who hurt you.
 <span 
-  class="has-tooltip"
-  data-tooltip="
-Some Greek copies continue
-">
-(Bless those who curse you, do good to those who hate you.)
-</span>`,
+  class="has-tooltip-before"
+  data-tooltip="Some Greek copies continue"
+>(Bless those who curse you, do good to those who hate you.)</span>`,
     // 45
     `If you do this, you will be true children of your Father in heaven. He causes the sun to rise on good people and on evil people, and he sends rain to those who do right and to those who do wrong.`,
     // 46
@@ -398,7 +369,7 @@ Some Greek copies continue
     // 47
     `And if you are nice only to your friends, you are no better than other people. Even those who don’t know God are nice to their friends.`,
     // 48
-    `So you must be perfect, just as your Father in heaven is perfect.`,
+    `So you must be perfect, just as your Father in heaven is perfect.`
   ],
   [
     // 6
@@ -419,11 +390,11 @@ Some Greek copies continue
     `Don’t be like them, because your Father knows the things you need before you ask him.`,
     // 9
     `So when you pray, you should pray like this:
-‘Our Father in heaven,
-may your name always be kept holy.`,
+    ‘Our Father in heaven,
+    may your name always be kept holy.`,
     // 10
     `May your kingdom come
-and what you want be done,
+    and what you want be done,
     here on earth as it is in heaven.`,
     // 11
     `Give us the food we need for each day.`,
@@ -432,15 +403,11 @@ and what you want be done,
     just as we have forgiven those who sinned against us.`,
     // 13
     `And do not cause us to be tempted,
-but save us from the Evil One.’
-<span  class="has-tooltip">
+    but save us from the Evil One.’ (
 <span 
-  class="has-tooltip"
-  data-tooltip="
-Some Greek copies do not contain the bracketed text.
-">
-(The kingdom, the power, and the glory are yours forever. Amen.)
-</span>`,
+  class="has-tooltip-before"
+  data-tooltip="Some Greek copies do not contain the bracketed text."
+>The kingdom, the power, and the glory are yours forever. Amen.</span> )`,
     // 14
     `Yes, if you forgive others for their sins, your Father in heaven will also forgive you for your sins.`,
     // 15
@@ -448,14 +415,10 @@ Some Greek copies do not contain the bracketed text.
     // 16
     `“When you
 <span 
-  class="has-tooltip"
-  data-tooltip="
-The people would give up eating for a special time of prayer and worship to God.
-It was also done to show sadness and disappointment.
-">
-fast,
-</span>
-don’t put on a sad face like the hypocrites. They make their faces look sad to show people they are fasting. I tell you the truth, those hypocrites already have their full reward.`,
+  class="has-tooltip-before"
+  data-tooltip="The people would give up eating for a special time of prayer and worship to God. It was also done to show sadness and disappointment."
+>fast</span>,
+    don’t put on a sad face like the hypocrites. They make their faces look sad to show people they are fasting. I tell you the truth, those hypocrites already have their full reward.`,
     // 17
     `So when you fast, comb your hair and wash your face.`,
     // 18
@@ -491,7 +454,7 @@ don’t put on a sad face like the hypocrites. They make their faces look sad to
     // 33
     `Seek first God’s kingdom and what God wants. Then all your other needs will be met as well.`,
     // 34
-    `So don’t worry about tomorrow, because tomorrow will have its own worries. Each day has enough trouble of its own.`,
+    `So don’t worry about tomorrow, because tomorrow will have its own worries. Each day has enough trouble of its own.`
   ],
   [
     // 7
@@ -551,7 +514,7 @@ don’t put on a sad face like the hypocrites. They make their faces look sad to
     // 28
     `When Jesus finished saying these things, the people were amazed at his teaching,`,
     // 29
-    `because he did not teach like their teachers of the law. He taught like a person who had authority.`,
+    `because he did not teach like their teachers of the law. He taught like a person who had authority.`
   ],
   [
     // 8
@@ -563,21 +526,15 @@ don’t put on a sad face like the hypocrites. They make their faces look sad to
     // 4
     `Then Jesus said to him, “Don’t tell anyone about this. But go and
 <span 
-  class="has-tooltip"
-  data-tooltip="
-The Law of Moses said a priest must say when a Jewish person with a skin disease was well.
-">
-show yourself to the priest
-</span>
-and offer the gift
+  class="has-tooltip-before"
+  data-tooltip="The Law of Moses said a priest must say when a Jewish person with a skin disease was well."
+>show yourself to the priest</span>
+    and offer the gift
 <span 
-  class="has-tooltip"
-  data-tooltip="
-Read about this in Leviticus 14:1–32.
-">
-Moses commanded
-</span>
-for people who are made well. This will show the people what I have done.”`,
+  class="has-tooltip-before"
+  data-tooltip="Read about this in Leviticus 14:1–32."
+>Moses commanded</span>
+    for people who are made well. This will show the people what I have done.”`,
     // 5
     `When Jesus entered the city of Capernaum, an army officer came to him, begging for help.`,
     // 6
@@ -630,13 +587,10 @@ for people who are made well. This will show the people what I have done.”`,
     // 28
     `When Jesus arrived at the other side of the lake in the area of the
 <span 
-  class="has-tooltip"
-  data-tooltip="
-From Gadara, an area southeast of Lake Galilee. The exact location is uncertain and some Greek copies read “Gergesene”; others read “Gerasene.”
-">
-Gadarene
-</span>
-people, two men who had demons in them met him. These men lived in the burial caves and were so dangerous that people could not use the road by those caves.`,
+  class="has-tooltip-after"
+  data-tooltip="From Gadara, an area southeast of Lake Galilee. The exact location is uncertain and some Greek copies read “Gergesene”; others read “Gerasene.”"
+>Gadarene</span>
+    people, two men who had demons in them met him. These men lived in the burial caves and were so dangerous that people could not use the road by those caves.`,
     // 29
     `They shouted, “What do you want with us, Son of God? Did you come here to torture us before the right time?”`,
     // 30
@@ -648,7 +602,7 @@ people, two men who had demons in them met him. These men lived in the burial ca
     // 33
     `The herdsmen ran away and went into town, where they told about all of this and what had happened to the men who had demons.`,
     // 34
-    `Then the whole town went out to see Jesus. When they saw him, they begged him to leave their area.`,
+    `Then the whole town went out to see Jesus. When they saw him, they begged him to leave their area.`
   ],
   [
     // 9
@@ -658,12 +612,9 @@ people, two men who had demons in them met him. These men lived in the burial ca
     // 3
     `Some of the teachers of the law said to themselves, “This man speaks as if he were God. That is
 <span 
-  class="has-tooltip"
-  data-tooltip="
-Saying things against God or not showing respect for God.
-">
-blasphemy!”
-</span>`,
+  class="has-tooltip-before"
+  data-tooltip="Saying things against God or not showing respect for God."
+>blasphemy!”</span>`,
     // 4
     `Knowing their thoughts, Jesus said, “Why are you thinking evil thoughts?`,
     // 5
@@ -687,21 +638,15 @@ blasphemy!”
     // 14
     `Then the followers of
 <span 
-  class="has-tooltip"
-  data-tooltip="
-John the Baptist, who preached to people about Christ’s coming (Matthew 3, Luke 3).
-">
-John
-</span>
-came to Jesus and said, “Why do we and the Pharisees often
+  class="has-tooltip-before"
+  data-tooltip="John the Baptist, who preached to people about Christ’s coming (Matthew 3, Luke 3)."
+>John</span>
+    came to Jesus and said, “Why do we and the Pharisees often
 <span 
-  class="has-tooltip"
-  data-tooltip="
-The people would give up eating for a special time of prayer and worship to God. It was also done to show sadness and disappointment.
-">
-fast
-</span>
-for a certain time, but your followers don’t?”`,
+  class="has-tooltip-before"
+  data-tooltip="The people would give up eating for a special time of prayer and worship to God. It was also done to show sadness and disappointment."
+>fast</span>
+    for a certain time, but your followers don’t?”`,
     // 15
     `Jesus answered, “The friends of the bridegroom are not sad while he is with them. But the time will come when the bridegroom will be taken from them, and then they will fast.`,
     // 16
@@ -750,20 +695,15 @@ They answered, “Yes, Lord.”`,
     // 37
     `Jesus said to his followers,
 <span 
-  class="has-tooltip"
-  data-tooltip="
-“There are...harvest.": As a farmer sends workers to harvest the grain, Jesus sends his followers to bring people to God.
-">
-“There are many people to harvest but only a few workers to help harvest them.
-</span>`,
+  class="has-tooltip-before"
+  data-tooltip="“There are...harvest.": As a farmer sends workers to harvest the grain, Jesus sends his followers to bring people to God."
+>“There are many people to harvest but only a few workers to help harvest them</span>.`,
     // 38
-    `<span 
-  class="has-tooltip"
-  data-tooltip="
-  “There are...harvest.": As a farmer sends workers to harvest the grain, Jesus sends his followers to bring people to God.
-">
-  Pray to the Lord, who owns the harvest, that he will send more workers to gather his harvest.”
-</span>`,
+    `
+<span 
+  class="has-tooltip-before"
+  data-tooltip="  “There are...harvest.": As a farmer sends workers to harvest the grain, Jesus sends his followers to bring people to God."
+>Pray to the Lord, who owns the harvest, that he will send more workers to gather his harvest”</span>.`
   ],
   [
     // 10
@@ -795,22 +735,16 @@ They answered, “Yes, Lord.”`,
     // 14
     `And if a home or town refuses to welcome you or listen to you, leave that place and
 <span 
-  class="has-tooltip"
-  data-tooltip="
-A warning. It showed that they had rejected these people.
-">
-shake its dust off your feet.
-</span>`,
+  class="has-tooltip-before"
+  data-tooltip="A warning. It showed that they had rejected these people."
+>shake its dust off your feet</span>.`,
     // 15
     `I tell you the truth, on the Judgment Day it will be better for the towns of
 <span 
-  class="has-tooltip"
-  data-tooltip="
-Two cities that God destroyed because the people were so evil.
-">
-Sodom and Gomorrah
-</span>
-than for the people of that town.`,
+  class="has-tooltip-before"
+  data-tooltip="Two cities that God destroyed because the people were so evil."
+>Sodom and Gomorrah</span>
+    than for the people of that town.`,
     // 16
     `“Listen, I am sending you out like sheep among wolves. So be as clever as snakes and as innocent as doves.`,
     // 17
@@ -868,7 +802,7 @@ a daughter - in - law will be against her mother - in - law.`,
     // 41
     `Whoever meets a prophet and accepts him will receive the reward of a prophet. And whoever accepts a good person because that person is good will receive the reward of a good person.`,
     // 42
-    `Those who give one of these little ones a cup of cold water because they are my followers will truly get their reward.”`,
+    `Those who give one of these little ones a cup of cold water because they are my followers will truly get their reward.”`
   ],
   [
     // 11
@@ -886,13 +820,10 @@ a daughter - in - law will be against her mother - in - law.`,
     // 7
     `As John’s followers were leaving, Jesus began talking to the people about John. Jesus said, “What did you go out into the desert to see? A
 <span 
-  class="has-tooltip"
-  data-tooltip="
-It means that John was not ordinary or weak like grass blown by the wind.
-">
-reed
-</span>
-blown by the wind?`,
+  class="has-tooltip-after"
+  data-tooltip="It means that John was not ordinary or weak like grass blown by the wind."
+>reed</span>
+    blown by the wind?`,
     // 8
     `What did you go out to see? A man dressed in fine clothes? No, those who wear fine clothes live in kings’ palaces.`,
     // 9
@@ -926,33 +857,24 @@ blown by the wind?`,
     // 21
     `He said, “How terrible for you, Korazin! How terrible for you, Bethsaida! If the same miracles I did in you had happened in
 <span 
-  class="has-tooltip"
-  data-tooltip="
-Towns where wicked people lived.
-">
-Tyre and Sidon,
-</span>
-those people would have changed their lives a long time ago. They would have worn rough cloth and put ashes on themselves to show they had changed.`,
+  class="has-tooltip-before"
+  data-tooltip="Towns where wicked people lived."
+>Tyre and Sidon</span>,
+    those people would have changed their lives a long time ago. They would have worn rough cloth and put ashes on themselves to show they had changed.`,
     // 22
     `But I tell you, on the Judgment Day it will be better for Tyre and Sidon than for you.`,
     // 23
     `And you,
 <span 
-  class="has-tooltip"
-  data-tooltip="
-Korazin... Bethsaida... Capernaum: Towns by Lake Galilee where Jesus preached to the people.
-">
-Capernaum,
-</span>
-will you be lifted up to heaven? No, you will be thrown down to the depths. If the miracles I did in you had happened in
+  class="has-tooltip-before"
+  data-tooltip="Korazin... Bethsaida... Capernaum: Towns by Lake Galilee where Jesus preached to the people."
+>Capernaum</span>,
+    will you be lifted up to heaven? No, you will be thrown down to the depths. If the miracles I did in you had happened in
 <span 
-  class="has-tooltip"
-  data-tooltip="
-A city that God destroyed because the people were so evil.
-">
-Sodom,
-</span>
-its people would have stopped sinning, and it would still be a city today.`,
+  class="has-tooltip-before"
+  data-tooltip="A city that God destroyed because the people were so evil."
+>Sodom</span>,
+    its people would have stopped sinning, and it would still be a city today.`,
     // 24
     `But I tell you, on the Judgment Day it will be better for Sodom than for you.”`,
     // 25
@@ -966,7 +888,7 @@ its people would have stopped sinning, and it would still be a city today.`,
     // 29
     `Accept my teachings and learn from me, because I am gentle and humble in spirit, and you will find rest for your lives.`,
     // 30
-    `The burden that I ask you to accept is easy; the load I give you to carry is light.”`,
+    `The burden that I ask you to accept is easy; the load I give you to carry is light.”`
   ],
   [
     // 12
@@ -990,12 +912,9 @@ its people would have stopped sinning, and it would still be a city today.`,
     // 10
     `where there was a man with a crippled hand. They were looking for a reason to accuse Jesus, so they asked him,
 <span 
-  class="has-tooltip"
-  data-tooltip="
-It was against Jewish Law to work on the Sabbath day.
-">
-“Is it right to heal on the Sabbath day?”
-</span>`,
+  class="has-tooltip-before"
+  data-tooltip="It was against Jewish Law to work on the Sabbath day."
+>“Is it right to heal on the Sabbath day?”</span>`,
     // 11
     `Jesus answered, “If any of you has a sheep, and it falls into a ditch on the Sabbath day, you will help it out of the ditch.`,
     // 12
@@ -1066,23 +985,17 @@ until he makes justice win the victory.`,
     // 41
     `On the Judgment Day the people from
 <span 
-  class="has-tooltip"
-  data-tooltip="
-The city where Jonah preached to warn the people. Read Jonah 3.
-">
-Nineveh
-</span>
-will stand up with you people who live now, and they will show that you are guilty. When Jonah preached to them, they were sorry and changed their lives. And I tell you that someone greater than Jonah is here.`,
+  class="has-tooltip-before"
+  data-tooltip="The city where Jonah preached to warn the people. Read Jonah 3."
+>Nineveh</span>
+    will stand up with you people who live now, and they will show that you are guilty. When Jonah preached to them, they were sorry and changed their lives. And I tell you that someone greater than Jonah is here.`,
     // 42
     `On the Judgment Day, the
 <span 
-  class="has-tooltip"
-  data-tooltip="
-The Queen of Sheba. She traveled a thousand miles to learn God’s wisdom from Solomon. Read 1 Kings 10:1–13.
-">
-Queen of the South
-</span>
-will stand up with you people who live today. She will show that you are guilty, because she came from far away to listen to Solomon’s wise teaching. And I tell you that someone greater than Solomon is here.`,
+  class="has-tooltip-before"
+  data-tooltip="The Queen of Sheba. She traveled a thousand miles to learn God’s wisdom from Solomon. Read 1 Kings 10:1–13."
+>Queen of the South</span>
+    will stand up with you people who live today. She will show that you are guilty, because she came from far away to listen to Solomon’s wise teaching. And I tell you that someone greater than Solomon is here.`,
     // 43
     `“When an evil spirit comes out of a person, it travels through dry places, looking for a place to rest, but it doesn’t find it.`,
     // 44
@@ -1090,22 +1003,19 @@ will stand up with you people who live today. She will show that you are guilty,
     // 45
     `Then the evil spirit goes out and brings seven other spirits even more evil than it is, and they go in and live there. So the person has even more trouble than before. It is the same way with the evil people who live today.”`,
     // 46
-    `While Jesus was talking to the people, his mother and brothers stood outside, trying to find a way to talk to him.`,
+    `While Jesus was talking to the people, his mother and brothers stood outside, trying to find a way to talk to him. (`,
     // 47
-    `<span 
-class="has-tooltip"
-tabindex="0"
-data-tooltip="
-Some Greek copies do not have verse 47.
-">
-Someone told Jesus, “Your mother and brothers are standing outside, and they want to talk to you.”
-</span>`,
+    `
+<span 
+  class="has-tooltip-before"
+  data-tooltip="Some Greek copies do not have verse 47."
+>Someone told Jesus, “Your mother and brothers are standing outside, and they want to talk to you.”</span> )`,
     // 48
     `He answered, “Who is my mother? Who are my brothers?”`,
     // 49
     `Then he pointed to his followers and said, “Here are my mother and my brothers.`,
     // 50
-    `My true brother and sister and mother are those who do what my Father in heaven wants.”`,
+    `My true brother and sister and mother are those who do what my Father in heaven wants.”`
   ],
   [
     // 13
@@ -1163,13 +1073,10 @@ They might really understand in their minds
     // 22
     `And what is the seed that fell among the thorny weeds? That seed is like the person who hears the teaching but lets worries about this life and the temptation of wealth stop that teaching from growing. So the teaching does not
 <span 
-  class="has-tooltip"
-  data-tooltip="
-To produce fruit means to have in your life the good things God wants.
-">
-produce fruit
-</span>
-in that person’s life.`,
+  class="has-tooltip-before"
+  data-tooltip="To produce fruit means to have in your life the good things God wants."
+>produce fruit</span>
+    in that person’s life.`,
     // 23
     `But what is the seed that fell on the good ground? That seed is like the person who hears the teaching and understands it. That person grows and produces fruit, sometimes a hundred times more, sometimes sixty times more, and sometimes thirty times more.”`,
     // 24
@@ -1246,7 +1153,7 @@ They answered, “Yes, we understand.”`,
     `So the people were upset with Jesus.
 But Jesus said to them, “A prophet is honored everywhere except in his hometown and in his own home.”`,
     // 58
-    `So he did not do many miracles there because they had no faith.`,
+    `So he did not do many miracles there because they had no faith.`
   ],
   [
     // 14
@@ -1321,7 +1228,7 @@ And Peter left the boat and walked on the water to Jesus.`,
     // 35
     `When the people there recognized Jesus, they told people all around there that Jesus had come, and they brought all their sick to him.`,
     // 36
-    `They begged Jesus to let them touch just the edge of his coat, and all who touched it were healed.`,
+    `They begged Jesus to let them touch just the edge of his coat, and all who touched it were healed.`
   ],
   [
     // 15
@@ -1356,13 +1263,10 @@ And Peter left the boat and walked on the water to Jesus.`,
     // 14
     `Stay away from the Pharisees; they are blind leaders
 <span 
-  class="has-tooltip"
-  data-tooltip="
-Some Greek copies continue.
-">
-(of blind people.)
-</span>
-And if a blind person leads a blind person, both will fall into a ditch.”`,
+  class="has-tooltip-before"
+  data-tooltip="Some Greek copies continue."
+>(of blind people.)</span>
+    And if a blind person leads a blind person, both will fall into a ditch.”`,
     // 15
     `Peter said, “Explain the example to us.”`,
     // 16
@@ -1413,40 +1317,30 @@ They answered, “Seven, and a few small fish.”`,
     // 38
     `There were about four thousand men there who ate, besides women and children.`,
     // 39
-    `After sending the people home, Jesus got into the boat and went to the area of Magadan.`,
+    `After sending the people home, Jesus got into the boat and went to the area of Magadan.`
   ],
   [
     // 16
     `The Pharisees and Sadducees came to Jesus, wanting to trick him. So they asked him to show them a miracle from God.`,
     // 2
-    `Jesus answered,
+    `Jesus answered, (
 <span 
-  class="has-tooltip"
-  data-tooltip="
-Some Greek copies do not have the rest of verse 2 
-">
-“At sunset you say we will have good weather, because the sky is red.
-</span>`,
+  class="has-tooltip-before"
+  data-tooltip="Some Greek copies do not have the rest of verse 2."
+>“At sunset you say we will have good weather, because the sky is red.</span>`,
     // 3
-    `<span 
-  class="has-tooltip"
-  data-tooltip="
-Some Greek copies do not have the verse 3. 
-">
-And in the morning you say that it will be a rainy day, because the sky is dark and red.
-You see these signs in the sky and know what they mean.
-In the same way, you see the things that I am doing now, but you don’t know their meaning.
-</span>`,
+    `
+<span 
+  class="has-tooltip-after"
+  data-tooltip="Some Greek copies do not have the verse 3."
+>And in the morning you say that it will be a rainy day, because the sky is dark and red. You see these signs in the sky and know what they mean. In the same way, you see the things that I am doing now, but you don’t know their meaning.</span> )`,
     // 4
     `Evil and sinful people ask for a miracle as a sign, but they will not be given any sign, except the
 <span 
-  class="has-tooltip"
-  data-tooltip="
-Jonah’s three days in the fish are like Jesus’ three days in the tomb. The story about Jonah is in the Book of Jonah.
-">
-sign of Jonah.”
-</span>
-Then Jesus left them and went away.`,
+  class="has-tooltip-before"
+  data-tooltip="Jonah’s three days in the fish are like Jesus’ three days in the tomb. The story about Jonah is in the Book of Jonah."
+>sign of Jonah.”</span>
+    Then Jesus left them and went away.`,
     // 5
     `Jesus’ followers went across the lake, but they had forgotten to bring bread.`,
     // 6
@@ -1476,13 +1370,10 @@ Then Jesus left them and went away.`,
     // 18
     `So I tell you, you are
 <span 
-  class="has-tooltip"
-  data-tooltip="
-The Greek name “Peter,” like the Aramaic name “Cephas,” means “rock.”
-">
-Peter.
-</span>
-On this rock I will build my church, and the power of death will not be able to defeat it.`,
+  class="has-tooltip-before"
+  data-tooltip="The Greek name “Peter,” like the Aramaic name “Cephas,” means “rock.”"
+>Peter.</span>
+    On this rock I will build my church, and the power of death will not be able to defeat it.`,
     // 19
     `I will give you the keys of the kingdom of heaven; the things you don’t allow on earth will be the things that God does not allow, and the things you allow on earth will be the things that God allows.”`,
     // 20
@@ -1494,13 +1385,10 @@ On this rock I will build my church, and the power of death will not be able to 
     // 23
     `Then Jesus said to Peter, “Go away from me,
 <span 
-  class="has-tooltip"
-  data-tooltip="
-Name for the devil, meaning “the enemy.” Jesus means that Peter was talking like Satan.
-">
-Satan!
-</span>
-You are not helping me! You don’t care about the things of God, but only about the things people think are important.”`,
+  class="has-tooltip-before"
+  data-tooltip="Name for the devil, meaning “the enemy.” Jesus means that Peter was talking like Satan."
+>Satan!</span>
+    You are not helping me! You don’t care about the things of God, but only about the things people think are important.”`,
     // 24
     `Then Jesus said to his followers, “If people want to follow me, they must give up the things they want. They must be willing even to give up their lives to follow me.`,
     // 25
@@ -1510,7 +1398,7 @@ You are not helping me! You don’t care about the things of God, but only about
     // 27
     `The Son of Man will come again with his Father’s glory and with his angels. At that time, he will reward them for what they have done.`,
     // 28
-    `I tell you the truth, some people standing here will see the Son of Man coming with his kingdom before they die.”`,
+    `I tell you the truth, some people standing here will see the Son of Man coming with his kingdom before they die.”`
   ],
   [
     // 17
@@ -1519,8 +1407,11 @@ You are not helping me! You don’t care about the things of God, but only about
     `While they watched, Jesus’ appearance was changed; his face became bright like the sun, and his clothes became white as light.`,
     // 3
     `Then
-Moses and Elijah(ba)
-appeared to them, talking with Jesus.`,
+      <span 
+        class="has-tooltip-after"
+        data-tooltip="Moses and Elijah Two of the most important Jewish leaders in the past. God had given Moses the Law, and Elijah was an important prophet."
+      >Moses and Elijah</span>
+    appeared to them, talking with Jesus.`,
     // 4
     `Peter said to Jesus, “Lord, it is good that we are here. If you want, I will put up three tents here - one for you, one for Moses, and one for Elijah.”`,
     // 5
@@ -1544,7 +1435,12 @@ appeared to them, talking with Jesus.`,
     // 14
     `When Jesus and his followers came back to the crowd, a man came to Jesus and bowed before him.`,
     // 15
-    `The man said, “Lord, have mercy on my son. He has epilepsy(bb) and is suffering very much, because he often falls into the fire or into the water.`,
+    `The man said, “Lord, have mercy on my son. He has 
+<span 
+  class="has-tooltip-after"
+  data-tooltip="A disease that causes a person sometimes to lose control of his body and maybe faint, shake strongly, or not be able to move."
+>epilepsy</span>
+    and is suffering very much, because he often falls into the fire or into the water.`,
     // 16
     `I brought him to your followers, but they could not cure him.”`,
     // 17
@@ -1554,9 +1450,13 @@ appeared to them, talking with Jesus.`,
     // 19
     `The followers came to Jesus when he was alone and asked, “Why couldn’t we force the demon out?”`,
     // 20
-    `Jesus answered, “Because your faith is too small. I tell you the truth, if your faith is as big as a mustard seed, you can say to this mountain, ‘Move from here to there,’ and it will move. All things will be possible for you. [`,
+    `Jesus answered, “Because your faith is too small. I tell you the truth, if your faith is as big as a mustard seed, you can say to this mountain, ‘Move from here to there’, and it will move. All things will be possible for you. (`,
     // 21
-    `That kind of spirit comes out only if you use prayer and fasting.]”(bc)`,
+    `
+<span 
+  class="has-tooltip-before"
+  data-tooltip="Some Greek copies do not contain the bracketed text."
+>That kind of spirit comes out only if you use prayer and fasting.</span> )`,
     // 22
     `While Jesus’ followers were gathering in Galilee, he said to them, “The Son of Man will be handed over to people,`,
     // 23
@@ -1570,7 +1470,7 @@ Peter went into the house, but before he could speak, Jesus said to him, “What
     `Peter answered, “Other people pay the taxes.”
 Jesus said to Peter, “Then the children of the king don’t have to pay taxes.`,
     // 27
-    `But we don’t want to upset these tax collectors. So go to the lake and fish. After you catch the first fish, open its mouth and you will find a coin. Take that coin and give it to the tax collectors for you and me.”`,
+    `But we don’t want to upset these tax collectors. So go to the lake and fish. After you catch the first fish, open its mouth and you will find a coin. Take that coin and give it to the tax collectors for you and me.”`
   ],
   [
     // 18
@@ -1592,9 +1492,13 @@ Jesus said to Peter, “Then the children of the king don’t have to pay taxes.
     // 9
     `If your eye causes you to sin, take it out and throw it away. It is better for you to have only one eye and live forever than to have two eyes and be thrown into the fire of hell.`,
     // 10
-    `“Be careful. Don’t think these little children are worth nothing. I tell you that they have angels in heaven who are always with my Father in heaven. [`,
+    `“Be careful. Don’t think these little children are worth nothing. I tell you that they have angels in heaven who are always with my Father in heaven. (`,
     // 11
-    `The Son of Man came to save lost people.](bd)`,
+    `
+<span 
+  class="has-tooltip-before"
+  data-tooltip="Some Greek copies do not contain the bracketed text."
+>The Son of Man came to save lost people.</span> )`,
     // 12
     `“If a man has a hundred sheep but one of the sheep gets lost, he will leave the other ninety - nine on the hill and go to look for the lost sheep.`,
     // 13
@@ -1602,9 +1506,14 @@ Jesus said to Peter, “Then the children of the king don’t have to pay taxes.
     // 14
     `In the same way, your Father in heaven does not want any of these little children to be lost.`,
     // 15
-    `“If your fellow believer sins against you,(be) go and tell him in private what he did wrong. If he listens to you, you have helped that person to be your brother or sister again.`,
+    `“If your fellow believer sins (
+<span 
+  class="has-tooltip-after"
+  data-tooltip="Some Greek copies do not have 'against you'."
+>against you</span> )
+    go and tell him in private what he did wrong. If he listens to you, you have helped that person to be your brother or sister again.`,
     // 16
-    `But if he refuses to listen, go to him again and take one or two other people with you. ‘Every case may be proved by two or three witnesses.’(bf)`,
+    `But if he refuses to listen, go to him again and take one or two other people with you. ‘Every case may be proved by two or three witnesses.’(Deuteronomy 19:15)`,
     // 17
     `If he refuses to listen to them, tell the church. If he refuses to listen to the church, then treat him like a person who does not believe in God or like a tax collector.`,
     // 18
@@ -1642,7 +1551,7 @@ Jesus said to Peter, “Then the children of the king don’t have to pay taxes.
     // 34
     `The master was very angry and put the servant in prison to be punished until he could pay everything he owed.`,
     // 35
-    `“This king did what my heavenly Father will do to you if you do not forgive your brother or sister from your heart.”`,
+    `“This king did what my heavenly Father will do to you if you do not forgive your brother or sister from your heart.”`
   ],
   [
     // 19
@@ -1652,9 +1561,9 @@ Jesus said to Peter, “Then the children of the king don’t have to pay taxes.
     // 3
     `Some Pharisees came to Jesus and tried to trick him. They asked, “Is it right for a man to divorce his wife for any reason he chooses?”`,
     // 4
-    `Jesus answered, “Surely you have read in the Scriptures: When God made the world, ‘he made them male and female.’(bg)`,
+    `Jesus answered, “Surely you have read in the Scriptures: When God made the world, ‘he made them male and female.’(Genesis 1:27 or 5:2)`,
     // 5
-    `And God said, ‘So a man will leave his father and mother and be united with his wife, and the two will become one body.’(bh)`,
+    `And God said, ‘So a man will leave his father and mother and be united with his wife, and the two will become one body.’(Genesis 2:24)`,
     // 6
     `So there are not two, but one. God has joined the two together, so no one should separate them.”`,
     // 7
@@ -1662,15 +1571,29 @@ Jesus said to Peter, “Then the children of the king don’t have to pay taxes.
     // 8
     `Jesus answered, “Moses allowed you to divorce your wives because you refused to accept God’s teaching, but divorce was not allowed in the beginning.`,
     // 9
-    `I tell you that anyone who divorces his wife and marries another woman is guilty of adultery.(bi) The only reason for a man to divorce his wife is if his wife has sexual relations with another man.”`,
+    `I tell you that anyone who divorces his wife and marries another woman is guilty of adultery. (
+<span 
+  class="has-tooltip-before"
+  data-tooltip="Some Greek copies continue. Compare Matthew 5:32."
+>And anyone who marries a divorced woman is guilty of adultery.</span> )
+    The only reason for a man to divorce his wife is if his wife has sexual relations with another man.”`,
     // 10
     `The followers said to him, “If that is the only reason a man can divorce his wife, it is better not to marry.”`,
     // 11
     `Jesus answered, “Not everyone can accept this teaching, but God has made some able to accept it.`,
     // 12
-    `There are different reasons why some men cannot marry. Some men were born without the ability to become fathers. Others were made that way later in life by other people. And some men have given up marriage because of the kingdom of heaven. But the person who can marry should accept this teaching about marriage.”(bj)`,
+    `There are different reasons why some men cannot marry. Some men were born without the ability to become fathers. Others were made that way later in life by other people. And some men have given up marriage because of the kingdom of heaven.
+<span 
+  class="has-tooltip-before"
+  data-tooltip="This may also mean, “The person who can accept this teaching about not marrying should accept it.“"
+>But the person who can marry should accept this teaching about marriage.</span>”`,
     // 13
-    `Then the people brought their little children to Jesus so he could put his hands on them(bk) and pray for them. His followers told them to stop,`,
+    `Then the people brought their little children to Jesus so he could 
+<span 
+  class="has-tooltip-after"
+  data-tooltip="Showing that Jesus gave special blessings to these children."
+>put his hands on them</span>
+    and pray for them. His followers told them to stop,`,
     // 14
     `but Jesus said, “Let the little children come to me. Don’t stop them, because the kingdom of heaven belongs to people who are like these children.”`,
     // 15
@@ -1680,10 +1603,9 @@ Jesus said to Peter, “Then the children of the king don’t have to pay taxes.
     // 17
     `Jesus answered, “Why do you ask me about what is good? Only God is good. But if you want to have life forever, obey the commands.”`,
     // 18
-    `The man asked, “Which commands?”
-Jesus answered, “‘You must not murder anyone; you must not be guilty of adultery; you must not steal; you must not tell lies about your neighbor;`,
+    `The man asked, “Which commands?” Jesus answered, “‘You must not murder anyone; you must not be guilty of adultery; you must not steal; you must not tell lies about your neighbor;`,
     // 19
-    `honor your father and mother;(bl) and love your neighbor as you love yourself.’”(bm)`,
+    `honor your father and mother;(Exodus 20:12-16 Deuteronomy 5:16-20) and love your neighbor as you love yourself.’”(Leviticus 19:18)`,
     // 20
     `The young man said, “I have obeyed all these things. What else do I need to do?”`,
     // 21
@@ -1703,9 +1625,14 @@ Jesus answered, “‘You must not murder anyone; you must not be guilty of adul
     // 28
     `Jesus said to them, “I tell you the truth, when the age to come has arrived, the Son of Man will sit on his great throne. All of you who followed me will also sit on twelve thrones, judging the twelve tribes of Israel.`,
     // 29
-    `And all those who have left houses, brothers, sisters, father, mother,(bn) children, or farms to follow me will get much more than they left, and they will have life forever.`,
+    `And all those who have left houses, brothers, sisters, father, mother 
+(<span 
+  class="has-tooltip-before"
+  data-tooltip="Some Greek copies continue"
+>or wife</span>),
+    children, or farms to follow me will get much more than they left, and they will have life forever.`,
     // 30
-    `Many who are first now will be last in the future. And many who are last now will be first in the future.`,
+    `Many who are first now will be last in the future. And many who are last now will be first in the future.`
   ],
   [
     // 20
@@ -1777,7 +1704,7 @@ The sons answered, “Yes, we can.”`,
     // 33
     `They answered, “Lord, we want to see.”`,
     // 34
-    `Jesus felt sorry for the blind men and touched their eyes, and at once they could see. Then they followed Jesus.`,
+    `Jesus felt sorry for the blind men and touched their eyes, and at once they could see. Then they followed Jesus.`
   ],
   [
     // 21
@@ -1890,7 +1817,7 @@ The Lord did this,
     // 45
     `When the leading priests and the Pharisees heard these stories, they knew Jesus was talking about them.`,
     // 46
-    `They wanted to arrest him, but they were afraid of the people, because the people believed that Jesus was a prophet.`,
+    `They wanted to arrest him, but they were afraid of the people, because the people believed that Jesus was a prophet.`
   ],
   [
     // 22
@@ -1990,7 +1917,7 @@ They answered, “The Christ is the Son of David.”`,
     // 45
     `David calls the Christ ‘Lord,’ so how can the Christ be his son?”`,
     // 46
-    `None of the Pharisees could answer Jesus’ question, and after that day no one was brave enough to ask him any more questions.`,
+    `None of the Pharisees could answer Jesus’ question, and after that day no one was brave enough to ask him any more questions.`
   ],
   [
     // 23
@@ -2070,7 +1997,7 @@ They answered, “The Christ is the Son of David.”`,
     // 38
     `Now your house will be left completely empty.`,
     // 39
-    `I tell you, you will not see me again until that time when you will say, ‘God bless the One who comes in the name of the Lord.’”(cg)`,
+    `I tell you, you will not see me again until that time when you will say, ‘God bless the One who comes in the name of the Lord.’”(cg)`
   ],
   [
     // 24
@@ -2180,7 +2107,7 @@ When Will Jesus Come Again?`,
     // 50
     `The master will come when that servant is not ready and is not expecting him.`,
     // 51
-    `Then the master will cut him in pieces and send him away to be with the hypocrites, where people will cry and grind their teeth with pain.`,
+    `Then the master will cut him in pieces and send him away to be with the hypocrites, where people will cry and grind their teeth with pain.`
   ],
   [
     // 25
@@ -2274,7 +2201,7 @@ When Will Jesus Come Again?`,
     // 45
     `“Then the King will answer, ‘I tell you the truth, anything you refused to do for even the least of my people here, you refused to do for me.’`,
     // 46
-    `“These people will go off to be punished forever, but the good people will go to live forever.”`,
+    `“These people will go off to be punished forever, but the good people will go to live forever.”`
   ],
   [
     // 26
@@ -2433,7 +2360,7 @@ The people answered, “He should die.”`,
     // 74
     `Then Peter began to place a curse on himself and swear, “I don’t know the man.” At once, a rooster crowed.`,
     // 75
-    `And Peter remembered what Jesus had told him: “Before the rooster crows, you will say three times that you don’t know me.” Then Peter went outside and cried painfully.`,
+    `And Peter remembered what Jesus had told him: “Before the rooster crows, you will say three times that you don’t know me.” Then Peter went outside and cried painfully.`
   ],
   [
     // 27
@@ -2572,7 +2499,7 @@ But they shouted louder, “Crucify him!”`,
     // 65
     `Pilate said, “Take some soldiers and go guard the tomb the best way you know.”`,
     // 66
-    `So they all went to the tomb and made it safe from thieves by sealing the stone in the entrance and putting soldiers there to guard it.`,
+    `So they all went to the tomb and made it safe from thieves by sealing the stone in the entrance and putting soldiers there to guard it.`
   ],
   [
     // 28
@@ -2614,8 +2541,8 @@ But they shouted louder, “Crucify him!”`,
     // 19
     `So go and make followers of all people in the world. Baptize them in the name of the Father and the Son and the Holy Spirit.`,
     // 20
-    `Teach them to obey everything that I have taught you, and I will be with you always, even until the end of this age.”`,
-  ],
+    `Teach them to obey everything that I have taught you, and I will be with you always, even until the end of this age.”`
+  ]
 ];
 
 const mk = [
@@ -2716,7 +2643,7 @@ const mk = [
     // 44
     `“Don’t tell anyone about this. But go and show yourself to the priest. And offer the gift Moses commanded for people who are made well.(d) This will show the people what I have done.”`,
     // 45
-    `The man left there, but he began to tell everyone that Jesus had healed him, and so he spread the news about Jesus. As a result, Jesus could not enter a town if people saw him. He stayed in places where nobody lived, but people came to him from everywhere.`,
+    `The man left there, but he began to tell everyone that Jesus had healed him, and so he spread the news about Jesus. As a result, Jesus could not enter a town if people saw him. He stayed in places where nobody lived, but people came to him from everywhere.`
   ],
   [
     // 2
@@ -2775,7 +2702,7 @@ The people were amazed and praised God. They said, “We have never seen anythin
     // 27
     `Then Jesus said to the Pharisees, “The Sabbath day was made to help people; they were not made to be ruled by the Sabbath day.`,
     // 28
-    `So then, the Son of Man is Lord even of the Sabbath day.”`,
+    `So then, the Son of Man is Lord even of the Sabbath day.”`
   ],
   [
     // 3
@@ -2847,7 +2774,7 @@ The people were amazed and praised God. They said, “We have never seen anythin
     // 34
     `Then he looked at those sitting around him and said, “Here are my mother and my brothers!`,
     // 35
-    `My true brother and sister and mother are those who do what God wants.”`,
+    `My true brother and sister and mother are those who do what God wants.”`
   ],
   [
     // 4
@@ -2936,7 +2863,7 @@ If they did learn and understand,
     // 40
     `Jesus said to his followers, “Why are you afraid? Do you still have no faith?”`,
     // 41
-    `The followers were very afraid and asked each other, “Who is this? Even the wind and the waves obey him!”`,
+    `The followers were very afraid and asked each other, “Who is this? Even the wind and the waves obey him!”`
   ],
   [
     // 5
@@ -3026,7 +2953,7 @@ A large crowd followed Jesus and pushed very close around him.`,
     // 42
     `At once the girl stood right up and began walking. (She was twelve years old.) Everyone was completely amazed.`,
     // 43
-    `Jesus gave them strict orders not to tell people about this. Then he told them to give the girl something to eat.`,
+    `Jesus gave them strict orders not to tell people about this. Then he told them to give the girl something to eat.`
   ],
   [
     // 6
@@ -3146,7 +3073,7 @@ When they found out, they said, “Five loaves and two fish.”`,
     // 55
     `They ran everywhere in that area and began to bring sick people on mats wherever they heard he was.`,
     // 56
-    `And everywhere he went - into towns, cities, or countryside - the people brought the sick to the marketplaces. They begged him to let them touch just the edge of his coat, and all who touched it were healed.`,
+    `And everywhere he went - into towns, cities, or countryside - the people brought the sick to the marketplaces. They begged him to let them touch just the edge of his coat, and all who touched it were healed.`
   ],
   [
     // 7
@@ -3226,7 +3153,7 @@ When they found out, they said, “Five loaves and two fish.”`,
     // 36
     `Jesus commanded the people not to tell anyone about what happened. But the more he commanded them, the more they told about it.`,
     // 37
-    `They were completely amazed and said, “Jesus does everything well. He makes the deaf hear! And those who can’t talk he makes able to speak.”`,
+    `They were completely amazed and said, “Jesus does everything well. He makes the deaf hear! And those who can’t talk he makes able to speak.”`
   ],
   [
     // 8
@@ -3308,7 +3235,7 @@ Peter answered, “You are the Christ.”`,
     // 37
     `They could never pay enough to buy back their souls.`,
     // 38
-    `The people who live now are living in a sinful and evil time. If people are ashamed of me and my teaching, the Son of Man will be ashamed of them when he comes with his Father’s glory and with the holy angels.”`,
+    `The people who live now are living in a sinful and evil time. If people are ashamed of me and my teaching, the Son of Man will be ashamed of them when he comes with his Father’s glory and with the holy angels.”`
   ],
   [
     // 9
@@ -3412,7 +3339,7 @@ Who Is the Greatest?`,
     // 49
     `Every person will be salted with fire.`,
     // 50
-    `“Salt is good, but if the salt loses its salty taste, you cannot make it salty again. So, be full of salt, and have peace with each other.”`,
+    `“Salt is good, but if the salt loses its salty taste, you cannot make it salty again. So, be full of salt, and have peace with each other.”`
   ],
   [
     // 10
@@ -3521,7 +3448,7 @@ So they called the blind man, saying, “Cheer up! Get to your feet. Jesus is ca
     `Jesus asked him, “What do you want me to do for you?”
 The blind man answered, “Teacher, I want to see.”`,
     // 52
-    `Jesus said, “Go, you are healed because you believed.” At once the man could see, and he followed Jesus on the road.`,
+    `Jesus said, “Go, you are healed because you believed.” At once the man could see, and he followed Jesus on the road.`
   ],
   [
     // 11
@@ -3595,7 +3522,7 @@ Praise(an) to God in heaven!”`,
     `But if we say, ‘It was from other people,’ the crowd will be against us.” (These leaders were afraid of the people, because all the people believed that John was a prophet.)`,
     // 33
     `So they answered Jesus, “We don’t know.”
-Jesus said to them, “Then I won’t tell you what authority I have to do these things.”`,
+Jesus said to them, “Then I won’t tell you what authority I have to do these things.”`
   ],
   [
     // 12
@@ -3696,7 +3623,7 @@ They answered, “Caesar’s.”`,
     // 43
     `Calling his followers to him, Jesus said, “I tell you the truth, this poor widow gave more than all those rich people.`,
     // 44
-    `They gave only what they did not need. This woman is very poor, but she gave all she had; she gave all she had to live on.”`,
+    `They gave only what they did not need. This woman is very poor, but she gave all she had; she gave all she had to live on.”`
   ],
   [
     // 13
@@ -3776,7 +3703,7 @@ They answered, “Caesar’s.”`,
     // 36
     `Always be ready. Otherwise he might come back suddenly and find you sleeping.`,
     // 37
-    `I tell you this, and I say this to everyone: ‘Be ready!’”`,
+    `I tell you this, and I say this to everyone: ‘Be ready!’”`
   ],
   [
     // 14
@@ -3929,7 +3856,7 @@ A short time later, some people were standing near Peter saying, “Surely you a
     // 71
     `Then Peter began to place a curse on himself and swear, “I don’t know this man you’re talking about!”`,
     // 72
-    `At once, the rooster crowed the second time. Then Peter remembered what Jesus had told him: “Before the rooster crows twice, you will say three times that you don’t know me.” Then Peter lost control of himself and began to cry.`,
+    `At once, the rooster crowed the second time. Then Peter remembered what Jesus had told him: “Before the rooster crows twice, you will say three times that you don’t know me.” Then Peter lost control of himself and began to cry.`
   ],
   [
     // 15
@@ -4027,7 +3954,7 @@ But they shouted even louder, “Crucify him!”`,
     // 46
     `Joseph bought some linen cloth, took the body down from the cross, and wrapped it in the linen. He put the body in a tomb that was cut out of a wall of rock. Then he rolled a very large stone to block the entrance of the tomb.`,
     // 47
-    `And Mary Magdalene and Mary the mother of Joseph saw the place where Jesus was laid.`,
+    `And Mary Magdalene and Mary the mother of Joseph saw the place where Jesus was laid.`
   ],
   [
     // 16
@@ -4070,8 +3997,8 @@ But they shouted even louder, “Crucify him!”`,
     // 19
     `After the Lord Jesus said these things to his followers, he was carried up into heaven, and he sat at the right side of God.`,
     // 20
-    `The followers went everywhere in the world and told the Good News to people, and the Lord helped them. The Lord proved that the Good News they told was true by giving them power to work miracles.`,
-  ],
+    `The followers went everywhere in the world and told the Good News to people, and the Lord helped them. The Lord proved that the Good News they told was true by giving them power to work miracles.`
+  ]
 ];
 
 const lk = [
@@ -4256,7 +4183,7 @@ From now on, all people will say that I am blessed,`,
     in the shadow of death.
 It will guide us into the path of peace.”`,
     // 80
-    `And so the child grew up and became strong in spirit. John lived in the desert until the time when he came out to preach to Israel.`,
+    `And so the child grew up and became strong in spirit. John lived in the desert until the time when he came out to preach to Israel.`
   ],
   [
     // 2
@@ -4365,7 +4292,7 @@ It will guide us into the path of peace.”`,
     // 51
     `Jesus went with them to Nazareth and was obedient to them. But his mother kept in her mind all that had happened.`,
     // 52
-    `Jesus became wiser and grew physically. People liked him, and he pleased God.`,
+    `Jesus became wiser and grew physically. People liked him, and he pleased God.`
   ],
   [
     // 3
@@ -4424,13 +4351,11 @@ John said to them, “Don’t force people to give you money, and don’t lie ab
     // 23
     `When Jesus began to preach, he was about thirty years old. Everyone thought he was the son(l) of Joseph. But
 <span 
-  class="has-tooltip"
+  class="has-tooltip-before"
   data-tooltip="Joseph's
 
-This note is not part of the New Century Version
-">
-his
-</span>
+This note is not part of the New Century Version"
+>his</span>
 family went back through Heli,`,
     // 24
     `Matthat, Levi, Melchi, Jannai, Joseph,`,
@@ -4462,7 +4387,7 @@ family went back through Heli,`,
     `Methuselah, Enoch, Jared, Mahalaleel, Kenan,`,
     // 38
     `Enosh, and Seth.
-The family of Jesus went all the way back to Adam and then to God.`,
+The family of Jesus went all the way back to Adam and then to God.`
   ],
   [
     // 4
@@ -4565,7 +4490,7 @@ God sent me to free those who have been treated unfairly
     // 43
     `But Jesus said to them, “I must preach about God’s kingdom to other towns, too. This is why I was sent.”`,
     // 44
-    `Then he kept on preaching in the synagogues of Judea.(r)`,
+    `Then he kept on preaching in the synagogues of Judea.(r)`
   ],
   [
     // 5
@@ -4646,7 +4571,7 @@ Jesus said to Simon, “Don’t be afraid. From now on you will fish for people.
     // 38
     `New wine must be put into new leather bags.`,
     // 39
-    `No one after drinking old wine wants new wine, because he says, ‘The old wine is better.’”`,
+    `No one after drinking old wine wants new wine, because he says, ‘The old wine is better.’”`
   ],
   [
     // 6
@@ -4755,7 +4680,7 @@ How terrible it will be for you who are laughing now,
     // 48
     `That person is like a man building a house who dug deep and laid the foundation on rock. When the floods came, the water tried to wash the house away, but it could not shake it, because the house was built well.`,
     // 49
-    `But the one who hears my words and does not obey is like a man who built his house on the ground without a foundation. When the floods came, the house quickly fell and was completely destroyed.”`,
+    `But the one who hears my words and does not obey is like a man who built his house on the ground without a foundation. When the floods came, the house quickly fell and was completely destroyed.”`
   ],
   [
     // 7
@@ -4864,7 +4789,7 @@ Jesus said to Simon, “You are right.”`,
     // 49
     `The people sitting at the table began to say among themselves, “Who is this who even forgives sins?”`,
     // 50
-    `Jesus said to the woman, “Because you believed, you are saved from your sins. Go in peace.”`,
+    `Jesus said to the woman, “Because you believed, you are saved from your sins. Go in peace.”`
   ],
   [
     // 8
@@ -4987,7 +4912,7 @@ When all the people said they had not touched him, Peter said, “Master, the pe
     // 55
     `Her spirit came back into her, and she stood up at once. Then Jesus ordered that she be given something to eat.`,
     // 56
-    `The girl’s parents were amazed, but Jesus told them not to tell anyone what had happened.`,
+    `The girl’s parents were amazed, but Jesus told them not to tell anyone what had happened.`
   ],
   [
     // 9
@@ -5120,7 +5045,7 @@ But he said, “Lord, first let me go and bury my father.”`,
     // 61
     `Another man said, “I will follow you, Lord, but first let me go and say good - bye to my family.”`,
     // 62
-    `Jesus said, “Anyone who begins to plow a field but keeps looking back is of no use in the kingdom of God.”`,
+    `Jesus said, “Anyone who begins to plow a field but keeps looking back is of no use in the kingdom of God.”`
   ],
   [
     // 10
@@ -5207,7 +5132,7 @@ Jesus said to him, “Then go and do what he did.”`,
     // 41
     `But the Lord answered her, “Martha, Martha, you are worried and upset about many things.`,
     // 42
-    `Only one thing is important. Mary has chosen the better thing, and it will never be taken away from her.”`,
+    `Only one thing is important. Mary has chosen the better thing, and it will never be taken away from her.”`
   ],
   [
     // 11
@@ -5321,7 +5246,7 @@ And do not cause us to be tempted.’”(at)`,
     // 53
     `When Jesus left, the teachers of the law and the Pharisees began to give him trouble, asking him questions about many things,`,
     // 54
-    `trying to catch him saying something wrong.`,
+    `trying to catch him saying something wrong.`
   ],
   [
     // 12
@@ -5442,7 +5367,7 @@ Who Is the Trusted Servant?`,
     // 58
     `If your enemy is taking you to court, try hard to settle it on the way. If you don’t, your enemy might take you to the judge, and the judge might turn you over to the officer, and the officer might throw you into jail.`,
     // 59
-    `I tell you, you will not get out of there until you have paid everything you owe.”`,
+    `I tell you, you will not get out of there until you have paid everything you owe.”`
   ],
   [
     // 13
@@ -5515,7 +5440,7 @@ Jesus said,`,
     // 34
     `“Jerusalem, Jerusalem! You kill the prophets and stone to death those who are sent to you. Many times I wanted to gather your people as a hen gathers her chicks under her wings, but you would not let me.`,
     // 35
-    `Now your house is left completely empty. I tell you, you will not see me until that time when you will say, ‘God bless the One who comes in the name of the Lord.’”(bb)`,
+    `Now your house is left completely empty. I tell you, you will not see me until that time when you will say, ‘God bless the One who comes in the name of the Lord.’”(bb)`
   ],
   [
     // 14
@@ -5588,7 +5513,7 @@ Jesus said,`,
     `“Salt is good, but if it loses its salty taste, you cannot make it salty again.`,
     // 35
     `It is no good for the soil or for manure; it is thrown away.
-“Let those with ears use them and listen.”`,
+“Let those with ears use them and listen.”`
   ],
   [
     // 15
@@ -5655,7 +5580,7 @@ Jesus said,`,
     // 31
     `The father said to him, ‘Son, you are always with me, and all that I have is yours.`,
     // 32
-    `We had to celebrate and be happy because your brother was dead, but now he is alive. He was lost, but now he is found.’”`,
+    `We had to celebrate and be happy because your brother was dead, but now he is alive. He was lost, but now he is found.’”`
   ],
   [
     // 16
@@ -5719,7 +5644,7 @@ Jesus said,`,
     // 30
     `The rich man said, ‘No, father Abraham! If someone goes to them from the dead, they would believe and change their hearts and lives.’`,
     // 31
-    `But Abraham said to him, ‘If they will not listen to Moses and the prophets, they will not listen to someone who comes back from the dead.’”`,
+    `But Abraham said to him, ‘If they will not listen to Moses and the prophets, they will not listen to someone who comes back from the dead.’”`
   ],
   [
     // 17
@@ -5799,7 +5724,7 @@ Jesus answered, “God’s kingdom is coming, but not in a way that you will be 
     `Two people will be in the field. One will be taken, and the other will be left.]”(bl)`,
     // 37
     `The followers asked Jesus, “Where will this be, Lord?”
-Jesus answered, “Where there is a dead body, there the vultures will gather.”`,
+Jesus answered, “Where there is a dead body, there the vultures will gather.”`
   ],
   [
     // 18
@@ -5890,7 +5815,7 @@ He said, “Lord, I want to see.”`,
     // 42
     `Jesus said to him, “Then see. You are healed because you believed.”`,
     // 43
-    `At once the man was able to see, and he followed Jesus, thanking God. All the people who saw this praised God.`,
+    `At once the man was able to see, and he followed Jesus, thanking God. All the people who saw this praised God.`
   ],
   [
     // 19
@@ -5991,7 +5916,7 @@ There is peace in heaven and glory to God!”`,
     // 47
     `Jesus taught in the Temple every day. The leading priests, the experts on the law, and some of the leaders of the people wanted to kill Jesus.`,
     // 48
-    `But they did not know how they could do it, because all the people were listening closely to him.`,
+    `But they did not know how they could do it, because all the people were listening closely to him.`
   ],
   [
     // 20
@@ -6098,7 +6023,7 @@ Is the Christ the Son of David?`,
     // 46
     `“Beware of the teachers of the law. They like to walk around wearing fancy clothes, and they love for people to greet them with respect in the marketplaces. They love to have the most important seats in the synagogues and at feasts.`,
     // 47
-    `But they cheat widows and steal their houses and then try to make themselves look good by saying long prayers. They will receive a greater punishment.”`,
+    `But they cheat widows and steal their houses and then try to make themselves look good by saying long prayers. They will receive a greater punishment.”`
   ],
   [
     // 21
@@ -6177,7 +6102,7 @@ But Jesus said,`,
     // 37
     `During the day, Jesus taught the people in the Temple, and at night he went out of the city and stayed on the Mount of Olives.`,
     // 38
-    `Every morning all the people got up early to go to the Temple to listen to him.`,
+    `Every morning all the people got up early to go to the Temple to listen to him.`
   ],
   [
     // 22
@@ -6329,7 +6254,7 @@ Jesus said to them, “If I tell you, you will not believe me.`,
     `They all said, “Then are you the Son of God?”
 Jesus said to them, “You say that I am.”`,
     // 71
-    `They said, “Why do we need witnesses now? We ourselves heard him say this.”`,
+    `They said, “Why do we need witnesses now? We ourselves heard him say this.”`
   ],
   [
     // 23
@@ -6446,7 +6371,7 @@ The soldiers threw lots to decide who would get his clothes.`,
     `The women who had come from Galilee with Jesus followed Joseph and saw the tomb and how Jesus’ body was laid.`,
     // 56
     `Then the women left to prepare spices and perfumes.
-On the Sabbath day they rested, as the law of Moses commanded.`,
+On the Sabbath day they rested, as the law of Moses commanded.`
   ],
   [
     // 24
@@ -6556,8 +6481,8 @@ They said, “About Jesus of Nazareth. He was a prophet who said and did many po
     // 52
     `They worshiped him and returned to Jerusalem very happy.`,
     // 53
-    `They stayed in the Temple all the time, praising God.`,
-  ],
+    `They stayed in the Temple all the time, praising God.`
+  ]
 ];
 
 const jn = [
@@ -6672,7 +6597,7 @@ Jesus answered, “I saw you when you were under the fig tree, before Philip tol
     // 50
     `Jesus said to Nathanael, “Do you believe simply because I told you I saw you under the fig tree? You will see greater things than that.”`,
     // 51
-    `And Jesus said to them, “I tell you the truth, you will all see heaven open and ‘angels of God going up and coming down’(m) on the Son of Man.”`,
+    `And Jesus said to them, “I tell you the truth, you will all see heaven open and ‘angels of God going up and coming down’(m) on the Son of Man.”`
   ],
   [
     // 2
@@ -6725,7 +6650,7 @@ So they took the water to the master.`,
     // 24
     `But Jesus did not believe in them because he knew them all.`,
     // 25
-    `He did not need anyone to tell him about people, because he knew what was in people’s minds.`,
+    `He did not need anyone to tell him about people, because he knew what was in people’s minds.`
   ],
   [
     // 3
@@ -6799,7 +6724,7 @@ So they took the water to the master.`,
     // 35
     `The Father loves the Son and has given him power over everything.`,
     // 36
-    `Those who believe in the Son have eternal life, but those who do not obey the Son will never have life. God’s anger stays on them.”`,
+    `Those who believe in the Son have eternal life, but those who do not obey the Son will never have life. God’s anger stays on them.”`
   ],
   [
     // 4
@@ -6912,7 +6837,7 @@ They answered, “Yesterday at one o’clock the fever left him.”`,
     // 53
     `The father knew that one o’clock was the exact time that Jesus had said, “Your son will live.” So the man and all the people who lived in his house believed in Jesus.`,
     // 54
-    `That was the second miracle Jesus did after coming from Judea to Galilee.`,
+    `That was the second miracle Jesus did after coming from Judea to Galilee.`
   ],
   [
     // 5
@@ -7009,7 +6934,7 @@ The day this happened was a Sabbath day.`,
     // 46
     `If you really believed Moses, you would believe me, because Moses wrote about me.`,
     // 47
-    `But if you don’t believe what Moses wrote, how can you believe what I say?”`,
+    `But if you don’t believe what Moses wrote, how can you believe what I say?”`
   ],
   [
     // 6
@@ -7021,16 +6946,14 @@ The day this happened was a Sabbath day.`,
     // 4
     `It was almost the time for the Jewish
 <span 
-  class="has-tooltip"
+  class="has-tooltip-after"
   data-tooltip="Should read 'Feast of Trumpets' (not Passover)
 • During Passover, everyone should be in Jerusalem by the Torah, but the event is in Bethsaida, 120+ km away from Jerusalem.
 • Jesus is feeding the crowd with leavened bread (not allowed at Passover).
 • The Last Day and People's Resurrection are themes of Feast of Trumpets, not Passover (See the next day at Jn6:39,40,44,54)
 
-This note is not part of the New Century Version
-">
-Passover Feast.
-</span>`,
+This note is not part of the New Century Version"
+>Passover Feast.</span>`,
     // 5
     `When Jesus looked up and saw a large crowd coming toward him, he said to Philip, “Where can we buy enough bread for all these people to eat?”`,
     // 6
@@ -7164,7 +7087,7 @@ Passover Feast.
     // 70
     `Then Jesus answered, “I chose all twelve of you, but one of you is a devil.”`,
     // 71
-    `Jesus was talking about Judas, the son of Simon Iscariot. Judas was one of the twelve, but later he was going to turn against Jesus.`,
+    `Jesus was talking about Judas, the son of Simon Iscariot. Judas was one of the twelve, but later he was going to turn against Jesus.`
   ],
   [
     // 7
@@ -7276,7 +7199,7 @@ Still others said, “The Christ will not come from Galilee.`,
     `They answered, “Are you from Galilee, too? Study the Scriptures, and you will learn that no prophet comes from Galilee.”`,
     // Some of the earliest surviving Greek copies do not contain 7:53 - 8:11
     // 53
-    `And everyone left and went home.`,
+    `And everyone left and went home.`
   ],
   [
     // 8
@@ -7402,7 +7325,7 @@ But they said, “We are not like children who never knew who their father was. 
     // 58
     `Jesus answered, “I tell you the truth, before Abraham was even born, I am!”`,
     // 59
-    `When Jesus said this, the people picked up stones to throw at him. But Jesus hid himself, and then he left the Temple.`,
+    `When Jesus said this, the people picked up stones to throw at him. But Jesus hid himself, and then he left the Temple.`
   ],
   [
     // 9
@@ -7491,7 +7414,7 @@ The man answered, “He is a prophet.”`,
     // 40
     `Some of the Pharisees who were nearby heard Jesus say this and asked, “Are you saying we are blind, too?”`,
     // 41
-    `Jesus said, “If you were blind, you would not be guilty of sin. But since you keep saying you see, your guilt remains.”`,
+    `Jesus said, “If you were blind, you would not be guilty of sin. But since you keep saying you see, your guilt remains.”`
   ],
   [
     // 10
@@ -7577,7 +7500,7 @@ The man answered, “He is a prophet.”`,
     // 41
     `and many people came to him and said, “John never did a miracle, but everything John said about this man is true.”`,
     // 42
-    `And in that place many believed in Jesus.`,
+    `And in that place many believed in Jesus.`
   ],
   [
     // 11
@@ -7696,7 +7619,7 @@ Jesus said to them, “Take the cloth off of him and let him go.”`,
     // 56
     `The people looked for Jesus and stood in the Temple asking each other, “Is he coming to the Feast? What do you think?”`,
     // 57
-    `But the leading priests and the Pharisees had given orders that if anyone knew where Jesus was, he must tell them. Then they could arrest him.`,
+    `But the leading priests and the Pharisees had given orders that if anyone knew where Jesus was, he must tell them. Then they could arrest him.`
   ],
   [
     // 12
@@ -7815,7 +7738,7 @@ Otherwise they would see with their eyes
     // 49
     `The things I taught were not from myself. The Father who sent me told me what to say and what to teach.`,
     // 50
-    `And I know that eternal life comes from what the Father commands. So whatever I say is what the Father told me to say.”`,
+    `And I know that eternal life comes from what the Father commands. So whatever I say is what the Father told me to say.”`
   ],
   [
     // 13
@@ -7895,7 +7818,7 @@ Jesus answered, “Where I am going you cannot follow now, but you will follow l
     // 37
     `Peter asked, “Lord, why can’t I follow you now? I am ready to die for you!”`,
     // 38
-    `Jesus answered, “Are you ready to die for me? I tell you the truth, before the rooster crows, you will say three times that you don’t know me.”`,
+    `Jesus answered, “Are you ready to die for me? I tell you the truth, before the rooster crows, you will say three times that you don’t know me.”`
   ],
   [
     // 14
@@ -7960,7 +7883,7 @@ Jesus answered, “Where I am going you cannot follow now, but you will follow l
     `I will not talk with you much longer, because the ruler of this world is coming. He has no power over me,`,
     // 31
     `but the world must know that I love the Father, so I do exactly what the Father told me to do.
-“Come now, let us go.`,
+“Come now, let us go.`
   ],
   [
     // 15
@@ -8016,7 +7939,7 @@ Jesus answered, “Where I am going you cannot follow now, but you will follow l
     // 26
     `“I will send you the Helper(ap) from the Father; he is the Spirit of truth who comes from the Father. When he comes, he will tell about me,`,
     // 27
-    `and you also must tell people about me, because you have been with me from the beginning.`,
+    `and you also must tell people about me, because you have been with me from the beginning.`
   ],
   [
     // 16
@@ -8086,7 +8009,7 @@ The Work of the Holy Spirit
     // 32
     `Listen to me; a time is coming when you will be scattered, each to your own home. That time is now here. You will leave me alone, but I am never really alone, because the Father is with me.`,
     // 33
-    `“I told you these things so that you can have peace in me. In this world you will have trouble, but be brave! I have defeated the world.”`,
+    `“I told you these things so that you can have peace in me. In this world you will have trouble, but be brave! I have defeated the world.”`
   ],
   [
     // 17
@@ -8140,7 +8063,7 @@ The Work of the Holy Spirit
     // 25
     `Father, you are the One who is good. The world does not know you, but I know you, and these people know you sent me.`,
     // 26
-    `I showed them what you are like, and I will show them again. Then they will have the same love that you have for me, and I will live in them.”`,
+    `I showed them what you are like, and I will show them again. Then they will have the same love that you have for me, and I will live in them.”`
   ],
   [
     // 18
@@ -8228,7 +8151,7 @@ Jesus answered, “You are the one saying I am a king. This is why I was born an
     // 39
     `But it is your custom that I free one prisoner to you at Passover time. Do you want me to free the ‘king of the Jews’?”`,
     // 40
-    `They shouted back, “No, not him! Let Barabbas go free!” (Barabbas was a robber.)`,
+    `They shouted back, “No, not him! Let Barabbas go free!” (Barabbas was a robber.)`
   ],
   [
     // 19
@@ -8323,7 +8246,7 @@ So the soldiers did this.`,
     // 41
     `In the place where Jesus was crucified, there was a garden. In the garden was a new tomb that had never been used before.`,
     // 42
-    `The men laid Jesus in that tomb because it was nearby, and they were preparing to start their Sabbath day.`,
+    `The men laid Jesus in that tomb because it was nearby, and they were preparing to start their Sabbath day.`
   ],
   [
     // 20
@@ -8391,7 +8314,7 @@ But Thomas said, “I will not believe it until I see the nail marks in his hand
     // 30
     `Jesus did many other miracles in the presence of his followers that are not written in this book.`,
     // 31
-    `But these are written so that you may believe that Jesus is the Christ, the Son of God. Then, by believing, you may have life through his name.`,
+    `But these are written so that you may believe that Jesus is the Christ, the Son of God. Then, by believing, you may have life through his name.`
   ],
   [
     // 21
@@ -8451,8 +8374,8 @@ He said to him, “Feed my sheep.`,
     // 24
     `That follower is the one who is telling these things and who has now written them down. We know that what he says is true.`,
     // 25
-    `There are many other things Jesus did. If every one of them were written down, I suppose the whole world would not be big enough for all the books that would be written.`,
-  ],
+    `There are many other things Jesus did. If every one of them were written down, I suppose the whole world would not be big enough for all the books that would be written.`
+  ]
 ];
 
 const act = [
@@ -8485,7 +8408,7 @@ The first book I wrote was about everything Jesus began to do and teach`,
     // 13
     `When they entered the city, they went to the upstairs room where they were staying. Peter, John, James, Andrew, Philip, Thomas, Bartholomew, Matthew, James son of Alphaeus, Simon (known as the Zealot), and Judas son of James were there.`,
     // 14
-    `They all continued praying together with some women, including Mary the mother of Jesus, and Jesus’ brothers.`,
+    `They all continued praying together with some women, including Mary the mother of Jesus, and Jesus’ brothers.`
   ],
   [
     // Acts 2
@@ -8495,8 +8418,8 @@ The first book I wrote was about everything Jesus began to do and teach`,
     // 3
     `They saw something like flames of fire that were separated and stood over each person there.`,
     // 4
-    `They were all filled with the Holy Spirit, and they began to speak different languages(a) by the power the Holy Spirit was giving them.`,
-  ],
+    `They were all filled with the Holy Spirit, and they began to speak different languages(a) by the power the Holy Spirit was giving them.`
+  ]
 ];
 
 export default { mt, mk, lk, jn, act };

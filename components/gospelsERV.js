@@ -56,17 +56,15 @@ Eleázár fia Mattán,
 Mattán fia Jákób.`,
     // 16
     `Jákób fia József, aki annak a Máriának a 
-<details>
-  <summary>férje</summary>
-  <span>
-    Valószínűleg Mária "apja"-ként értendő ("férje" helyett)</br>
-    • Egyfelől hogy értelmet nyerjen a felmenők eltérése Lk 3:23-38 -hoz képest,</br>
-    • Valamint hogy kiadódjon a teljes 14 generáció</br>
-    </br>
-    <small><strong>Ez a megjegyzés nem része az ERV-HU Biblia fordításnak</strong></small>
-  </span>
-</details> 
-volt, akitől Jézus, a Messiás született.`,
+<span 
+  class="has-tooltip-before"
+  data-tooltip="Valószínűleg Mária ”apja”-ként értendő (”férje” helyett)
+  • Egyfelől hogy értelmet nyerjen a felmenők eltérése Lk 3:23-38 -hoz képest,
+  • Valamint hogy kiadódjon a teljes 14 generáció
+
+  Ez a megjegyzés nem része az ERV-HU Biblia fordításnak"
+>férje</span>
+    volt, akitől Jézus, a Messiás született.`,
     // 17
     `A nemzedékek száma tehát Ábrahámtól Dávidig tizennégy, Dávidtól a babiloni fogságba vitelig szintén tizennégy, a babiloni fogságba viteltől a Messiás születéséig ismét tizennégy.`,
     // 18  ~ Jézus születése (#B) ~
@@ -88,7 +86,7 @@ Ez a név azt jelenti: „Isten velünk van”.`,
     `Azután József felébredt az álomból, és mindent úgy tett, ahogy az Örökkévaló angyala parancsolta.
 Feleségül vette Máriát,`,
     // 25
-    `de nem volt közöttük szexuális kapcsolat, amíg Mária meg nem szülte a fiát, akinek József a „Jézus” nevet adta.`,
+    `de nem volt közöttük szexuális kapcsolat, amíg Mária meg nem szülte a fiát, akinek József a „Jézus” nevet adta.`
   ],
   [
     // 2  ~ A keleti bölcsek imádják Jézust ~
@@ -146,7 +144,7 @@ Ráhel siratta gyermekeit,
     // 23
     `és odaérve Názáret városában telepedett le.
 Így teljesedett be, amit Isten a próféták által mondott a Messiásról:
-„Názáretinek (#f) fogják őt nevezni.”`,
+„Názáretinek (#f) fogják őt nevezni.”`
   ],
   [
     // 3  ~ Bemerítő János utat készít a Messiásnak (#C) ~
@@ -185,7 +183,7 @@ Ráhel siratta gyermekeit,
     // 16
     `Miután Jézus bemerítkezett, azonnal feljött a vízből. Ekkor hirtelen megnyílt a Menny, és János látta, amint Isten Lelke galamb formájában leereszkedik, és Jézusra száll.`,
     // 17
-    `A Mennyből pedig hang hallatszott: „Ő a Fiam, akit nagyon szeretek, s akiben gyönyörködöm!”`,
+    `A Mennyből pedig hang hallatszott: „Ő a Fiam, akit nagyon szeretek, s akiben gyönyörködöm!”`
   ],
   [
     // 4  ~ Jézust próbára teszi a Sátán (#E) ~
@@ -252,7 +250,7 @@ Akik halál földjén és árnyékában laktak,
     // 24
     `Elterjedt a híre még Szíria egész tartományában is. Ezért hozzá vittek mindenféle beteget: epilepsziásokat, bénákat, és olyanokat, akik különböző fájdalmaktól szenvedtek, meg akikben gonosz szellem volt. Jézus pedig meggyógyította őket.`,
     // 25
-    `Ezért nagy tömeg vette körül, és kísérte. Galileából, a Tízvárosból, Jeruzsálemből, Júdeából és a Jordán folyón túlról jöttek.`,
+    `Ezért nagy tömeg vette körül, és kísérte. Galileából, a Tízvárosból, Jeruzsálemből, Júdeából és a Jordán folyón túlról jöttek.`
   ],
   [
     // 5  ~ Boldogok és áldottak vagytok! (#I) ~
@@ -366,7 +364,7 @@ mert őket Isten gyermekeinek (#n) nevezik!`,
     // 47
     `Ha csak a testvéreiteknek köszöntök, ugyan mennyivel tesztek többet, mint mások? Ezt még azok is megteszik, akik nem ismerik Istent!`,
     // 48
-    `Legyetek tehát tökéletesek, mint ahogy Mennyei Atyátok tökéletes!”`,
+    `Legyetek tehát tökéletesek, mint ahogy Mennyei Atyátok tökéletes!”`
   ],
   [
     // 6  ~ Az adakozásról ~
@@ -443,7 +441,7 @@ mert őket Isten gyermekeinek (#n) nevezik!`,
     // 33
     `Isten Királyságával és azzal törődjetek, amit Isten igazságossága kíván - erre törekedjetek mindenek előtt! Isten pedig majd törődik azzal, amire szükségetek van.`,
     // 34
-    `Ne aggódjatok tehát a holnap miatt! A holnap majd magával hozza az új gondokat és az új megoldásokat is. Minden napnak elég a maga gondja-baja.”`,
+    `Ne aggódjatok tehát a holnap miatt! A holnap majd magával hozza az új gondokat és az új megoldásokat is. Minden napnak elég a maga gondja-baja.”`
   ],
   [
     // 7  ~ Ne ítéljetek el senkit! (#Q) ~
@@ -503,7 +501,7 @@ mert őket Isten gyermekeinek (#n) nevezik!`,
     // 28
     `Mikor Jézus befejezte a beszédet, az egész tömeg csodálkozott a tanításán,`,
     // 29
-    `mert nem úgy tanította őket, mint a törvénytanítóik, hanem úgy, mint akinek teljes hatalma van.`,
+    `mert nem úgy tanította őket, mint a törvénytanítóik, hanem úgy, mint akinek teljes hatalma van.`
   ],
   [
     // 8  ~ Akarom, gyógyulj meg! (#V) ~
@@ -575,7 +573,7 @@ mert őket Isten gyermekeinek (#n) nevezik!`,
     // 33
     `Ekkor a pásztorok, akik a disznókat őrizték, elfutottak a városba, és elmondtak mindent - azt is, ami a két megszállottal történt.`,
     // 34
-    `A város egész lakossága kiment, hogy Jézussal találkozzon. Amikor meglátták, kérték, hogy menjen el arról a vidékről.`,
+    `A város egész lakossága kiment, hogy Jézussal találkozzon. Amikor meglátták, kérték, hogy menjen el arról a vidékről.`
   ],
   [
     // 9  ~ Jézus meggyógyít egy béna férfit (#AB) ~
@@ -654,7 +652,7 @@ mert őket Isten gyermekeinek (#n) nevezik!`,
     // 37
     `Ekkor a tanítványaihoz fordult: „Látjátok, milyen sok a gabona, de milyen kevés az arató!`,
     // 38
-    `Imádkozzatok hát, és kérjétek az Aratás Urát: küldjön még több aratót, hogy learassák a gabonáját!”`,
+    `Imádkozzatok hát, és kérjétek az Aratás Urát: küldjön még több aratót, hogy learassák a gabonáját!”`
   ],
   [
     // 10  ~ A tizenkét apostol kiküldése (#AF) ~
@@ -750,7 +748,7 @@ Jakab, Alfeus fia, és Taddeus;`,
     // 41
     `Aki azért fogad be egy prófétát, mert az illető próféta, az megkapja ugyanazt a jutalmat, amely a prófétának jár. Aki azért fogad be egy igazságos embert, mert az illető igazságos, az megkapja ugyanazt a jutalmat, amely az igazságos embernek jár.`,
     // 42
-    `Aki csak egyetlen pohár friss vizet ad az én kedvemért egyik kis tanítványomnak, igazán mondom nektek, hogy megkapja a jutalmát!”`,
+    `Aki csak egyetlen pohár friss vizet ad az én kedvemért egyik kis tanítványomnak, igazán mondom nektek, hogy megkapja a jutalmát!”`
   ],
   [
     // 11  ~ Jézus Bemerítő Jánosról (#AL) ~
@@ -818,7 +816,7 @@ Siratót énekeltünk,
     // 29
     `Azt az igát vegyétek fel, amelyet én adok rátok, s tanuljátok meg tőlem, hogy én szívből szelíd és alázatos vagyok -, akkor meg fogtok nyugodni.`,
     // 30
-    `Mert az iga, amelyet én teszek rátok, nem nehéz! A teher, amelyet én helyezek a vállaitokra, könnyű.”`,
+    `Mert az iga, amelyet én teszek rátok, nem nehéz! A teher, amelyet én helyezek a vállaitokra, könnyű.”`
   ],
   [
     // 12  ~ Az Emberfia a szombatnak is Ura (#AO) ~
@@ -926,7 +924,7 @@ Betöltöm őt Lelkemmel,
     // 49
     `Majd tanítványaira mutatott, és ezt mondta: „Itt vannak a testvéreim és anyám!`,
     // 50
-    `Aki megteszi, amit Mennyei Atyám akar, az az én testvérem és anyám.”`,
+    `Aki megteszi, amit Mennyei Atyám akar, az az én testvérem és anyám.”`
   ],
   [
     // 13  ~ Példázat a magvetésről (#AV) ~
@@ -1062,7 +1060,7 @@ A szolgák tovább kérdezték: »Akarod, hogy kigyomláljuk?«`,
     `Ezért nem fogadták el Jézust, hanem visszautasították és elfordultak tőle.
 Jézus ekkor ezt mondta nekik: „A prófétát mindenhol tisztelik, csak a saját városában és családjában nem.”`,
     // 58
-    `Ebben a városban nem is tett sok csodát, mert nem hittek benne.`,
+    `Ebben a városban nem is tett sok csodát, mert nem hittek benne.`
   ],
   [
     // 14  ~ Heródes Jézusról (#BA) ~
@@ -1137,7 +1135,7 @@ Péter ki is lépett a csónakból, és a vízen járva elindult Jézus felé,`,
     // 35
     `Az ott lakók felismerték Jézust, és az egész környéken elhíresztelték, hogy megérkezett. Így azután minden beteget odavittek hozzá,`,
     // 36
-    `és kérték, hogy legalább a ruhája szélét érinthessék. Akik csak megérintették, mind meg is gyógyultak.`,
+    `és kérték, hogy legalább a ruhája szélét érinthessék. Akik csak megérintették, mind meg is gyógyultak.`
   ],
   [
     // 15  ~ Isten szava fontosabb, vagy az emberi hagyományok? (#BE) ~
@@ -1221,7 +1219,7 @@ mert tanításaik csak emberi parancsok!«” (#av)`,
     // 38
     `A tömegben körülbelül négyezer férfi volt, s rajtuk kívül még az asszonyok és a gyerekek.`,
     // 39
-    `Miután Jézus elbocsátotta az embereket, beszállt egy bárkába, és Magadán vidékére ment.`,
+    `Miután Jézus elbocsátotta az embereket, beszállt egy bárkába, és Magadán vidékére ment.`
   ],
   [
     // 16  ~ A vallási vezetők próbára akarják tenni Jézust (#D) ~
@@ -1279,7 +1277,7 @@ mert tanításaik csak emberi parancsok!«” (#av)`,
     // 27
     `Bizony, az Emberfia eljön Atyja dicsőségében, és angyalai kiséretével, s akkor majd mindenkinek megadja, amit a tettei szerint megérdemel.`,
     // 28
-    `Igazán mondom nektek: vannak köztetek, akik nem ízlelik meg a halált, amíg meg nem látják az Emberfiát, amint eljön királyi dicsőségében.”`,
+    `Igazán mondom nektek: vannak köztetek, akik nem ízlelik meg a halált, amíg meg nem látják az Emberfiát, amint eljön királyi dicsőségében.”`
   ],
   [
     // 17  ~ Jézus megmutatkozik a dicsőségében (#H) ~
@@ -1336,7 +1334,7 @@ mert tanításaik csak emberi parancsok!«” (#av)`,
     `„Természetesen az idegenektől!” - felelte Péter.
 „Ezek szerint a saját népüknek nem kell adót fizetniük - mondta Jézus. -`,
     // 27
-    `De hogy fel ne háborítsuk őket, menj ki a tóhoz horgászni. Amikor kifogod az első halat, nyisd ki a száját, és egy négydrachmás ezüstpénzt találsz benne. Add oda az adószedőknek értem és érted!”`,
+    `De hogy fel ne háborítsuk őket, menj ki a tóhoz horgászni. Amikor kifogod az első halat, nyisd ki a száját, és egy négydrachmás ezüstpénzt találsz benne. Add oda az adószedőknek értem és érted!”`
   ],
   [
     // 18  ~ Ki a legnagyobb? (#K) ~
@@ -1408,7 +1406,7 @@ mert tanításaik csak emberi parancsok!«” (#av)`,
     // 34
     `Majd a király haragjában átadta ezt a szolgáját a börtönőröknek, hogy tartsák fogva, amíg ki nem fizeti minden adósságát.`,
     // 35
-    `Bizony, így bánik veletek Mennyei Atyám is, ha szívből meg nem bocsáttok annak a testvéreteknek, aki vétkezett ellenetek!”`,
+    `Bizony, így bánik veletek Mennyei Atyám is, ha szívből meg nem bocsáttok annak a testvéreteknek, aki vétkezett ellenetek!”`
   ],
   [
     // 19  ~ A házasságról és a válásról (#O) ~
@@ -1471,7 +1469,7 @@ Jézus így válaszolt: „Ne gyilkolj! Ne kövess el házasságtörést! Ne lop
     // 29
     `Mindenki, aki elhagyta értem házát, testvéreit, apját, anyját, gyermekeit vagy szántóföldjeit, százszor annyit kap vissza, és örök életet kap örökségül.`,
     // 30
-    `De sokan, akik most az első helyeket foglalják el az életben, akkor majd utolsók lesznek. Ugyanakkor sokan, akik most az utolsó helyeken vannak, az első helyekre kerülnek.”`,
+    `De sokan, akik most az első helyeket foglalják el az életben, akkor majd utolsók lesznek. Ugyanakkor sokan, akik most az utolsó helyeken vannak, az első helyekre kerülnek.”`
   ],
   [
     // 20  ~ Példázat a szőlőmunkásokról ~
@@ -1545,7 +1543,7 @@ Az asszony így felelt: „Azt szeretném, hogy Királyságodban az egyik fiam a
     // 33
     `Így feleltek: „Urunk! Nyisd meg a szemünket, hogy lássunk!”`,
     // 34
-    `Jézus megsajnálta őket, és megérintette a szemüket. Abban a pillanatban meggyógyult a szemük, és láttak. Azután követték Jézust.`,
+    `Jézus megsajnálta őket, és megérintette a szemüket. Abban a pillanatban meggyógyult a szemük, és láttak. Azután követték Jézust.`
   ],
   [
     // 21  ~ Jézus királyként vonul be Jeruzsálembe (#U) ~
@@ -1655,7 +1653,7 @@ Sohasem olvastátok ezt?`,
     // 45
     `A főpapok és a farizeusok ekkor megértették, hogy Jézus róluk mondta ezt a jelképes történetet.`,
     // 46
-    `Ezért szerették volna letartóztatni, de féltek az emberektől, akik Jézust prófétának tartották.`,
+    `Ezért szerették volna letartóztatni, de féltek az emberektől, akik Jézust prófétának tartották.`
   ],
   [
     // 22  ~ Példázat a királyi lakodalomról (#Z) ~
@@ -1754,7 +1752,7 @@ amíg ellenségeidet
     // 45
     `Ha Dávid Urának nevezi a Messiást, hogyan lehet a Messiás a fia?”`,
     // 46
-    `Erre azonban egyik farizeus sem tudott válaszolni. Így attól a naptól kezdve már senki sem merte őt kérdésekkel próbára tenni.`,
+    `Erre azonban egyik farizeus sem tudott válaszolni. Így attól a naptól kezdve már senki sem merte őt kérdésekkel próbára tenni.`
   ],
   [
     // 23  ~ Jézus véleménye a vallási vezetőkről (#AE) ~
@@ -1834,7 +1832,7 @@ amíg ellenségeidet
     // 38
     `Bizony üressé és elhagyatottá lesz a Házatok! (#as)`,
     // 39
-    `Igazán mondom nektek: mostantól fogva nem láttok engem, amíg ezt nem mondjátok: »Áldott, aki az Örökkévaló nevében jön!«” (#at)`,
+    `Igazán mondom nektek: mostantól fogva nem láttok engem, amíg ezt nem mondjátok: »Áldott, aki az Örökkévaló nevében jön!«” (#at)`
   ],
   [
     // 24  ~ Jézus prófétál az utolsó időkről (#AG) ~
@@ -1942,7 +1940,7 @@ lehullnak az égről a csillagok,
     // 50
     `Egy napon azonban - amikor a gonosz szolga nem várja, és nem is gondol rá - az ura hazaérkezik.`,
     // 51
-    `Akkor az úr kegyetlenül megbünteti őt, és oda küldi, ahová a képmutatók kerülnek. Ott lesz majd sírás és fogcsikorgatás!”`,
+    `Akkor az úr kegyetlenül megbünteti őt, és oda küldi, ahová a képmutatók kerülnek. Ott lesz majd sírás és fogcsikorgatás!”`
   ],
   [
     // 25  ~ Példázat a tíz szűzről ~
@@ -2036,7 +2034,7 @@ lehullnak az égről a csillagok,
     // 45
     `Akkor a király így válaszol majd: »Igazán mondom nektek: amikor nem segítettetek a testvéreimnek - akár a legkisebbnek is -, akkor nekem nem segítettetek!«`,
     // 46
-    `Akkor ezek elmennek az örök büntetésre, az igazságosak pedig az örök életre.”`,
+    `Akkor ezek elmennek az örök büntetésre, az igazságosak pedig az örök életre.”`
   ],
   [
     // 26  ~ A vallási vezetők Jézus megöletését tervezik (#AK) ~
@@ -2194,7 +2192,7 @@ A vezetők mind azt válaszolták: „Bűnös, és meg kell halnia!”`,
     // 74
     `Péter ekkor átok alatt megesküdött, (#bk) hogy igaz, amit mond: „Nem is ismerem azt a férfit!” Abban a pillanatban kukorékolt a kakas.`,
     // 75
-    `Péternek azonnal eszébe jutott, amit Jézus korábban mondott neki: „Mielőtt a kakas kukorékol, háromszor le fogod tagadni, hogy ismersz engem.” Ezután Péter kiment a főpap udvarából, és keserves sírásra fakadt.`,
+    `Péternek azonnal eszébe jutott, amit Jézus korábban mondott neki: „Mielőtt a kakas kukorékol, háromszor le fogod tagadni, hogy ismersz engem.” Ezután Péter kiment a főpap udvarából, és keserves sírásra fakadt.`
   ],
   [
     // 27  ~ Jézus Pilátus előtt (#AU) ~
@@ -2334,7 +2332,7 @@ De azok még hangosabban ordibáltak: „Feszítsd keresztre!”`,
     // 65
     `Pilátus azt felelte: „Rendben van, vigyetek néhány katonát az őrségből, és őriztessétek a sírt, ahogy csak akarjátok!”`,
     // 66
-    `Azok el is mentek, lepecsételték a sír bejáratát elzáró követ, és őrséget állítottak mellé.`,
+    `Azok el is mentek, lepecsételték a sír bejáratát elzáró követ, és őrséget állítottak mellé.`
   ],
   [
     // 28  ~ Jézus feltámadásának örömhíre (#I) ~
@@ -2376,8 +2374,8 @@ De azok még hangosabban ordibáltak: „Feszítsd keresztre!”`,
     // 19
     `Ezért menjetek el a nemzetekhez, és tegyetek tanítványommá minden embert az egész világon! Merítsétek be őket az Atya, a Fiú és a Szentlélek nevébe!`,
     // 20
-    `Tanítsátok őket, hogy engedelmeskedjenek mindannak, amit én parancsoltam nektek! Biztosak lehettek benne, hogy állandóan veletek leszek. Igen, veletek maradok minden nap, amíg ez a korszak véget nem ér!”`,
-  ],
+    `Tanítsátok őket, hogy engedelmeskedjenek mindannak, amit én parancsoltam nektek! Biztosak lehettek benne, hogy állandóan veletek leszek. Igen, veletek maradok minden nap, amíg ez a korszak véget nem ér!”`
+  ]
 ];
 
 const mk = [
@@ -2475,7 +2473,7 @@ const mk = [
     // 44
     `„Vigyázz, senkinek se beszélj erről! Menj, és mutasd meg magad a papnak! (#f) Azután vidd fel az áldozatot a Templomba a gyógyulásodért, ahogyan azt Mózes megparancsolta, hogy bizonyítékul szolgáljon nekik!”`,
     // 45
-    `A férfi elment, de azután mégis elhíresztelte, hogy mi történt vele. Emiatt Jézus nem mehetett be többé a városba, amikor mások is látták. Inkább elhagyatott helyeken tartózkodott, és az embereknek kellett mindenfelől hozzá menniük.`,
+    `A férfi elment, de azután mégis elhíresztelte, hogy mi történt vele. Emiatt Jézus nem mehetett be többé a városba, amikor mások is látták. Inkább elhagyatott helyeken tartózkodott, és az embereknek kellett mindenfelől hozzá menniük.`
   ],
   [
     // 2  ~ Jézus meggyógyít egy béna férfit (#J) ~
@@ -2534,7 +2532,7 @@ Ekkor a beteghez fordult:`,
     // 27
     `Végül ezt mondta: „A szombat ünnepe van az emberért, és nem az ember a szombatért.`,
     // 28
-    `Így hát az Emberfia úr a szombat ünnepe fölött is”.`,
+    `Így hát az Emberfia úr a szombat ünnepe fölött is”.`
   ],
   [
     // 3  ~ Jézus szombaton is gyógyít (#N) ~
@@ -2613,7 +2611,7 @@ Simont, a zélótát (#h) ,`,
     // 34
     `Végignézett a körülötte ülőkön, és rájuk mutatott: „Itt vannak a testvéreim és az anyám,`,
     // 35
-    `mert azok az igazi testvéreim és anyám, akik megteszik, amit Isten akar!”`,
+    `mert azok az igazi testvéreim és anyám, akik megteszik, amit Isten akar!”`
   ],
   [
     // 4  ~ Példázat a magvetésről (#R) ~
@@ -2700,7 +2698,7 @@ hogy ne forduljanak Istenhez,
     // 40
     `Majd azt mondta nekik: „Miért rémültetek meg? Még mindig nem hisztek?”`,
     // 41
-    `A tanítványokat nagy félelem fogta el, és ezt kérdezgették egymástól: „Ki lehet ez, hogy még a szél és a víz is engedelmeskedik neki?”`,
+    `A tanítványokat nagy félelem fogta el, és ezt kérdezgették egymástól: „Ki lehet ez, hogy még a szél és a víz is engedelmeskedik neki?”`
   ],
   [
     // 5  ~ Jézus kiűzi a gonosz szellemek seregét (#X) ~
@@ -2789,7 +2787,7 @@ hogy ne forduljanak Istenhez,
     // 42
     `Ekkor a tizenkét éves kislány azonnal felkelt, és járni kezdett, az emberek pedig magukon kívül voltak a csodálkozástól.`,
     // 43
-    `Jézus azonban szigorúan megparancsolta, hogy erről senkinek se beszéljenek. Azután szólt, hogy adjanak enni a kislánynak.`,
+    `Jézus azonban szigorúan megparancsolta, hogy erről senkinek se beszéljenek. Azután szólt, hogy adjanak enni a kislánynak.`
   ],
   [
     // 6  ~ Jézus Názáretben (#Z) ~
@@ -2907,7 +2905,7 @@ Miután mindent összeszámoltak, így feleltek: „Öt kenyerünk van, és két
     // 55
     `Amikor ugyanis meghallották, hogy valahol megjelent, mindenhonnan odasiettek, hogy hozzá vigyék a hordágyakon fekvő betegeket.`,
     // 56
-    `Bárhová is ment - falvakba, városokba vagy tanyákra - az emberek kitették betegeiket a piactérre, és könyörögtek neki, hogy legalább a ruhája szélét érinthessék. Akik pedig megérintették őt, meg is gyógyultak.`,
+    `Bárhová is ment - falvakba, városokba vagy tanyákra - az emberek kitették betegeiket a piactérre, és könyörögtek neki, hogy legalább a ruhája szélét érinthessék. Akik pedig megérintették őt, meg is gyógyultak.`
   ],
   [
     // 7  ~ Isten szava fontosabb, vagy az emberi hagyományok? (#AF) ~
@@ -2988,7 +2986,7 @@ mert a tanításaik,
     // 36
     `Jézus megparancsolta, hogy erről senkinek se beszéljenek. De minél jobban tiltotta, annál inkább terjedt a híre.`,
     // 37
-    `Mindenki nagyon csodálkozott a süketnéma gyógyulásán, és ezt mondták: „Milyen jól tesz mindent! A süketek fülét megnyitja, a némák nyelvét pedig megoldja!”`,
+    `Mindenki nagyon csodálkozott a süketnéma gyógyulásán, és ezt mondták: „Milyen jól tesz mindent! A süketek fülét megnyitja, a némák nyelvét pedig megoldja!”`
   ],
   [
     // 8  ~ Jézus enni ad több, mint négyezer embernek (#AH) ~
@@ -3070,7 +3068,7 @@ Péter így válaszolt: „Te vagy a Messiás!”`,
     // 37
     `Ugyan mit adhat azért, hogy megmentse a lelkét?`,
     // 38
-    `Aki most szégyell engem és szavaimat ez előtt a hűtlen és bűnös nemzedék előtt, azt az Emberfia is szégyellni fogja, amikor majd eljön az Atya dicsőségében, a szent angyalokkal együtt.”`,
+    `Aki most szégyell engem és szavaimat ez előtt a hűtlen és bűnös nemzedék előtt, azt az Emberfia is szégyellni fogja, amikor majd eljön az Atya dicsőségében, a szent angyalokkal együtt.”`
   ],
   [
     // 9
@@ -3174,7 +3172,7 @@ Az apa ezt felelte: „Már gyermekkora óta.`,
     // 49
     `Mert mindenkit tűzzel sóznak meg. (#aa)`,
     // 50
-    `Jó a só, de ha elveszti az ízét, hogyan lehet helyrehozni? Legyen bennetek só, és éljetek egymással békességben!”`,
+    `Jó a só, de ha elveszti az ízét, hogyan lehet helyrehozni? Legyen bennetek só, és éljetek egymással békességben!”`
   ],
   [
     // 10  ~ Jézus a házasságról és a válásról (#AS) ~
@@ -3283,7 +3281,7 @@ Szóltak a vaknak, és így biztatták: „Bátorság! Kelj fel, mert Jézus hí
     `Jézus ezt kérdezte tőle: „Mit tegyek veled? Mit kívánsz tőlem?”
 „Mester, hogy újra lássak!” - válaszolt a vak.`,
     // 52
-    `Jézus erre így válaszolt: „Menj el, a hited meggyógyított.” A férfi azonnal visszanyerte a látását, és csatlakozott a Jézust kísérő csoporthoz.`,
+    `Jézus erre így válaszolt: „Menj el, a hited meggyógyított.” A férfi azonnal visszanyerte a látását, és csatlakozott a Jézust kísérő csoporthoz.`
   ],
   [
     // 11  ~ Jézus királyként vonul be Jeruzsálembe (#AY) ~
@@ -3356,7 +3354,7 @@ Hozsánna a magasságban Istennek!”`,
     `De azt mégsem mondhatjuk, hogy csak emberektől volt…”. A vezetők ugyanis féltek a néptől, mert Bemerítő Jánost mindenki prófétának tartotta.`,
     // 33
     `Ezért így válaszoltak Jézusnak: „Nem tudjuk.”
-„Akkor én sem mondom meg nektek, milyen felhatalmazással teszem ezeket” - felelt nekik Jézus.`,
+„Akkor én sem mondom meg nektek, milyen felhatalmazással teszem ezeket” - felelt nekik Jézus.`
   ],
   [
     // 12  ~ Példázat a gyilkos szőlőmunkásokról (#BD) ~
@@ -3455,7 +3453,7 @@ A nagy sokaság örömmel hallgatta Jézust.`,
     // 43
     `Jézus ekkor magához hívta tanítványait, és ezt mondta: „Igazán mondom, hogy ez az özvegyasszony többet dobott a perselybe, mint bárki más.`,
     // 44
-    `A többiek mind a fölöslegükből adakoztak. Ő pedig nagy szegénysége ellenére mindent odaadott, amije csak volt, még a betevő falatjára való pénzét is.”`,
+    `A többiek mind a fölöslegükből adakoztak. Ő pedig nagy szegénysége ellenére mindent odaadott, amije csak volt, még a betevő falatjára való pénzét is.”`
   ],
   [
     // 13  ~ Jézus prófétál az utolsó időkről (#H) ~
@@ -3534,7 +3532,7 @@ A nagy sokaság örömmel hallgatta Jézust.`,
     // 36
     `Ha hirtelen megérkezik, nehogy alva találjon titeket!`,
     // 37
-    `Amit most nektek mondok, mindenki másnak is mondom: »Maradjatok éberek!«”`,
+    `Amit most nektek mondok, mindenki másnak is mondom: »Maradjatok éberek!«”`
   ],
   [
     // 14  ~ A vallási vezetők Jézus megöletését tervezik (#J) ~
@@ -3685,7 +3683,7 @@ Kis idő múlva az ott állók megszólították Pétert: „Biztos, hogy közé
     // 71
     `Péter ekkor átok alatt megesküdött, hogy igazat mond: „Nem is ismerem azt az embert, akiről beszéltek!”`,
     // 72
-    `Ebben a pillanatban másodszor is kukorékolt a kakas. Akkor Péter visszaemlékezett Jézus szavaira: „Mielőtt a kakas másodszor megszólal, háromszor is le fogod tagadni, hogy ismersz engem” - és sírva fakadt.`,
+    `Ebben a pillanatban másodszor is kukorékolt a kakas. Akkor Péter visszaemlékezett Jézus szavaira: „Mielőtt a kakas másodszor megszólal, háromszor is le fogod tagadni, hogy ismersz engem” - és sírva fakadt.`
   ],
   [
     // 15  ~ Jézus Pilátus előtt (#T) ~
@@ -3783,7 +3781,7 @@ De azok csak még hangosabban ordították: „Feszítsd keresztre!”`,
     // 46
     `József lenvásznat vásárolt, azután levette Jézus holttestét a keresztről, és a vászonba göngyölve elhelyezte egy sziklasírba. Ezután a nagy zárókövet a sír bejárata elé gördítették.`,
     // 47
-    `Mária, József anyja és Mária Magdalén látták, hogy hová tették Jézus testét.`,
+    `Mária, József anyja és Mária Magdalén látták, hogy hová tették Jézus testét.`
   ],
   [
     // 16  ~ Jézus feltámadásának örömhíre (#Y) ~
@@ -3825,8 +3823,8 @@ De azok csak még hangosabban ordították: „Feszítsd keresztre!”`,
     // 19  ~ Jézus visszatér a Mennybe (#AB) ~
     `Miután az Úr Jézus beszélt a tanítványaival, felvitték a Mennybe, és ott Isten jobb oldalára ült.`,
     // 20
-    `Az apostolok pedig elmentek, és mindenhol kihirdették Isten üzenetét. Az Úr együttműködött velük, és hitelesítette az üzenetet természetfeletti jelekkel, amelyek kísérték az üzenet hirdetését.`,
-  ],
+    `Az apostolok pedig elmentek, és mindenhol kihirdették Isten üzenetét. Az Úr együttműködött velük, és hitelesítette az üzenetet természetfeletti jelekkel, amelyek kísérték az üzenet hirdetését.`
+  ]
 ];
 
 const lk = [
@@ -4017,7 +4015,7 @@ Ezért meg fog látogatni minket
      akik a halál árnyékában, sötétben ülnek,
 és a békesség útjára vezessen bennünket.”`,
     // 80
-    `A gyermek János növekedett, és egyre erősödött lélekben. A pusztában élt egészen addig, amíg nyilvánosan hirdetni kezdte Isten üzenetét Izráel népének.`,
+    `A gyermek János növekedett, és egyre erősödött lélekben. A pusztában élt egészen addig, amíg nyilvánosan hirdetni kezdte Isten üzenetét Izráel népének.`
   ],
   [
     // 2  ~ Jézus születése (#A) ~
@@ -4129,7 +4127,7 @@ Ezért meg fog látogatni minket
     // 51
     `Ezután Jézus visszatért velük Názáretbe, és engedelmeskedett nekik. Mária pedig a szívében őrizte ezeket a dolgokat.`,
     // 52
-    `Jézus egyre bölcsebb lett, és felnőtté vált. Isten számára egyre kedvesebb volt, és az emberek is mind jobban kedvelték.`,
+    `Jézus egyre bölcsebb lett, és felnőtté vált. Isten számára egyre kedvesebb volt, és az emberek is mind jobban kedvelték.`
   ],
   [
     // 3  ~ Bemerítő János utat készít a Messiásnak (#B) ~
@@ -4277,7 +4275,7 @@ Mahalalél Kénán fia,`,
     `Kénán Enós fia,
 Enós Sét fia,
 Sét Ádám fia,
-Ádám pedig Isten fia volt.`,
+Ádám pedig Isten fia volt.`
   ],
   [
     // 4  ~ Jézust próbára teszi a Sátán (#E) ~
@@ -4376,7 +4374,7 @@ a vakoknak pedig szemük megnyílását,
     // 43
     `de ő ezt mondta: „Más városokban is hirdetnem kell az Isten Királyságáról szóló örömüzenetet, mert ezért küldtek.”`,
     // 44
-    `Ezzel továbbment, és Júdea zsinagógáiban is hirdette Isten üzenetét.`,
+    `Ezzel továbbment, és Júdea zsinagógáiban is hirdette Isten üzenetét.`
   ],
   [
     // 5  ~ A csodálatos halfogás (#K) ~
@@ -4458,7 +4456,7 @@ Ekkor a beteghez fordult: „Én mondom neked, kelj fel, fogd a hordágyadat, é
     // 38
     `Az új bort új tömlőbe kell tölteni.`,
     // 39
-    `Aki kiforrott, megérlelődött bort ivott, az nem kívánja azonnal az új bort, mert azt mondja, hogy jobb a régi.”`,
+    `Aki kiforrott, megérlelődött bort ivott, az nem kívánja azonnal az új bort, mert azt mondja, hogy jobb a régi.”`
   ],
   [
     // 6  ~ Az Emberfia a szombatnak is Ura (#P) ~
@@ -4579,7 +4577,7 @@ Jaj nektek, akik most nevettek,
     // 48
     `az hasonló ehhez: egy ember házat épített, és jó mélyre leásta az alapját. Egészen a kőszikláig ásott, és arra alapozta a házát. Azután jött az áradat, beleütközött a házba, és el akarta sodorni, de nem tudta megingatni, mert erős alapra építették.`,
     // 49
-    `Aki pedig hallja a szavamat, de nem engedelmeskedik, az hasonló ehhez: egy ember házat épített, de minden alapozás nélkül, csak a földre. Amikor jött az árvíz, a ház azonnal összedőlt. Csak egy romhalmaz maradt belőle.”`,
+    `Aki pedig hallja a szavamat, de nem engedelmeskedik, az hasonló ehhez: egy ember házat épített, de minden alapozás nélkül, csak a földre. Amikor jött az árvíz, a ház azonnal összedőlt. Csak egy romhalmaz maradt belőle.”`
   ],
   [
     // 7  ~ A római százados hite (#X) ~
@@ -4690,7 +4688,7 @@ Siratót énekeltünk,
     // 49
     `Akik vele együtt vacsoráztak, ezt gondolták: „Kicsoda ez? Azt képzeli, hogy megbocsáthatja valakinek a bűneit?”`,
     // 50
-    `Végül Jézus ezt mondta az asszonynak: „A hited megmentett téged, menj békességgel!”`,
+    `Végül Jézus ezt mondta az asszonynak: „A hited megmentett téged, menj békességgel!”`
   ],
   [
     // 8  ~ Jézus tanítványai és kísérői ~
@@ -4814,7 +4812,7 @@ Mindnyájan tagadták, Péter pedig ezt mondta: „Mester, az emberek tolonganak
     // 55
     `Ekkor a lélek visszatért a kislányba, aki azonnal feltámadt. Akkor Jézus mondta, hogy adjanak neki enni.`,
     // 56
-    `A leány szülei nagyon meg voltak döbbenve, de Jézus megparancsolta nekik, hogy senkinek se mondják el, ami történt.`,
+    `A leány szülei nagyon meg voltak döbbenve, de Jézus megparancsolta nekik, hogy senkinek se mondják el, ami történt.`
   ],
   [
     // 9  ~ Jézus kiküldi a tizenkét apostolt (#AG) ~
@@ -4945,7 +4943,7 @@ Amíg a többiek még azon csodálkoztak, amit Jézus tett, ő ezt mondta a tan�
     // 61
     `Másvalaki így szólította meg: „Követlek, Uram, de előbb hadd búcsúzzam el a családomtól!”`,
     // 62
-    `De Jézus így felelt: „Aki egyszer szántani kezd, azután mégis visszafordul, az nem alkalmas arra, hogy Isten Királyságában éljen!”`,
+    `De Jézus így felelt: „Aki egyszer szántani kezd, azután mégis visszafordul, az nem alkalmas arra, hogy Isten Királyságában éljen!”`
   ],
   [
     // 10  ~ Jézus kiküldi hetvenkét tanítványát ~
@@ -5032,7 +5030,7 @@ Jézus azt mondta: „Igazad van, menj, és kövesd a példáját!”`,
     // 41
     `De az Úr így felelt: „Márta, Márta! Túl sokat vállalsz magadra, és sokat aggodalmaskodsz!`,
     // 42
-    `Pedig csak kevés dolog van, amely igazán fontos, sőt valójában csak egyetlen egy. Mária jól választott! Ezt soha el nem vehetik tőle.”`,
+    `Pedig csak kevés dolog van, amely igazán fontos, sőt valójában csak egyetlen egy. Mária jól választott! Ezt soha el nem vehetik tőle.”`
   ],
   [
     // 11  ~ Jézus imádkozni tanítja a tanítványait (#C) ~
@@ -5147,7 +5145,7 @@ Ne engedd, hogy kísértésekkel próbára tegyenek bennünket!”`,
     // 53
     `Amikor Jézus továbbment onnan, a törvénytanítók és farizeusok nagyon fel voltak háborodva. Attól fogva nagyon ellenségesen viselkedtek vele szemben. Rossz szándékkal faggatták különböző kérdésekkel,`,
     // 54
-    `és egyre csak azt lesték, hogy melyik szavába tudnának belekötni.`,
+    `és egyre csak azt lesték, hogy melyik szavába tudnának belekötni.`
   ],
   [
     // 12  ~ Óvakodjatok a farizeusok kovászától! ~
@@ -5272,7 +5270,7 @@ az anyós menye ellen fordul,
     // 58
     `Gondold csak el: valaki vádol téged, pert indít ellened, és ellenfeleddel együtt a bíró elé kell állnotok. Ilyen esetben nagyon igyekezz, hogy még útközben kibéküljetek egymással! Ha ez nem sikerül, az ellenfeled a bíró elé visz, a bíró átad a börtönőrnek, az pedig börtönbe zár téged!`,
     // 59
-    `Mondom neked: ki nem jössz onnan, amíg az utolsó fillérig meg nem fizetted, amivel tartozol!”`,
+    `Mondom neked: ki nem jössz onnan, amíg az utolsó fillérig meg nem fizetted, amivel tartozol!”`
   ],
   [
     // 13  ~ Térjetek vissza Istenhez! ~
@@ -5345,7 +5343,7 @@ az anyós menye ellen fordul,
     // 34
     `Jeruzsálem, Jeruzsálem! Megölöd a prófétákat, és megkövezed azokat, akiket Isten hozzád küld! Hányszor akartam összegyűjteni a gyermekeidet, ahogyan a tyúk szárnyai alá gyűjti a csibéit, de ti nem akartátok!`,
     // 35
-    `Bizony elhagyatottá lesz a Házatok! Igazán mondom nektek: nem láttok többé engem addig a napig, amikor majd ezt mondjátok: »Áldott, aki az Örökkévaló nevében jön!«” (#p)`,
+    `Bizony elhagyatottá lesz a Házatok! Igazán mondom nektek: nem láttok többé engem addig a napig, amikor majd ezt mondjátok: »Áldott, aki az Örökkévaló nevében jön!«” (#p)`
   ],
   [
     // 14  ~ Szabad-e szombaton gyógyítani? ~
@@ -5418,7 +5416,7 @@ az anyós menye ellen fordul,
     `„Jó a só, de ha elveszti az ízét, hogyan lehetne ismét sóssá tenni?`,
     // 35
     `Az ízetlen só már semmire sem jó! Sem a szántóföldre, sem a trágyára nem használható, ezért kidobják.
-Akinek van füle, hallja és értse meg, amit mondok!”`,
+Akinek van füle, hallja és értse meg, amit mondok!”`
   ],
   [
     // 15  ~ Az elveszett juh (#V) ~
@@ -5486,7 +5484,7 @@ A tékozló fiú hazatérése
     // 31
     `Az apja erre így válaszolt: »Fiam, te mindig velem vagy, és minden vagyonom a tiéd!`,
     // 32
-    `Most gyere, ünnepeljünk, és örüljünk együtt, mert öcséd meghalt, de feltámadt! Elveszett, de megtaláltam!«”`,
+    `Most gyere, ünnepeljünk, és örüljünk együtt, mert öcséd meghalt, de feltámadt! Elveszett, de megtaláltam!«”`
   ],
   [
     // 16  ~ Példázat a csaló intézőről ~
@@ -5550,7 +5548,7 @@ A tékozló fiú hazatérése
     // 30
     `De a gazdag tovább vitatkozott: »Nem úgy van, Atyám! Ha valaki a halottak közül megy vissza hozzájuk, akkor biztosan megváltoztatják az életüket.«`,
     // 31
-    `Ábrahám így válaszolt: »Ha Mózesre és a prófétákra nem hallgatnak, akkor az sem győzi meg őket, ha valaki feltámad a halottak közül.«”`,
+    `Ábrahám így válaszolt: »Ha Mózesre és a prófétákra nem hallgatnak, akkor az sem győzi meg őket, ha valaki feltámad a halottak közül.«”`
   ],
   [
     // 17  ~ Ne okozz megütközést! (#X) ~
@@ -5630,7 +5628,7 @@ Azok mind a tízen el is indultak, és útközben meggyógyultak.`,
     `Két férfi lesz majd a mezőn, az egyiket felviszik, a másikat otthagyják.”`,
     // 37
     `A tanítványok megkérdezték tőle: „Hová, Uram?”
-Ő pedig így válaszolt: „Ahol a tetem van, oda gyűlnek a keselyűk.” (#aa)`,
+Ő pedig így válaszolt: „Ahol a tetem van, oda gyűlnek a keselyűk.” (#aa)`
   ],
   [
     // 18  ~ A kitartó imádkozásról ~
@@ -5720,7 +5718,7 @@ De amikor az Emberfia visszajön, vajon talál-e olyanokat a földön, akik igaz
     // 42
     `Jézus ezt mondta neki: „Láss! A hited megmentett téged.”`,
     // 43
-    `Ő pedig azonnal visszanyerte a látását, dicsőítette Istent, és követte Jézust. Ezt látva, az egész nép dicsérte Istent.`,
+    `Ő pedig azonnal visszanyerte a látását, dicsőítette Istent, és követte Jézust. Ezt látva, az egész nép dicsérte Istent.`
   ],
   [
     // 19  ~ Zákeus ~
@@ -5822,7 +5820,7 @@ Békesség a Mennyben,
     // 47
     `Ezután minden nap tanított a Templom területén. A főpapok, a törvénytanítók, és a nép vezetői pedig keresték az alkalmat, hogy megölhessék őt.`,
     // 48
-    `De nem tudták, mit tegyenek, mert az emberek nagy figyelemmel és örömmel hallgatták, amit Jézus mondott.`,
+    `De nem tudták, mit tegyenek, mert az emberek nagy figyelemmel és örömmel hallgatták, amit Jézus mondott.`
   ],
   [
     // 20  ~ Honnan származik Jézus hatalma? (#AG) ~
@@ -5926,7 +5924,7 @@ Akik hallották ezt a történetet, így kiáltottak fel: „Isten ments, hogy e
     // 46
     `„Óvakodjatok azoktól a törvénytanítóktól, akik szeretnek előkelő ruhában járni, és szívesen veszik, ha tisztelettel köszöntik őket az utcán, szeretik a legelőkelőbb helyeket elfoglalni a zsinagógában és az ünnepi vacsorákon.`,
     // 47
-    `Ugyanakkor az özvegyektől csalással elveszik a házukat. Azt akarják, hogy mindenki felfigyeljen rájuk, ezért a nyilvánosság előtt hosszasan imádkoznak. Ők súlyosabb büntetést fognak kapni.”`,
+    `Ugyanakkor az özvegyektől csalással elveszik a házukat. Azt akarják, hogy mindenki felfigyeljen rájuk, ezért a nyilvánosság előtt hosszasan imádkoznak. Ők súlyosabb büntetést fognak kapni.”`
   ],
   [
     // 21  ~ Az özvegyasszony fillérei (#AM) ~
@@ -6005,7 +6003,7 @@ Akik hallották ezt a történetet, így kiáltottak fel: „Isten ments, hogy e
     `Jézus nappal a Templom területén tanított, de este kiment az Olajfák hegyére, és ott töltötte az éjszakát.`,
     // 38
     `Az egész nép már korán reggel sietett hozzá a Templom területére, hogy hallgassa őt.
-A vallási vezetők Jézus megöletését tervezik (#E)`,
+A vallási vezetők Jézus megöletését tervezik (#E)`
   ],
   [
     // 22
@@ -6157,7 +6155,7 @@ Még be sem fejezte, amikor felhangzott a kakas kukorékolása.`,
     `Ekkor azok megkérdezték: „Szóval, te vagy az Isten Fia?”
 Ő így felelt: „Igen, én vagyok az.”`,
     // 71
-    `Ők pedig ezt mondták: „Nincs szükségünk több tanúvallomásra! Most tőle magától hallottuk, hogy ezt mondta!”`,
+    `Ők pedig ezt mondták: „Nincs szükségünk több tanúvallomásra! Most tőle magától hallottuk, hogy ezt mondta!”`
   ],
   [
     // 23  ~ Pilátus kihallgatja Jézust (#N) ~
@@ -6274,7 +6272,7 @@ A katonák sorsvetéssel elosztották maguk között Jézus ruháit.`,
     `Az asszonyok, akik Galileától kezdve követték Jézust, Józseffel mentek, látták a sírt, és azt is, hogyan helyezték el a sziklasírba Jézus testét.`,
     // 56
     `Azután hazamentek, és előkészítették az illatszereket, amelyeket temetésnél szoktak használni.
-A szombat ünnepén azonban otthon maradtak a Törvény parancsa szerint.`,
+A szombat ünnepén azonban otthon maradtak a Törvény parancsa szerint.`
   ],
   [
     // 24  ~ Jézus feltámadásának örömhíre (#S) ~
@@ -6384,8 +6382,8 @@ Azok így feleltek: „A názáreti Jézusról van szó, aki szavaival és tette
     // 52
     `A tanítványok imádták Jézust, és nagy örömmel tértek vissza Jeruzsálembe.`,
     // 53
-    `Mindig a Templom területén tartózkodtak, dicsérték és áldották Istent.`,
-  ],
+    `Mindig a Templom területén tartózkodtak, dicsérték és áldották Istent.`
+  ]
 ];
 
 const jn = [
@@ -6498,7 +6496,7 @@ Jézus ezt válaszolta: „Láttalak téged a fügefa alatt, mielőtt Fülöp id
     // 50
     `Jézus így felelt: „Azért hiszel, mert azt mondtam, hogy láttalak a fügefa alatt? Ennél nagyobb dolgokat is látsz majd.”`,
     // 51
-    `És így folytatta: „Igazán mondom nektek: meglátjátok majd a megnyílt Mennyet, és Isten angyalait, amint fel- és leszállnak az Emberfiára.” (#k)`,
+    `És így folytatta: „Igazán mondom nektek: meglátjátok majd a megnyílt Mennyet, és Isten angyalait, amint fel- és leszállnak az Emberfiára.” (#k)`
   ],
   [
     // 2  ~ A kánai lakodalom ~
@@ -6552,7 +6550,7 @@ A szolgák így is tettek.`,
     // 24
     `Ő azonban nem bízta magát rájuk, mert ismerte őket.`,
     // 25
-    `Nem volt szüksége rá, hogy valaki megmondja neki, mi van az emberekben, mert eleve jól ismerte mindegyiküket.`,
+    `Nem volt szüksége rá, hogy valaki megmondja neki, mi van az emberekben, mert eleve jól ismerte mindegyiküket.`
   ],
   [
     // 3  ~ Jézus és Nikodémus beszélgetése ~
@@ -6626,7 +6624,7 @@ A szolgák így is tettek.`,
     // 35
     `mert az Atya szereti a Fiút, és mindent az ő kezébe adott.`,
     // 36
-    `Aki hisz a Fiúban, annak örök élete van. Aki viszont nem engedelmeskedik a Fiúnak, az sohasem látja meg az örök életet, hanem Isten haragja alatt marad.”`,
+    `Aki hisz a Fiúban, annak örök élete van. Aki viszont nem engedelmeskedik a Fiúnak, az sohasem látja meg az örök életet, hanem Isten haragja alatt marad.”`
   ],
   [
     // 4  ~ Jézus beszélget a samáriai asszonnyal ~
@@ -6739,7 +6737,7 @@ Azok mondták, hogy előző nap délután egy órakor múlt el a láza.`,
     // 53
     `Az apa visszaemlékezett arra, hogy Jézus pontosan abban az órában mondta neki: „A fiad élni fog!” - és hitt Jézusban egész családjával együtt.`,
     // 54
-    `Ez volt a második csodálatos jel, amelyet Jézus tett, miután Júdeából Galileába érkezett.`,
+    `Ez volt a második csodálatos jel, amelyet Jézus tett, miután Júdeából Galileába érkezett.`
   ],
   [
     // 5  ~ Jézus meggyógyít egy beteget a Betesda tavánál ~
@@ -6836,7 +6834,7 @@ Mivel ez szombaton történt,`,
     // 46
     `akkor bennem is hinnétek, hiszen énrólam írt.`,
     // 47
-    `De ha az ő írásainak nem hisztek, hogyan hihetnétek az én szavaimnak?”`,
+    `De ha az ő írásainak nem hisztek, hogyan hihetnétek az én szavaimnak?”`
   ],
   [
     // 6  ~ Jézus enni ad több, mint ötezer embernek (#D) ~
@@ -6847,20 +6845,16 @@ Mivel ez szombaton történt,`,
     `Jézus felment a hegyoldalra, és a tanítványaival együtt letelepedett.`,
     // 4
     `Ekkor már közel volt a 
-<details>
-  <summary>páska,</summary>
-  <span>
-    Ez valószínűleg a "Harsonák Napjának ünnepe" (nem páska / húsvét)</br>
-    • A páska ünnepe alatt mindenkinek Jeruzsálemben kell lennie a Tóra szerint.
-          Ez az esemény azonban Betsaidában van, Jeruzsálemtől több mint 120 km-re.</br>
-    • Jézus kovászos kenyeret ad az embereknek (amit a páska ünnepén tilos fogyasztani).</br>
-    • Az "utolsó nap" és az "emberek feltámadása" a Harsonák Napjának alapelemei, nem a páskájé 
-          (lsd. a másnapi események következő igehelyeit: Jn6:39,40,44,54)</br>
-    </br>
-    <small><strong>Ez a megjegyzés nem része az ERV-HU Biblia fordításnak</strong></small>
-  </span>
-</details>
-a zsidók nagy ünnepe.`,
+<span 
+  class="has-tooltip-after"
+  data-tooltip="Ez valószínűleg a ”Harsonák Napjának ünnepe” (nem páska / húsvét)
+  • A páska ünnepe alatt mindenkinek Jeruzsálemben kell lennie a Tóra szerint. Ez az esemény azonban Betsaidában van, Jeruzsálemtől több mint 120 km-re.
+  • Jézus kovászos kenyeret ad az embereknek (amit a páska ünnepén tilos fogyasztani).
+  • Az ”utolsó nap” és az ”emberek feltámadása” a Harsonák Napjának alapelemei, nem a páskájé (lsd. a másnapi események következő igehelyeit: Jn6:39,40,44,54).
+
+  Ez a megjegyzés nem része az ERV-HU Biblia fordításnak"
+>páska</span>
+    a zsidók nagy ünnepe.`,
     // 5
     `Amikor Jézus körülnézett és látta, hogy mekkora tömeg közeledik feléjük, megkérdezte Fülöptől: „Honnan vegyünk annyi kenyeret, hogy mindannyian ehessenek?”`,
     // 6
@@ -6994,7 +6988,7 @@ a zsidók nagy ünnepe.`,
     // 70
     `Jézus erre így válaszolt: „Nem én választottalak ki benneteket, mind a tizenkettőt? Mégis van közöttetek egy, aki a Gonoszhoz tartozik!”`,
     // 71
-    `Júdásról, az Iskáriótes Simon fiáról beszélt, aki a tizenkettő közé tartozott, mégis el akarta árulni Jézust.`,
+    `Júdásról, az Iskáriótes Simon fiáról beszélt, aki a tizenkettő közé tartozott, mégis el akarta árulni Jézust.`
   ],
   [
     // 7  ~ Jézus és testvérei ~
@@ -7105,7 +7099,7 @@ De voltak, akik ezt mondták: „Az nem lehet, mert a Messiás nem Galileából 
     // 52
     `Ekkor a többiek letorkolták: „Talán te is Galileából jöttél? Nézz utána az Írásokban, és meglátod, hogy a Próféta nem Galileából származik!”`,
     // 53
-    `Ezután mindannyian hazamentek.`,
+    `Ezután mindannyian hazamentek.`
   ],
   [
     // 8  ~ A házasságtörő asszony esete ~
@@ -7229,7 +7223,7 @@ Jézus így válaszolt: „Az vagyok, akinek kezdettől fogva mondom magamat.`,
     // 58
     `Jézus felelt: „Igazán mondom nektek: mielőtt Ábrahám megszületett, ÉN VAGYOK.”`,
     // 59
-    `Ekkor köveket kaptak föl, hogy megdobálják Jézust, de ő eltűnt előlük, és elhagyta a Templom területét.`,
+    `Ekkor köveket kaptak föl, hogy megdobálják Jézust, de ő eltűnt előlük, és elhagyta a Templom területét.`
   ],
   [
     // 9  ~ A vakon született koldus gyógyulása ~
@@ -7318,7 +7312,7 @@ A koldus megmondta: „Én vagyok az!”`,
     // 40
     `Meghallotta ezt néhány farizeus, akik Jézus közelében voltak, és megkérdezték tőle: „Hogyan?! Talán mi is vakok vagyunk?”`,
     // 41
-    `Jézus ezt felelte: „Ha vakok lennétek, nem volnátok bűnösök. De mivel azt mondjátok, hogy láttok, bűnösök maradtok.”`,
+    `Jézus ezt felelte: „Ha vakok lennétek, nem volnátok bűnösök. De mivel azt mondjátok, hogy láttok, bűnösök maradtok.”`
   ],
   [
     // 10  ~ Példázat a juhnyájról és a pásztorról ~
@@ -7404,7 +7398,7 @@ A koldus megmondta: „Én vagyok az!”`,
     // 41
     `Sokan jöttek hozzá, és ezt mondták: „Bemerítő János nem tett csodákat, de amit erről az emberről mondott, az mind igaz.”`,
     // 42
-    `És ott sokan hittek Jézusban.`,
+    `És ott sokan hittek Jézusban.`
   ],
   [
     // 11  ~ Lázár halála ~
@@ -7523,7 +7517,7 @@ Márta, a halott Lázár nővére felkiáltott: „De Uram, már biztosan rossz 
     // 56
     `A Templom területén nagy tömeg gyűlt össze. Az emberek keresték Jézust, és egymástól kérdezgették: „Mit gondoltok, talán nem is jön fel az ünnepre?”`,
     // 57
-    `A főpapok és a farizeusok pedig kiadták a parancsot, hogy ha valaki tudja, hol van Jézus, azonnal jelentse, mert le akarták tartóztatni őt.`,
+    `A főpapok és a farizeusok pedig kiadták a parancsot, hogy ha valaki tudja, hol van Jézus, azonnal jelentse, mert le akarták tartóztatni őt.`
   ],
   [
     // 12  ~ Mária nárdusolaja (#B) ~
@@ -7638,7 +7632,7 @@ hogy szemükkel ne lássanak,
     // 49
     `Mert amit mondtam, nem magamtól mondtam. Az Atya, aki elküldött engem, parancsolta meg, hogy mit mondjak, és mit tanítsak.`,
     // 50
-    `És tudom, hogy amit az Atya parancsol, abból örök élet származik. Amit tehát én mondok, azt úgy mondom, ahogyan ő mondta nekem.”`,
+    `És tudom, hogy amit az Atya parancsol, abból örök élet származik. Amit tehát én mondok, azt úgy mondom, ahogyan ő mondta nekem.”`
   ],
   [
     // 13  ~ Jézus megmossa a tanítványai lábát ~
@@ -7718,7 +7712,7 @@ Jézus így válaszolt: „Most még nem jöhetsz velem oda, ahová megyek, de k
     // 37
     `Péter megkérdezte: „Uram, miért nem mehetek veled most? Az életemet is odaadnám érted!”`,
     // 38
-    `Jézus így felelt: „Az életedet adod értem? Igazán mondom neked: ma éjjel, mielőtt a kakas kukorékol, háromszor is le fogod tagadni, hogy ismersz engem!”`,
+    `Jézus így felelt: „Az életedet adod értem? Igazán mondom neked: ma éjjel, mielőtt a kakas kukorékol, háromszor is le fogod tagadni, hogy ismersz engem!”`
   ],
   [
     // 14  ~ Én vagyok az út, az igazság és az élet ~
@@ -7783,7 +7777,7 @@ Jézus így válaszolt: „Most még nem jöhetsz velem oda, ahová megyek, de k
     `Már nem sokáig beszélek veletek, mert közeledik ennek a világnak a fejedelme. (#r) Fölöttem ugyan nincs hatalma,`,
     // 31
     `de ezeknek a dolgoknak mégis meg kell történniük, hogy az egész világ megtudja: én szeretem az Atyát! Ezért mindazt megteszem, amit ő parancsolt.
-Most pedig keljetek fel, menjünk innen!”`,
+Most pedig keljetek fel, menjünk innen!”`
   ],
   [
     // 15  ~ Jézus a szőlőhöz hasonlítja magát ~
@@ -7839,7 +7833,7 @@ Most pedig keljetek fel, menjünk innen!”`,
     // 26
     `El fog jönni a Segítő, az Igazság Lelke, (#u) akit az Atyától küldök hozzátok, és ő majd tanúskodik mellettem.`,
     // 27
-    `De ti is tanúskodni fogtok rólam, mert kezdettől velem voltatok.`,
+    `De ti is tanúskodni fogtok rólam, mert kezdettől velem voltatok.`
   ],
   [
     // 16
@@ -7908,7 +7902,7 @@ Most pedig keljetek fel, menjünk innen!”`,
     // 32
     `Figyeljetek rám! Hamarosan eljön az idő, sőt, már itt is van, amikor mindannyian szétszóródtok, ki-ki hazatér az otthonába, és engem egyedül hagytok. De mégsem leszek egyedül, mert Atyám velem van.`,
     // 33
-    `Ezt azért mondom nektek, hogy teljes békességetek és bizalmatok legyen bennem. Ezen a világon próbatételek, nehéz időszakok és szenvedések várnak rátok, de legyetek bátrak: én már legyőztem a világot.”`,
+    `Ezt azért mondom nektek, hogy teljes békességetek és bizalmatok legyen bennem. Ezen a világon próbatételek, nehéz időszakok és szenvedések várnak rátok, de legyetek bátrak: én már legyőztem a világot.”`
   ],
   [
     // 17  ~ Jézus imádkozik a tanítványaiért ~
@@ -7963,7 +7957,7 @@ Akik ehhez a világhoz tartoznak, gyűlölték az enyémeket, mert ők nem ebbő
     // 25
     `Igazságos Atyám! Ez a világ soha nem ismert meg téged, de én ismerlek, és ők is felismerték és elfogadták, hogy te küldtél engem.`,
     // 26
-    `Megmutattam nekik, hogy te valójában milyen vagy, és továbbra is meg fogom mutatni, hogy az a szeretet, amellyel engem szerettél, bennük éljen, és én is őbennük éljek.”`,
+    `Megmutattam nekik, hogy te valójában milyen vagy, és továbbra is meg fogom mutatni, hogy az a szeretet, amellyel engem szerettél, bennük éljen, és én is őbennük éljek.”`
   ],
   [
     // 18  ~ Jézust letartóztatják (#F) ~
@@ -8050,7 +8044,7 @@ Jézus válaszolt: „Igen, jól mondod, az vagyok. Azért születtem, és jött
     // 39
     `A szokás szerint azonban egy foglyot szabadon engedek a kedvetekért a Páska ünnepén. Akarjátok-e, hogy szabadon engedjem nektek a zsidók királyát?”`,
     // 40
-    `Erre azok kiabálni kezdtek: „Nem, ne őt, hanem Barabbást engedd szabadon!” Ez a Barabbás rablógyilkos volt.`,
+    `Erre azok kiabálni kezdtek: „Nem, ne őt, hanem Barabbást engedd szabadon!” Ez a Barabbás rablógyilkos volt.`
   ],
   [
     // 19
@@ -8142,7 +8136,7 @@ A katonák pontosan ezt tették.`,
     // 41
     `Azon a helyen, ahol Jézust keresztre feszítették, volt egy kert, abban pedig egy új sziklasír, ahová addig még senkit sem temettek.`,
     // 42
-    `Mivel ez a sír közel volt, oda helyezték Jézus testét. Sietniük kellett, mert az előkészület napja a végéhez közeledett.`,
+    `Mivel ez a sír közel volt, oda helyezték Jézus testét. Sietniük kellett, mert az előkészület napja a végéhez közeledett.`
   ],
   [
     // 20  ~ A tanítványok üresen találják Jézus sírját (#O) ~
@@ -8209,7 +8203,7 @@ Mária azt hitte, hogy a kertésszel beszél, ezért így felelt: „Uram, ha te
     // 30  ~ Miért írta János ezt a könyvet? ~
     `Jézus nagyon sok csodát tett a tanítványai szeme láttára. Ezek közül azonban sok nincs leírva ebben a könyvben.`,
     // 31
-    `Amelyek viszont le vannak írva, azokat éppen azért jegyezték fel a számotokra, hogy higgyétek, hogy Jézus a Messiás, az Isten Fia, s hogy a benne való hit által életetek legyen a nevében.`,
+    `Amelyek viszont le vannak írva, azokat éppen azért jegyezték fel a számotokra, hogy higgyétek, hogy Jézus a Messiás, az Isten Fia, s hogy a benne való hit által életetek legyen a nevében.`
   ],
   [
     // 21  ~ Jézus megjelenik a Galileai-tónál ~
@@ -8269,8 +8263,8 @@ Jézus azt mondta neki: „Viselj gondot a juhaimra! (#ag)`,
     // 24
     `Ez a tanítvány az, aki mindezekről a dolgokról tanúskodik. Ő az, aki ezeket leírta, és tudjuk, hogy amit mond és ír, az igaz.`,
     // 25
-    `Jézus még sok más dolgot is tett. Ha ezeket mind részletesen leírnák, azt hiszem, az egész világ sem lenne elég, hogy befogadja azokat a könyveket.`,
-  ],
+    `Jézus még sok más dolgot is tett. Ha ezeket mind részletesen leírnák, azt hiszem, az egész világ sem lenne elég, hogy befogadja azokat a könyveket.`
+  ]
 ];
 
 const act = [
@@ -8302,7 +8296,7 @@ const act = [
     // 13
     `majd felmentek abba az emeleti szobába, ahol a szállásuk volt: Péter, János, Jakab, András, Fülöp, Tamás, Bertalan, Máté, azután Jakab, az Alfeus fia, azután a zélóta Simon és Júdás, a Jakab fia.`,
     // 14
-    `Mindannyian együtt voltak, állandóan és egy szívvel-lélekkel imádkoztak. Asszonyok is voltak velük - többek között Jézus anyja, Mária - meg Jézus testvérei is.`,
+    `Mindannyian együtt voltak, állandóan és egy szívvel-lélekkel imádkoztak. Asszonyok is voltak velük - többek között Jézus anyja, Mária - meg Jézus testvérei is.`
   ],
   [
     // Acts 2 ~ Pünkösdkor a Szentlélek leszáll a tanítványokra
@@ -8313,8 +8307,8 @@ const act = [
     // 3
     `Azután lángnyelvek jelentek meg közöttük, és rászálltak mindenkire.`,
     // 4
-    `Ekkor betöltötte őket a Szentlélek. Mind más-más nyelveken kezdtek beszélni, ahogy a Szentlélek adta kinek-kinek, hogy mit mondjon.`,
-  ],
+    `Ekkor betöltötte őket a Szentlélek. Mind más-más nyelveken kezdtek beszélni, ahogy a Szentlélek adta kinek-kinek, hogy mit mondjon.`
+  ]
 ];
 
 export default { mt, mk, lk, jn, act };
